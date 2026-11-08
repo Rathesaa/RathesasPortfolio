@@ -5,8 +5,8 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="theme-color" content="#f7f7f2">
-<title>Rathesa Kodeeswaran | Learning Experience Design & UX</title>
-<meta name="description" content="Rathesa Kodeeswaran's portfolio in learning experience design, instructional design, UX, and digital learning.">
+<title>Rathesa Kodeeswaran | Learning & Development Portfolio</title>
+<meta name="description" content="Rathesa Kodeeswaran's portfolio showcasing learning design, instructional design, training resources, employee onboarding, digital learning and UX.">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -26,543 +26,128 @@
   --lav:#e9e5f2;
   --shadow:0 12px 35px rgba(31,49,38,.08)
 }
-
 *{box-sizing:border-box}
-
-html{
-  scroll-behavior:smooth;
-  scroll-padding-top:90px
-}
-
-body{
-  margin:0;
-  background:var(--bg);
-  color:var(--ink);
-  font:16px/1.7 "DM Sans",sans-serif
-}
-
+html{scroll-behavior:smooth;scroll-padding-top:90px}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.7 "DM Sans",sans-serif}
 a{color:var(--green)}
-
-a:focus-visible,button:focus-visible{
-  outline:3px solid #bd7292;
-  outline-offset:3px
-}
-
-.wrap{
-  width:min(1100px,calc(100% - 40px));
-  margin:auto
-}
-
-nav{
-  height:76px;
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  gap:20px
-}
-
-nav .brand{
-  font:800 16px Manrope,sans-serif;
-  color:var(--ink);
-  text-decoration:none
-}
-
-nav .links{
-  display:flex;
-  gap:24px
-}
-
-nav .links a{
-  text-decoration:none;
-  color:var(--muted);
-  font-size:14px;
-  font-weight:600
-}
-
+a:focus-visible,button:focus-visible{outline:3px solid #bd7292;outline-offset:3px}
+.wrap{width:min(1100px,calc(100% - 40px));margin:auto}
+nav{min-height:76px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+nav .brand{font:800 16px Manrope,sans-serif;color:var(--ink);text-decoration:none}
+nav .links{display:flex;gap:22px;flex-wrap:wrap}
+nav .links a{text-decoration:none;color:var(--muted);font-size:14px;font-weight:600}
 nav a:hover{color:var(--green)}
-
-.hero{
-  padding:80px 0 88px;
-  display:grid;
-  grid-template-columns:1.15fr .85fr;
-  gap:55px;
-  align-items:center
-}
-
-.eyebrow{
-  color:var(--green);
-  font-weight:700;
-  letter-spacing:.12em;
-  text-transform:uppercase;
-  font-size:12px
-}
-
-.hero h1{
-  font:800 clamp(42px,6vw,70px)/1.05 Manrope,sans-serif;
-  letter-spacing:-.055em;
-  margin:18px 0 22px;
-  max-width:720px
-}
-
-.hero h1 em{
-  font-style:normal;
-  color:var(--green)
-}
-
-.hero p{
-  font-size:18px;
-  color:var(--muted);
-  max-width:630px
-}
-
-.actions{
-  display:flex;
-  gap:12px;
-  flex-wrap:wrap;
-  margin-top:30px
-}
-
-.btn{
-  display:inline-block;
-  padding:12px 19px;
-  border-radius:7px;
-  background:var(--green);
-  color:white;
-  text-decoration:none;
-  font-weight:700;
-  font-size:14px
-}
-
-.btn.secondary{
-  background:transparent;
-  color:var(--green);
-  border:1px solid var(--green)
-}
-
-.hero-art{
-  background:var(--green2);
-  border-radius:22px;
-  padding:26px;
-  min-height:330px;
-  position:relative;
-  overflow:hidden
-}
-
-.art-card{
-  background:white;
-  border-radius:13px;
-  padding:20px;
-  box-shadow:var(--shadow);
-  position:relative;
-  z-index:1
-}
-
-.art-card small{
-  font-weight:700;
-  color:var(--green);
-  text-transform:uppercase;
-  letter-spacing:.1em
-}
-
-.art-card h3{
-  font:700 23px Manrope;
-  margin:8px 0
-}
-
-.progress{
-  height:8px;
-  border-radius:10px;
-  background:#e8eee9;
-  margin:15px 0
-}
-
-.progress span{
-  display:block;
-  width:68%;
-  height:100%;
-  border-radius:10px;
-  background:var(--green)
-}
-
-.choice{
-  border:1px solid var(--line);
-  padding:10px 12px;
-  border-radius:7px;
-  margin-top:9px;
-  font-size:13px
-}
-
-.choice.active{
-  border-color:var(--green);
-  background:#f1f7f2
-}
-
-.art-note{
-  position:absolute;
-  right:20px;
-  bottom:18px;
-  background:var(--pink);
-  padding:12px 16px;
-  border-radius:10px;
-  font-size:13px;
-  font-weight:700;
-  transform:rotate(3deg)
-}
-
-section{
-  padding:78px 0;
-  border-top:1px solid var(--line)
-}
-
-.section-head{
-  max-width:700px;
-  margin-bottom:38px
-}
-
-.section-head h2{
-  font:800 clamp(30px,4vw,43px)/1.15 Manrope;
-  letter-spacing:-.04em;
-  margin:9px 0 13px
-}
-
-.section-head p{
-  color:var(--muted);
-  margin:0
-}
-
-.intro-grid{
-  display:grid;
-  grid-template-columns:.8fr 1.2fr;
-  gap:60px
-}
-
-.statement{
-  font:800 clamp(25px,3vw,36px)/1.25 Manrope;
-  letter-spacing:-.04em;
-  color:var(--green)
-}
-
-.intro-copy p{
-  margin:0 0 15px;
-  color:var(--muted)
-}
-
-.note{
-  background:var(--yellow);
-  padding:23px 25px;
-  border-radius:12px;
-  margin-top:28px
-}
-
-.note strong{
-  display:block;
-  font:700 16px Manrope;
-  margin-bottom:6px
-}
-
-.note p{
-  margin:0;
-  color:#4f5148;
-  font-size:14px
-}
-
-.cards{
-  display:grid;
-  grid-template-columns:repeat(2,1fr);
-  gap:22px
-}
-
-.project{
-  background:var(--paper);
-  border:1px solid var(--line);
-  border-radius:15px;
-  overflow:hidden;
-  box-shadow:var(--shadow);
-  transition:transform .18s ease,box-shadow .18s ease
-}
-
-.project:hover{
-  transform:translateY(-3px);
-  box-shadow:0 16px 38px rgba(31,49,38,.13)
-}
-
-.project-visual{
-  min-height:180px;
-  padding:25px;
-  display:flex;
-  align-items:center;
-  justify-content:center
-}
-
+.hero{padding:75px 0 85px;display:grid;grid-template-columns:1.15fr .85fr;gap:55px;align-items:center}
+.eyebrow{color:var(--green);font-weight:700;letter-spacing:.12em;text-transform:uppercase;font-size:12px}
+.hero h1{font:800 clamp(42px,6vw,68px)/1.05 Manrope,sans-serif;letter-spacing:-.055em;margin:18px 0 22px;max-width:720px}
+.hero h1 em{font-style:normal;color:var(--green)}
+.hero p{font-size:18px;color:var(--muted);max-width:640px}
+.actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:30px}
+.btn{display:inline-block;padding:12px 19px;border-radius:7px;background:var(--green);color:white;text-decoration:none;font-weight:700;font-size:14px;border:1px solid var(--green)}
+.btn.secondary{background:transparent;color:var(--green)}
+.btn:hover{opacity:.88}
+.hero-art{background:var(--green2);border-radius:22px;padding:26px;min-height:330px;position:relative;overflow:hidden}
+.art-card{background:white;border-radius:13px;padding:20px;box-shadow:var(--shadow);position:relative;z-index:1}
+.art-card small{font-weight:700;color:var(--green);text-transform:uppercase;letter-spacing:.1em}
+.art-card h3{font:700 23px Manrope;margin:8px 0}
+.progress{height:8px;border-radius:10px;background:#e8eee9;margin:15px 0}
+.progress span{display:block;width:68%;height:100%;border-radius:10px;background:var(--green)}
+.choice{border:1px solid var(--line);padding:10px 12px;border-radius:7px;margin-top:9px;font-size:13px}
+.choice.active{border-color:var(--green);background:#f1f7f2}
+.art-note{position:absolute;right:20px;bottom:18px;background:var(--pink);padding:12px 16px;border-radius:10px;font-size:13px;font-weight:700;transform:rotate(3deg)}
+section{padding:75px 0;border-top:1px solid var(--line)}
+.section-head{max-width:740px;margin-bottom:38px}
+.section-head h2{font:800 clamp(30px,4vw,43px)/1.15 Manrope;letter-spacing:-.04em;margin:9px 0 13px}
+.section-head p{color:var(--muted);margin:0}
+.intro-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:60px}
+.statement{font:800 clamp(25px,3vw,36px)/1.25 Manrope;letter-spacing:-.04em;color:var(--green)}
+.intro-copy p{margin:0 0 15px;color:var(--muted)}
+.note{background:var(--yellow);padding:23px 25px;border-radius:12px;margin-top:28px}
+.note strong{display:block;font:700 16px Manrope;margin-bottom:6px}
+.note p{margin:0;color:#4f5148;font-size:14px}
+.cards{display:grid;grid-template-columns:repeat(2,1fr);gap:22px}
+.project{background:var(--paper);border:1px solid var(--line);border-radius:15px;overflow:hidden;box-shadow:var(--shadow);transition:transform .18s ease,box-shadow .18s ease}
+.project:hover{transform:translateY(-3px);box-shadow:0 16px 38px rgba(31,49,38,.13)}
+.project-visual{min-height:180px;padding:25px;display:flex;align-items:center;justify-content:center}
 .v1{background:var(--pink)}
 .v2{background:var(--yellow)}
 .v3{background:var(--green2)}
 .v4{background:var(--lav)}
-
-.mini-screen{
-  width:min(100%,340px);
-  background:#fff;
-  border:1px solid #e2e5e0;
-  border-radius:10px;
-  padding:15px;
-  box-shadow:0 7px 18px #29392b12
-}
-
-.mini-screen b{
-  font:700 14px Manrope
-}
-
-.mini-line{
-  height:7px;
-  border-radius:8px;
-  background:#e7ebe7;
-  margin-top:9px;
-  width:90%
-}
-
+.mini-screen{width:min(100%,340px);background:#fff;border:1px solid #e2e5e0;border-radius:10px;padding:15px;box-shadow:0 7px 18px #29392b12}
+.mini-screen b{font:700 14px Manrope}
+.mini-line{height:7px;border-radius:8px;background:#e7ebe7;margin-top:9px;width:90%}
 .mini-line.short{width:55%}
-
-.mini-pill{
-  display:inline-block;
-  background:#e4eee7;
-  color:#285d49;
-  padding:5px 9px;
-  border-radius:20px;
-  font-size:10px;
-  font-weight:700;
-  margin:10px 4px 0 0
-}
-
+.mini-pill{display:inline-block;background:#e4eee7;color:#285d49;padding:5px 9px;border-radius:20px;font-size:10px;font-weight:700;margin:10px 4px 0 0}
 .project-body{padding:24px}
-
-.project-body .tag{
-  font-size:11px;
-  text-transform:uppercase;
-  letter-spacing:.1em;
-  color:var(--green);
-  font-weight:700
-}
-
-.project h3{
-  font:700 22px Manrope;
-  line-height:1.25;
-  margin:8px 0
-}
-
-.project-body>p{
-  color:var(--muted);
-  font-size:14px;
-  margin:0 0 18px
-}
-
-.detail{
-  border-top:1px solid var(--line);
-  padding:12px 0 0;
-  margin-top:12px
-}
-
-.detail strong{
-  font-size:12px;
-  text-transform:uppercase;
-  letter-spacing:.07em
-}
-
-.detail p{
-  font-size:13px;
-  color:var(--muted);
-  margin:4px 0 0
-}
-
-.methods{
-  display:flex;
-  flex-wrap:wrap;
-  gap:7px;
-  margin-top:14px
-}
-
-.methods span{
-  background:#f0f3ef;
-  border-radius:30px;
-  padding:5px 9px;
-  font-size:11px;
-  font-weight:600;
-  color:#405248
-}
-
-.case-link{
-  margin:18px 0 0!important;
-  padding-top:13px;
-  border-top:1px solid var(--line)
-}
-
-.case-link a{
-  font-size:14px;
-  font-weight:700;
-  text-decoration:none
-}
-
+.project-body .tag{font-size:11px;text-transform:uppercase;letter-spacing:.1em;color:var(--green);font-weight:700}
+.project h3{font:700 22px Manrope;line-height:1.25;margin:8px 0}
+.project-body>p{color:var(--muted);font-size:14px;margin:0 0 18px}
+.detail{border-top:1px solid var(--line);padding:12px 0 0;margin-top:12px}
+.detail strong{font-size:12px;text-transform:uppercase;letter-spacing:.07em}
+.detail p{font-size:13px;color:var(--muted);margin:4px 0 0}
+.methods{display:flex;flex-wrap:wrap;gap:7px;margin-top:14px}
+.methods span{background:#f0f3ef;border-radius:30px;padding:5px 9px;font-size:11px;font-weight:600;color:#405248}
+.case-link{margin:18px 0 0!important;padding-top:13px;border-top:1px solid var(--line)}
+.case-link a{font-size:14px;font-weight:700;text-decoration:none}
 .case-link a:hover{text-decoration:underline}
-
-.framework{
-  display:grid;
-  grid-template-columns:repeat(4,1fr);
-  gap:14px
-}
-
-.framework article{
-  padding:22px;
-  border-top:4px solid var(--green);
-  background:white;
-  border-radius:0 0 10px 10px
-}
-
-.framework .num{
-  font:800 30px Manrope;
-  color:#9ab6a3
-}
-
-.framework h3{
-  font:700 17px Manrope;
-  margin:8px 0
-}
-
-.framework p{
-  font-size:13px;
-  color:var(--muted);
-  margin:0
-}
-
-.methods-grid{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:15px
-}
-
-.method{
-  padding:21px;
-  background:white;
-  border:1px solid var(--line);
-  border-radius:11px
-}
-
-.method h3{
-  font:700 17px Manrope;
-  margin:0 0 8px
-}
-
-.method p{
-  font-size:13px;
-  color:var(--muted);
-  margin:0
-}
-
-.method .why{
-  display:block;
-  margin-top:11px;
-  color:var(--green);
-  font-size:12px;
-  font-weight:700
-}
-
-.skills{
-  display:flex;
-  flex-wrap:wrap;
-  gap:9px
-}
-
-.skills span{
-  padding:9px 14px;
-  border:1px solid var(--line);
-  border-radius:30px;
-  background:white;
-  font-size:13px;
-  font-weight:600
-}
-
-.contact{
-  background:var(--green);
-  color:white;
-  border-radius:18px;
-  padding:45px;
-  margin:75px auto
-}
-
-.contact h2{
-  font:800 clamp(30px,4vw,44px)/1.15 Manrope;
-  max-width:650px;
-  margin:10px 0
-}
-
-.contact p{
-  color:#e1eee5;
-  max-width:600px
-}
-
-.contact .btn{
-  background:white;
-  color:var(--green);
-  margin-top:12px
-}
-
-footer{
-  padding:0 0 35px;
-  color:var(--muted);
-  font-size:13px;
-  display:flex;
-  justify-content:space-between;
-  gap:20px
-}
-
+.featured{border:2px solid #9ab6a3}
+.featured-label{display:inline-block;background:var(--green);color:white;padding:5px 10px;border-radius:20px;font-size:10px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;margin-bottom:8px}
+.framework{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.framework article{padding:22px;border-top:4px solid var(--green);background:white;border-radius:0 0 10px 10px}
+.framework .num{font:800 30px Manrope;color:#9ab6a3}
+.framework h3{font:700 17px Manrope;margin:8px 0}
+.framework p{font-size:13px;color:var(--muted);margin:0}
+.methods-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:15px}
+.method{padding:21px;background:white;border:1px solid var(--line);border-radius:11px}
+.method h3{font:700 17px Manrope;margin:0 0 8px}
+.method p{font-size:13px;color:var(--muted);margin:0}
+.method .why{display:block;margin-top:11px;color:var(--green);font-size:12px;font-weight:700}
+.skill-groups{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
+.skill-group{background:white;border:1px solid var(--line);border-radius:12px;padding:22px}
+.skill-group h3{font:700 17px Manrope;margin:0 0 14px}
+.skills{display:flex;flex-wrap:wrap;gap:9px}
+.skills span{padding:8px 12px;border:1px solid var(--line);border-radius:30px;background:#fafbf8;font-size:12px;font-weight:600}
+.experience-strip{display:grid;grid-template-columns:repeat(3,1fr);gap:15px;margin-top:28px}
+.experience-item{background:white;padding:20px;border:1px solid var(--line);border-radius:11px}
+.experience-item strong{display:block;font:700 15px Manrope;margin-bottom:6px}
+.experience-item p{font-size:13px;color:var(--muted);margin:0}
+.contact{background:var(--green);color:white;border-radius:18px;padding:45px;margin:75px auto}
+.contact h2{font:800 clamp(30px,4vw,44px)/1.15 Manrope;max-width:650px;margin:10px 0}
+.contact p{color:#e1eee5;max-width:600px}
+.contact .btn{background:white;color:var(--green);border-color:white;margin:12px 8px 0 0}
+footer{padding:0 0 35px;color:var(--muted);font-size:13px;display:flex;justify-content:space-between;gap:20px}
 @media(max-width:800px){
-  .hero{
-    grid-template-columns:1fr;
-    padding:55px 0
-  }
-  .hero-art{min-height:280px}
-  .intro-grid{
-    grid-template-columns:1fr;
-    gap:20px
-  }
-  .framework{grid-template-columns:repeat(2,1fr)}
-  .methods-grid{grid-template-columns:repeat(2,1fr)}
+ .hero{grid-template-columns:1fr;padding:55px 0}
+ .hero-art{min-height:280px}
+ .intro-grid{grid-template-columns:1fr;gap:20px}
+ .framework{grid-template-columns:repeat(2,1fr)}
+ .methods-grid{grid-template-columns:repeat(2,1fr)}
 }
-
 @media(max-width:560px){
-  nav{
-    height:auto;
-    padding:20px 0;
-    align-items:flex-start;
-    flex-direction:column
-  }
-  .links{
-    flex-wrap:wrap;
-    gap:13px!important
-  }
-  .wrap{width:min(100% - 28px,1100px)}
-  .hero h1{font-size:43px}
-  .cards,.framework,.methods-grid{grid-template-columns:1fr}
-  .contact{
-    padding:28px;
-    margin:45px auto
-  }
-  footer{flex-direction:column}
+ nav{padding:20px 0;align-items:flex-start;flex-direction:column}
+ .links{gap:13px!important}
+ .wrap{width:min(100% - 28px,1100px)}
+ .hero h1{font-size:43px}
+ .cards,.framework,.methods-grid,.skill-groups,.experience-strip{grid-template-columns:1fr}
+ .contact{padding:28px;margin:45px auto}
+ footer{flex-direction:column}
 }
-
 @media(prefers-reduced-motion:reduce){
-  html{scroll-behavior:auto}
+ html{scroll-behavior:auto}
+ .project{transition:none}
 }
 </style>
 </head>
 
 <body>
-
 <div class="wrap">
 <nav>
   <a class="brand" href="#top">RATHESA KODEESWARAN</a>
   <div class="links">
     <a href="#about">About</a>
     <a href="#work">Projects</a>
-    <a href="#approach">Learning methods</a>
+    <a href="#experience">Experience</a>
+    <a href="#approach">Approach</a>
     <a href="#skills">Skills</a>
     <a href="#contact">Contact</a>
   </div>
@@ -570,17 +155,18 @@ footer{
 
 <header class="hero" id="top">
   <div>
-    <div class="eyebrow">Learning experience design · UX · Digital learning</div>
-    <h1>I turn complex information into <em>meaningful learning.</em></h1>
+    <div class="eyebrow">Learning & Development · Instructional Design · Digital Learning</div>
+    <h1>I make complex information <em>easier to understand and apply.</em></h1>
     <p>
-      I’m a UX/UI designer with a growing focus on learning experience and
-      instructional design. I bring together user-centred design, adult
-      learning principles, and digital tools to create learning that is clear,
-      engaging, and useful beyond the course.
+      I’m a UX/UI designer focused on creating clear, engaging, and accessible
+      learning experiences. Combining user-centred design, technical
+      communication, and adult learning principles, I translate complex
+      information into practical resources that help people understand
+      processes, build confidence, and apply what they learn.
     </p>
     <div class="actions">
       <a class="btn" href="#work">Explore my projects</a>
-      <a class="btn secondary" href="#about">A little about me</a>
+      <a class="btn secondary" href="#about">About me</a>
     </div>
   </div>
 
@@ -605,36 +191,34 @@ footer{
   <div class="statement">
     Good learning design is more than presenting information. It helps people understand, practise, and use what they learn.
   </div>
-
   <div class="intro-copy">
     <p>
-      My background combines UX/UI design, visual communication, and adult
-      education. I’m interested in the point where design and learning meet:
-      how people find information, make sense of it, build confidence, and
-      apply it in real situations.
+      My background brings together UX/UI design, technical communication,
+      visual design, and adult education. I’m interested in how people find
+      information, make sense of complex processes, build confidence, and
+      apply new knowledge in real situations.
     </p>
-
     <p>
-      In my UX/UI work at Hitachi Rail, I’ve contributed to user research,
-      usability testing, wireframes, prototypes, workflows, and technical
-      documentation. That experience shapes how I approach learning: start
-      with the people using it, make complex ideas easier to navigate, and
-      test whether the experience is clear.
+      In my current role at Hitachi Rail, I contribute to technical
+      documentation, HMI manuals, project learning materials, and course
+      reviews. My UX/UI work also includes user research, usability testing,
+      wireframes, prototypes, and workflows. These experiences have taught me
+      to consider the people using information, make complex ideas easier to
+      navigate, and look for ways to improve clarity and usability.
     </p>
-
     <p>
-      Through my adult education studies and independent learning-design
-      projects, I’m building practical experience with instructional
-      strategies, learning activities, assessment, and digital learning tools.
+      I completed a Certificate in Adult Education at Conestoga College,
+      with studies in adult learning, curriculum development, assessment,
+      evaluation, and instructional techniques. I apply this knowledge
+      through independent learning-design projects and digital prototypes.
     </p>
-
     <div class="note">
       <strong>My learning-design perspective</strong>
       <p>
-        I don’t assume everyone has one fixed “learning style.” I consider
-        learners’ prior knowledge, goals, context, accessibility needs, and
-        preferences—then choose a mix of methods that supports understanding
-        and practice.
+        Effective learning starts with the learner and the task. I consider
+        prior knowledge, goals, context, accessibility, and the type of
+        performance expected, then choose methods that support understanding,
+        practice, feedback, and application.
       </p>
     </div>
   </div>
@@ -644,77 +228,74 @@ footer{
 <section id="work">
 <div class="wrap">
   <div class="section-head">
-    <div class="eyebrow">Selected work</div>
-    <h2>Learning methods, brought to life.</h2>
+    <div class="eyebrow">Selected learning design work</div>
+    <h2>Learning experiences designed around real needs.</h2>
     <p>
-      Each project demonstrates a different instructional approach. I explain
-      the learner need, why I chose the method, how the activity works, and
-      how learning can be checked. These are portfolio concepts and
-      learning-design samples, not claimed workplace training outcomes.
+      These independent portfolio concepts demonstrate how I approach
+      instructional design, digital learning, employee onboarding, and
+      learner-centred experiences. Each project explains the learner need,
+      design choices, learning activities, and opportunities to assess
+      understanding. They are concept projects, not claimed workplace
+      training outcomes.
     </p>
   </div>
 
   <div class="cards">
 
-    <!-- PROJECT 01 -->
-    <article class="project" tabindex="0">
+    <article class="project featured">
       <div class="project-visual v1">
         <div class="mini-screen">
-          <b>Cybersecurity Basics</b>
+          <b>Cybersecurity Essentials</b>
           <div class="mini-line"></div>
           <div class="mini-line short"></div>
-          <div class="mini-pill">Scenario</div>
+          <div class="mini-pill">Workplace scenario</div>
           <div class="mini-pill">Knowledge check</div>
           <div class="mini-line"></div>
         </div>
       </div>
-
       <div class="project-body">
-        <div class="tag">Project 01 · Scenario-based learning</div>
-        <h3>Cybersecurity Basics for Remote Workers</h3>
+        <span class="featured-label">Featured learning project</span>
+        <div class="tag">Project 01 · Scenario-based eLearning</div>
+        <h3>Cybersecurity Essentials: Working Securely from Anywhere</h3>
         <p>
           A short digital learning experience that helps employees recognize
-          suspicious messages and practise safe responses.
+          phishing and social engineering risks and practise safer responses
+          when working remotely.
         </p>
-
         <div class="detail">
           <strong>Learner need</strong>
           <p>
-            Move beyond simply knowing phishing definitions to recognizing
-            warning signs and choosing an appropriate action.
+            Move beyond remembering cybersecurity definitions to identifying
+            warning signs, evaluating requests, and selecting an appropriate
+            response in realistic workplace situations.
           </p>
         </div>
-
         <div class="detail">
-          <strong>Methods and design choices</strong>
+          <strong>Instructional approach</strong>
           <p>
-            Realistic workplace scenarios, decision-making questions,
-            immediate explanatory feedback, and a short knowledge check.
+            Measurable learning objectives, a realistic phishing scenario,
+            the Pause–Verify–Protect framework, decision-making practice,
+            and explanatory feedback.
           </p>
         </div>
-
         <div class="detail">
-          <strong>How learning is checked</strong>
+          <strong>Assessment</strong>
           <p>
-            Learners select responses in realistic situations and receive
-            feedback explaining why an action is safer.
+            Scenario questions and knowledge checks assess whether learners
+            can recognize risks and choose safer actions.
           </p>
         </div>
-
         <div class="methods">
           <span>Scenario-based learning</span>
+          <span>Learning objectives</span>
           <span>Retrieval practice</span>
           <span>Feedback</span>
         </div>
-
-        <p class="case-link">
-          <a href="cybersecurity.html">Explore this project →</a>
-        </p>
+        <p class="case-link"><a href="cybersecurity.html">Explore the course and case study →</a></p>
       </div>
     </article>
 
-    <!-- PROJECT 02 -->
-    <article class="project" tabindex="0">
+    <article class="project">
       <div class="project-visual v2">
         <div class="mini-screen">
           <b>Handling a difficult conversation</b>
@@ -725,7 +306,6 @@ footer{
           <div class="mini-line short"></div>
         </div>
       </div>
-
       <div class="project-body">
         <div class="tag">Project 02 · Branching scenario</div>
         <h3>Conflict Management: Choosing Your Response</h3>
@@ -734,45 +314,37 @@ footer{
           challenging workplace conversation and consider the impact
           of their choices.
         </p>
-
         <div class="detail">
           <strong>Learner need</strong>
           <p>
             Build confidence applying communication strategies in situations
-            that may not have one perfect answer.
+            where context matters and there may not be one perfect response.
           </p>
         </div>
-
         <div class="detail">
-          <strong>Methods and design choices</strong>
+          <strong>Instructional approach</strong>
           <p>
-            Branching choices, realistic dialogue, consequences, reflection
-            prompts, and supportive feedback.
+            Branching dialogue, realistic choices, consequences, reflection,
+            and feedback that considers different perspectives.
           </p>
         </div>
-
         <div class="detail">
-          <strong>How learning is checked</strong>
+          <strong>Assessment</strong>
           <p>
-            Learners explain or reflect on why a response may de-escalate
-            or intensify a situation.
+            Learners consider how tone, listening, and word choice may affect
+            a conversation and identify when additional support is appropriate.
           </p>
         </div>
-
         <div class="methods">
           <span>Branching scenarios</span>
           <span>Experiential practice</span>
           <span>Reflection</span>
         </div>
-
-        <p class="case-link">
-          <a href="conflict-management.html">Explore this project →</a>
-        </p>
+        <p class="case-link"><a href="conflict-management.html">Explore this project →</a></p>
       </div>
     </article>
 
-    <!-- PROJECT 03 -->
-    <article class="project" tabindex="0">
+    <article class="project">
       <div class="project-visual v3">
         <div class="mini-screen">
           <b>Your learning dashboard</b>
@@ -783,116 +355,130 @@ footer{
           <div class="mini-pill">Continue learning</div>
         </div>
       </div>
-
       <div class="project-body">
-        <div class="tag">Project 03 · UX + self-directed learning</div>
+        <div class="tag">Project 03 · UX + digital learning</div>
         <h3>LearnFlow: A More Supportive LMS Experience</h3>
         <p>
           A learning-management-system concept that brings course discovery,
           learning materials, and progress into one organized experience.
         </p>
-
         <div class="detail">
           <strong>Learner need</strong>
           <p>
-            Help employees understand what to learn next, find relevant
-            resources, and keep track of their progress.
+            Help employees find assigned and relevant learning, understand
+            their progress, and identify useful next steps.
           </p>
         </div>
-
         <div class="detail">
-          <strong>Methods and design choices</strong>
+          <strong>Design approach</strong>
           <p>
-            Clear learning pathways, chunked content, progress indicators,
-            recommendations, and opportunities to revisit key concepts.
+            Learner-centred navigation, course discovery, progress indicators,
+            clear learning pathways, and supportive quiz feedback.
           </p>
         </div>
-
         <div class="detail">
           <strong>Future opportunity</strong>
           <p>
-            Explore responsible AI recommendations based on learner goals,
-            activity, and feedback—not assumptions about fixed learning styles.
+            Explore responsible recommendations informed by learner goals,
+            interests, and activity, with learner control over suggestions.
           </p>
         </div>
-
         <div class="methods">
-          <span>Self-directed learning</span>
-          <span>Microlearning</span>
+          <span>LMS experience concept</span>
+          <span>UX/UI design</span>
           <span>Learning pathways</span>
         </div>
-
-        <p class="case-link">
-          <a href="learnflow.html">Explore this project →</a>
-        </p>
+        <p class="case-link"><a href="learnflow.html">Explore this project →</a></p>
       </div>
     </article>
 
-    <!-- PROJECT 04: FIRSTSTEPS -->
-    <article class="project" tabindex="0">
+    <article class="project">
       <div class="project-visual v4">
         <div class="mini-screen">
           <b>Welcome to FirstSteps</b>
           <div class="mini-line"></div>
           <div class="mini-line short"></div>
-          <div class="progress">
-            <span style="width:45%"></span>
-          </div>
+          <div class="progress"><span style="width:45%"></span></div>
           <div class="mini-pill">Your first week</div>
           <div class="mini-pill">Learning pathway</div>
           <div class="mini-line"></div>
         </div>
       </div>
-
       <div class="project-body">
         <div class="tag">Project 04 · Employee onboarding</div>
         <h3>FirstSteps: A More Structured Employee Onboarding Experience</h3>
         <p>
-          A digital onboarding concept designed to help new employees
-          navigate their first weeks, access essential resources, and
-          understand their learning priorities.
+          A digital onboarding concept that helps new employees navigate
+          their first weeks, access essential resources, and understand
+          their learning priorities.
         </p>
-
         <div class="detail">
           <strong>Learner need</strong>
           <p>
-            Help new employees navigate unfamiliar processes, locate
-            important information, and understand what they need to
-            complete during their first weeks.
+            Help new employees understand what to do, where to find information,
+            and how to progress through the early stages of a new role.
           </p>
         </div>
-
         <div class="detail">
-          <strong>Methods and design choices</strong>
+          <strong>Instructional approach</strong>
           <p>
-            Structured onboarding pathways, interactive checklists,
-            progress indicators, role-specific learning resources,
-            and clear next steps.
+            A staged 30-day learning journey, interactive checklists,
+            orientation resources, role-related learning, and clear next steps.
           </p>
         </div>
-
         <div class="detail">
-          <strong>Learning and performance support</strong>
+          <strong>Performance support</strong>
           <p>
-            Combine introductory learning activities, required training,
-            reference materials, and knowledge checks to support employees
-            as they become familiar with their roles.
+            Combine introductory learning, reference materials, progress
+            tracking, and practical resources to support employees as they
+            become familiar with their roles.
           </p>
         </div>
-
         <div class="methods">
           <span>Employee onboarding</span>
+          <span>Orientation</span>
           <span>Learning pathways</span>
           <span>Performance support</span>
-          <span>UX/UI design</span>
         </div>
-
-        <p class="case-link">
-          <a href="firststeps.html">Explore this project →</a>
-        </p>
+        <p class="case-link"><a href="firststeps.html">Explore this project →</a></p>
       </div>
     </article>
+  </div>
+</div>
+</section>
 
+<section id="experience">
+<div class="wrap">
+  <div class="section-head">
+    <div class="eyebrow">Professional experience</div>
+    <h2>Experience that supports effective learning.</h2>
+    <p>
+      My professional background combines technical communication,
+      user-centred design, documentation, and customer-facing support.
+    </p>
+  </div>
+  <div class="experience-strip">
+    <article class="experience-item">
+      <strong>Technical documentation</strong>
+      <p>
+        At Hitachi Rail, contribute to HMI manuals, technical resources,
+        project learning materials, and course reviews.
+      </p>
+    </article>
+    <article class="experience-item">
+      <strong>User-centred design</strong>
+      <p>
+        Apply user research, usability testing, workflows, wireframes,
+        and prototypes to improve clarity and usability.
+      </p>
+    </article>
+    <article class="experience-item">
+      <strong>Communication and coordination</strong>
+      <p>
+        Bring customer service, inquiry handling, administrative support,
+        and communication experience from public-facing roles.
+      </p>
+    </article>
   </div>
 </div>
 </section>
@@ -900,67 +486,43 @@ footer{
 <section id="approach">
 <div class="wrap">
   <div class="section-head">
-    <div class="eyebrow">My approach</div>
+    <div class="eyebrow">Learning methods</div>
     <h2>Choose the method to fit the learning goal.</h2>
     <p>
-      Different methods serve different purposes. I think about what learners
-      need to know or do, then select an approach that gives them the right
-      kind of support and practice.
+      Different methods serve different purposes. I consider what learners
+      need to know or do, then select an approach that provides the right
+      kind of explanation, support, practice, and feedback.
     </p>
   </div>
-
   <div class="methods-grid">
     <article class="method">
       <h3>Scenario-based learning</h3>
-      <p>
-        Places learners in realistic situations where they make decisions
-        and see the consequences.
-      </p>
+      <p>Places learners in realistic situations where they make decisions and consider the consequences.</p>
       <span class="why">Useful for: judgement and decision-making</span>
     </article>
-
     <article class="method">
       <h3>Retrieval practice</h3>
-      <p>
-        Asks learners to recall information instead of only rereading
-        or reviewing it.
-      </p>
+      <p>Asks learners to recall and use information instead of only rereading or reviewing it.</p>
       <span class="why">Useful for: strengthening recall</span>
     </article>
-
     <article class="method">
       <h3>Spaced practice</h3>
-      <p>
-        Revisits important ideas over time, rather than presenting
-        everything in one session.
-      </p>
+      <p>Revisits important ideas over time rather than presenting everything in one session.</p>
       <span class="why">Useful for: longer-term retention</span>
     </article>
-
     <article class="method">
       <h3>Worked examples</h3>
-      <p>
-        Shows a model or completed example before asking learners
-        to solve a similar task.
-      </p>
+      <p>Shows a model or completed example before asking learners to solve a similar task.</p>
       <span class="why">Useful for: building foundational skills</span>
     </article>
-
     <article class="method">
       <h3>Scaffolding</h3>
-      <p>
-        Breaks a complex task into manageable steps, then gradually
-        reduces support as confidence grows.
-      </p>
+      <p>Breaks a complex task into manageable steps, gradually reducing support as confidence grows.</p>
       <span class="why">Useful for: learning new processes</span>
     </article>
-
     <article class="method">
       <h3>Reflection and discussion</h3>
-      <p>
-        Gives learners space to connect new ideas with experience
-        and consider alternative perspectives.
-      </p>
+      <p>Connects new ideas with experience and gives learners space to consider alternative perspectives.</p>
       <span class="why">Useful for: insight and application</span>
     </article>
   </div>
@@ -970,49 +532,33 @@ footer{
 <section>
 <div class="wrap">
   <div class="section-head">
-    <div class="eyebrow">From need to evaluation</div>
-    <h2>A thoughtful design process.</h2>
+    <div class="eyebrow">My process</div>
+    <h2>From learning need to evaluation.</h2>
     <p>
       I use a practical, learner-centred process and adapt it to the scope,
       audience, and goals of each project.
     </p>
   </div>
-
   <div class="framework">
     <article>
       <div class="num">01</div>
       <h3>Understand</h3>
-      <p>
-        Identify the audience, context, existing knowledge, task,
-        and performance gap.
-      </p>
+      <p>Identify the audience, context, existing knowledge, task, and performance gap.</p>
     </article>
-
     <article>
       <div class="num">02</div>
       <h3>Design</h3>
-      <p>
-        Set measurable objectives and choose content, practice,
-        and assessment methods.
-      </p>
+      <p>Set measurable objectives and choose content, practice, and assessment methods.</p>
     </article>
-
     <article>
       <div class="num">03</div>
       <h3>Develop</h3>
-      <p>
-        Create accessible content, prototypes, activities, and job aids;
-        gather feedback and refine.
-      </p>
+      <p>Create accessible content, prototypes, activities, and job aids; gather feedback and refine.</p>
     </article>
-
     <article>
       <div class="num">04</div>
       <h3>Evaluate</h3>
-      <p>
-        Check understanding and usability, then consider whether
-        learners can apply the skill at work.
-      </p>
+      <p>Check understanding and usability, then consider whether learners can apply the skill at work.</p>
     </article>
   </div>
 </div>
@@ -1021,55 +567,82 @@ footer{
 <section id="skills">
 <div class="wrap">
   <div class="section-head">
-    <div class="eyebrow">Capabilities</div>
-    <h2>What I bring to a project.</h2>
+    <div class="eyebrow">Capabilities and tools</div>
+    <h2>What I bring to a learning project.</h2>
     <p>
-      A blend of design, communication, and developing
-      instructional-design practice.
+      A combination of adult education, technical communication,
+      digital learning, and user-centred design.
     </p>
   </div>
-
-  <div class="skills">
-    <span>Adult learning principles</span>
-    <span>Instructional design</span>
-    <span>Learning objectives</span>
-    <span>Scenario-based learning</span>
-    <span>Assessment and feedback</span>
-    <span>UX research</span>
-    <span>Usability testing</span>
-    <span>Wireframing and prototyping</span>
-    <span>Technical documentation</span>
-    <span>Visual communication</span>
-    <span>Accessibility-minded design</span>
-    <span>Stakeholder collaboration</span>
-    <span>Articulate Rise</span>
-    <span>H5P</span>
-    <span>Camtasia</span>
-    <span>Figma</span>
-    <span>Microsoft 365</span>
-    <span>SharePoint</span>
+  <div class="skill-groups">
+    <div class="skill-group">
+      <h3>Learning design</h3>
+      <div class="skills">
+        <span>Adult learning principles</span>
+        <span>Instructional design</span>
+        <span>Learning objectives</span>
+        <span>Curriculum development</span>
+        <span>Assessment and evaluation</span>
+        <span>Scenario-based learning</span>
+        <span>Feedback design</span>
+      </div>
+    </div>
+    <div class="skill-group">
+      <h3>Training and documentation</h3>
+      <div class="skills">
+        <span>Training materials</span>
+        <span>Technical documentation</span>
+        <span>Procedure guides</span>
+        <span>Information organization</span>
+        <span>SharePoint</span>
+        <span>Microsoft 365</span>
+        <span>Stakeholder collaboration</span>
+      </div>
+    </div>
+    <div class="skill-group">
+      <h3>Digital learning tools</h3>
+      <div class="skills">
+        <span>Articulate Rise</span>
+        <span>H5P</span>
+        <span>Camtasia</span>
+        <span>TalentLMS</span>
+        <span>Learning platform familiarity</span>
+      </div>
+    </div>
+    <div class="skill-group">
+      <h3>UX and design</h3>
+      <div class="skills">
+        <span>UX research</span>
+        <span>Usability testing</span>
+        <span>Wireframing</span>
+        <span>Prototyping</span>
+        <span>Figma</span>
+        <span>Visual communication</span>
+        <span>Accessibility-minded design</span>
+      </div>
+    </div>
   </div>
 </div>
 </section>
 
 <div class="wrap">
   <div class="contact" id="contact">
-    <div class="eyebrow" style="color:#d4e8da">LET’S CONNECT</div>
-    <h2>Let’s make complex things easier to understand and use.</h2>
+    <div class="eyebrow" style="color:#d4e8da">LET'S CONNECT</div>
+    <h2>Let's make complex information easier to understand and use.</h2>
     <p>
-      I’m interested in opportunities across learning experience design,
-      instructional design, digital learning, training, and enablement.
+      I'm interested in opportunities across Learning & Development,
+      instructional design, digital learning, training coordination,
+      employee onboarding, and knowledge enablement.
     </p>
-    <a class="btn" href="https://www.linkedin.com/in/rathesa-kodeeswaran/">
+    <a class="btn" href="https://www.linkedin.com/in/rathesa-kodeeswaran/" target="_blank" rel="noopener">
       Connect on LinkedIn
     </a>
   </div>
 
   <footer>
     <span>© 2026 Rathesa Kodeeswaran</span>
-    <span>Learning Experience Design · UX · Digital Learning</span>
+    <span>Learning & Development · Instructional Design · UX</span>
   </footer>
 </div>
-
 </body>
 </html>
