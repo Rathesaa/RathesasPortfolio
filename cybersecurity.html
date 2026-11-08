@@ -4,1002 +4,1512 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Cybersecurity Essentials | Rathesa Kodeeswaran</title>
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<meta name="theme-color" content="#f7f7f2">
+<title>Cybersecurity Essentials | Learning Design Case Study</title>
+<meta name="description" content="An instructional design portfolio project exploring scenario-based cybersecurity training for employees working remotely.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
 
 <style>
 :root {
-  --navy:#172c36;
+  --bg:#f7f7f2;
+  --paper:#ffffff;
+  --ink:#202923;
+  --muted:#66716a;
   --green:#285d49;
-  --light:#eaf2ed;
-  --cream:#f8f8f4;
-  --text:#34434a;
-  --muted:#68777c;
-  --border:#e1e7e3;
-  --purple:#6555a5;
-  --purple-light:#f0edfa;
+  --green-dark:#1c4636;
+  --green-light:#e3eee6;
+  --pink:#f3dce5;
+  --yellow:#f3e9c9;
+  --lavender:#e9e5f2;
+  --line:#dfe5df;
+  --red:#a84343;
+  --red-light:#f8e8e6;
+  --shadow:0 12px 35px rgba(31,49,38,.07);
 }
 *{box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{margin:0;background:var(--cream);color:var(--text);font-family:'DM Sans',sans-serif;line-height:1.7}
-h1,h2,h3,h4{font-family:Manrope,sans-serif;color:var(--navy);line-height:1.3}
-h1{font-size:clamp(2.5rem,6vw,4rem)}
-h2{font-size:2rem}
+html{scroll-behavior:smooth;scroll-padding-top:90px}
+body{
+  margin:0;
+  background:var(--bg);
+  color:var(--ink);
+  font-family:"DM Sans",sans-serif;
+  line-height:1.7;
+}
+button,a{font:inherit}
 a{color:var(--green)}
-button{font:inherit;cursor:pointer}
-.top-nav{display:flex;justify-content:space-between;padding:22px 7%;background:white;border-bottom:1px solid var(--border)}
-.brand{font-family:Manrope,sans-serif;font-weight:800;color:var(--navy);letter-spacing:1px}
-.top-nav a{text-decoration:none;font-weight:700}
-.container{max-width:1050px;margin:auto;padding:0 25px}
-.hero{padding:75px 0 60px}
-.eyebrow,.course-label{color:var(--green);text-transform:uppercase;letter-spacing:2px;font-size:.75rem;font-weight:700}
-.hero h1{margin:15px 0}
-.hero p,.intro{max-width:750px;color:var(--muted);font-size:1.08rem}
-.pill,.tag{display:inline-block;background:var(--light);color:var(--green);padding:7px 13px;border-radius:30px;font-size:.8rem;font-weight:700;margin:5px 4px 0 0}
-.section{padding:60px 0;border-top:1px solid var(--border)}
-.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;margin-top:25px}
-.card{background:white;border:1px solid var(--border);border-radius:12px;padding:23px}
-.card h3{margin-top:0}
-.card p{color:var(--muted);margin-bottom:0}
-.banner{background:#f5e8e6;padding:23px 26px;border-radius:10px;margin:25px 0}
-.banner p{margin-bottom:0}
-.strategy{display:grid;gap:13px;margin-top:25px}
-.strategy article{background:white;border:1px solid var(--border);border-radius:10px;padding:20px}
-.strategy h3{margin:0 0 6px}
-.strategy p{margin:0;color:var(--muted)}
-.course{background:white;border:1px solid var(--border);border-radius:15px;overflow:hidden;margin-top:30px;box-shadow:0 12px 35px #172c3610}
-.course-head{background:var(--navy);color:white;padding:28px}
-.course-head h2{color:white;margin:7px 0}
-.course-head p{color:#d4e0df;margin:0}
-.progress{height:7px;background:#52636a;border-radius:20px;margin-top:20px;overflow:hidden}
-.progress-fill{height:100%;width:0;background:#a9d4b7;transition:.3s}
-.progress-text{font-size:.78rem;color:#d4e0df;margin-top:7px}
-.course-layout{display:grid;grid-template-columns:210px 1fr;min-height:600px}
-.sidebar{background:#f4f7f4;padding:20px 13px;border-right:1px solid var(--border)}
-.sidebar h4{font-size:.72rem;letter-spacing:1px;color:var(--muted);padding-left:10px}
-.nav-buttons{display:grid;gap:5px}
-.nav-buttons button{border:0;background:transparent;text-align:left;padding:10px;border-radius:7px;font-size:.82rem;color:var(--text)}
-.nav-buttons button.active{background:var(--light);color:var(--green);font-weight:700}
-.content{padding:32px;min-width:0}
-.page{display:none}
-.page.active{display:block}
-.content h2{font-size:1.7rem}
-.content p{color:var(--text)}
-.callout{background:var(--light);border-left:4px solid var(--green);padding:17px 19px;border-radius:6px;margin:22px 0}
-.callout p{margin-bottom:0}
-.warning{background:#f7f0d9;border-left-color:#b38a2f}
-.choice-list{display:grid;gap:10px;margin:20px 0}
-.choice,.option{width:100%;text-align:left;padding:14px 16px;border:1px solid var(--border);border-radius:8px;background:white}
-.choice:hover,.option:hover{border-color:var(--green)}
-.choice.selected,.option.selected{background:var(--light);border:2px solid var(--green)}
-.feedback{display:none;padding:16px;border-radius:8px;margin:15px 0}
+button:focus-visible,a:focus-visible{
+  outline:3px solid #bd7292;
+  outline-offset:4px;
+}
+.wrap{width:min(1120px,calc(100% - 40px));margin:auto}
+.topbar{
+  position:sticky;
+  top:0;
+  z-index:20;
+  background:rgba(247,247,242,.95);
+  backdrop-filter:blur(12px);
+  border-bottom:1px solid var(--line);
+}
+.nav{
+  min-height:70px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:20px;
+}
+.brand{
+  color:var(--ink);
+  text-decoration:none;
+  font:800 14px Manrope,sans-serif;
+  letter-spacing:.03em;
+}
+.navlinks{display:flex;gap:22px;flex-wrap:wrap}
+.navlinks a{
+  color:var(--muted);
+  text-decoration:none;
+  font-size:13px;
+  font-weight:700;
+}
+.navlinks a:hover{color:var(--green)}
+.eyebrow{
+  color:var(--green);
+  text-transform:uppercase;
+  font-size:11px;
+  letter-spacing:.14em;
+  font-weight:800;
+}
+h1,h2,h3,h4{font-family:Manrope,sans-serif;line-height:1.2}
+.hero{padding:78px 0 68px}
+.hero-grid{
+  display:grid;
+  grid-template-columns:1.1fr .9fr;
+  align-items:center;
+  gap:55px;
+}
+.hero h1{
+  font-size:clamp(42px,6vw,68px);
+  letter-spacing:-.055em;
+  margin:15px 0 22px;
+}
+.hero h1 span{color:var(--green)}
+.hero-copy{
+  max-width:650px;
+  color:var(--muted);
+  font-size:17px;
+}
+.hero-meta{
+  display:flex;
+  flex-wrap:wrap;
+  gap:9px;
+  margin-top:24px;
+}
+.pill{
+  display:inline-flex;
+  align-items:center;
+  padding:7px 12px;
+  border-radius:30px;
+  background:#e9eee8;
+  color:#385342;
+  font-size:11px;
+  font-weight:700;
+}
+.hero-art{
+  background:var(--green-light);
+  border-radius:20px;
+  padding:26px;
+  min-height:330px;
+  display:flex;
+  align-items:center;
+}
+.email-card{
+  background:white;
+  border:1px solid #e1e5df;
+  border-radius:12px;
+  padding:21px;
+  width:100%;
+  box-shadow:var(--shadow);
+}
+.email-top{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:12px;
+  border-bottom:1px solid var(--line);
+  padding-bottom:12px;
+  font-size:12px;
+  color:var(--muted);
+}
+.warning{
+  color:var(--red);
+  background:var(--red-light);
+  border-radius:5px;
+  padding:4px 8px;
+  font-size:10px;
+  font-weight:800;
+}
+.email-card h3{font-size:19px;margin:19px 0 9px}
+.email-card p{font-size:12px;color:var(--muted);margin:5px 0}
+.fake-link{
+  display:inline-block;
+  margin-top:15px;
+  padding:9px 12px;
+  border-radius:6px;
+  background:#f6e7e7;
+  color:#9b3838;
+  font-size:11px;
+  font-weight:700;
+}
+.email-note{
+  margin-top:13px;
+  border-left:3px solid var(--red);
+  padding-left:11px;
+  font-size:11px;
+  color:var(--muted);
+}
+section{padding:72px 0;border-top:1px solid var(--line)}
+.section-heading{max-width:760px;margin-bottom:32px}
+.section-heading h2{
+  font-size:clamp(30px,4vw,43px);
+  letter-spacing:-.04em;
+  margin:9px 0 13px;
+}
+.section-heading p{color:var(--muted);margin:0}
+.case-grid{
+  display:grid;
+  grid-template-columns:.8fr 1.2fr;
+  gap:45px;
+}
+.big-statement{
+  font:800 clamp(25px,3vw,35px)/1.25 Manrope;
+  letter-spacing:-.04em;
+  color:var(--green);
+}
+.prose p{color:var(--muted);margin:0 0 15px}
+.info-box{
+  background:var(--yellow);
+  border-radius:12px;
+  padding:22px;
+  margin-top:22px;
+}
+.info-box strong{display:block;font:700 15px Manrope;margin-bottom:5px}
+.info-box p{font-size:13px;color:#55584d;margin:0}
+.two-col{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:18px;
+}
+.panel{
+  background:white;
+  border:1px solid var(--line);
+  border-radius:12px;
+  padding:23px;
+}
+.panel h3{font-size:17px;margin:0 0 10px}
+.panel p,.panel li{font-size:13px;color:var(--muted)}
+.panel ul{padding-left:19px;margin-bottom:0}
+.objectives{display:grid;gap:12px}
+.objective{
+  display:grid;
+  grid-template-columns:38px 1fr;
+  gap:13px;
+  align-items:start;
+  background:white;
+  border:1px solid var(--line);
+  border-radius:10px;
+  padding:16px;
+}
+.objective-num{
+  width:34px;height:34px;
+  border-radius:50%;
+  background:var(--green-light);
+  display:grid;place-items:center;
+  font-weight:800;color:var(--green);
+  font-size:12px;
+}
+.objective p{margin:2px 0;color:var(--muted);font-size:14px}
+.objective strong{color:var(--ink)}
+.framework{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:15px;
+}
+.framework-card{
+  background:white;
+  border:1px solid var(--line);
+  border-radius:12px;
+  padding:22px;
+}
+.framework-card .letter{
+  font:800 38px Manrope;
+  color:var(--green);
+}
+.framework-card h3{font-size:18px;margin:5px 0}
+.framework-card p{font-size:13px;color:var(--muted);margin:0}
+.storyboard{display:grid;gap:12px}
+.story-row{
+  display:grid;
+  grid-template-columns:65px 1fr 1fr;
+  gap:20px;
+  align-items:start;
+  background:white;
+  border:1px solid var(--line);
+  border-radius:10px;
+  padding:17px;
+}
+.story-number{font:800 22px Manrope;color:#8ba895}
+.story-row h3{font-size:15px;margin:2px 0 6px}
+.story-row p{font-size:12px;color:var(--muted);margin:0}
+.story-label{
+  font-size:10px;
+  color:var(--green);
+  font-weight:800;
+  text-transform:uppercase;
+  letter-spacing:.08em;
+}
+.course-intro{
+  background:var(--green-dark);
+  color:white;
+  padding:55px 0;
+}
+.course-intro .eyebrow{color:#c3dfca}
+.course-intro h2{
+  font-size:clamp(32px,4vw,47px);
+  margin:10px 0;
+  letter-spacing:-.04em;
+}
+.course-intro p{color:#dce9df;max-width:680px}
+.course-stats{
+  display:flex;
+  gap:35px;
+  flex-wrap:wrap;
+  margin-top:26px;
+}
+.course-stat strong{display:block;font:800 23px Manrope}
+.course-stat span{font-size:11px;color:#dce9df}
+.course-area{padding:55px 0}
+.course-layout{
+  display:grid;
+  grid-template-columns:250px 1fr;
+  gap:30px;
+  align-items:start;
+}
+.course-sidebar{
+  background:white;
+  border:1px solid var(--line);
+  border-radius:12px;
+  padding:18px;
+  position:sticky;
+  top:90px;
+}
+.course-sidebar h3{font-size:14px;margin:0 0 12px}
+.course-progress{
+  height:7px;background:#e9eee9;border-radius:10px;overflow:hidden;
+  margin:10px 0 6px;
+}
+.course-progress span{
+  display:block;width:0;height:100%;background:var(--green);
+  transition:width .25s ease;
+}
+.progress-text{font-size:11px;color:var(--muted)}
+.lesson-nav{display:grid;gap:5px;margin-top:17px}
+.lesson-nav button{
+  text-align:left;
+  border:0;
+  border-radius:7px;
+  background:transparent;
+  color:var(--muted);
+  padding:10px;
+  font-size:12px;
+  font-weight:700;
+  cursor:pointer;
+}
+.lesson-nav button:hover{background:#f0f4ef}
+.lesson-nav button.active{background:var(--green-light);color:var(--green)}
+.lesson-nav button.completed:after{content:" ✓";color:var(--green)}
+.lesson-content{
+  background:white;
+  border:1px solid var(--line);
+  border-radius:14px;
+  padding:clamp(22px,4vw,38px);
+  min-height:570px;
+}
+.lesson{display:none}
+.lesson.active{display:block}
+.lesson-kicker{
+  color:var(--green);
+  font-size:11px;
+  text-transform:uppercase;
+  font-weight:800;
+  letter-spacing:.12em;
+}
+.lesson h2{font-size:clamp(27px,4vw,36px);margin:10px 0 14px;letter-spacing:-.04em}
+.lesson>p{color:var(--muted);font-size:14px}
+.lesson h3{font-size:18px;margin-top:27px}
+.lesson-callout{
+  padding:18px 20px;
+  border-radius:10px;
+  background:var(--green-light);
+  margin:20px 0;
+}
+.lesson-callout strong{display:block;color:var(--green);font:700 15px Manrope}
+.lesson-callout p{font-size:13px;color:#506357;margin:5px 0 0}
+.tip-grid{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:12px;
+  margin:20px 0;
+}
+.tip{
+  padding:16px;
+  border:1px solid var(--line);
+  border-radius:9px;
+}
+.tip strong{font-size:13px;display:block}
+.tip p{font-size:12px;color:var(--muted);margin:5px 0 0}
+.scenario{
+  background:#f5f7f4;
+  border:1px solid var(--line);
+  border-radius:12px;
+  padding:21px;
+  margin:20px 0;
+}
+.scenario-header{
+  display:flex;justify-content:space-between;gap:12px;align-items:center;
+  margin-bottom:15px;
+}
+.scenario-header span{
+  font-size:10px;text-transform:uppercase;letter-spacing:.1em;
+  font-weight:800;color:var(--green);
+}
+.scenario h3{font-size:18px;margin:0 0 10px}
+.scenario p{font-size:13px;color:var(--muted)}
+.scenario-email{
+  background:white;border:1px solid var(--line);border-radius:8px;
+  padding:16px;margin:15px 0;
+}
+.scenario-email p{font-size:12px;margin:4px 0}
+.scenario-email strong{color:var(--ink)}
+.choice-list{display:grid;gap:10px;margin-top:18px}
+.answer{
+  width:100%;
+  text-align:left;
+  padding:14px 16px;
+  border:1px solid var(--line);
+  border-radius:9px;
+  background:white;
+  cursor:pointer;
+  font-size:13px;
+  color:var(--ink);
+  transition:border-color .15s,background .15s;
+}
+.answer:hover{border-color:var(--green);background:#f8fbf8}
+.answer:disabled{cursor:default;opacity:1}
+.answer.correct{border-color:#4b8660;background:#e9f4eb}
+.answer.incorrect{border-color:#c77b70;background:#fbefed}
+.feedback{
+  display:none;
+  margin-top:15px;
+  padding:16px;
+  border-radius:9px;
+  font-size:13px;
+}
 .feedback.show{display:block}
-.feedback.good{background:#e8f4eb;color:#235b38}
-.feedback.bad{background:#f9ece9;color:#8b3930}
-.primary,.secondary{border:0;border-radius:7px;padding:12px 18px;font-weight:700}
-.primary{background:var(--green);color:white}
-.secondary{background:#edf1ee;color:var(--navy)}
-.controls{display:flex;justify-content:space-between;gap:10px;margin-top:30px;padding-top:20px;border-top:1px solid var(--border)}
-.email{border:1px solid var(--border);border-radius:9px;overflow:hidden;margin:20px 0}
-.email-head{background:#f1f4f4;padding:12px 17px;font-size:.85rem}
-.email-body{padding:20px}
-.email-body p{margin:8px 0}
-.ai-panel{background:linear-gradient(135deg,#f4f1fc,#f8f7fd);border:1px solid #ded8f2;border-radius:13px;padding:23px;margin:25px 0}
-.ai-heading{display:flex;align-items:center;gap:12px}
-.ai-icon{width:42px;height:42px;background:var(--purple);color:white;border-radius:12px;display:grid;place-items:center;font-size:1.3rem}
-.ai-heading h3{margin:0;color:#443778}
-.ai-heading p{margin:2px 0;color:#746b91;font-size:.83rem}
-.ai-panel .callout{background:white;border-left-color:var(--purple)}
-.ai-panel label{display:block;margin:9px 0}
-.ai-panel input[type=radio]{accent-color:var(--purple)}
-.ai-panel select,.ai-panel textarea,.chat-input{width:100%;padding:12px;border:1px solid #d9d3eb;border-radius:7px;background:white;font:inherit}
-.ai-result{display:none;background:white;border:1px solid #ded8f2;border-radius:9px;padding:17px;margin-top:15px}
-.ai-result.show{display:block}
-.ai-result h4{color:#443778;margin:0 0 8px}
-.ai-tag{display:inline-block;background:var(--purple-light);color:#55458c;border-radius:20px;padding:5px 10px;font-size:.75rem;font-weight:700}
-.chat-box{background:white;border:1px solid #ded8f2;border-radius:10px;padding:15px;margin-top:15px}
-.chat-messages{max-height:260px;overflow-y:auto;display:grid;gap:10px;margin-bottom:13px}
-.chat-message{padding:11px 13px;border-radius:9px;font-size:.9rem;max-width:90%}
-.chat-message.ai{background:var(--purple-light);color:#443778}
-.chat-message.user{background:var(--light);justify-self:end}
-.chat-row{display:flex;gap:8px}
-.chat-input{flex:1;min-width:0}
-.quiz-card{background:#f8faf8;border:1px solid var(--border);padding:20px;border-radius:9px;margin:20px 0}
-.quiz-card h3{margin-top:0}
-.quiz-option{display:block;width:100%;text-align:left;padding:12px;margin:8px 0;border:1px solid var(--border);border-radius:7px;background:white}
-.quiz-option.correct{background:#e8f4eb;border-color:#43865b}
-.quiz-option.wrong{background:#f9ece9;border-color:#bd6256}
-.quiz-option:disabled{cursor:default}
-.checklist label{display:flex;gap:12px;padding:13px 0;border-bottom:1px solid var(--border)}
-.checklist input{margin-top:6px;accent-color:var(--green)}
-textarea.commitment{width:100%;min-height:90px;padding:12px;border:1px solid var(--border);border-radius:8px;font:inherit}
-.score{font-family:Manrope,sans-serif;font-size:3rem;font-weight:800;color:var(--green)}
-.completion{text-align:center;padding:25px 5px}
-.footer{text-align:center;padding:35px;color:var(--muted);font-size:.85rem;border-top:1px solid var(--border)}
-@media(max-width:750px){
- .grid{grid-template-columns:1fr}
- .course-layout{grid-template-columns:1fr}
- .sidebar{border-right:0;border-bottom:1px solid var(--border)}
- .nav-buttons{grid-template-columns:repeat(2,1fr)}
- .content{padding:22px}
- .hero{padding:50px 0}
- .top-nav{padding:18px 5%}
+.feedback.good{background:#e9f4eb;color:#285d49}
+.feedback.bad{background:#fbefed;color:#8c3c37}
+.feedback strong{display:block;margin-bottom:5px}
+.feedback p{margin:0}
+.next-btn,.action-btn{
+  border:0;
+  border-radius:7px;
+  background:var(--green);
+  color:white;
+  padding:12px 18px;
+  font-size:13px;
+  font-weight:700;
+  cursor:pointer;
+}
+.next-btn:hover,.action-btn:hover{background:var(--green-dark)}
+.next-btn:disabled{opacity:.4;cursor:not-allowed}
+.lesson-controls{
+  display:flex;justify-content:space-between;gap:12px;
+  border-top:1px solid var(--line);padding-top:22px;margin-top:32px;
+}
+.secondary-btn{
+  border:1px solid var(--line);background:white;color:var(--green);
+  padding:11px 16px;border-radius:7px;font-weight:700;
+  font-size:12px;cursor:pointer;
+}
+.check-list{display:grid;gap:12px;margin:20px 0}
+.check-item{
+  display:flex;gap:12px;align-items:flex-start;
+  padding:13px;border:1px solid var(--line);border-radius:9px;
+}
+.check-item input{margin-top:5px;accent-color:var(--green);width:17px;height:17px}
+.check-item label{font-size:13px;cursor:pointer}
+.score-card{
+  background:var(--green-light);
+  border-radius:12px;padding:22px;margin-top:20px;
+}
+.score-card strong{font:800 27px Manrope;color:var(--green)}
+.score-card p{font-size:13px;color:#506357;margin:5px 0}
+.reflection{
+  background:var(--yellow);
+  border-radius:12px;
+  padding:22px;
+  margin-top:20px;
+}
+.reflection h3{margin:0 0 8px}
+.reflection p{font-size:13px;color:#5e5a4d;margin:0}
+.case-note{
+  border-left:3px solid var(--green);
+  padding:12px 16px;
+  background:#f0f5f0;
+  color:var(--muted);
+  font-size:12px;
+  margin-top:25px;
+}
+.evaluation-grid{
+  display:grid;grid-template-columns:repeat(3,1fr);gap:15px;
+}
+.evaluation-card{
+  background:white;border:1px solid var(--line);
+  padding:20px;border-radius:11px;
+}
+.evaluation-card h3{font-size:15px;margin:0 0 8px}
+.evaluation-card p{font-size:12px;color:var(--muted);margin:0}
+footer{
+  padding:30px 0 40px;
+  border-top:1px solid var(--line);
+  color:var(--muted);
+  font-size:12px;
+  display:flex;justify-content:space-between;gap:20px;
+}
+@media(max-width:800px){
+  .hero-grid,.case-grid{grid-template-columns:1fr}
+  .course-layout{grid-template-columns:1fr}
+  .course-sidebar{position:static}
+  .lesson-nav{grid-template-columns:repeat(2,1fr)}
+  .framework{grid-template-columns:1fr}
+  .evaluation-grid{grid-template-columns:1fr}
+}
+@media(max-width:600px){
+  .wrap{width:calc(100% - 28px)}
+  .nav{align-items:flex-start;flex-direction:column;padding:14px 0}
+  .navlinks{gap:12px}
+  .navlinks a{font-size:11px}
+  .hero{padding:50px 0}
+  .hero-art{min-height:260px}
+  .two-col,.tip-grid{grid-template-columns:1fr}
+  .story-row{grid-template-columns:38px 1fr;gap:10px}
+  .story-row>div:last-child{grid-column:2}
+  .lesson-content{padding:20px}
+  .course-stats{gap:20px}
+  footer{flex-direction:column}
+}
+@media(prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *{transition:none!important}
 }
 </style>
 </head>
 
 <body>
 
-<nav class="top-nav">
-  <div class="brand">RATHESA KODEESWARAN</div>
-  <a href="index.html">← Back to Portfolio</a>
-</nav>
-
-<header class="container hero">
-  <div class="eyebrow">Learning Experience Design · Case Study</div>
-  <h1>Cybersecurity Essentials: Working Securely from Anywhere</h1>
-  <p>
-    An interactive workplace learning concept exploring how scenario-based
-    learning and AI-powered personalization can help employees recognize
-    cybersecurity risks and practise safer responses.
-  </p>
-  <span class="pill">Instructional Design</span>
-  <span class="pill">UX / UI Design</span>
-  <span class="pill">AI-Powered Learning Concept</span>
-</header>
-
-<!-- PROJECT OVERVIEW -->
-
-<section class="section">
-<div class="container">
-  <div class="eyebrow">01 / Project Overview</div>
-  <h2>Making cybersecurity easier to understand and apply</h2>
-  <p class="intro">
-    Employees handle sensitive information across offices, homes, and
-    public spaces. They need more than policy information: they need
-    opportunities to recognize risks and practise responding to them.
-  </p>
-
-  <div class="banner">
-    <strong>The learning challenge</strong>
-    <p>
-      How might we make cybersecurity training more engaging and
-      responsive to individual learner needs while helping employees
-      apply security practices in everyday situations?
-    </p>
-  </div>
-
-  <div class="grid">
-    <article class="card">
-      <h3>Target Audience</h3>
-      <p>Employees who use digital tools and access organizational information in office, remote, and hybrid work settings.</p>
-    </article>
-    <article class="card">
-      <h3>Learning Format</h3>
-      <p>A self-paced digital learning concept designed to take approximately 15–20 minutes.</p>
-    </article>
-    <article class="card">
-      <h3>Learning Objectives</h3>
-      <p>Learners should be able to recognize phishing indicators, select safer responses, and apply practical security habits.</p>
-    </article>
-    <article class="card">
-      <h3>Design Methods</h3>
-      <p>Scenario-based learning, interactive assessments, instructional feedback, and an adaptive learning prototype.</p>
-    </article>
+<div class="topbar">
+  <div class="wrap nav">
+    <a class="brand" href="index.html">← RATHESA KODEESWARAN</a>
+    <div class="navlinks">
+      <a href="#case-study">Case study</a>
+      <a href="#objectives">Objectives</a>
+      <a href="#approach">Approach</a>
+      <a href="#course">Try the course</a>
+      <a href="#evaluation">Evaluation</a>
+    </div>
   </div>
 </div>
-</section>
 
-<!-- DESIGN APPROACH -->
-
-<section class="section">
-<div class="container">
-  <div class="eyebrow">02 / Instructional Design Strategy</div>
-  <h2>Designing for practical application</h2>
-  <p class="intro">
-    The course uses familiar workplace situations to help learners
-    recognize risks, consider their options, and practise making
-    informed decisions.
-  </p>
-  <div class="strategy">
-    <article><h3>Authentic workplace scenarios</h3><p>Situations involving suspicious emails and shared workspaces connect cybersecurity concepts to everyday decisions.</p></article>
-    <article><h3>Decision-based activities</h3><p>Learners choose how they would respond to realistic situations instead of only reading about security rules.</p></article>
-    <article><h3>Immediate feedback</h3><p>Explanations reinforce correct decisions and help address misconceptions.</p></article>
-    <article><h3>Knowledge checks</h3><p>Short questions give learners opportunities to recall and apply key concepts.</p></article>
-    <article><h3>Adaptive learning</h3><p>The concept explores how learner preferences and assessment performance can guide personalized explanations and additional practice.</p></article>
-  </div>
-</div>
-</section>
-
-<!-- COURSE -->
-
-<section class="section" id="course">
-<div class="container">
-  <div class="eyebrow">03 / Interactive Learning Experience</div>
-  <h2>Explore the course</h2>
-  <p class="intro">
-    Work through the scenarios, personalize your learning experience,
-    complete the knowledge check, and explore the adaptive assistant.
-  </p>
-
-  <div class="course">
-    <div class="course-head">
-      <div class="course-label" style="color:#b8d6c5">Northstar Learning · Enterprise Security Academy</div>
-      <h2>Cybersecurity Essentials</h2>
-      <p>Working Securely from Anywhere · 15–20 minutes</p>
-      <div class="progress"><div class="progress-fill" id="progressFill"></div></div>
-      <div class="progress-text" id="progressText">Section 1 of 8</div>
+<header class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <div class="eyebrow">Project 01 · Instructional design · Scenario-based eLearning</div>
+      <h1>Cybersecurity <span>Essentials</span></h1>
+      <p class="hero-copy">
+        Working Securely from Anywhere. A short, scenario-based learning
+        experience designed to help employees recognize common cybersecurity
+        risks and make safer decisions when working remotely.
+      </p>
+      <div class="hero-meta">
+        <span class="pill">15–20 minute concept</span>
+        <span class="pill">Adult learners</span>
+        <span class="pill">Interactive prototype</span>
+      </div>
     </div>
 
-    <div class="course-layout">
-      <aside class="sidebar">
-        <h4>Course contents</h4>
-        <div class="nav-buttons">
-          <button class="active" data-page="0">01 · Welcome</button>
-          <button data-page="1">02 · Common Risks</button>
-          <button data-page="2">03 · Sarah's Inbox</button>
-          <button data-page="3">04 · Your Decision</button>
-          <button data-page="4">05 · Remote Work</button>
-          <button data-page="5">06 · Knowledge Check</button>
-          <button data-page="6">07 · Security Habits</button>
-          <button data-page="7">08 · Completion</button>
+    <div class="hero-art">
+      <div class="email-card">
+        <div class="email-top">
+          <span>INBOX · 1 new message</span>
+          <span class="warning">SUSPICIOUS EMAIL</span>
         </div>
-      </aside>
-
-      <div class="content">
-
-        <!-- PAGE 1 -->
-
-        <div class="page active" data-index="0">
-          <div class="course-label">WELCOME</div>
-          <h2>Working securely starts with you</h2>
-          <p>
-            Cybersecurity is not just the responsibility of IT teams.
-            Every employee plays a role in protecting company information,
-            accounts, and digital systems.
-          </p>
-          <p>
-            Whether you work at the office, from home, or in a public
-            space, everyday decisions can affect information security.
-          </p>
-          <div class="callout">
-            <strong>Pause. Verify. Protect.</strong>
-            <p>Take a moment before acting. Verify unexpected requests. Protect information by following approved security practices.</p>
-          </div>
-          <h3>What you will learn</h3>
-          <ul>
-            <li>Identify warning signs in suspicious messages.</li>
-            <li>Recognize common cybersecurity risks.</li>
-            <li>Choose safer responses to workplace situations.</li>
-            <li>Build everyday habits that protect information.</li>
-          </ul>
-
-          <!-- ADAPTIVE LEARNER PROFILE -->
-
-          <div class="ai-panel">
-            <div class="ai-heading">
-              <div class="ai-icon">✦</div>
-              <div>
-                <h3>Meet your Adaptive Learning Assistant</h3>
-                <p>Personalize how you explore the course</p>
-              </div>
-            </div>
-            <p>
-              Everyone approaches learning differently. Select the
-              content format you find most helpful. The course will
-              use your preference to tailor examples and recommendations.
-            </p>
-            <strong>How would you prefer to explore new information?</strong>
-            <div>
-              <label><input type="radio" name="preference" value="visual"> Visual examples, diagrams, and illustrations</label>
-              <label><input type="radio" name="preference" value="reading"> Written explanations and step-by-step guidance</label>
-              <label><input type="radio" name="preference" value="practice"> Interactive scenarios and hands-on practice</label>
-              <label><input type="radio" name="preference" value="mixed" checked> A combination of different formats</label>
-            </div>
-            <button class="primary" id="savePreference">Personalize my course</button>
-            <div class="ai-result" id="profileResult" aria-live="polite"></div>
-          </div>
-
-          <div class="callout">
-            <strong>Learning is flexible.</strong>
-            <p>You can change your preference at any time. Your selected format is a preference, not a fixed learning-style label.</p>
-          </div>
-        </div>
-
-        <!-- PAGE 2 -->
-
-        <div class="page" data-index="1">
-          <div class="course-label">UNDERSTANDING THE RISKS</div>
-          <h2>Where can security risks happen?</h2>
-          <p>Cybersecurity threats can appear in everyday activities. Understanding common risks is the first step toward preventing them.</p>
-          <div class="grid">
-            <article class="card"><h3>Phishing & Social Engineering</h3><p>Messages designed to trick people into sharing information or taking unsafe actions.</p></article>
-            <article class="card"><h3>Suspicious Links</h3><p>Unexpected links or files may lead to fraudulent websites or malicious downloads.</p></article>
-            <article class="card"><h3>Weak Account Security</h3><p>Reused or easy-to-guess passwords can make accounts vulnerable.</p></article>
-            <article class="card"><h3>Unsecured Networks</h3><p>Public or untrusted networks may expose sensitive information.</p></article>
-            <article class="card"><h3>Information Exposure</h3><p>Documents, screens, and conversations can unintentionally expose confidential information.</p></article>
-            <article class="card"><h3>Unexpected Requests</h3><p>Someone may impersonate a colleague or manager to create urgency.</p></article>
-          </div>
-          <div class="callout warning"><strong>Remember</strong><p>A message that looks familiar is not necessarily legitimate. Verify unexpected requests before taking action.</p></div>
-
-          <div class="ai-panel">
-            <div class="ai-heading"><div class="ai-icon">✦</div><div><h3>Personalized explanation</h3><p>Explore this topic in your preferred format</p></div></div>
-            <button class="secondary" onclick="showAdaptiveExplanation('risks')">Give me a personalized explanation</button>
-            <div class="ai-result" id="adaptiveExplanation"></div>
-          </div>
-        </div>
-
-        <!-- PAGE 3 -->
-
-        <div class="page" data-index="2">
-          <div class="course-label">SCENARIO 01 · PHISHING</div>
-          <h2>A message that needs your attention</h2>
-          <p>
-            Sarah is working remotely when she receives an email claiming
-            her company account will be suspended unless she verifies
-            her information within 30 minutes.
-          </p>
-          <div class="email">
-            <div class="email-head">
-              <strong>From:</strong> support@northstarr-secure.com<br>
-              <strong>Subject:</strong> URGENT: Your account will be suspended
-            </div>
-            <div class="email-body">
-              <p>Hello Sarah,</p>
-              <p>We detected an issue with your account. Your access will be suspended in 30 minutes unless you verify your credentials immediately.</p>
-              <p>Please use the link below to confirm your account:</p>
-              <p style="color:#b33c3c;font-weight:700">northstar-account.help/login</p>
-              <p>Thank you,<br>Northstar IT Support</p>
-            </div>
-          </div>
-          <h3>Can you spot the warning signs?</h3>
-          <ul>
-            <li><strong>Look-alike sender:</strong> The email domain is slightly different from the expected company domain.</li>
-            <li><strong>Manufactured urgency:</strong> The 30-minute deadline pressures Sarah to act quickly.</li>
-            <li><strong>Credential request:</strong> The message asks for login information.</li>
-            <li><strong>Suspicious destination:</strong> The link does not match an expected company website.</li>
-          </ul>
-          <div class="callout"><strong>Think before you click.</strong><p>Urgent language, unexpected credential requests, and unfamiliar links are reasons to stop and verify.</p></div>
-        </div>
-
-        <!-- PAGE 4 -->
-
-        <div class="page" data-index="3">
-          <div class="course-label">SCENARIO 01 · YOUR DECISION</div>
-          <h2>What should Sarah do?</h2>
-          <p>Choose the safest response to the suspicious email.</p>
-          <div class="choice-list" id="scenarioChoices">
-            <button class="choice" data-correct="false">A. Click the link and sign in before the deadline.</button>
-            <button class="choice" data-correct="false">B. Reply to the email and ask whether the request is legitimate.</button>
-            <button class="choice" data-correct="true">C. Avoid clicking the link and report the email through the approved process.</button>
-          </div>
-          <div class="feedback" id="scenarioFeedback" role="status" aria-live="polite"></div>
-
-          <div class="ai-panel">
-            <div class="ai-heading"><div class="ai-icon">✦</div><div><h3>Need another example?</h3><p>Get additional practice based on this topic</p></div></div>
-            <p>If phishing is still confusing, explore another example before continuing.</p>
-            <button class="secondary" onclick="showAdaptiveExplanation('phishing')">Show me another phishing example</button>
-            <div class="ai-result" id="phishingExample"></div>
-          </div>
-        </div>
-
-        <!-- PAGE 5 -->
-
-        <div class="page" data-index="4">
-          <div class="course-label">SCENARIO 02 · REMOTE WORK</div>
-          <h2>Protecting information in a shared space</h2>
-          <p>
-            Jordan is working from a coffee shop and joins a video call
-            to discuss a confidential project document.
-          </p>
-          <div class="card">
-            <h3>The situation</h3>
-            <p>People are sitting nearby, the Wi-Fi network is public, and Jordan has opened a document containing sensitive business information.</p>
-          </div>
-          <h3>What should Jordan do?</h3>
-          <div class="choice-list" id="workspaceChoices">
-            <button class="choice" data-correct="false">A. Continue the call because the document is only being discussed.</button>
-            <button class="choice" data-correct="true">B. Move to a private location and use an approved secure connection.</button>
-            <button class="choice" data-correct="false">C. Turn up the screen brightness so he can read more easily.</button>
-          </div>
-          <div class="feedback" id="workspaceFeedback" role="status" aria-live="polite"></div>
-          <div class="callout"><strong>Key takeaway</strong><p>Consider your surroundings before accessing or discussing confidential information. Protect screens, conversations, and network connections.</p></div>
-        </div>
-
-        <!-- PAGE 6 -->
-
-        <div class="page" data-index="5">
-          <div class="course-label">KNOWLEDGE CHECK</div>
-          <h2>Test your understanding</h2>
-          <p>Answer each question. Your results will help personalize your review recommendations.</p>
-          <div id="quizContainer"></div>
-          <div class="feedback" id="quizFeedback" role="status" aria-live="polite"></div>
-          <p id="quizCounter"><strong>Question 1 of 5</strong></p>
-          <div id="quizResult" class="ai-result">
-            <h3>Knowledge check complete</h3>
-            <div class="score" id="quizScore">0/5</div>
-            <p id="quizMessage"></p>
-            <button class="secondary" id="retryQuiz">Try again</button>
-            <div id="recommendations"></div>
-          </div>
-
-          <div class="ai-panel">
-            <div class="ai-heading"><div class="ai-icon">✦</div><div><h3>Your adaptive learning recommendations</h3><p>Recommendations based on your answers</p></div></div>
-            <div id="liveRecommendations">
-              Complete the knowledge check to receive personalized recommendations.
-            </div>
-          </div>
-        </div>
-
-        <!-- PAGE 7 -->
-
-        <div class="page" data-index="6">
-          <div class="course-label">PUT IT INTO PRACTICE</div>
-          <h2>Your everyday security checklist</h2>
-          <p>Use this checklist as a reminder of the habits that help protect your organization.</p>
-          <div class="checklist">
-            <label><input type="checkbox"> <span>Verify unexpected requests through a known contact method.</span></label>
-            <label><input type="checkbox"> <span>Avoid unfamiliar links and unexpected attachments.</span></label>
-            <label><input type="checkbox"> <span>Use approved password practices and multi-factor authentication.</span></label>
-            <label><input type="checkbox"> <span>Use approved secure connections and protect your devices.</span></label>
-            <label><input type="checkbox"> <span>Keep confidential information away from unauthorized viewers.</span></label>
-            <label><input type="checkbox"> <span>Report suspicious activity using your organization's approved process.</span></label>
-          </div>
-
-          <h3>Your personal commitment</h3>
-          <p>What is one security habit you will prioritize this week?</p>
-          <textarea class="commitment" id="commitment" placeholder="This week, I will..."></textarea>
-
-          <div class="ai-panel">
-            <div class="ai-heading"><div class="ai-icon">✦</div><div><h3>Ask your learning assistant</h3><p>Explore cybersecurity concepts in your own words</p></div></div>
-            <p>Ask a question about phishing, passwords, remote work, or information security.</p>
-            <div class="chat-box">
-              <div class="chat-messages" id="chatMessages">
-                <div class="chat-message ai">Hello! I'm your learning assistant. What would you like to understand better?</div>
-              </div>
-              <div class="chat-row">
-                <input class="chat-input" id="chatInput" placeholder="Ask a cybersecurity question..." aria-label="Ask a cybersecurity question">
-                <button class="primary" id="sendChat">Send</button>
-              </div>
-            </div>
-            <p style="font-size:.78rem;color:#746b91">Prototype assistant: responses use predefined learning content, not a live AI model.</p>
-          </div>
-        </div>
-
-        <!-- PAGE 8 -->
-
-        <div class="page" data-index="7">
-          <div class="completion">
-            <div style="font-size:3rem;color:var(--green)">✓</div>
-            <div class="course-label">COURSE COMPLETE</div>
-            <h2>Small pauses can prevent large incidents.</h2>
-            <p>You have reached the end of Cybersecurity Essentials: Working Securely from Anywhere.</p>
-            <div class="callout">
-              <h3>Your knowledge check result</h3>
-              <div class="score" id="finalScore">Not completed</div>
-              <p id="finalMessage">Complete the knowledge check to see your score.</p>
-            </div>
-            <div class="callout">
-              <h3>Your personalized learning summary</h3>
-              <p id="finalSummary">Your learning recommendations will appear here after completing the course activities.</p>
-            </div>
-            <div class="callout">
-              <h3>Remember these three steps</h3>
-              <p><strong>Pause:</strong> Stop before responding to unexpected requests.</p>
-              <p><strong>Verify:</strong> Confirm requests through trusted channels.</p>
-              <p><strong>Protect:</strong> Follow approved practices and report concerns.</p>
-            </div>
-            <button class="primary" onclick="window.print()">Print course summary</button>
-          </div>
-        </div>
-
-        <div class="controls">
-          <button class="secondary" id="previousBtn" disabled>← Previous</button>
-          <button class="primary" id="nextBtn">Next section →</button>
+        <h3>Your account will be suspended</h3>
+        <p><strong>From:</strong> IT Support &lt;support@northstar-secure.example&gt;</p>
+        <p><strong>Subject:</strong> Immediate action required</p>
+        <p>
+          Your account access will expire today. Verify your login details
+          immediately to avoid losing access to company systems.
+        </p>
+        <span class="fake-link">Verify account →</span>
+        <div class="email-note">
+          Warning signs: urgency, unexpected credential request, and an
+          unfamiliar sender address.
         </div>
       </div>
     </div>
   </div>
-</div>
-</section>
+</header>
 
-<!-- EVALUATION -->
+<section id="case-study">
+  <div class="wrap">
+    <div class="section-heading">
+      <div class="eyebrow">The design challenge</div>
+      <h2>Helping employees recognize risks before they act.</h2>
+      <p>
+        Cybersecurity awareness is not just about knowing the rules.
+        Employees need to recognize warning signs and make appropriate
+        decisions when faced with unexpected messages, requests, and situations.
+      </p>
+    </div>
 
-<section class="section">
-<div class="container">
-  <div class="eyebrow">04 / Assessment & Evaluation</div>
-  <h2>How learning could be evaluated</h2>
-  <div class="grid">
-    <article class="card"><h3>Knowledge Assessment</h3><p>Review quiz scores and scenario responses to identify understanding of security risks.</p></article>
-    <article class="card"><h3>Learner Feedback</h3><p>Collect feedback about the clarity, relevance, accessibility, and usefulness of the experience.</p></article>
-    <article class="card"><h3>Confidence & Application</h3><p>Use pre- and post-learning questions to explore whether learners feel more prepared to respond to suspicious situations.</p></article>
-    <article class="card"><h3>Adaptive Recommendations</h3><p>Evaluate whether personalized practice and explanations help learners address identified knowledge gaps.</p></article>
+    <div class="case-grid">
+      <div>
+        <div class="big-statement">
+          How might we help employees turn cybersecurity knowledge into safer everyday decisions?
+        </div>
+        <div class="info-box">
+          <strong>Project scope</strong>
+          <p>
+            An independent instructional design concept for a fictional
+            organization. The course focuses on phishing, social engineering,
+            and secure remote-working habits.
+          </p>
+        </div>
+      </div>
+
+      <div class="prose">
+        <p>
+          Remote and hybrid work introduce situations where employees may
+          receive unexpected requests, access information outside the office,
+          or work in environments with less direct support.
+        </p>
+        <p>
+          A traditional information-heavy approach can explain cybersecurity
+          policies, but it may not give learners enough opportunity to practise
+          applying those policies in realistic situations.
+        </p>
+        <p>
+          For this concept, I chose a short scenario-based format. Learners
+          encounter a suspicious email, identify indicators of risk, and
+          practise deciding what to do next. The goal is to connect information
+          with practical decision-making.
+        </p>
+        <p>
+          The course uses a recurring fictional employee, Sarah, to provide
+          continuity and give learners a recognizable workplace context.
+        </p>
+      </div>
+    </div>
   </div>
-  <div class="banner">
-    <strong>Evaluation note</strong>
-    <p>These are proposed evaluation methods. No organizational pilot, learner study, or measured performance improvement is being claimed.</p>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-heading">
+      <div class="eyebrow">Audience and learning need</div>
+      <h2>Designed for employees who need practical guidance.</h2>
+    </div>
+
+    <div class="two-col">
+      <article class="panel">
+        <h3>Intended audience</h3>
+        <p>
+          Employees in office, hybrid, and remote work environments who use
+          email, collaboration platforms, shared documents, and company systems.
+          The concept assumes learners have basic familiarity with everyday
+          workplace technology.
+        </p>
+      </article>
+      <article class="panel">
+        <h3>Learning challenge</h3>
+        <p>
+          Learners may recognize the term phishing but still struggle to
+          evaluate an unexpected message, resist pressure, or know how to
+          respond after interacting with a suspicious link.
+        </p>
+      </article>
+      <article class="panel">
+        <h3>Potential barriers</h3>
+        <ul>
+          <li>Urgent messages can encourage rushed decisions.</li>
+          <li>Fraudulent messages can imitate familiar organizations.</li>
+          <li>Employees may be unsure how to report suspicious activity.</li>
+          <li>Security guidance can feel abstract without examples.</li>
+        </ul>
+      </article>
+      <article class="panel">
+        <h3>Design response</h3>
+        <ul>
+          <li>Use realistic workplace scenarios.</li>
+          <li>Highlight observable warning signs.</li>
+          <li>Provide decision-making opportunities.</li>
+          <li>Explain why each response is safer or riskier.</li>
+        </ul>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section id="objectives">
+  <div class="wrap">
+    <div class="section-heading">
+      <div class="eyebrow">Learning objectives</div>
+      <h2>What should learners be able to do?</h2>
+      <p>
+        The objectives focus on observable actions rather than simply asking
+        learners to understand or become familiar with cybersecurity.
+      </p>
+    </div>
+
+    <div class="objectives">
+      <div class="objective">
+        <div class="objective-num">01</div>
+        <p><strong>Identify</strong> common indicators of phishing and social engineering in workplace communications.</p>
+      </div>
+      <div class="objective">
+        <div class="objective-num">02</div>
+        <p><strong>Evaluate</strong> suspicious emails and requests by checking the sender, message content, and requested action.</p>
+      </div>
+      <div class="objective">
+        <div class="objective-num">03</div>
+        <p><strong>Select</strong> an appropriate response to common cybersecurity risks when working remotely.</p>
+      </div>
+      <div class="objective">
+        <div class="objective-num">04</div>
+        <p><strong>Apply</strong> the Pause–Verify–Protect approach before sharing information or taking action.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="approach">
+  <div class="wrap">
+    <div class="section-heading">
+      <div class="eyebrow">Instructional strategy</div>
+      <h2>From information to decision-making.</h2>
+      <p>
+        The instructional approach combines concise explanations with
+        opportunities to practise. Learners are asked to make decisions,
+        receive feedback, and consider how the guidance applies to their work.
+      </p>
+    </div>
+
+    <div class="framework">
+      <article class="framework-card">
+        <div class="letter">01</div>
+        <h3>Pause</h3>
+        <p>
+          Stop before responding to unexpected messages, urgent requests,
+          unfamiliar links, or requests for sensitive information.
+        </p>
+      </article>
+      <article class="framework-card">
+        <div class="letter">02</div>
+        <h3>Verify</h3>
+        <p>
+          Check the sender, confirm the request through a trusted channel,
+          and look for warning signs before taking action.
+        </p>
+      </article>
+      <article class="framework-card">
+        <div class="letter">03</div>
+        <h3>Protect</h3>
+        <p>
+          Avoid interacting with suspicious content, report concerns using
+          approved workplace procedures, and take appropriate next steps.
+        </p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-heading">
+      <div class="eyebrow">Learning sequence</div>
+      <h2>How the course is structured.</h2>
+      <p>
+        The sequence introduces key concepts, demonstrates them in context,
+        and gradually asks learners to make decisions independently.
+      </p>
+    </div>
+
+    <div class="storyboard">
+      <div class="story-row">
+        <div class="story-number">01</div>
+        <div>
+          <div class="story-label">Introduction</div>
+          <h3>Why cybersecurity matters</h3>
+          <p>Introduce the purpose of the course and establish the remote-working context.</p>
+        </div>
+        <div>
+          <div class="story-label">Learning activity</div>
+          <p>Set expectations and introduce the learning objectives.</p>
+        </div>
+      </div>
+      <div class="story-row">
+        <div class="story-number">02</div>
+        <div>
+          <div class="story-label">Concept introduction</div>
+          <h3>Recognizing common threats</h3>
+          <p>Explore phishing, social engineering, suspicious links, and unexpected requests.</p>
+        </div>
+        <div>
+          <div class="story-label">Learning activity</div>
+          <p>Identify warning signs in sample workplace communications.</p>
+        </div>
+      </div>
+      <div class="story-row">
+        <div class="story-number">03</div>
+        <div>
+          <div class="story-label">Guided scenario</div>
+          <h3>Sarah receives a suspicious email</h3>
+          <p>Introduce a realistic decision point with contextual information.</p>
+        </div>
+        <div>
+          <div class="story-label">Learning activity</div>
+          <p>Evaluate the message and choose an appropriate response.</p>
+        </div>
+      </div>
+      <div class="story-row">
+        <div class="story-number">04</div>
+        <div>
+          <div class="story-label">Strategy</div>
+          <h3>Pause–Verify–Protect</h3>
+          <p>Introduce a simple framework learners can use when uncertain.</p>
+        </div>
+        <div>
+          <div class="story-label">Learning activity</div>
+          <p>Apply each step to everyday workplace situations.</p>
+        </div>
+      </div>
+      <div class="story-row">
+        <div class="story-number">05</div>
+        <div>
+          <div class="story-label">Independent practice</div>
+          <h3>What would you do?</h3>
+          <p>Present additional scenarios involving passwords, public spaces, and suspicious requests.</p>
+        </div>
+        <div>
+          <div class="story-label">Learning activity</div>
+          <p>Choose a response and receive explanatory feedback.</p>
+        </div>
+      </div>
+      <div class="story-row">
+        <div class="story-number">06</div>
+        <div>
+          <div class="story-label">Assessment and reflection</div>
+          <h3>Check your knowledge</h3>
+          <p>Assess whether learners can recognize risks and choose safer actions.</p>
+        </div>
+        <div>
+          <div class="story-label">Learning activity</div>
+          <p>Complete a short knowledge check and identify one action to apply at work.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="course-intro" id="course">
+  <div class="wrap">
+    <div class="eyebrow">Interactive course prototype</div>
+    <h2>Cybersecurity Essentials</h2>
+    <p>
+      Working Securely from Anywhere. Explore common cybersecurity risks,
+      practise evaluating suspicious messages, and learn how to respond
+      with greater confidence.
+    </p>
+    <div class="course-stats">
+      <div class="course-stat"><strong>15–20</strong><span>Minutes</span></div>
+      <div class="course-stat"><strong>6</strong><span>Learning sections</span></div>
+      <div class="course-stat"><strong>4</strong><span>Learning objectives</span></div>
+    </div>
   </div>
 </div>
-</section>
 
-<!-- REFLECTION -->
+<div class="course-area">
+<div class="wrap course-layout">
 
-<section class="section">
-<div class="container">
-  <div class="eyebrow">05 / Design Reflection</div>
-  <h2>Bringing UX and learning design together</h2>
-  <p class="intro">
-    This project explores how user experience principles can support
-    effective digital learning. Clear navigation, consistent layouts,
-    accessible interactions, and meaningful feedback help learners
-    focus on the content and understand what to do next.
-  </p>
-  <p>
-    The adaptive learning concept extends this approach by exploring
-    how learner preferences and performance can influence the type
-    of support and practice they receive.
-  </p>
-  <p>
-    The goal is not to label learners by a fixed learning style, but
-    to create a flexible experience that responds to their needs
-    while keeping the learning objectives consistent.
-  </p>
-  <span class="tag">Adult Learning</span>
-  <span class="tag">Scenario-Based Learning</span>
-  <span class="tag">UX / UI Design</span>
-  <span class="tag">AI Learning Concept</span>
-  <span class="tag">Accessibility</span>
+  <aside class="course-sidebar">
+    <h3>Your learning progress</h3>
+    <div class="course-progress"><span id="progressFill"></span></div>
+    <div class="progress-text" id="progressText">0 of 6 sections completed</div>
+
+    <div class="lesson-nav" aria-label="Course sections">
+      <button class="active" data-lesson="0">01 · Welcome</button>
+      <button data-lesson="1">02 · Recognize threats</button>
+      <button data-lesson="2">03 · Sarah's scenario</button>
+      <button data-lesson="3">04 · Pause–Verify–Protect</button>
+      <button data-lesson="4">05 · Workplace practice</button>
+      <button data-lesson="5">06 · Knowledge check</button>
+    </div>
+    <div class="case-note">
+      Prototype note: this is a browser-based learning concept. Progress
+      is tracked within the current page session and is not connected
+      to a real LMS.
+    </div>
+  </aside>
+
+  <main class="lesson-content" id="lessonContent">
+
+    <!-- LESSON 1 -->
+    <article class="lesson active" data-section="0">
+      <div class="lesson-kicker">Section 01 · Introduction</div>
+      <h2>Working securely starts with everyday decisions.</h2>
+      <p>
+        Think about how often you receive emails, open shared documents,
+        access company systems, or respond to requests from colleagues.
+        Each interaction is an opportunity to protect information.
+      </p>
+
+      <div class="lesson-callout">
+        <strong>Why this matters</strong>
+        <p>
+          Cybersecurity is not only the responsibility of IT teams.
+          Employees play an important role by recognizing unusual activity,
+          protecting information, and reporting concerns.
+        </p>
+      </div>
+
+      <h3>By the end of this course, you will be able to:</h3>
+      <div class="check-list">
+        <div class="check-item"><input type="checkbox" disabled checked><label>Recognize common signs of phishing and social engineering.</label></div>
+        <div class="check-item"><input type="checkbox" disabled checked><label>Evaluate suspicious messages and requests.</label></div>
+        <div class="check-item"><input type="checkbox" disabled checked><label>Choose safer responses to everyday security risks.</label></div>
+        <div class="check-item"><input type="checkbox" disabled checked><label>Apply Pause–Verify–Protect before taking action.</label></div>
+      </div>
+
+      <div class="reflection">
+        <h3>Consider this</h3>
+        <p>
+          You receive an unexpected message asking you to confirm your
+          account details immediately. What would you normally do first?
+          Keep your answer in mind as you work through the course.
+        </p>
+      </div>
+    </article>
+
+    <!-- LESSON 2 -->
+    <article class="lesson" data-section="1">
+      <div class="lesson-kicker">Section 02 · Recognize threats</div>
+      <h2>Not every message is what it seems.</h2>
+      <p>
+        Phishing is a type of social engineering that uses deceptive
+        messages to persuade people to reveal information, open harmful
+        attachments, or visit fraudulent websites.
+      </p>
+
+      <div class="tip-grid">
+        <div class="tip">
+          <strong>Unexpected requests</strong>
+          <p>A message asks you to provide information or complete an action you were not expecting.</p>
+        </div>
+        <div class="tip">
+          <strong>Urgent language</strong>
+          <p>Threats of account suspension, missed payments, or immediate consequences pressure you to act quickly.</p>
+        </div>
+        <div class="tip">
+          <strong>Unfamiliar sender</strong>
+          <p>The display name may look familiar, but the actual email address or domain may be different.</p>
+        </div>
+        <div class="tip">
+          <strong>Suspicious links</strong>
+          <p>A link may lead to a website designed to imitate a legitimate login page.</p>
+        </div>
+        <div class="tip">
+          <strong>Requests for sensitive details</strong>
+          <p>A message asks for passwords, verification codes, payment details, or confidential information.</p>
+        </div>
+        <div class="tip">
+          <strong>Unexpected attachments</strong>
+          <p>An unfamiliar file arrives without a clear business reason or expected context.</p>
+        </div>
+      </div>
+
+      <div class="scenario">
+        <div class="scenario-header">
+          <span>Example · Suspicious message</span>
+          <span class="warning">Review carefully</span>
+        </div>
+        <div class="scenario-email">
+          <p><strong>From:</strong> IT Support &lt;support@northstar-secure.example&gt;</p>
+          <p><strong>Subject:</strong> Immediate action required</p>
+          <hr style="border:0;border-top:1px solid #e5e8e3;margin:12px 0">
+          <p>Hello,</p>
+          <p>
+            Your company account will be suspended today unless you
+            verify your login credentials immediately.
+          </p>
+          <p>Please use the link below to restore access.</p>
+          <p style="color:#a84343;font-weight:700">Verify your account now</p>
+        </div>
+        <p><strong>Look for:</strong> an unexpected request, urgency, and a request for login details.</p>
+      </div>
+
+      <div class="lesson-callout">
+        <strong>Remember</strong>
+        <p>
+          One warning sign does not always prove a message is fraudulent.
+          Consider the whole message and verify unexpected requests through
+          a trusted channel.
+        </p>
+      </div>
+    </article>
+
+    <!-- LESSON 3 -->
+    <article class="lesson" data-section="2">
+      <div class="lesson-kicker">Section 03 · Guided scenario</div>
+      <h2>Sarah receives an unexpected email.</h2>
+      <p>
+        Sarah is working remotely when she receives a message that appears
+        to come from her company's IT department.
+      </p>
+
+      <div class="scenario">
+        <div class="scenario-header">
+          <span>Workplace scenario</span>
+          <span class="warning">Your decision</span>
+        </div>
+        <h3>Account access notification</h3>
+        <div class="scenario-email">
+          <p><strong>From:</strong> IT Support &lt;helpdesk@northstar-access.example&gt;</p>
+          <p><strong>Subject:</strong> Action required: Account access</p>
+          <hr style="border:0;border-top:1px solid #e5e8e3;margin:12px 0">
+          <p>
+            Your account has been flagged for review. To prevent interruption
+            to your work, confirm your login details using the link below.
+          </p>
+          <p style="color:#a84343;font-weight:700">Confirm account access</p>
+        </div>
+        <p>
+          Sarah notices that the sender address looks unfamiliar. She was
+          not expecting an account notification, and the email asks her
+          to provide her login details.
+        </p>
+      </div>
+
+      <h3>What should Sarah do?</h3>
+      <div class="choice-list" data-question="sarah">
+        <button class="answer" data-correct="false">
+          A. Click the link to check whether the account is really affected.
+        </button>
+        <button class="answer" data-correct="true">
+          B. Avoid the link, verify the message through a trusted IT channel,
+          and report it using the organization's process.
+        </button>
+        <button class="answer" data-correct="false">
+          C. Reply to the email and ask the sender to confirm their identity.
+        </button>
+      </div>
+      <div class="feedback" id="feedback-sarah" aria-live="polite"></div>
+
+      <div class="lesson-callout">
+        <strong>Key learning point</strong>
+        <p>
+          A message can appear professional and still be fraudulent.
+          Verify unexpected requests independently rather than using
+          contact details or links supplied in the suspicious message.
+        </p>
+      </div>
+    </article>
+
+    <!-- LESSON 4 -->
+    <article class="lesson" data-section="3">
+      <div class="lesson-kicker">Section 04 · Practical framework</div>
+      <h2>Use Pause–Verify–Protect.</h2>
+      <p>
+        When a message or request feels unusual, use this simple sequence
+        before taking action.
+      </p>
+
+      <div class="framework">
+        <article class="framework-card">
+          <div class="letter">01</div>
+          <h3>Pause</h3>
+          <p>
+            Do not rush. Avoid clicking unexpected links, opening unfamiliar
+            attachments, or sharing information under pressure.
+          </p>
+        </article>
+        <article class="framework-card">
+          <div class="letter">02</div>
+          <h3>Verify</h3>
+          <p>
+            Check the sender and request. Contact the person or department
+            using a trusted phone number, known website, or established channel.
+          </p>
+        </article>
+        <article class="framework-card">
+          <div class="letter">03</div>
+          <h3>Protect</h3>
+          <p>
+            Follow your organization's reporting procedure. If you already
+            interacted with the message, report it promptly and follow
+            IT or security guidance.
+          </p>
+        </article>
+      </div>
+
+      <div class="scenario">
+        <h3>Put the framework into practice</h3>
+        <p>
+          You receive an unexpected message from a senior leader asking
+          you to purchase gift cards and send the codes immediately.
+        </p>
+        <p><strong>Pause:</strong> Do not purchase anything under pressure.</p>
+        <p><strong>Verify:</strong> Contact the person through a known,
+          independent communication channel.</p>
+        <p><strong>Protect:</strong> Report the suspicious request according
+          to your organization's procedures.</p>
+      </div>
+
+      <div class="lesson-callout">
+        <strong>Important</strong>
+        <p>
+          Reporting channels and incident procedures vary by organization.
+          Always follow your employer's approved cybersecurity policies.
+        </p>
+      </div>
+    </article>
+
+    <!-- LESSON 5 -->
+    <article class="lesson" data-section="4">
+      <div class="lesson-kicker">Section 05 · Workplace practice</div>
+      <h2>Choose a safer response.</h2>
+      <p>
+        Apply what you have learned to three common remote-working situations.
+        Select an answer and read the feedback before moving on.
+      </p>
+
+      <div class="scenario">
+        <div class="scenario-header"><span>Scenario 1 · Password security</span></div>
+        <h3>You need to remember several work passwords.</h3>
+        <p>A colleague suggests saving them in a document on your desktop.</p>
+        <div class="choice-list" data-question="password">
+          <button class="answer" data-correct="false">Save the passwords in a document with a memorable filename.</button>
+          <button class="answer" data-correct="true">Use an organization-approved password manager and follow password policy.</button>
+          <button class="answer" data-correct="false">Reuse one strong password for all work accounts.</button>
+        </div>
+        <div class="feedback" id="feedback-password" aria-live="polite"></div>
+      </div>
+
+      <div class="scenario">
+        <div class="scenario-header"><span>Scenario 2 · Public spaces</span></div>
+        <h3>You are working at an airport.</h3>
+        <p>You need to review a document containing confidential company information.</p>
+        <div class="choice-list" data-question="airport">
+          <button class="answer" data-correct="false">Open the document in a public area as long as you work quickly.</button>
+          <button class="answer" data-correct="true">Move to a more private location and follow company rules for secure access and handling.</button>
+          <button class="answer" data-correct="false">Ask someone nearby to watch your laptop while you step away.</button>
+        </div>
+        <div class="feedback" id="feedback-airport" aria-live="polite"></div>
+      </div>
+
+      <div class="scenario">
+        <div class="scenario-header"><span>Scenario 3 · Incident response</span></div>
+        <h3>You accidentally clicked a suspicious link.</h3>
+        <p>You are worried that you may have exposed your account details.</p>
+        <div class="choice-list" data-question="incident">
+          <button class="answer" data-correct="false">Delete the email and wait to see whether anything happens.</button>
+          <button class="answer" data-correct="false">Ignore it because you did not notice anything unusual.</button>
+          <button class="answer" data-correct="true">Report it promptly through the organization's security process and follow IT instructions.</button>
+        </div>
+        <div class="feedback" id="feedback-incident" aria-live="polite"></div>
+      </div>
+
+      <div class="lesson-callout">
+        <strong>Why practice matters</strong>
+        <p>
+          Decision-making practice helps learners connect guidance with
+          the kinds of situations they may encounter during everyday work.
+        </p>
+      </div>
+    </article>
+
+    <!-- LESSON 6 -->
+    <article class="lesson" data-section="5">
+      <div class="lesson-kicker">Section 06 · Knowledge check</div>
+      <h2>Check what you've learned.</h2>
+      <p>
+        Answer all four questions. Choose the best response based on the
+        information covered in this course. You can review your answers
+        and explanations after submitting.
+      </p>
+
+      <form id="quizForm">
+        <div class="scenario">
+          <h3>1. Which is a common warning sign of phishing?</h3>
+          <div class="choice-list">
+            <label class="answer"><input type="radio" name="q1" value="a"> A message from a colleague you were expecting.</label>
+            <label class="answer"><input type="radio" name="q1" value="b"> An urgent, unexpected request for login details.</label>
+            <label class="answer"><input type="radio" name="q1" value="c"> A routine calendar invitation you recognize.</label>
+          </div>
+          <div class="feedback" id="quiz-feedback-1"></div>
+        </div>
+
+        <div class="scenario">
+          <h3>2. What is the safest way to verify an unexpected IT request?</h3>
+          <div class="choice-list">
+            <label class="answer"><input type="radio" name="q2" value="a"> Reply directly to the suspicious message.</label>
+            <label class="answer"><input type="radio" name="q2" value="b"> Use the link provided in the message.</label>
+            <label class="answer"><input type="radio" name="q2" value="c"> Contact IT using a trusted, independently verified channel.</label>
+          </div>
+          <div class="feedback" id="quiz-feedback-2"></div>
+        </div>
+
+        <div class="scenario">
+          <h3>3. What should you do if you accidentally click a suspicious link?</h3>
+          <div class="choice-list">
+            <label class="answer"><input type="radio" name="q3" value="a"> Report it promptly and follow your organization's incident procedures.</label>
+            <label class="answer"><input type="radio" name="q3" value="b"> Delete the message and say nothing.</label>
+            <label class="answer"><input type="radio" name="q3" value="c"> Forward the link to coworkers to ask if it looks safe.</label>
+          </div>
+          <div class="feedback" id="quiz-feedback-3"></div>
+        </div>
+
+        <div class="scenario">
+          <h3>4. What does Verify mean in Pause–Verify–Protect?</h3>
+          <div class="choice-list">
+            <label class="answer"><input type="radio" name="q4" value="a"> Assume a familiar display name is legitimate.</label>
+            <label class="answer"><input type="radio" name="q4" value="b"> Check the request through a trusted, independent channel.</label>
+            <label class="answer"><input type="radio" name="q4" value="c"> Respond quickly so the request does not expire.</label>
+          </div>
+          <div class="feedback" id="quiz-feedback-4"></div>
+        </div>
+
+        <button type="submit" class="action-btn">Submit knowledge check</button>
+      </form>
+
+      <div class="score-card" id="quizResult" style="display:none" aria-live="polite">
+        <strong id="scoreNumber">0 / 4</strong>
+        <p id="scoreMessage"></p>
+        <button type="button" class="secondary-btn" id="retryQuiz">Try again</button>
+      </div>
+
+      <div class="reflection">
+        <h3>Make it practical</h3>
+        <p>
+          Before finishing, identify one action you can apply in your own
+          work. For example: checking the sender before responding,
+          verifying unusual requests, or reporting suspicious activity.
+        </p>
+      </div>
+    </article>
+
+    <div class="lesson-controls">
+      <button class="secondary-btn" id="previousLesson" type="button">← Previous</button>
+      <button class="next-btn" id="nextLesson" type="button">Continue →</button>
+    </div>
+  </main>
 </div>
+</div>
+
+<section id="evaluation">
+  <div class="wrap">
+    <div class="section-heading">
+      <div class="eyebrow">Assessment and evaluation</div>
+      <h2>How would I know whether the learning worked?</h2>
+      <p>
+        Completing a course is not the same as demonstrating learning.
+        This concept uses a combination of knowledge checks, learner feedback,
+        and potential workplace indicators to evaluate effectiveness.
+      </p>
+    </div>
+
+    <div class="evaluation-grid">
+      <article class="evaluation-card">
+        <h3>Knowledge and understanding</h3>
+        <p>
+          Use scenario questions and knowledge checks to assess whether
+          learners can identify phishing indicators and select appropriate
+          responses.
+        </p>
+      </article>
+      <article class="evaluation-card">
+        <h3>Confidence and usability</h3>
+        <p>
+          Gather learner feedback about clarity, relevance, accessibility,
+          and confidence in responding to suspicious messages.
+        </p>
+      </article>
+      <article class="evaluation-card">
+        <h3>Workplace application</h3>
+        <p>
+          Where appropriate, review aggregated reporting trends and security
+          awareness indicators over time. Interpret changes alongside other
+          organizational factors.
+        </p>
+      </article>
+    </div>
+
+    <div class="info-box">
+      <strong>Potential evaluation measures</strong>
+      <p>
+        Knowledge-check performance, scenario decision accuracy, learner
+        feedback, course completion, and trends in reported suspicious
+        messages. These are proposed measures for a future implementation,
+        not results from this portfolio prototype.
+      </p>
+    </div>
+  </div>
 </section>
 
-<footer class="footer">
-  © 2026 Rathesa Kodeeswaran · Learning Experience Design Portfolio<br>
-  <a href="index.html">Return to all projects</a>
+<section>
+  <div class="wrap">
+    <div class="section-heading">
+      <div class="eyebrow">Design reflection</div>
+      <h2>What this project demonstrates.</h2>
+    </div>
+    <div class="case-grid">
+      <div class="big-statement">
+        The goal is not simply to teach employees what phishing is. It is to help them recognize it and know what to do next.
+      </div>
+      <div class="prose">
+        <p>
+          This project explores how a practical workplace topic can be
+          transformed into a short learning experience with clear objectives,
+          realistic examples, guided practice, and assessment.
+        </p>
+        <p>
+          The use of a recurring scenario gives learners an opportunity to
+          apply information in context. The Pause–Verify–Protect framework
+          provides a memorable structure they can recall when faced with
+          unexpected requests.
+        </p>
+        <p>
+          A future version could be developed in an authoring tool such as
+          Articulate Rise, with additional accessibility testing, narration
+          options, and an LMS-compatible course package.
+        </p>
+        <p>
+          The next design iteration would include feedback from representative
+          learners and subject-matter experts to validate the examples,
+          procedures, and technical accuracy.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap" style="display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap">
+    <span>© 2026 Rathesa Kodeeswaran</span>
+    <span>Learning Design · Instructional Design · UX</span>
+    <a href="index.html">Back to portfolio ↑</a>
+  </div>
 </footer>
 
 <script>
-/* ---------------------------------
-   COURSE NAVIGATION
---------------------------------- */
+const lessons = [...document.querySelectorAll(".lesson")];
+const navButtons = [...document.querySelectorAll(".lesson-nav button")];
+const progressFill = document.getElementById("progressFill");
+const progressText = document.getElementById("progressText");
+const previousButton = document.getElementById("previousLesson");
+const nextButton = document.getElementById("nextLesson");
 
-const pages = [...document.querySelectorAll('.page')];
-const nav = [...document.querySelectorAll('.nav-buttons button')];
-let currentPage = 0;
+let currentLesson = 0;
+const completed = new Set();
 
-function showPage(index) {
-  currentPage = Math.max(0, Math.min(index, pages.length - 1));
+function updateProgress(){
+  const count = completed.size;
+  progressFill.style.width = (count / lessons.length * 100) + "%";
+  progressText.textContent = count + " of " + lessons.length + " sections completed";
 
-  pages.forEach((page, i) =>
-    page.classList.toggle('active', i === currentPage)
-  );
-
-  nav.forEach((button, i) =>
-    button.classList.toggle('active', i === currentPage)
-  );
-
-  document.getElementById('progressFill').style.width =
-    ((currentPage + 1) / pages.length * 100) + '%';
-
-  document.getElementById('progressText').textContent =
-    `Section ${currentPage + 1} of ${pages.length}`;
-
-  document.getElementById('previousBtn').disabled = currentPage === 0;
-  document.getElementById('nextBtn').style.display =
-    currentPage === pages.length - 1 ? 'none' : 'inline-block';
-
-  if (currentPage === 7) updateCompletion();
+  navButtons.forEach((button,index)=>{
+    button.classList.toggle("completed",completed.has(index));
+  });
 }
 
-nav.forEach(button => {
-  button.addEventListener('click', () => showPage(Number(button.dataset.page)));
+function showLesson(index){
+  currentLesson = Math.max(0,Math.min(index,lessons.length-1));
+
+  lessons.forEach((lesson,i)=>{
+    lesson.classList.toggle("active",i===currentLesson);
+  });
+
+  navButtons.forEach((button,i)=>{
+    button.classList.toggle("active",i===currentLesson);
+  });
+
+  previousButton.disabled = currentLesson===0;
+  previousButton.style.opacity = currentLesson===0 ? ".4" : "1";
+
+  nextButton.textContent = currentLesson===lessons.length-1
+    ? "Finish course"
+    : "Continue →";
+
+  document.getElementById("course").scrollIntoView({behavior:"smooth"});
+}
+
+navButtons.forEach(button=>{
+  button.addEventListener("click",()=>{
+    showLesson(Number(button.dataset.lesson));
+  });
 });
 
-document.getElementById('previousBtn').addEventListener('click', () => showPage(currentPage - 1));
-document.getElementById('nextBtn').addEventListener('click', () => showPage(currentPage + 1));
-
-/* ---------------------------------
-   LEARNER PROFILE
---------------------------------- */
-
-let learnerPreference = 'mixed';
-
-const preferenceDescriptions = {
-  visual: 'You selected visual examples. The course will emphasize diagrams, annotated examples, and visual comparisons.',
-  reading: 'You selected written explanations. The course will emphasize step-by-step guidance, summaries, and clear written explanations.',
-  practice: 'You selected interactive practice. The course will emphasize scenarios, decision-making, and opportunities to apply concepts.',
-  mixed: 'You selected a combination of formats. The course will use a mix of explanations, examples, and interactive activities.'
-};
-
-document.getElementById('savePreference').addEventListener('click', () => {
-  const selected = document.querySelector('input[name="preference"]:checked');
-  learnerPreference = selected ? selected.value : 'mixed';
-
-  const result = document.getElementById('profileResult');
-  result.innerHTML = `
-    <span class="ai-tag">Learning preference saved</span>
-    <h4>Your course experience is personalized</h4>
-    <p>${preferenceDescriptions[learnerPreference]}</p>
-    <p>You can change this preference whenever you like.</p>
-  `;
-  result.classList.add('show');
+previousButton.addEventListener("click",()=>{
+  showLesson(currentLesson-1);
 });
 
-/* ---------------------------------
-   ADAPTIVE EXPLANATIONS
-   Rule-based prototype, not live AI
---------------------------------- */
+nextButton.addEventListener("click",()=>{
+  completed.add(currentLesson);
+  updateProgress();
 
-function showAdaptiveExplanation(topic) {
-  const target = topic === 'risks'
-    ? document.getElementById('adaptiveExplanation')
-    : document.getElementById('phishingExample');
-
-  let heading = '';
-  let message = '';
-
-  if (topic === 'risks') {
-    heading = 'Understanding cybersecurity risks';
-
-    if (learnerPreference === 'visual') {
-      message = 'Think of cybersecurity like protecting a house. Phishing is like a fake visitor asking for your keys. Weak passwords are like using an easy-to-guess lock combination. Unsecured networks are like leaving a door open. Each risk creates a different way for someone to access information.';
-    } else if (learnerPreference === 'reading') {
-      message = 'A cybersecurity risk is any situation that could expose information or allow unauthorized access. Common examples include phishing messages, weak passwords, untrusted networks, and accidentally sharing confidential information. Review unexpected requests before taking action.';
-    } else if (learnerPreference === 'practice') {
-      message = 'Imagine receiving an email asking you to reset your password immediately. Before clicking, check the sender, inspect the destination, and verify the request through a trusted channel. This is how you apply cybersecurity awareness in practice.';
-    } else {
-      message = 'Cybersecurity risks include phishing, weak passwords, untrusted networks, and accidental information exposure. For example, a suspicious email may use urgency to encourage you to click a link. Pause, inspect the message, and verify the request before responding.';
-    }
-  }
-
-  if (topic === 'phishing') {
-    heading = 'Another phishing example';
-
-    if (learnerPreference === 'visual') {
-      message = 'Imagine an email with a familiar company logo but an unfamiliar sender address. The logo may look genuine, but the sender domain and link destination do not match the organization. A familiar appearance does not prove a message is safe.';
-    } else if (learnerPreference === 'reading') {
-      message = 'You receive a message saying your payroll information must be updated immediately. It asks you to sign in through an unfamiliar link. Do not use the link. Contact the appropriate department using a known contact method and report the message.';
-    } else {
-      message = 'Practice: A colleague sends you an unexpected file and asks you to enable macros before opening it. What should you do? Do not enable the macros. Verify the request through a trusted channel and follow your organization’s security procedures.';
-    }
-  }
-
-  target.innerHTML = `<h4>${heading}</h4><p>${message}</p><span class="ai-tag">Based on your selected preference</span>`;
-  target.classList.add('show');
-}
-
-/* ---------------------------------
-   SCENARIO FEEDBACK
---------------------------------- */
-
-function setupScenario(containerId, feedbackId, goodMessage, badMessage, topic) {
-  const container = document.getElementById(containerId);
-  const feedback = document.getElementById(feedbackId);
-
-  container.querySelectorAll('.choice').forEach(button => {
-    button.addEventListener('click', () => {
-      container.querySelectorAll('.choice').forEach(item => item.classList.remove('selected'));
-      button.classList.add('selected');
-
-      const correct = button.dataset.correct === 'true';
-      feedback.className = 'feedback show ' + (correct ? 'good' : 'bad');
-      feedback.textContent = correct ? goodMessage : badMessage;
-
-      if (!correct) {
-        adaptiveNeeds.add(topic);
-        updateLiveRecommendations();
-      }
-    });
-  });
-}
-
-const adaptiveNeeds = new Set();
-
-setupScenario(
-  'scenarioChoices',
-  'scenarioFeedback',
-  'Correct! Sarah should avoid the link and report the suspicious email through the approved process.',
-  'Not quite. Clicking or replying could expose Sarah to further risk. Avoid interacting with the message and report it through the approved process.',
-  'phishing'
-);
-
-setupScenario(
-  'workspaceChoices',
-  'workspaceFeedback',
-  'Correct! Jordan should move to a private location and use an approved secure connection.',
-  'Not quite. A public setting can expose confidential information. Jordan should move to a private location and follow approved network practices.',
-  'remote'
-);
-
-/* ---------------------------------
-   KNOWLEDGE CHECK
---------------------------------- */
-
-const questions = [
-  {
-    topic:'phishing',
-    q:'You receive an urgent payment request from a senior leader using an unfamiliar email address. What should you do?',
-    options:[
-      'Process the payment immediately.',
-      'Reply to the email asking for confirmation.',
-      'Verify the request through a known contact method and report it if suspicious.'
-    ],
-    answer:2,
-    explanation:'Verify unexpected financial requests through an independently known contact method. Urgency and unfamiliar sender details are warning signs.'
-  },
-  {
-    topic:'passwords',
-    q:'You create an account for a new approved workplace service. Which password practice is safest?',
-    options:[
-      'Reuse your existing work password.',
-      'Create a unique password using an approved password manager.',
-      'Use a simple password that is easy to remember.'
-    ],
-    answer:1,
-    explanation:'Unique passwords reduce the risk of one compromised account exposing other accounts.'
-  },
-  {
-    topic:'remote',
-    q:'You need to access a confidential file while at an airport. What should you consider?',
-    options:[
-      'Use any available public Wi-Fi.',
-      'Use approved secure access and protect your screen from nearby viewers.',
-      'Ask someone nearby to watch your belongings.'
-    ],
-    answer:1,
-    explanation:'Use approved secure access methods and consider visual privacy.'
-  },
-  {
-    topic:'privacy',
-    q:'A housemate enters while you are discussing confidential information on a video call. What is the best response?',
-    options:[
-      'Continue speaking because the call is online.',
-      'Mute yourself and move to a private location.',
-      'Turn up your speaker volume.'
-    ],
-    answer:1,
-    explanation:'Confidential conversations should not be overheard by unauthorized people.'
-  },
-  {
-    topic:'incident',
-    q:'You clicked a suspicious link but did not enter any information. What should you do?',
-    options:[
-      'Ignore it because you did not enter a password.',
-      'Delete the email and do nothing else.',
-      'Report the incident and follow the security team’s instructions.'
-    ],
-    answer:2,
-    explanation:'Report suspicious activity promptly, even if you did not enter information.'
-  }
-];
-
-let questionIndex = 0;
-let score = 0;
-let completed = false;
-let missedTopics = new Set();
-
-const quizContainer = document.getElementById('quizContainer');
-const quizFeedback = document.getElementById('quizFeedback');
-
-function renderQuestion() {
-  const question = questions[questionIndex];
-  document.getElementById('quizCounter').innerHTML =
-    `<strong>Question ${questionIndex + 1} of ${questions.length}</strong>`;
-
-  quizFeedback.className = 'feedback';
-  quizContainer.innerHTML = `
-    <div class="quiz-card">
-      <h3>${questionIndex + 1}. ${question.q}</h3>
-      <div id="quizOptions"></div>
-      <button class="primary" id="submitAnswer" disabled>Submit answer</button>
-      <button class="secondary" id="nextQuestion" style="display:none;margin-left:8px">
-        ${questionIndex === questions.length - 1 ? 'See results' : 'Next question →'}
-      </button>
-    </div>
-  `;
-
-  const options = document.getElementById('quizOptions');
-  let selected = null;
-
-  question.options.forEach((option, index) => {
-    const button = document.createElement('button');
-    button.className = 'quiz-option';
-    button.textContent = option;
-
-    button.addEventListener('click', () => {
-      selected = index;
-      options.querySelectorAll('button').forEach(item => {
-        item.style.borderColor = '';
-        item.style.background = '';
-      });
-      button.style.borderColor = '#285d49';
-      button.style.background = '#eaf2ed';
-      document.getElementById('submitAnswer').disabled = false;
-    });
-
-    options.appendChild(button);
-  });
-
-  document.getElementById('submitAnswer').addEventListener('click', () => {
-    if (selected === null) return;
-
-    const correct = selected === question.answer;
-    if (correct) score++;
-    else missedTopics.add(question.topic);
-
-    options.querySelectorAll('button').forEach((button, index) => {
-      button.disabled = true;
-      if (index === question.answer) button.classList.add('correct');
-      else if (index === selected) button.classList.add('wrong');
-    });
-
-    quizFeedback.className = 'feedback show ' + (correct ? 'good' : 'bad');
-    quizFeedback.innerHTML = `<strong>${correct ? 'Correct!' : 'Not quite.'}</strong><br>${question.explanation}`;
-
-    document.getElementById('submitAnswer').style.display = 'none';
-    document.getElementById('nextQuestion').style.display = 'inline-block';
-  });
-
-  document.getElementById('nextQuestion').addEventListener('click', () => {
-    if (questionIndex < questions.length - 1) {
-      questionIndex++;
-      renderQuestion();
-    } else {
-      finishQuiz();
-    }
-  });
-}
-
-function finishQuiz() {
-  completed = true;
-  quizContainer.style.display = 'none';
-  document.getElementById('quizCounter').style.display = 'none';
-
-  const result = document.getElementById('quizResult');
-  result.classList.add('show');
-  document.getElementById('quizScore').textContent = `${score}/${questions.length}`;
-
-  document.getElementById('quizMessage').textContent =
-    score === 5 ? 'Excellent work! You answered every question correctly.' :
-    score >= 3 ? 'Good effort! Review the recommendations to strengthen your understanding.' :
-    'Review the topics below and try again to strengthen your understanding.';
-
-  updateLiveRecommendations();
-  updateCompletion();
-}
-
-function updateLiveRecommendations() {
-  const target = document.getElementById('liveRecommendations');
-
-  const topics = new Set([...missedTopics, ...adaptiveNeeds]);
-
-  if (topics.size === 0) {
-    target.innerHTML = 'Great progress! No additional practice topics have been identified yet.';
+  if(currentLesson===lessons.length-1){
+    document.getElementById("progressText").textContent =
+      completed.size + " of " + lessons.length + " sections completed · Course finished";
+    nextButton.textContent="Course completed ✓";
+    nextButton.disabled=true;
     return;
   }
 
-  const names = {
-    phishing:'Phishing and suspicious messages',
-    passwords:'Password and account security',
-    remote:'Remote work and network security',
-    privacy:'Confidentiality and information privacy',
-    incident:'Reporting suspicious activity'
-  };
-
-  target.innerHTML = '<strong>Topics to review:</strong><ul>' +
-    [...topics].map(topic => `<li>${names[topic] || topic}</li>`).join('') +
-    '</ul><p>Consider revisiting these topics and practising with another example.</p>';
-}
-
-function resetQuiz() {
-  questionIndex = 0;
-  score = 0;
-  completed = false;
-  missedTopics = new Set();
-
-  quizContainer.style.display = 'block';
-  document.getElementById('quizCounter').style.display = 'block';
-  document.getElementById('quizResult').classList.remove('show');
-
-  updateLiveRecommendations();
-  renderQuestion();
-}
-
-document.getElementById('retryQuiz').addEventListener('click', resetQuiz);
-
-renderQuestion();
-
-/* ---------------------------------
-   ASK THE LEARNING ASSISTANT
-   Predefined responses for prototype
---------------------------------- */
-
-function assistantResponse(message) {
-  const text = message.toLowerCase();
-
-  if (text.includes('phish') || text.includes('email') || text.includes('link')) {
-    return 'Phishing messages try to trick you into sharing information or clicking unsafe links. Look for unfamiliar sender addresses, urgency, unexpected attachments, and suspicious destinations. Avoid clicking and report suspicious messages through your organization’s approved process.';
-  }
-
-  if (text.includes('password') || text.includes('account')) {
-    return 'Use unique passwords for different accounts, an organization-approved password manager, and multi-factor authentication where required. Never share your password in response to an unexpected email or message.';
-  }
-
-  if (text.includes('wifi') || text.includes('network') || text.includes('airport')) {
-    return 'When working remotely, follow your organization’s approved secure-access requirements. Avoid untrusted networks when accessing sensitive information, and protect your screen from nearby viewers.';
-  }
-
-  if (text.includes('report') || text.includes('clicked') || text.includes('incident')) {
-    return 'Report suspicious activity promptly using your organization’s approved security process. Even if you did not enter information, follow the security team’s instructions.';
-  }
-
-  if (text.includes('private') || text.includes('confidential') || text.includes('privacy')) {
-    return 'Protect confidential information by choosing private locations for sensitive conversations, securing your screen, and ensuring unauthorized people cannot view or hear the information.';
-  }
-
-  return 'A useful cybersecurity habit is to pause before acting, verify unexpected requests through trusted channels, and follow your organization’s approved security procedures. Try asking me about phishing, passwords, remote work, or reporting suspicious activity.';
-}
-
-function sendMessage() {
-  const input = document.getElementById('chatInput');
-  const message = input.value.trim();
-  if (!message) return;
-
-  const messages = document.getElementById('chatMessages');
-
-  const user = document.createElement('div');
-  user.className = 'chat-message user';
-  user.textContent = message;
-  messages.appendChild(user);
-
-  const response = document.createElement('div');
-  response.className = 'chat-message ai';
-  response.textContent = assistantResponse(message);
-  messages.appendChild(response);
-
-  input.value = '';
-  messages.scrollTop = messages.scrollHeight;
-}
-
-document.getElementById('sendChat').addEventListener('click', sendMessage);
-document.getElementById('chatInput').addEventListener('keydown', event => {
-  if (event.key === 'Enter') sendMessage();
+  showLesson(currentLesson+1);
 });
 
-/* ---------------------------------
-   COMPLETION SUMMARY
---------------------------------- */
+const scenarioExplanations = {
+  sarah:{
+    correct:"Correct. Sarah should avoid the link and verify the request independently. Reporting it through the organization's approved process helps the security team investigate.",
+    incorrect:"Not the safest response. Clicking the link or replying can expose information or continue the interaction with a suspicious sender. Use a trusted channel to verify the request."
+  },
+  password:{
+    correct:"Correct. An organization-approved password manager helps protect credentials and supports the organization's security requirements.",
+    incorrect:"Storing passwords in ordinary documents or reusing passwords can increase the impact of an exposed account. Follow organizational password guidance and use approved tools."
+  },
+  airport:{
+    correct:"Correct. Confidential information should be accessed and handled in accordance with organizational security policies. A more private setting can reduce the risk of visual exposure or unauthorized access.",
+    incorrect:"A public setting can expose confidential information to people nearby. Follow company rules for secure access and choose a suitable environment."
+  },
+  incident:{
+    correct:"Correct. Prompt reporting gives the security team an opportunity to assess the situation and advise on next steps. Follow their instructions rather than assuming nothing happened.",
+    incorrect:"Ignoring or hiding a possible incident can delay an appropriate response. Report it promptly, even if you are unsure whether information was exposed."
+  }
+};
 
-function updateCompletion() {
-  document.getElementById('finalScore').textContent =
-    completed ? `${score}/${questions.length}` : 'Not completed';
+document.querySelectorAll(".choice-list[data-question]").forEach(group=>{
+  const question=group.dataset.question;
+  const feedback=document.getElementById("feedback-"+question);
+  const buttons=[...group.querySelectorAll(".answer")];
 
-  document.getElementById('finalMessage').textContent =
-    completed
-      ? `You answered ${score} out of ${questions.length} questions correctly.`
-      : 'Complete the knowledge check to see your score.';
+  buttons.forEach(button=>{
+    button.addEventListener("click",()=>{
+      if(group.dataset.answered==="true")return;
+      group.dataset.answered="true";
 
-  const preferenceText = {
-    visual:'visual examples',
-    reading:'written explanations',
-    practice:'interactive practice',
-    mixed:'a combination of learning formats'
-  };
+      const correct=button.dataset.correct==="true";
+      button.classList.add(correct?"correct":"incorrect");
 
-  let summary = `You selected ${preferenceText[learnerPreference]}. `;
+      buttons.forEach(item=>{
+        item.disabled=true;
+        if(item.dataset.correct==="true")item.classList.add("correct");
+      });
 
-  if (completed && missedTopics.size > 0) {
-    summary += 'Your review recommendations include: ' +
-      [...missedTopics].join(', ') + '.';
-  } else if (completed) {
-    summary += 'You answered all knowledge-check questions correctly.';
-  } else {
-    summary += 'Complete the knowledge check for additional recommendations.';
+      feedback.className="feedback show "+(correct?"good":"bad");
+      feedback.innerHTML="<strong>"+(correct?"That's the safer choice.":"Let's review that choice.")+
+        "</strong><p>"+scenarioExplanations[question][correct?"correct":"incorrect"]+"</p>";
+    });
+  });
+});
+
+const quizAnswers={
+  q1:{
+    answer:"b",
+    correct:"Correct. Urgency combined with an unexpected request for credentials is a common phishing warning sign.",
+    incorrect:"Look for an unexpected request for sensitive information combined with pressure to act quickly."
+  },
+  q2:{
+    answer:"c",
+    correct:"Correct. Use a trusted, independently verified channel instead of contact details or links provided in a suspicious message.",
+    incorrect:"Do not rely on the suspicious message to verify itself. Use an established contact method."
+  },
+  q3:{
+    answer:"a",
+    correct:"Correct. Prompt reporting helps the security team assess possible exposure and advise on appropriate next steps.",
+    incorrect:"Do not ignore a possible incident. Report it promptly, even if you are unsure whether anything was exposed."
+  },
+  q4:{
+    answer:"b",
+    correct:"Correct. Verification means checking the sender and request through a trusted, independent channel.",
+    incorrect:"Verification means independently confirming that the sender and request are legitimate before taking action."
+  }
+};
+
+document.getElementById("quizForm").addEventListener("submit",event=>{
+  event.preventDefault();
+
+  let score=0;
+  let answered=0;
+
+  Object.entries(quizAnswers).forEach(([question,data],index)=>{
+    const selected=document.querySelector('input[name="'+question+'"]:checked');
+    const feedback=document.getElementById("quiz-feedback-"+(index+1));
+
+    if(selected){
+      answered++;
+      const correct=selected.value===data.answer;
+      if(correct)score++;
+
+      feedback.className="feedback show "+(correct?"good":"bad");
+      feedback.innerHTML="<strong>"+(correct?"Correct.":"Review this answer.")+
+        "</strong><p>"+data[correct?"correct":"incorrect"]+"</p>";
+    }else{
+      feedback.className="feedback show bad";
+      feedback.innerHTML="<strong>Not answered.</strong><p>Please choose an answer and try again.</p>";
+    }
+  });
+
+  const result=document.getElementById("quizResult");
+  document.getElementById("scoreNumber").textContent=score+" / 4";
+
+  let message="";
+  if(score===4){
+    message="Excellent work. You demonstrated a strong understanding of the key ideas in this course.";
+  }else if(score>=2){
+    message="Good effort. Review the explanations for the questions you missed, then try again.";
+  }else{
+    message="Take another look at the lessons and feedback. The goal is to understand why each response is safer.";
   }
 
-  document.getElementById('finalSummary').textContent = summary;
-}
+  if(answered<4){
+    message="You answered "+answered+" of 4 questions. Complete the remaining questions to assess your understanding.";
+  }
 
-showPage(0);
+  document.getElementById("scoreMessage").textContent=message;
+  result.style.display="block";
+  result.scrollIntoView({behavior:"smooth",block:"center"});
+});
+
+document.getElementById("retryQuiz").addEventListener("click",()=>{
+  document.getElementById("quizForm").reset();
+
+  document.querySelectorAll('[id^="quiz-feedback-"]').forEach(feedback=>{
+    feedback.className="feedback";
+    feedback.innerHTML="";
+  });
+
+  document.getElementById("quizResult").style.display="none";
+});
 </script>
 
 </body>
