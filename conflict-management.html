@@ -1,21 +1,995 @@
+
 <!DOCTYPE html>
-<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Conflict Management: Choosing Your Response | Rathesa Kodeeswaran</title>
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Conflict Management | Rathesa Kodeeswaran</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
 <style>
-:root{--bg:#f7f7f2;--paper:#fff;--ink:#202923;--muted:#59645d;--green:#285d49;--green2:#dcebe1;--pink:#f3dce5;--line:#dce2dc}
-*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.7 "DM Sans",sans-serif}.wrap{width:min(850px,calc(100% - 36px));margin:auto}nav{padding:25px 0;display:flex;justify-content:space-between;gap:20px}nav a{color:var(--green);font-weight:700;text-decoration:none}.hero{padding:65px 0 45px}.eyebrow{color:var(--green);font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase}h1,h2{font-family:Manrope,sans-serif;line-height:1.15;letter-spacing:-.04em}h1{font-size:clamp(38px,7vw,58px);margin:15px 0}.summary{font-size:19px;color:var(--muted);max-width:720px}.banner{background:#dcebe1;border-radius:16px;padding:28px;margin:25px 0 40px}.banner strong{font:700 14px Manrope}.banner p{margin:5px 0 0;color:#48554b}section{padding:28px 0;border-top:1px solid var(--line)}h2{font-size:25px;margin:0 0 12px}p,li{color:var(--muted)}ul{padding-left:22px}li{padding:4px 0}.back{display:inline-block;margin:20px 0 60px;padding:11px 16px;border:1px solid var(--green);border-radius:7px;color:var(--green);font-weight:700;text-decoration:none}.disclaimer{font-size:13px;background:#fff;border-left:4px solid var(--green);padding:14px 18px;margin-top:25px}@media(max-width:560px){nav{flex-direction:column}}
-</style></head><body><div class="wrap">
-<nav><a href="index.html">← Rathesa Kodeeswaran</a><a href="index.html#work">All projects</a></nav>
-<header class="hero"><div class="eyebrow">Project 02 · Branching scenario · Experiential practice</div><h1>Conflict Management: Choosing Your Response</h1><p class="summary">An interactive practice concept where learners navigate a challenging workplace conversation and consider how different responses affect the situation.</p>
-<div class="banner"><strong>At a glance</strong><p>eXeLearning concept · Branching design · Scenario writing · Reflection prompts</p></div></header>
-<section><h2>The learning problem</h2><p>Knowing communication tips is not the same as being able to use them in a tense conversation. Learners need a safe way to practise considering their options.</p></section>
-<section><h2>Target audience</h2><p>Employees who communicate with coworkers, customers, or other stakeholders. The scenarios should be adapted to the role and workplace context.</p></section>
-<section><h2>Learning objectives</h2><p>By the end of this learning experience, learners should be able to:</p><ul><li>Recognize communication choices that may escalate or de-escalate a disagreement.</li><li>Select a response that demonstrates listening and respectful communication.</li><li>Reflect on how tone and word choice can affect an interaction.</li></ul></section>
-<section><h2>Why this learning method?</h2><p>Branching scenarios provide experiential practice: learners make a choice, see a plausible consequence, and reflect before trying another approach. Reflection prompts connect the activity to prior experience.</p></section>
-<section><h2>Design and development</h2><p>The concept begins with a workplace disagreement. Learners choose how to respond, then follow a short branch showing how the conversation might progress. Each branch includes feedback and a prompt to consider another approach.</p></section>
-<section><h2>Assessment and evaluation</h2><p>Learners explain why a response may help or hinder the conversation. A more developed version could use a scoring rubric tied to observable communication behaviours rather than treating one exact phrase as the only correct answer.</p></section>
-<section><h2>Design reflection</h2><p>Conflict situations are nuanced, so the activity should avoid implying that every situation has one perfect response. The branches should model constructive options while acknowledging context, power dynamics, and when to seek support.</p></section>
-<div class="disclaimer"><strong>Portfolio note:</strong> This page describes a learning-design concept and proposed approach. Add your actual screenshots, prototype, learner feedback, and measured results as you develop the project. Do not present proposed outcomes as completed results.</div>
-<a class="back" href="index.html#work">← Back to all projects</a>
-</div></body></html>
+:root {
+  --ink: #292d32;
+  --muted: #73777b;
+  --cream: #f8f5ef;
+  --paper: #fffefa;
+  --terracotta: #bd705d;
+  --terracotta-dark: #965342;
+  --blue: #dce9ed;
+  --blue-dark: #52727d;
+  --sage: #dfe8dc;
+  --line: #e9e3da;
+  --soft: #f1ece4;
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  background: var(--cream);
+  color: var(--ink);
+  font-family: 'DM Sans', sans-serif;
+  line-height: 1.7;
+}
+
+a { color: inherit; text-decoration: none; }
+
+nav {
+  max-width: 1120px;
+  margin: auto;
+  padding: 25px 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+nav a:hover { color: var(--terracotta-dark); }
+
+.nav-right { display: flex; gap: 26px; color: var(--muted); }
+
+.hero {
+  max-width: 1120px;
+  margin: 35px auto 70px;
+  padding: 65px 70px;
+  background: #e9ded4;
+  border-radius: 5px;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero::after {
+  content: "02";
+  position: absolute;
+  right: 40px;
+  bottom: -85px;
+  font-family: 'Manrope', sans-serif;
+  font-size: 290px;
+  font-weight: 800;
+  color: rgba(255,255,255,.28);
+  line-height: 1;
+}
+
+.eyebrow {
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 10px;
+  font-weight: 700;
+  color: var(--terracotta-dark);
+}
+
+h1, h2, h3 {
+  font-family: 'Manrope', sans-serif;
+  line-height: 1.2;
+}
+
+h1 {
+  font-size: clamp(38px, 6vw, 65px);
+  max-width: 650px;
+  margin: 18px 0;
+  letter-spacing: -2.5px;
+}
+
+.hero p {
+  max-width: 580px;
+  font-size: 16px;
+  color: #55565a;
+}
+
+.hero-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 28px;
+  position: relative;
+  z-index: 1;
+}
+
+.pill {
+  background: rgba(255,255,255,.65);
+  border-radius: 30px;
+  padding: 8px 14px;
+  font-size: 11px;
+  font-weight: 700;
+  color: #5d5550;
+}
+
+main {
+  max-width: 920px;
+  margin: auto;
+  padding: 0 28px 90px;
+}
+
+section { margin: 0 0 70px; }
+
+.section-label {
+  color: var(--terracotta-dark);
+  text-transform: uppercase;
+  letter-spacing: 1.8px;
+  font-size: 10px;
+  font-weight: 700;
+  margin-bottom: 13px;
+}
+
+h2 {
+  font-size: 30px;
+  letter-spacing: -1px;
+  margin: 0 0 20px;
+}
+
+h3 { font-size: 17px; margin: 0 0 10px; }
+
+p { color: #5e6266; }
+
+.intro-grid {
+  display: grid;
+  grid-template-columns: 1.1fr .9fr;
+  gap: 25px;
+}
+
+.info-card {
+  background: var(--paper);
+  border: 1px solid var(--line);
+  padding: 25px;
+  border-radius: 5px;
+}
+
+.info-card p { font-size: 14px; margin-bottom: 0; }
+
+.objectives {
+  display: grid;
+  gap: 12px;
+  margin-top: 25px;
+}
+
+.objective {
+  display: flex;
+  gap: 15px;
+  align-items: flex-start;
+  background: var(--paper);
+  padding: 16px 18px;
+  border-left: 3px solid var(--terracotta);
+  font-size: 14px;
+}
+
+.objective span {
+  color: var(--terracotta-dark);
+  font-weight: 700;
+}
+
+.design-note {
+  background: var(--blue);
+  padding: 27px 30px;
+  border-radius: 5px;
+  margin-top: 25px;
+}
+
+.design-note p { margin-bottom: 0; color: #425b63; }
+
+.demo-heading {
+  margin-bottom: 24px;
+}
+
+.demo-heading p { max-width: 650px; }
+
+.course-shell {
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 12px 35px rgba(50, 40, 30, .06);
+}
+
+.course-top {
+  background: #333d42;
+  color: white;
+  padding: 20px 25px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 15px;
+}
+
+.course-top small {
+  color: #d3dadd;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  font-size: 9px;
+  font-weight: 700;
+}
+
+.course-top strong {
+  display: block;
+  font-family: 'Manrope', sans-serif;
+  font-size: 16px;
+}
+
+.course-progress {
+  height: 4px;
+  background: #d9d4cc;
+}
+
+.course-progress div {
+  height: 4px;
+  width: 0%;
+  background: var(--terracotta);
+  transition: width .3s ease;
+}
+
+.course-content { padding: 35px; }
+
+.step-count {
+  color: var(--terracotta-dark);
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+}
+
+.course-content h2 {
+  font-size: 27px;
+  margin: 10px 0 15px;
+}
+
+.course-content p { font-size: 14px; }
+
+.prompt-card {
+  background: #f5eee7;
+  padding: 22px;
+  border-radius: 5px;
+  margin: 23px 0;
+}
+
+.prompt-card strong {
+  display: block;
+  margin-bottom: 7px;
+  font-family: 'Manrope', sans-serif;
+}
+
+.prompt-card p { margin: 0; }
+
+.person {
+  display: flex;
+  gap: 13px;
+  align-items: center;
+  margin: 22px 0;
+}
+
+.avatar {
+  width: 43px;
+  height: 43px;
+  border-radius: 50%;
+  background: var(--blue);
+  display: grid;
+  place-items: center;
+  color: var(--blue-dark);
+  font-weight: 800;
+}
+
+.person small { display: block; color: var(--muted); }
+
+.choice-list {
+  display: grid;
+  gap: 12px;
+  margin-top: 22px;
+}
+
+.choice {
+  border: 1px solid var(--line);
+  background: white;
+  border-radius: 5px;
+  padding: 17px 19px;
+  cursor: pointer;
+  text-align: left;
+  font-family: inherit;
+  color: var(--ink);
+  transition: .2s;
+  width: 100%;
+}
+
+.choice:hover {
+  border-color: var(--terracotta);
+  background: #fcf7f2;
+  transform: translateY(-1px);
+}
+
+.choice strong {
+  display: block;
+  font-size: 14px;
+  margin-bottom: 4px;
+}
+
+.choice span {
+  display: block;
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.feedback {
+  display: none;
+  background: var(--sage);
+  padding: 20px;
+  border-radius: 5px;
+  margin-top: 20px;
+}
+
+.feedback.visible { display: block; }
+
+.feedback strong {
+  display: block;
+  color: #405b45;
+  margin-bottom: 5px;
+}
+
+.feedback p { margin: 0; color: #506253; }
+
+.reflection-box {
+  background: #f0f4f4;
+  border: 1px solid #dce6e6;
+  padding: 23px;
+  border-radius: 5px;
+  margin-top: 22px;
+}
+
+.reflection-box label {
+  display: block;
+  font-weight: 700;
+  font-size: 13px;
+  margin-bottom: 10px;
+}
+
+textarea, select {
+  width: 100%;
+  padding: 13px;
+  border: 1px solid #d9d9d5;
+  border-radius: 4px;
+  font-family: inherit;
+  font-size: 13px;
+  background: white;
+  color: var(--ink);
+}
+
+textarea { min-height: 100px; resize: vertical; }
+
+.primary-btn, .secondary-btn {
+  border: 0;
+  padding: 12px 19px;
+  border-radius: 4px;
+  font-family: inherit;
+  font-size: 12px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.primary-btn {
+  background: var(--terracotta);
+  color: white;
+}
+
+.primary-btn:hover { background: var(--terracotta-dark); }
+
+.secondary-btn {
+  background: #eee9e1;
+  color: var(--ink);
+}
+
+.course-actions {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  margin-top: 28px;
+}
+
+.assistant {
+  background: #333d42;
+  color: white;
+  padding: 25px;
+  border-radius: 6px;
+  margin-top: 25px;
+}
+
+.assistant .section-label { color: #e6b6a8; }
+
+.assistant h3 { font-size: 20px; }
+
+.assistant p { color: #d1d9db; font-size: 13px; }
+
+.assistant select, .assistant textarea {
+  margin: 8px 0 15px;
+}
+
+.assistant-response {
+  display: none;
+  background: #455258;
+  border-left: 3px solid #e2a18e;
+  padding: 17px;
+  margin-top: 16px;
+  border-radius: 3px;
+}
+
+.assistant-response.visible { display: block; }
+
+.assistant-response p { margin: 0; color: white; }
+
+.completion {
+  text-align: center;
+  padding: 35px 10px;
+}
+
+.completion-icon {
+  margin: auto auto 20px;
+  width: 65px;
+  height: 65px;
+  border-radius: 50%;
+  background: var(--sage);
+  display: grid;
+  place-items: center;
+  font-size: 26px;
+}
+
+.reflection-summary {
+  background: var(--soft);
+  padding: 18px;
+  border-radius: 5px;
+  margin-top: 18px;
+  text-align: left;
+  font-size: 13px;
+}
+
+.case-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.case-card {
+  background: var(--paper);
+  border: 1px solid var(--line);
+  padding: 24px;
+  border-radius: 5px;
+}
+
+.case-card p { font-size: 13px; }
+
+.disclaimer {
+  background: #f0ece5;
+  border-radius: 5px;
+  padding: 20px 23px;
+  font-size: 12px;
+  color: #68645d;
+}
+
+footer {
+  border-top: 1px solid var(--line);
+  padding: 25px;
+  text-align: center;
+  color: var(--muted);
+  font-size: 11px;
+}
+
+@media(max-width:700px) {
+  nav { padding: 20px; }
+  .nav-right { gap: 12px; }
+  .hero { margin: 15px 15px 50px; padding: 42px 28px; }
+  .hero::after { font-size: 170px; right: 5px; }
+  main { padding: 0 18px 60px; }
+  .intro-grid, .case-grid { grid-template-columns: 1fr; }
+  .course-content { padding: 23px 19px; }
+  .course-top { align-items: flex-start; flex-direction: column; }
+  h2 { font-size: 26px; }
+}
+</style>
+</head>
+
+<body>
+
+<nav>
+  <a href="index.html">← Rathesa Kodeeswaran</a>
+  <div class="nav-right">
+    <a href="index.html#work">All projects</a>
+    <a href="index.html#about">About</a>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="eyebrow">Project 02 · Branching scenario · Experiential practice</div>
+  <h1>Conflict Management: Choosing Your Response</h1>
+  <p>
+    A workplace communication learning experience where employees practise
+    navigating challenging conversations, explore different responses, and
+    reflect on how their choices influence an interaction.
+  </p>
+  <div class="hero-meta">
+    <span class="pill">Branching scenarios</span>
+    <span class="pill">Scenario writing</span>
+    <span class="pill">AI-inspired feedback</span>
+    <span class="pill">Reflection-based learning</span>
+  </div>
+</header>
+
+<main>
+
+<section>
+  <div class="section-label">01 / Project overview</div>
+  <h2>Learning to navigate difficult conversations</h2>
+
+  <div class="intro-grid">
+    <div class="info-card">
+      <h3>The learning problem</h3>
+      <p>
+        Knowing communication tips is not the same as being able to use them
+        in a tense conversation. Employees need opportunities to practise
+        listening, choosing their words, and responding thoughtfully in a
+        realistic but low-risk environment.
+      </p>
+    </div>
+    <div class="info-card">
+      <h3>Target audience</h3>
+      <p>
+        Employees who communicate with coworkers, customers, or other
+        stakeholders. Scenarios can be adapted to different workplace
+        responsibilities and organizational contexts.
+      </p>
+    </div>
+  </div>
+
+  <div class="objectives">
+    <div class="objective"><span>01</span> Recognize communication choices that may escalate or de-escalate a disagreement.</div>
+    <div class="objective"><span>02</span> Select responses that demonstrate listening and respectful communication.</div>
+    <div class="objective"><span>03</span> Reflect on how tone, timing, and word choice can affect an interaction.</div>
+  </div>
+
+  <div class="design-note">
+    <h3>Why use branching scenarios?</h3>
+    <p>
+      Branching scenarios provide experiential practice. Learners make a
+      choice, see a plausible consequence, and consider an alternative
+      approach. Rather than memorizing a list of communication rules, they
+      practise applying judgement in context.
+    </p>
+  </div>
+</section>
+
+<section>
+  <div class="section-label">02 / Interactive learning experience</div>
+  <div class="demo-heading">
+    <h2>What would you do?</h2>
+    <p>
+      Explore a workplace disagreement. Choose how you would respond, review
+      how the conversation might develop, and consider another approach.
+      There is no single perfect phrase for every conflict.
+    </p>
+  </div>
+
+  <div class="course-shell">
+    <div class="course-top">
+      <div>
+        <small>Northstar Learning · Practice Lab</small>
+        <strong>Workplace Conversations</strong>
+      </div>
+      <div><small id="stepLabel">SCENARIO 01 / 04</small></div>
+    </div>
+    <div class="course-progress"><div id="progressBar"></div></div>
+
+    <div class="course-content" id="courseContent">
+      <div class="step-count">YOUR PRACTICE STARTS HERE</div>
+      <h2>A conversation becomes tense</h2>
+      <p>
+        You are working on a shared project with Jordan. A deadline is
+        approaching, and you notice that a task assigned to Jordan has not
+        been completed. When you ask about it, Jordan responds defensively.
+      </p>
+
+      <div class="person">
+        <div class="avatar">J</div>
+        <div><strong>Jordan</strong><small>Project teammate</small></div>
+      </div>
+
+      <div class="prompt-card">
+        <strong>Jordan says:</strong>
+        <p>
+          "I've had a lot on my plate. It feels like you're blaming me when
+          nobody else has checked in about this."
+        </p>
+      </div>
+
+      <p><strong>How would you respond?</strong></p>
+
+      <div class="choice-list">
+        <button class="choice" onclick="startScenario('a')">
+          <strong>A. Be direct about the missed deadline</strong>
+          <span>"The task was assigned to you, and we need it finished today."</span>
+        </button>
+        <button class="choice" onclick="startScenario('b')">
+          <strong>B. Acknowledge their concern and ask a question</strong>
+          <span>"I didn't mean to make you feel blamed. Can you tell me what's getting in the way?"</span>
+        </button>
+        <button class="choice" onclick="startScenario('c')">
+          <strong>C. Step back from the conversation</strong>
+          <span>"Let's leave this for now and talk when we have more time."</span>
+        </button>
+      </div>
+
+      <div class="feedback" id="feedback">
+        <strong id="feedbackTitle"></strong>
+        <p id="feedbackText"></p>
+      </div>
+
+      <div class="course-actions">
+        <button class="secondary-btn" onclick="resetScenario()">Restart scenario</button>
+        <button class="primary-btn" id="nextBtn" onclick="nextStep()" style="display:none">Continue →</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="section-label">03 / Personalized learning support</div>
+  <h2>A learning assistant that encourages reflection</h2>
+  <p>
+    The learning assistant offers feedback based on the learner's selected
+    focus and responses. It encourages learners to think about the
+    communication skills they want to practise.
+  </p>
+
+  <div class="assistant">
+    <div class="section-label">Learning companion</div>
+    <h3>Let's reflect on your approach.</h3>
+    <p>
+      Choose an area you would like to strengthen. The assistant will provide
+      a suggested strategy and a practical example.
+    </p>
+
+    <label for="focus" style="font-size:12px;font-weight:700">What would you like to practise?</label>
+    <select id="focus">
+      <option value="listening">Active listening</option>
+      <option value="tone">Tone and word choice</option>
+      <option value="deescalation">De-escalating tension</option>
+      <option value="boundaries">Setting respectful boundaries</option>
+    </select>
+
+    <label for="reflection" style="font-size:12px;font-weight:700">What do you find challenging?</label>
+    <textarea id="reflection" placeholder="For example: I find it difficult to stay calm when someone becomes defensive."></textarea>
+
+    <button class="primary-btn" onclick="getAssistantFeedback()">Get a learning suggestion</button>
+
+    <div class="assistant-response" id="assistantResponse">
+      <p id="assistantText"></p>
+    </div>
+    <p style="font-size:10px;margin-top:15px">
+      Prototype note: This assistant uses predefined, rule-based feedback.
+      A production version could connect to an approved AI service.
+    </p>
+  </div>
+</section>
+
+<section>
+  <div class="section-label">04 / Apply and reflect</div>
+  <h2>Take the learning back to work</h2>
+  <p>
+    The final activity encourages learners to connect the scenario to their
+    own workplace experiences and identify one communication behaviour to
+    practise.
+  </p>
+
+  <div class="reflection-box">
+    <label for="takeaway">What is one thing you would try differently in a challenging conversation?</label>
+    <textarea id="takeaway" placeholder="Write your reflection here..."></textarea>
+    <div style="margin-top:15px">
+      <button class="primary-btn" onclick="saveReflection()">Save reflection</button>
+    </div>
+    <div class="feedback" id="reflectionFeedback">
+      <strong>Reflection saved in this practice session.</strong>
+      <p>Your response is displayed in the completion summary below.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="section-label">05 / Learning design decisions</div>
+  <h2>Designing for thoughtful communication</h2>
+
+  <div class="case-grid">
+    <div class="case-card">
+      <h3>Assessment approach</h3>
+      <p>
+        Learners review the consequences of their choices and explain why
+        a response may help or hinder a conversation. Reflection focuses
+        on observable behaviours such as listening, clarifying, and
+        acknowledging another person's perspective.
+      </p>
+    </div>
+    <div class="case-card">
+      <h3>AI-inspired personalization</h3>
+      <p>
+        A learning assistant provides targeted suggestions based on the
+        learner's chosen development area. A future version could use
+        approved AI tools to generate additional examples and adapt
+        practice activities while maintaining appropriate privacy and
+        organizational safeguards.
+      </p>
+    </div>
+    <div class="case-card">
+      <h3>Accessibility and inclusion</h3>
+      <p>
+        The experience uses plain language, clear navigation, readable
+        contrast, and multiple opportunities to explore alternative
+        responses. Workplace scenarios should account for different
+        communication styles and power dynamics.
+      </p>
+    </div>
+    <div class="case-card">
+      <h3>Design reflection</h3>
+      <p>
+        Conflict situations are nuanced. The activity should not suggest
+        that every situation has one perfect response. Some situations
+        require a pause, a manager's support, or formal workplace processes.
+      </p>
+    </div>
+  </div>
+</section>
+
+<div class="disclaimer">
+  <strong>Portfolio note:</strong> This page presents a learning-design
+  concept and interactive prototype. The learning assistant uses
+  predefined responses rather than a live AI integration. Add actual
+  learner feedback, usability observations, and evaluation results as
+  they become available. Do not present proposed outcomes as measured
+  results.
+</div>
+
+</main>
+
+<footer>
+  © 2026 Rathesa Kodeeswaran · Learning Experience Design Portfolio
+  <br><br>
+  <a href="index.html">← Back to all projects</a>
+</footer>
+
+<script>
+let currentStep = 1;
+let selectedChoice = "";
+let reflectionText = "";
+
+const scenarios = {
+  a: {
+    title: "A direct approach",
+    text: "Jordan hears that the deadline matters, but may also feel that their concerns have not been acknowledged. The conversation could become more defensive. A useful next step might be to clarify the urgency while asking what support or information is needed."
+  },
+  b: {
+    title: "An acknowledgement and an open question",
+    text: "Jordan may feel more comfortable explaining the difficulty. This approach creates space for listening and problem-solving. It does not mean ignoring the deadline; you can still agree on responsibilities and next steps."
+  },
+  c: {
+    title: "A pause in the conversation",
+    text: "Taking a break can be helpful if emotions are rising. However, without agreeing when to return to the issue, the task may remain unresolved. Consider setting a specific time to continue the discussion."
+  }
+};
+
+function startScenario(choice) {
+  selectedChoice = choice;
+  const result = scenarios[choice];
+
+  document.getElementById("feedbackTitle").textContent = result.title;
+  document.getElementById("feedbackText").textContent = result.text;
+  document.getElementById("feedback").classList.add("visible");
+  document.getElementById("nextBtn").style.display = "inline-block";
+
+  document.querySelectorAll(".choice").forEach(button => {
+    button.style.opacity = ".55";
+    button.disabled = true;
+  });
+
+  document.querySelectorAll(".choice")[["a","b","c"].indexOf(choice)].style.opacity = "1";
+}
+
+function resetScenario() {
+  selectedChoice = "";
+  document.getElementById("feedback").classList.remove("visible");
+  document.getElementById("nextBtn").style.display = "none";
+  document.querySelectorAll(".choice").forEach(button => {
+    button.style.opacity = "1";
+    button.disabled = false;
+  });
+}
+
+function nextStep() {
+  const content = document.getElementById("courseContent");
+
+  if (currentStep === 1) {
+    currentStep = 2;
+    content.innerHTML = `
+      <div class="step-count">SCENARIO 02 / 04</div>
+      <h2>The conversation continues</h2>
+      <p>After discussing the missed task, Jordan explains that the project requirements changed and they were unsure which version to follow.</p>
+      <div class="prompt-card">
+        <strong>Jordan says:</strong>
+        <p>"I didn't want to send the wrong thing. I was waiting for clarification, but I should have mentioned it sooner."</p>
+      </div>
+      <p><strong>What would help move the conversation forward?</strong></p>
+      <div class="choice-list">
+        <button class="choice" onclick="chooseSecond(1)"><strong>Clarify expectations together</strong><span>Review the requirements and agree on the next steps.</span></button>
+        <button class="choice" onclick="chooseSecond(2)"><strong>Focus on what went wrong</strong><span>Explain that Jordan should have raised the issue earlier.</span></button>
+        <button class="choice" onclick="chooseSecond(3)"><strong>Take over the task</strong><span>Complete it yourself to avoid further delays.</span></button>
+      </div>
+      <div class="feedback" id="feedback"><strong id="feedbackTitle"></strong><p id="feedbackText"></p></div>
+      <div class="course-actions"><button class="secondary-btn" onclick="resetSecond()">Try another response</button><button class="primary-btn" id="nextBtn" style="display:none" onclick="nextStep()">Continue →</button></div>
+    `;
+  } else if (currentStep === 2) {
+    currentStep = 3;
+    content.innerHTML = `
+      <div class="step-count">SCENARIO 03 / 04</div>
+      <h2>A different perspective</h2>
+      <p>Imagine you are Jordan. You have several competing priorities and feel that your teammate has not considered your workload.</p>
+      <div class="prompt-card">
+        <strong>Consider this:</strong>
+        <p>How might the situation look from the other person's perspective? What information might you be missing?</p>
+      </div>
+      <p><strong>Choose the reflection that feels most useful.</strong></p>
+      <div class="choice-list">
+        <button class="choice" onclick="chooseThird(1)"><strong>Ask before making assumptions</strong><span>There may be context you do not know yet.</span></button>
+        <button class="choice" onclick="chooseThird(2)"><strong>Focus only on the task</strong><span>The deadline is the most important issue.</span></button>
+        <button class="choice" onclick="chooseThird(3)"><strong>Consider the relationship</strong><span>How the conversation feels may affect future collaboration.</span></button>
+      </div>
+      <div class="feedback" id="feedback"><strong id="feedbackTitle"></strong><p id="feedbackText"></p></div>
+      <div class="course-actions"><button class="secondary-btn" onclick="resetThird()">Try another reflection</button><button class="primary-btn" id="nextBtn" style="display:none" onclick="nextStep()">Continue →</button></div>
+    `;
+  } else {
+    currentStep = 4;
+    content.innerHTML = `
+      <div class="completion">
+        <div class="completion-icon">✓</div>
+        <div class="step-count">PRACTICE COMPLETE</div>
+        <h2>Every conversation is an opportunity to learn.</h2>
+        <p>You explored different ways to respond to a workplace disagreement and considered how communication choices can influence an interaction.</p>
+        <div class="reflection-summary" id="summary">
+          <strong>Your reflection</strong>
+          <p>${escapeHTML(reflectionText || "You can add a personal reflection in the section above.")}</p>
+        </div>
+        <div style="margin-top:22px"><button class="primary-btn" onclick="restartCourse()">Explore again</button></div>
+      </div>
+    `;
+  }
+
+  updateProgress();
+}
+
+function chooseSecond(choice) {
+  const feedback = [
+    ["Collaborative problem-solving", "Clarifying expectations together can help both people understand the issue and agree on a realistic next step."],
+    ["Addressing accountability", "It may be important to discuss communication expectations, but starting with blame could make it harder to understand the underlying issue."],
+    ["A quick solution with a trade-off", "Taking over may solve the immediate problem, but it could create an unsustainable pattern and leave the original issue unresolved."]
+  ][choice - 1];
+  showBranchFeedback(feedback[0], feedback[1]);
+}
+
+function chooseThird(choice) {
+  const feedback = [
+    ["Curiosity before judgement", "Asking questions can reveal missing information and help prevent assumptions from shaping the conversation."],
+    ["Task-focused thinking", "Deadlines matter, but focusing only on the task may overlook factors affecting the working relationship."],
+    ["Considering the relationship", "A respectful working relationship can make future collaboration easier. It is still important to address the practical issue."]
+  ][choice - 1];
+  showBranchFeedback(feedback[0], feedback[1]);
+}
+
+function showBranchFeedback(title, message) {
+  document.getElementById("feedbackTitle").textContent = title;
+  document.getElementById("feedbackText").textContent = message;
+  document.getElementById("feedback").classList.add("visible");
+  document.getElementById("nextBtn").style.display = "inline-block";
+  document.querySelectorAll(".choice").forEach(button => button.disabled = true);
+}
+
+function resetSecond() {
+  resetBranch();
+}
+function resetThird() {
+  resetBranch();
+}
+function resetBranch() {
+  document.getElementById("feedback").classList.remove("visible");
+  document.getElementById("nextBtn").style.display = "none";
+  document.querySelectorAll(".choice").forEach(button => button.disabled = false);
+}
+
+function updateProgress() {
+  document.getElementById("progressBar").style.width = (currentStep / 4 * 100) + "%";
+  document.getElementById("stepLabel").textContent = "SCENARIO 0" + currentStep + " / 04";
+}
+
+function getAssistantFeedback() {
+  const focus = document.getElementById("focus").value;
+  const reflection = document.getElementById("reflection").value.trim();
+
+  const suggestions = {
+    listening: "Try using an open question before offering a solution. For example: 'Can you walk me through what's been happening?' Then summarize what you heard to check your understanding.",
+    tone: "Try using neutral, specific language that focuses on the situation rather than the person. Instead of 'You never communicate,' consider 'I wasn't sure where the task stood, and I'd like us to agree on an update process.'",
+    deescalation: "When a conversation becomes tense, slow the pace. Acknowledge the concern, keep your voice calm, and focus on one issue at a time. If needed, agree to pause and return to the discussion at a specific time.",
+    boundaries: "Respectful boundaries can be clear and collaborative. For example: 'I want to work through this with you. I also need us to agree on a timeline so the team can plan around it.'"
+  };
+
+  let response = suggestions[focus];
+  if (reflection) {
+    response += " Your reflection gives you a useful starting point. Consider practising this strategy in a lower-pressure conversation before applying it in a more challenging situation.";
+  }
+
+  document.getElementById("assistantText").textContent = response;
+  document.getElementById("assistantResponse").classList.add("visible");
+}
+
+function saveReflection() {
+  reflectionText = document.getElementById("takeaway").value.trim();
+  const message = document.getElementById("reflectionFeedback");
+
+  if (!reflectionText) {
+    message.querySelector("strong").textContent = "Add a reflection first.";
+    message.querySelector("p").textContent = "Write one idea or behaviour you would like to practise.";
+  } else {
+    message.querySelector("strong").textContent = "Reflection saved in this practice session.";
+    message.querySelector("p").textContent = "Your response will appear in the completion summary.";
+  }
+
+  message.classList.add("visible");
+}
+
+function escapeHTML(value) {
+  return value.replace(/[&<>"']/g, char => ({
+    "&": "&amp;",
+    "<": "&lt;",
+    ">": "&gt;",
+    '"': "&quot;",
+    "'": "&#039;"
+  })[char]);
+}
+
+function restartCourse() {
+  currentStep = 1;
+  selectedChoice = "";
+  document.getElementById("courseContent").innerHTML = `
+    <div class="step-count">YOUR PRACTICE STARTS HERE</div>
+    <h2>A conversation becomes tense</h2>
+    <p>You are working on a shared project with Jordan. A deadline is approaching, and you notice that a task assigned to Jordan has not been completed. When you ask about it, Jordan responds defensively.</p>
+    <div class="person"><div class="avatar">J</div><div><strong>Jordan</strong><small>Project teammate</small></div></div>
+    <div class="prompt-card"><strong>Jordan says:</strong><p>"I've had a lot on my plate. It feels like you're blaming me when nobody else has checked in about this."</p></div>
+    <p><strong>How would you respond?</strong></p>
+    <div class="choice-list">
+      <button class="choice" onclick="startScenario('a')"><strong>A. Be direct about the missed deadline</strong><span>"The task was assigned to you, and we need it finished today."</span></button>
+      <button class="choice" onclick="startScenario('b')"><strong>B. Acknowledge their concern and ask a question</strong><span>"I didn't mean to make you feel blamed. Can you tell me what's getting in the way?"</span></button>
+      <button class="choice" onclick="startScenario('c')"><strong>C. Step back from the conversation</strong><span>"Let's leave this for now and talk when we have more time."</span></button>
+    </div>
+    <div class="feedback" id="feedback"><strong id="feedbackTitle"></strong><p id="feedbackText"></p></div>
+    <div class="course-actions"><button class="secondary-btn" onclick="resetScenario()">Restart scenario</button><button class="primary-btn" id="nextBtn" onclick="nextStep()" style="display:none">Continue →</button></div>
+  `;
+  updateProgress();
+}
+
+updateProgress();
+</script>
+
+</body>
+</html>
