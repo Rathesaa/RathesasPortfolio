@@ -4,1394 +4,517 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>LearnFlow | Rathesa Kodeeswaran</title>
+<title>LearnFlow | Learning Experience Design Portfolio</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-
 <style>
 :root {
-  --ink: #22283a;
-  --muted: #777e91;
-  --purple: #7166d8;
-  --purple-dark: #554bb8;
-  --lavender: #eeedff;
-  --blue: #e9f1ff;
-  --cyan: #dff4f5;
-  --paper: #ffffff;
-  --background: #f6f7fb;
-  --line: #e9eaf1;
-  --green: #278b72;
-  --soft-green: #e3f4ee;
-}
-
-* { box-sizing: border-box; }
-
-html { scroll-behavior: smooth; }
-
-body {
-  margin: 0;
-  background: var(--background);
-  color: var(--ink);
-  font-family: 'DM Sans', sans-serif;
-  line-height: 1.65;
-}
-
-a { color: inherit; text-decoration: none; }
-
-nav {
-  max-width: 1120px;
-  margin: auto;
-  padding: 23px 28px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  font-size: 13px;
-  font-weight: 700;
-}
-
-.nav-links {
-  display: flex;
-  gap: 25px;
-  color: var(--muted);
-}
-
-nav a:hover { color: var(--purple); }
-
-.hero {
-  max-width: 1120px;
-  margin: 35px auto 65px;
-  padding: 68px 70px;
-  background: linear-gradient(120deg, #e8eaff, #e8f4f8);
-  border-radius: 12px;
-  position: relative;
-  overflow: hidden;
-}
-
-.hero::after {
-  content: "L";
-  position: absolute;
-  right: 60px;
-  bottom: -135px;
-  font-family: 'Manrope', sans-serif;
-  font-size: 390px;
-  line-height: 1;
-  font-weight: 800;
-  color: rgba(113,102,216,.08);
-}
-
-.eyebrow {
-  color: var(--purple-dark);
-  font-size: 10px;
-  font-weight: 700;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-}
-
-h1, h2, h3, h4 {
-  font-family: 'Manrope', sans-serif;
-  line-height: 1.25;
-}
-
-h1 {
-  font-size: clamp(40px, 6vw, 66px);
-  letter-spacing: -2.5px;
-  max-width: 650px;
-  margin: 18px 0;
-}
-
-.hero p {
-  max-width: 620px;
-  color: #5f667b;
-  font-size: 16px;
-}
-
-.tags {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 9px;
-  margin-top: 25px;
-  position: relative;
-  z-index: 1;
-}
-
-.tag {
-  background: rgba(255,255,255,.75);
-  border: 1px solid rgba(255,255,255,.8);
-  padding: 7px 13px;
-  border-radius: 30px;
-  font-size: 11px;
-  font-weight: 700;
-  color: #595b91;
-}
-
-main {
-  max-width: 1000px;
-  margin: auto;
-  padding: 0 28px 85px;
-}
-
-section { margin-bottom: 75px; }
-
-.section-label {
-  font-size: 10px;
-  text-transform: uppercase;
-  letter-spacing: 1.8px;
-  font-weight: 700;
-  color: var(--purple);
-  margin-bottom: 12px;
-}
-
-h2 {
-  font-size: 30px;
-  letter-spacing: -.9px;
-  margin: 0 0 17px;
-}
-
-h3 { font-size: 17px; margin: 0 0 10px; }
-
-p { color: #697084; }
-
-.overview-grid {
-  display: grid;
-  grid-template-columns: 1.1fr .9fr;
-  gap: 20px;
-}
-
-.info-card {
-  background: var(--paper);
-  border: 1px solid var(--line);
-  border-radius: 9px;
-  padding: 25px;
-}
-
-.info-card p { font-size: 14px; margin-bottom: 0; }
-
-.objectives {
-  display: grid;
-  gap: 10px;
-  margin-top: 20px;
-}
-
-.objective {
-  background: white;
-  border: 1px solid var(--line);
-  border-radius: 7px;
-  padding: 15px 18px;
-  font-size: 14px;
-  display: flex;
-  gap: 14px;
-}
-
-.objective span {
-  color: var(--purple);
-  font-weight: 800;
-}
-
-.design-callout {
-  background: var(--lavender);
-  border-radius: 9px;
-  padding: 25px;
-  margin-top: 20px;
-}
-
-.design-callout p {
-  color: #55547d;
-  margin-bottom: 0;
-}
-
-.dashboard-wrap {
-  background: white;
-  border: 1px solid var(--line);
-  border-radius: 12px;
-  overflow: hidden;
-  box-shadow: 0 12px 40px rgba(36,42,73,.06);
-}
-
-.dashboard-header {
-  padding: 20px 25px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  border-bottom: 1px solid var(--line);
-}
-
-.brand {
-  font-family: 'Manrope', sans-serif;
-  font-weight: 800;
-  font-size: 17px;
-}
-
-.brand span { color: var(--purple); }
-
-.profile {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  font-size: 12px;
-  font-weight: 700;
-}
-
-.profile-icon {
-  width: 34px;
-  height: 34px;
-  border-radius: 50%;
-  background: var(--lavender);
-  display: grid;
-  place-items: center;
-  color: var(--purple-dark);
-}
-
-.dashboard-body {
-  display: grid;
-  grid-template-columns: 175px 1fr;
-  min-height: 650px;
-}
-
-.sidebar {
-  padding: 25px 15px;
-  background: #fafaff;
-  border-right: 1px solid var(--line);
-}
-
-.sidebar-label {
-  font-size: 9px;
-  letter-spacing: 1.3px;
-  color: #a0a3b3;
-  font-weight: 700;
-  padding: 0 10px;
-  margin: 10px 0;
-}
-
-.side-link {
-  display: block;
-  border: 0;
-  width: 100%;
-  padding: 11px 10px;
-  margin: 4px 0;
-  background: transparent;
-  border-radius: 6px;
-  text-align: left;
-  color: #73798b;
-  font: inherit;
-  font-size: 11px;
-  cursor: pointer;
-}
-
-.side-link.active {
-  color: var(--purple-dark);
-  background: var(--lavender);
-  font-weight: 700;
-}
-
-.dashboard-main {
-  padding: 30px;
-  min-width: 0;
-}
-
-.welcome-row {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  gap: 15px;
-  margin-bottom: 22px;
-}
-
-.welcome-row h3 {
-  font-size: 21px;
-  margin-bottom: 3px;
-}
-
-.welcome-row p { font-size: 12px; margin: 0; }
-
-.date-label {
-  background: #f2f3f9;
-  border-radius: 5px;
-  padding: 7px 10px;
-  color: #777d91;
-  font-size: 10px;
-  white-space: nowrap;
-}
-
-.stats {
-  display: grid;
-  grid-template-columns: repeat(3,1fr);
-  gap: 12px;
-  margin-bottom: 24px;
-}
-
-.stat {
-  padding: 16px;
-  background: #f8f8fd;
-  border: 1px solid #eeeeF5;
-  border-radius: 7px;
-}
-
-.stat strong {
-  display: block;
-  font-family: 'Manrope', sans-serif;
-  font-size: 22px;
-}
-
-.stat span {
-  color: var(--muted);
-  font-size: 10px;
-}
-
-.dashboard-section-title {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin: 23px 0 13px;
-}
-
-.dashboard-section-title h4 {
-  font-size: 13px;
-  margin: 0;
-}
-
-.dashboard-section-title a {
-  color: var(--purple);
-  font-size: 10px;
-  font-weight: 700;
-}
-
-.course-list {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 12px;
-}
-
-.course-card {
-  border: 1px solid var(--line);
-  border-radius: 8px;
-  padding: 14px;
-  min-width: 0;
-}
-
-.course-art {
-  height: 83px;
-  border-radius: 6px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 27px;
-  margin-bottom: 12px;
-}
-
-.art-blue { background: #e7efff; }
-.art-pink { background: #f8eaf0; }
-.art-green { background: #e3f3ed; }
-.art-yellow { background: #fff3db; }
-
-.course-card h4 {
-  font-size: 12px;
-  margin: 0 0 4px;
-}
-
-.course-card p {
-  font-size: 10px;
-  margin: 0 0 10px;
-}
-
-.course-meta {
-  display: flex;
-  justify-content: space-between;
-  font-size: 9px;
-  color: var(--muted);
-}
-
-.progress-track {
-  height: 5px;
-  background: #eeeff4;
-  border-radius: 10px;
-  margin-top: 8px;
-  overflow: hidden;
-}
-
-.progress-fill {
-  height: 100%;
-  background: var(--purple);
-  border-radius: 10px;
-}
-
-.recommend-banner {
-  background: linear-gradient(110deg, #efedff, #eaf5fa);
-  padding: 18px;
-  border-radius: 8px;
-  display: flex;
-  justify-content: space-between;
-  gap: 15px;
-  align-items: center;
-  margin-top: 20px;
-}
-
-.recommend-banner strong {
-  display: block;
-  font-size: 12px;
-}
-
-.recommend-banner p {
-  font-size: 10px;
-  margin: 4px 0 0;
-}
-
-.mini-button {
-  border: 0;
-  background: var(--purple);
-  color: white;
-  border-radius: 5px;
-  padding: 9px 12px;
-  font-size: 10px;
-  font-weight: 700;
-  cursor: pointer;
-  white-space: nowrap;
-}
-
-.mini-button:hover { background: var(--purple-dark); }
-
-.dashboard-view { display: none; }
-.dashboard-view.active { display: block; }
-
-.recommend-demo {
-  background: #fff;
-  border: 1px solid var(--line);
-  border-radius: 12px;
-  overflow: hidden;
-}
-
-.ai-header {
-  background: #302f58;
-  color: white;
-  padding: 27px;
-}
-
-.ai-header .section-label { color: #c8c5ff; }
-
-.ai-header h3 {
-  font-size: 21px;
-  margin: 0 0 7px;
-}
-
-.ai-header p {
-  color: #d7d6eb;
-  font-size: 13px;
-  max-width: 680px;
-  margin: 0;
-}
-
-.ai-body { padding: 28px; }
-
-.form-group { margin-bottom: 23px; }
-
-.form-group label {
-  display: block;
-  font-size: 13px;
-  font-weight: 700;
-  margin-bottom: 9px;
-}
-
-.form-help {
-  font-size: 11px;
-  color: var(--muted);
-  margin: -4px 0 12px;
-}
-
-.goal-grid {
-  display: grid;
-  grid-template-columns: repeat(3,1fr);
-  gap: 10px;
-}
-
-.goal-option input, .interest-option input {
-  position: absolute;
-  opacity: 0;
-  pointer-events: none;
-}
-
-.goal-option span {
-  display: block;
-  padding: 14px 10px;
-  border: 1px solid var(--line);
-  border-radius: 7px;
-  text-align: center;
-  font-size: 11px;
-  cursor: pointer;
-  transition: .2s;
-}
-
-.goal-option input:checked + span {
-  background: var(--lavender);
-  border-color: var(--purple);
-  color: var(--purple-dark);
-  font-weight: 700;
-}
-
-.interest-grid {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 9px;
-}
-
-.interest-option span {
-  display: inline-block;
-  border: 1px solid var(--line);
-  border-radius: 30px;
-  padding: 8px 13px;
-  cursor: pointer;
-  font-size: 11px;
-}
-
-.interest-option input:checked + span {
-  background: var(--blue);
-  border-color: #8ca9d9;
-  color: #395c94;
-  font-weight: 700;
-}
-
-.activity-select {
-  width: 100%;
-  padding: 12px;
-  border: 1px solid var(--line);
-  border-radius: 6px;
-  background: white;
-  color: var(--ink);
-  font: inherit;
-  font-size: 12px;
-}
-
-.generate-button {
-  background: var(--purple);
-  border: 0;
-  color: white;
-  padding: 13px 20px;
-  border-radius: 6px;
-  font: inherit;
-  font-size: 12px;
-  font-weight: 700;
-  cursor: pointer;
-}
-
-.generate-button:hover { background: var(--purple-dark); }
-
-.recommend-results {
-  display: none;
-  background: #f8f8fd;
-  border: 1px solid #e8e7f5;
-  padding: 23px;
-  border-radius: 8px;
-  margin-top: 25px;
-}
-
-.recommend-results.visible { display: block; }
-
-.result-intro {
-  font-size: 12px;
-  margin: 5px 0 17px;
-}
-
-.result-card {
-  display: flex;
-  gap: 14px;
-  padding: 14px;
-  background: white;
-  border: 1px solid var(--line);
-  border-radius: 7px;
-  margin-top: 10px;
-  align-items: center;
-}
-
-.result-icon {
-  min-width: 43px;
-  height: 43px;
-  border-radius: 7px;
-  display: grid;
-  place-items: center;
-  background: var(--lavender);
-  font-size: 20px;
-}
-
-.result-card h4 { font-size: 12px; margin: 0 0 3px; }
-.result-card p { font-size: 10px; margin: 0; }
-
-.ai-explanation {
-  background: #f2f1ff;
-  border-left: 3px solid var(--purple);
-  padding: 15px;
-  margin-top: 17px;
-  border-radius: 4px;
-}
-
-.ai-explanation strong {
-  font-size: 11px;
-  display: block;
-  margin-bottom: 4px;
-}
-
-.ai-explanation p {
-  font-size: 11px;
-  margin: 0;
-}
-
-.ai-steps {
-  display: grid;
-  grid-template-columns: repeat(2,1fr);
-  gap: 14px;
-  margin-top: 25px;
-}
-
-.ai-step {
-  background: white;
-  border: 1px solid var(--line);
-  border-radius: 8px;
-  padding: 19px;
-}
-
-.ai-step .number {
-  color: var(--purple);
-  font-weight: 800;
-  font-size: 11px;
-}
-
-.ai-step h4 { font-size: 13px; margin: 8px 0 5px; }
-.ai-step p { font-size: 12px; margin: 0; }
-
-.future-note {
-  background: #eaf3f6;
-  padding: 23px;
-  border-radius: 8px;
-  margin-top: 20px;
-}
-
-.future-note h3 { color: #385b6a; }
-.future-note p { color: #536c77; font-size: 13px; margin-bottom: 0; }
-
-.case-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 15px;
-}
-
-.case-card {
-  background: white;
-  border: 1px solid var(--line);
-  padding: 23px;
-  border-radius: 8px;
-}
-
-.case-card p { font-size: 13px; margin-bottom: 0; }
-
-.portfolio-note {
-  background: #eeedf8;
-  border-radius: 8px;
-  padding: 21px 23px;
-  color: #62617e;
-  font-size: 12px;
-}
-
-footer {
-  text-align: center;
-  border-top: 1px solid var(--line);
-  padding: 27px;
-  color: var(--muted);
-  font-size: 11px;
-}
-
-@media(max-width:750px) {
-  .hero { margin: 15px; padding: 42px 27px; }
-  .hero::after { font-size: 230px; right: 0; }
-  main { padding: 0 17px 60px; }
-  .overview-grid, .case-grid { grid-template-columns: 1fr; }
-  .dashboard-body { grid-template-columns: 1fr; }
-  .sidebar {
-    display: flex;
-    gap: 4px;
-    overflow-x: auto;
-    border-right: 0;
-    border-bottom: 1px solid var(--line);
-    padding: 10px;
-  }
-  .sidebar-label { display: none; }
-  .side-link { white-space: nowrap; width: auto; }
-  .dashboard-main { padding: 20px 15px; }
-  .stats { gap: 7px; }
-  .stat { padding: 11px; }
-  .stat strong { font-size: 18px; }
-  .course-list { grid-template-columns: 1fr 1fr; }
-  .goal-grid { grid-template-columns: 1fr 1fr; }
-  .ai-steps { grid-template-columns: 1fr; }
-}
-
-@media(max-width:450px) {
-  nav { padding: 18px; }
-  .nav-links { gap: 12px; }
-  .nav-links a:last-child { display: none; }
-  .welcome-row { flex-direction: column; }
-  .course-list { grid-template-columns: 1fr; }
-  .recommend-banner { align-items: flex-start; flex-direction: column; }
+  --ink:#202b39;
+  --muted:#687687;
+  --navy:#172d49;
+  --blue:#426cba;
+  --blue-light:#edf3fc;
+  --teal:#398d83;
+  --teal-light:#eaf5f2;
+  --gold:#d5a44b;
+  --line:#e6eaf0;
+  --surface:#ffffff;
+  --canvas:#f5f7fa;
+  --radius:18px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--canvas);color:var(--ink);font-family:"DM Sans",sans-serif;line-height:1.6}
+h1,h2,h3,h4{font-family:"Manrope",sans-serif;line-height:1.2}
+a{color:inherit}
+.topbar{background:#fff;border-bottom:1px solid var(--line);padding:18px 6%;display:flex;justify-content:space-between;align-items:center}
+.brand{font-family:Manrope;font-weight:800;letter-spacing:-.5px;color:var(--navy);text-decoration:none}
+.topbar nav{display:flex;gap:26px;font-size:13px;color:var(--muted)}
+.topbar nav a{text-decoration:none}
+.topbar nav a:hover{color:var(--blue)}
+.back{font-size:13px;color:var(--muted);text-decoration:none}
+.container{max-width:1160px;margin:auto;padding:0 28px}
+.hero{padding:74px 0 58px;background:#fff}
+.eyebrow{font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--blue)}
+.hero h1{font-size:clamp(38px,5vw,62px);letter-spacing:-2.5px;color:var(--navy);max-width:800px;margin:16px 0}
+.hero p{max-width:690px;color:var(--muted);font-size:17px}
+.pills{display:flex;gap:9px;flex-wrap:wrap;margin-top:25px}
+.pill{font-size:12px;background:var(--blue-light);color:#355a99;padding:7px 12px;border-radius:30px;font-weight:600}
+.project-meta{display:grid;grid-template-columns:repeat(4,1fr);gap:15px;margin-top:40px;padding-top:25px;border-top:1px solid var(--line)}
+.meta-label{font-size:10px;text-transform:uppercase;letter-spacing:1.3px;color:#8994a2;font-weight:700}
+.meta-value{font-size:13px;margin-top:5px;font-weight:600}
+.section{padding:68px 0}
+.section.white{background:#fff}
+.section-heading{font-size:30px;letter-spacing:-1px;color:var(--navy);margin:8px 0 14px}
+.lead{font-size:16px;color:var(--muted);max-width:760px}
+.grid-2{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:30px}
+.panel{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:26px}
+.panel h3{font-size:17px;margin:0 0 12px;color:var(--navy)}
+.panel p{font-size:14px;color:var(--muted);margin:0}
+.problem{background:#f0f4fa;border-left:4px solid var(--blue);padding:24px 28px;border-radius:0 14px 14px 0;margin-top:28px}
+.problem strong{display:block;color:var(--navy);margin-bottom:6px}
+.problem p{margin:0;color:#58687c;font-size:14px}
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:17px;margin-top:28px}
+.info-card{background:#fff;border:1px solid var(--line);border-radius:16px;padding:23px}
+.number{width:34px;height:34px;border-radius:10px;background:var(--blue-light);color:var(--blue);display:grid;place-items:center;font-weight:800;margin-bottom:16px}
+.info-card h3{font-size:15px;margin:0 0 8px}
+.info-card p{font-size:13px;color:var(--muted);margin:0}
+.objectives{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:25px}
+.objective{display:flex;gap:13px;background:#fff;border:1px solid var(--line);border-radius:13px;padding:17px;font-size:13px}
+.check{color:var(--teal);font-weight:800}
+.strategy-list{display:grid;gap:13px;margin-top:25px}
+.strategy{display:flex;gap:17px;padding:18px 20px;border:1px solid var(--line);border-radius:14px;background:#fff}
+.strategy-icon{width:40px;height:40px;flex-shrink:0;border-radius:12px;background:var(--teal-light);display:grid;place-items:center;color:var(--teal);font-size:18px}
+.strategy h3{font-size:15px;margin:0 0 5px}
+.strategy p{font-size:13px;color:var(--muted);margin:0}
+.prototype-intro{display:flex;justify-content:space-between;gap:20px;align-items:end;margin-bottom:25px}
+.prototype-intro p{max-width:650px;color:var(--muted);font-size:14px}
+.demo-shell{background:#eaf0f7;border-radius:22px;padding:22px;box-shadow:0 18px 50px rgba(25,45,75,.08)}
+.app{background:#fff;border:1px solid #e3e8ef;border-radius:15px;overflow:hidden;min-height:650px;display:grid;grid-template-columns:205px 1fr}
+.sidebar{background:#172d49;color:#fff;padding:25px 16px}
+.app-logo{font-family:Manrope;font-size:19px;font-weight:800;padding:0 10px 25px}
+.app-logo span{color:#83c5bb}
+.profile{display:flex;gap:10px;align-items:center;padding:14px 9px;border-top:1px solid #38506c;border-bottom:1px solid #38506c;margin-bottom:20px}
+.avatar{width:34px;height:34px;background:#dce8f5;color:#24466e;border-radius:50%;display:grid;place-items:center;font-weight:800;font-size:12px}
+.profile small{display:block;color:#aebdd0;font-size:10px}
+.profile strong{font-size:12px}
+.nav-label{font-size:9px;text-transform:uppercase;letter-spacing:1.4px;color:#9aacc2;padding:12px 10px 7px}
+.nav-item{padding:10px;border-radius:8px;color:#d3deeb;font-size:12px;margin:3px 0;cursor:pointer;display:flex;gap:10px;align-items:center}
+.nav-item.active,.nav-item:hover{background:#2a4565;color:#fff}
+.app-main{padding:27px;background:#f8fafc;min-width:0}
+.app-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:24px}
+.app-top small{color:#8491a1;font-size:11px}
+.app-top strong{font-size:12px}
+.welcome h2{font-size:23px;color:var(--navy);margin:0 0 5px}
+.welcome p{font-size:12px;color:var(--muted);margin:0}
+.dashboard-grid{display:grid;grid-template-columns:1.55fr 1fr;gap:15px;margin-top:22px}
+.dash-card{background:#fff;border:1px solid var(--line);border-radius:13px;padding:18px;min-width:0}
+.dash-card h3{font-size:13px;color:var(--navy);margin:0 0 13px}
+.continue-card{background:#edf3fc;border:1px solid #dce7f7}
+.course-tag{font-size:9px;color:#426cba;font-weight:800;text-transform:uppercase;letter-spacing:1px}
+.continue-card h3{font-size:17px;margin:8px 0 5px}
+.continue-card p{font-size:11px;color:#64758a;margin:0 0 14px}
+.progress-track{height:7px;background:#dbe3ee;border-radius:10px;overflow:hidden}
+.progress-fill{height:100%;background:var(--blue);border-radius:10px;transition:width .3s}
+.progress-label{display:flex;justify-content:space-between;font-size:10px;color:#68788c;margin:7px 0 14px}
+.primary-btn,.secondary-btn{border:0;border-radius:8px;padding:10px 15px;font-family:inherit;font-weight:700;font-size:11px;cursor:pointer}
+.primary-btn{background:var(--blue);color:#fff}
+.primary-btn:hover{background:#315899}
+.secondary-btn{background:#edf1f6;color:#42556d}
+.stat-grid{display:grid;grid-template-columns:1fr 1fr;gap:9px}
+.stat{background:#f7f9fc;border-radius:10px;padding:13px}
+.stat strong{font-family:Manrope;font-size:22px;color:var(--navy);display:block}
+.stat span{font-size:10px;color:var(--muted)}
+.course-row{display:flex;gap:12px;align-items:center;padding:12px 0;border-bottom:1px solid #edf0f4}
+.course-row:last-child{border:0}
+.course-art{width:43px;height:43px;border-radius:10px;display:grid;place-items:center;font-size:18px;flex-shrink:0}
+.art-blue{background:#e8effb}.art-green{background:#e8f4ee}.art-gold{background:#fbf1df}
+.course-row strong{font-size:11px;display:block}
+.course-row small{font-size:10px;color:var(--muted)}
+.course-row button{margin-left:auto;white-space:nowrap}
+.recommendation{background:#f0f7f5;border:1px solid #dcece7}
+.recommendation p{font-size:11px;color:#5e746e;margin:0 0 12px}
+.page-view{display:none}
+.page-view.active{display:block}
+.view-title{font-size:22px;color:var(--navy);margin:0 0 6px}
+.view-subtitle{font-size:12px;color:var(--muted);margin:0 0 22px}
+.course-detail{display:grid;grid-template-columns:1fr auto;gap:15px;align-items:center}
+.course-detail h3{margin:5px 0;font-size:16px}
+.course-detail p{font-size:11px;color:var(--muted);margin:0}
+.filter-row{display:flex;gap:8px;flex-wrap:wrap;margin:15px 0}
+.filter{border:1px solid var(--line);background:#fff;padding:7px 12px;border-radius:20px;font-size:10px;cursor:pointer;color:var(--muted)}
+.filter.active{background:var(--blue-light);color:var(--blue);border-color:#cddcf1}
+.catalog-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.catalog-card{background:#fff;border:1px solid var(--line);border-radius:12px;padding:16px}
+.catalog-card .course-art{margin-bottom:12px}
+.catalog-card h3{font-size:13px;margin:0 0 5px}
+.catalog-card p{font-size:10px;color:var(--muted);margin:0 0 12px}
+.resource-row{background:#fff;border:1px solid var(--line);border-radius:10px;padding:14px;margin:9px 0;display:flex;justify-content:space-between;gap:12px;font-size:11px}
+.resource-row span{color:var(--muted)}
+.check-row{display:flex;gap:12px;align-items:center;background:#fff;border:1px solid var(--line);border-radius:10px;padding:14px;margin:9px 0;font-size:12px}
+.check-row input{accent-color:var(--teal);width:16px;height:16px}
+.notice{font-size:10px;color:var(--muted);margin-top:18px;padding:13px;background:#f0f3f7;border-radius:9px}
+.callout{padding:20px;background:#edf3fc;border-radius:13px;margin-top:20px}
+.callout strong{color:var(--navy);font-size:13px}
+.callout p{font-size:12px;color:var(--muted);margin:5px 0 0}
+.evaluation{display:grid;grid-template-columns:repeat(3,1fr);gap:15px;margin-top:25px}
+.eval-card{border-top:3px solid var(--teal);background:#fff;padding:18px;border-radius:0 0 12px 12px}
+.eval-card strong{font-size:13px}
+.eval-card p{font-size:12px;color:var(--muted);margin:7px 0 0}
+.reflection{background:var(--navy);color:#fff;padding:35px;border-radius:18px;margin-top:28px}
+.reflection h3{font-size:20px;margin:0 0 10px}
+.reflection p{font-size:14px;color:#d1dce9;max-width:780px;margin:0}
+.footer{padding:35px 0;text-align:center;color:#8792a1;font-size:11px}
+@media(max-width:800px){
+ .topbar nav{display:none}
+ .project-meta{grid-template-columns:1fr 1fr}
+ .cards,.evaluation{grid-template-columns:1fr}
+ .grid-2,.objectives{grid-template-columns:1fr}
+ .app{grid-template-columns:1fr}
+ .sidebar{display:none}
+ .dashboard-grid{grid-template-columns:1fr}
+ .prototype-intro{display:block}
+}
+@media(max-width:520px){
+ .container{padding:0 18px}
+ .hero{padding:50px 0 40px}
+ .app-main{padding:15px}
+ .demo-shell{padding:8px}
+ .catalog-grid{grid-template-columns:1fr}
 }
 </style>
 </head>
-
 <body>
-
-<nav>
-  <a href="index.html">← Rathesa Kodeeswaran</a>
-  <div class="nav-links">
-    <a href="index.html#work">All projects</a>
+<header class="topbar">
+  <a class="brand" href="index.html">RATHESA KODEESWARAN</a>
+  <nav>
+    <a href="index.html#work">Projects</a>
     <a href="index.html#about">About</a>
-  </div>
-</nav>
-
-<header class="hero">
-  <div class="eyebrow">Project 03 · UX + self-directed learning</div>
-  <h1>LearnFlow: A More Supportive LMS Experience</h1>
-  <p>
-    Rethinking the learning management system experience through clearer
-    navigation, personalized recommendations, and progress visibility.
-    A concept designed to help learners take a more active role in their
-    development.
-  </p>
-  <div class="tags">
-    <span class="tag">UX/UI Design</span>
-    <span class="tag">Figma</span>
-    <span class="tag">User Flows</span>
-    <span class="tag">Wireframes</span>
-    <span class="tag">Interactive Prototyping</span>
-  </div>
+    <a href="index.html#contact">Contact</a>
+  </nav>
+  <a class="back" href="index.html#work">← All projects</a>
 </header>
 
-<main>
-
-<section>
-  <div class="section-label">01 / Project overview</div>
-  <h2>Making workplace learning easier to navigate</h2>
-
-  <div class="overview-grid">
-    <div class="info-card">
-      <h3>The learning problem</h3>
-      <p>
-        Learners can lose time navigating a learning platform, locating
-        materials, and figuring out what to do next. When courses,
-        resources, and progress information are spread across different
-        areas, it can be difficult to stay organized and motivated.
-        LearnFlow explores how a clearer, more supportive interface
-        can reduce this friction.
-      </p>
-    </div>
-    <div class="info-card">
-      <h3>Target audience</h3>
-      <p>
-        Employees completing assigned workplace learning as well as
-        learners exploring optional development opportunities.
-        The concept considers people with different experience levels,
-        schedules, and learning goals.
-      </p>
-    </div>
+<section class="hero">
+ <div class="container">
+  <div class="eyebrow">Project 03 · UX + Self-Directed Learning</div>
+  <h1>LearnFlow: A More Supportive LMS Experience</h1>
+  <p>A learning management system concept designed to make workplace learning easier to navigate. LearnFlow brings course discovery, learning resources, and progress tracking into one organized experience.</p>
+  <div class="pills">
+   <span class="pill">UX/UI Design</span>
+   <span class="pill">Adult Learning</span>
+   <span class="pill">Information Architecture</span>
+   <span class="pill">Learning Experience Design</span>
   </div>
+  <div class="project-meta">
+   <div><div class="meta-label">Project type</div><div class="meta-value">Independent concept</div></div>
+   <div><div class="meta-label">Audience</div><div class="meta-value">Workplace learners</div></div>
+   <div><div class="meta-label">Focus</div><div class="meta-value">Learning platform UX</div></div>
+   <div><div class="meta-label">Tools</div><div class="meta-value">Figma · HTML · CSS · JavaScript</div></div>
+  </div>
+ </div>
+</section>
 
+<section class="section">
+ <div class="container">
+  <div class="eyebrow">01 · The challenge</div>
+  <h2 class="section-heading">Making workplace learning easier to navigate</h2>
+  <p class="lead">Learning platforms can contain valuable training and development resources, but learners may struggle to find relevant courses, locate materials, or understand what they should do next.</p>
+  <div class="problem">
+   <strong>The design problem</strong>
+   <p>How might we create a more organized and supportive learning experience that helps employees find relevant learning, manage their progress, and take ownership of their development?</p>
+  </div>
+  <div class="grid-2">
+   <div class="panel">
+    <h3>Learner needs</h3>
+    <p>Employees need a clear view of assigned learning, accessible course materials, visible progress, and recommendations that connect to their interests and development goals.</p>
+   </div>
+   <div class="panel">
+    <h3>Design opportunity</h3>
+    <p>Bring key learning activities into one place and reduce the effort required to move between course discovery, learning content, and progress information.</p>
+   </div>
+  </div>
+ </div>
+</section>
+
+<section class="section white">
+ <div class="container">
+  <div class="eyebrow">02 · Audience & objectives</div>
+  <h2 class="section-heading">Designing around the learner</h2>
+  <p class="lead">The concept is intended for employees balancing required workplace training with optional professional development.</p>
+  <div class="cards">
+   <div class="info-card"><div class="number">01</div><h3>Assigned learners</h3><p>Employees who need to complete mandatory courses and understand deadlines and outstanding requirements.</p></div>
+   <div class="info-card"><div class="number">02</div><h3>Self-directed learners</h3><p>Employees exploring optional courses and resources to build skills or support career development.</p></div>
+   <div class="info-card"><div class="number">03</div><h3>Busy professionals</h3><p>Employees who need to quickly locate relevant information and return to learning without unnecessary navigation.</p></div>
+  </div>
+  <h3 style="margin:35px 0 0;color:var(--navy);font-size:17px">Learning experience objectives</h3>
   <div class="objectives">
-    <div class="objective"><span>01</span> Find assigned and recommended learning in one place.</div>
-    <div class="objective"><span>02</span> Understand course progress, completion status, and next steps.</div>
-    <div class="objective"><span>03</span> Discover resources that relate to personal and professional goals.</div>
+   <div class="objective"><span class="check">✓</span><span>Help learners locate assigned and recommended learning opportunities.</span></div>
+   <div class="objective"><span class="check">✓</span><span>Make course progress and outstanding learning requirements easy to understand.</span></div>
+   <div class="objective"><span class="check">✓</span><span>Connect learners with resources that support their interests and development goals.</span></div>
+   <div class="objective"><span class="check">✓</span><span>Provide a consistent place to access courses, materials, and learning activities.</span></div>
   </div>
-
-  <div class="design-callout">
-    <h3>Why self-directed learning?</h3>
-    <p>
-      Self-directed learning gives learners more visibility and choice
-      in their development. LearnFlow supports this by making learning
-      opportunities easier to discover, progress easier to understand,
-      and next steps easier to identify. The platform supports the
-      learning process rather than dictating how someone must learn.
-    </p>
-  </div>
+ </div>
 </section>
 
-<section>
-  <div class="section-label">02 / Interface concept</div>
-  <h2>A learning dashboard built around the learner</h2>
-  <p>
-    The dashboard brings together active courses, progress, and learning
-    recommendations. Explore the different navigation areas in this
-    interactive interface concept.
-  </p>
-
-  <div class="dashboard-wrap">
-    <div class="dashboard-header">
-      <div class="brand">learn<span>flow.</span></div>
-      <div class="profile">
-        <div class="profile-icon">RK</div>
-        <span>Alex Morgan</span>
-      </div>
-    </div>
-
-    <div class="dashboard-body">
-      <aside class="sidebar">
-        <div class="sidebar-label">LEARNING SPACE</div>
-        <button class="side-link active" onclick="showView('overview',this)">⌂ &nbsp; Overview</button>
-        <button class="side-link" onclick="showView('mycourses',this)">▤ &nbsp; My courses</button>
-        <button class="side-link" onclick="showView('discover',this)">⌕ &nbsp; Discover</button>
-        <button class="side-link" onclick="showView('progress',this)">◷ &nbsp; My progress</button>
-      </aside>
-
-      <div class="dashboard-main">
-
-        <div class="dashboard-view active" id="overview">
-          <div class="welcome-row">
-            <div>
-              <h3>Welcome back, Alex!</h3>
-              <p>Pick up where you left off or explore something new.</p>
-            </div>
-            <div class="date-label">YOUR LEARNING SPACE</div>
-          </div>
-
-          <div class="stats">
-            <div class="stat"><strong>04</strong><span>Active courses</span></div>
-            <div class="stat"><strong>68%</strong><span>Average progress</span></div>
-            <div class="stat"><strong>12h</strong><span>Learning time</span></div>
-          </div>
-
-          <div class="dashboard-section-title">
-            <h4>Continue learning</h4>
-            <a href="#" onclick="showView('mycourses',document.querySelectorAll('.side-link')[1]);return false;">View all</a>
-          </div>
-
-          <div class="course-list">
-            <div class="course-card">
-              <div class="course-art art-blue">💬</div>
-              <h4>Effective Communication</h4>
-              <p>Professional development · 6 lessons</p>
-              <div class="course-meta"><span>Progress</span><strong>75%</strong></div>
-              <div class="progress-track"><div class="progress-fill" style="width:75%"></div></div>
-            </div>
-            <div class="course-card">
-              <div class="course-art art-pink">👥</div>
-              <h4>Working in Teams</h4>
-              <p>Workplace skills · 4 lessons</p>
-              <div class="course-meta"><span>Progress</span><strong>40%</strong></div>
-              <div class="progress-track"><div class="progress-fill" style="width:40%"></div></div>
-            </div>
-          </div>
-
-          <div class="recommend-banner">
-            <div>
-              <strong>Looking for your next learning opportunity?</strong>
-              <p>Explore resources selected around your interests and goals.</p>
-            </div>
-            <button class="mini-button" onclick="showView('discover',document.querySelectorAll('.side-link')[2])">Explore courses</button>
-          </div>
-        </div>
-
-        <div class="dashboard-view" id="mycourses">
-          <div class="welcome-row">
-            <div>
-              <h3>My courses</h3>
-              <p>Keep track of your current learning activities.</p>
-            </div>
-          </div>
-          <div class="course-list">
-            <div class="course-card">
-              <div class="course-art art-blue">💬</div>
-              <h4>Effective Communication</h4>
-              <p>6 lessons · 2h 30m</p>
-              <div class="course-meta"><span>In progress</span><strong>75%</strong></div>
-              <div class="progress-track"><div class="progress-fill" style="width:75%"></div></div>
-            </div>
-            <div class="course-card">
-              <div class="course-art art-pink">👥</div>
-              <h4>Working in Teams</h4>
-              <p>4 lessons · 1h 45m</p>
-              <div class="course-meta"><span>In progress</span><strong>40%</strong></div>
-              <div class="progress-track"><div class="progress-fill" style="width:40%"></div></div>
-            </div>
-            <div class="course-card">
-              <div class="course-art art-green">🔐</div>
-              <h4>Cybersecurity Essentials</h4>
-              <p>5 lessons · 1h 15m</p>
-              <div class="course-meta"><span>Completed</span><strong>100%</strong></div>
-              <div class="progress-track"><div class="progress-fill" style="width:100%"></div></div>
-            </div>
-            <div class="course-card">
-              <div class="course-art art-yellow">📊</div>
-              <h4>Introduction to Data</h4>
-              <p>7 lessons · 3h</p>
-              <div class="course-meta"><span>Not started</span><strong>0%</strong></div>
-              <div class="progress-track"><div class="progress-fill" style="width:0%"></div></div>
-            </div>
-          </div>
-        </div>
-
-        <div class="dashboard-view" id="discover">
-          <div class="welcome-row">
-            <div>
-              <h3>Discover learning</h3>
-              <p>Explore courses and resources to support your development.</p>
-            </div>
-          </div>
-          <div class="course-list">
-            <div class="course-card">
-              <div class="course-art art-blue">🎤</div>
-              <h4>Presentation Skills</h4>
-              <p>Communication · 5 lessons</p>
-              <div class="course-meta"><span>Beginner</span><strong>1h 30m</strong></div>
-            </div>
-            <div class="course-card">
-              <div class="course-art art-green">🧭</div>
-              <h4>Leadership Foundations</h4>
-              <p>Leadership · 8 lessons</p>
-              <div class="course-meta"><span>Intermediate</span><strong>3h</strong></div>
-            </div>
-            <div class="course-card">
-              <div class="course-art art-pink">🤝</div>
-              <h4>Managing Conflict</h4>
-              <p>Workplace skills · 4 lessons</p>
-              <div class="course-meta"><span>Beginner</span><strong>1h</strong></div>
-            </div>
-            <div class="course-card">
-              <div class="course-art art-yellow">🧠</div>
-              <h4>Critical Thinking</h4>
-              <p>Professional skills · 6 lessons</p>
-              <div class="course-meta"><span>Intermediate</span><strong>2h</strong></div>
-            </div>
-          </div>
-        </div>
-
-        <div class="dashboard-view" id="progress">
-          <div class="welcome-row">
-            <div>
-              <h3>My learning progress</h3>
-              <p>A snapshot of your learning activity and completed courses.</p>
-            </div>
-          </div>
-          <div class="stats">
-            <div class="stat"><strong>12h</strong><span>Total learning time</span></div>
-            <div class="stat"><strong>08</strong><span>Lessons completed</span></div>
-            <div class="stat"><strong>01</strong><span>Course completed</span></div>
-          </div>
-          <div class="info-card">
-            <h3>Your learning activity</h3>
-            <p>Effective Communication — 75% complete</p>
-            <div class="progress-track"><div class="progress-fill" style="width:75%"></div></div>
-            <p style="margin-top:20px">Working in Teams — 40% complete</p>
-            <div class="progress-track"><div class="progress-fill" style="width:40%"></div></div>
-            <p style="margin-top:20px">Cybersecurity Essentials — 100% complete</p>
-            <div class="progress-track"><div class="progress-fill" style="width:100%"></div></div>
-          </div>
-        </div>
-
-      </div>
-    </div>
+<section class="section">
+ <div class="container">
+  <div class="eyebrow">03 · Experience strategy</div>
+  <h2 class="section-heading">From course access to learner support</h2>
+  <p class="lead">The interface is designed to support self-directed learning by helping employees understand their options, make informed choices, and monitor their progress.</p>
+  <div class="strategy-list">
+   <div class="strategy"><div class="strategy-icon">⌂</div><div><h3>Centralized dashboard</h3><p>Bring assigned courses, learning activity, and recommended resources together so learners can see what matters at a glance.</p></div></div>
+   <div class="strategy"><div class="strategy-icon">◎</div><div><h3>Clear course discovery</h3><p>Organize learning opportunities by topic and provide concise descriptions, estimated time, and course details before learners begin.</p></div></div>
+   <div class="strategy"><div class="strategy-icon">↗</div><div><h3>Visible progress</h3><p>Use progress indicators and completion information to help learners understand where they are and what remains.</p></div></div>
+   <div class="strategy"><div class="strategy-icon">✧</div><div><h3>Relevant recommendations</h3><p>Suggest learning based on a learner's stated goals, interests, and previous activity, while keeping recommendations transparent and optional.</p></div></div>
   </div>
+ </div>
 </section>
 
-<section>
-  <div class="section-label">03 / AI-assisted learning concept</div>
-  <h2>Recommendations that grow with the learner</h2>
-  <p>
-    A future development opportunity is to introduce AI-assisted
-    recommendations. Rather than showing every learner the same courses,
-    the platform could use their goals, interests, and learning activity
-    to help identify relevant learning opportunities.
-  </p>
-
-  <div class="recommend-demo">
-    <div class="ai-header">
-      <div class="section-label">Personalized learning concept</div>
-      <h3>What would you like to learn next?</h3>
-      <p>
-        Tell LearnFlow a little about your goals and interests to explore
-        how a more personalized recommendation experience could work.
-      </p>
-    </div>
-
-    <div class="ai-body">
-      <div class="form-group">
-        <label>1. What is your current learning goal?</label>
-        <p class="form-help">Choose the area you would most like to develop.</p>
-        <div class="goal-grid">
-          <label class="goal-option">
-            <input type="radio" name="goal" value="communication" checked>
-            <span>Communication</span>
-          </label>
-          <label class="goal-option">
-            <input type="radio" name="goal" value="leadership">
-            <span>Leadership</span>
-          </label>
-          <label class="goal-option">
-            <input type="radio" name="goal" value="technical">
-            <span>Technical skills</span>
-          </label>
-          <label class="goal-option">
-            <input type="radio" name="goal" value="productivity">
-            <span>Productivity</span>
-          </label>
-          <label class="goal-option">
-            <input type="radio" name="goal" value="teamwork">
-            <span>Teamwork</span>
-          </label>
-          <label class="goal-option">
-            <input type="radio" name="goal" value="career">
-            <span>Career growth</span>
-          </label>
-        </div>
-      </div>
-
-      <div class="form-group">
-        <label>2. Which topics interest you?</label>
-        <p class="form-help">Select one or more topics that you would like to explore.</p>
-        <div class="interest-grid">
-          <label class="interest-option"><input type="checkbox" value="presentations" checked><span>Presentations</span></label>
-          <label class="interest-option"><input type="checkbox" value="conflict"><span>Conflict management</span></label>
-          <label class="interest-option"><input type="checkbox" value="collaboration"><span>Collaboration</span></label>
-          <label class="interest-option"><input type="checkbox" value="management"><span>People management</span></label>
-          <label class="interest-option"><input type="checkbox" value="digital"><span>Digital tools</span></label>
-          <label class="interest-option"><input type="checkbox" value="problem-solving"><span>Problem-solving</span></label>
-          <label class="interest-option"><input type="checkbox" value="time"><span>Time management</span></label>
-        </div>
-      </div>
-
-      <div class="form-group">
-        <label for="activity">3. What best describes your recent learning activity?</label>
-        <p class="form-help">This helps illustrate how course activity could influence recommendations.</p>
-        <select class="activity-select" id="activity">
-          <option value="new">I'm just getting started</option>
-          <option value="active">I've been actively completing courses</option>
-          <option value="incomplete">I have started courses I haven't finished</option>
-          <option value="exploring">I've been exploring different topics</option>
-        </select>
-      </div>
-
-      <button class="generate-button" onclick="generateRecommendations()">Find my learning recommendations →</button>
-
-      <div class="recommend-results" id="recommendResults">
-        <div class="section-label">Your suggested learning pathway</div>
-        <h3 id="resultHeading">Recommendations for you</h3>
-        <p class="result-intro" id="resultIntro"></p>
-        <div id="resultCards"></div>
-        <div class="ai-explanation">
-          <strong>Why these recommendations?</strong>
-          <p id="resultReason"></p>
-        </div>
-      </div>
-    </div>
+<section class="section white" id="prototype">
+ <div class="container">
+  <div class="eyebrow">04 · Interactive prototype</div>
+  <div class="prototype-intro">
+   <div>
+    <h2 class="section-heading">Explore the LearnFlow experience</h2>
+    <p>Try the sample dashboard. Navigate between learning areas, explore course recommendations, and update the sample checklist. This prototype uses fictional course content and sample learner information.</p>
+   </div>
+   <span class="pill">Interactive concept</span>
   </div>
+
+  <div class="demo-shell">
+   <div class="app">
+    <aside class="sidebar">
+     <div class="app-logo">learn<span>flow</span></div>
+     <div class="profile"><div class="avatar">JD</div><div><strong>Jordan Davis</strong><small>Learning account</small></div></div>
+     <div class="nav-label">Workspace</div>
+     <div class="nav-item active" data-view="overview">⌂ &nbsp; Overview</div>
+     <div class="nav-item" data-view="my-learning">▤ &nbsp; My learning</div>
+     <div class="nav-item" data-view="discover">⌕ &nbsp; Discover courses</div>
+     <div class="nav-item" data-view="resources">▧ &nbsp; Resources</div>
+     <div class="nav-label">Account</div>
+     <div class="nav-item" data-view="goals">◎ &nbsp; My goals</div>
+    </aside>
+
+    <main class="app-main">
+     <div class="app-top"><strong>LEARNING WORKSPACE</strong><small>Sample learner account · Jordan Davis</small></div>
+
+     <div class="page-view active" id="overview">
+      <div class="welcome"><h2>Good morning, Jordan 👋</h2><p>Here's an overview of your learning activity.</p></div>
+      <div class="dashboard-grid">
+       <div class="dash-card continue-card">
+        <span class="course-tag">Continue learning</span>
+        <h3>Communicating with Confidence</h3>
+        <p>Build practical communication skills for everyday workplace conversations.</p>
+        <div class="progress-track"><div class="progress-fill" style="width:60%"></div></div>
+        <div class="progress-label"><span>Course progress</span><strong>60%</strong></div>
+        <button class="primary-btn" onclick="openCourse('communication')">Continue course →</button>
+       </div>
+       <div class="dash-card">
+        <h3>Your learning at a glance</h3>
+        <div class="stat-grid">
+         <div class="stat"><strong>3</strong><span>Active courses</span></div>
+         <div class="stat"><strong>2</strong><span>Completed</span></div>
+         <div class="stat"><strong>4.5h</strong><span>Learning time</span></div>
+         <div class="stat"><strong>1</strong><span>Due this week</span></div>
+        </div>
+       </div>
+       <div class="dash-card">
+        <h3>Recommended for you</h3>
+        <div class="course-row"><div class="course-art art-green">✦</div><div><strong>Giving and Receiving Feedback</strong><small>20 min · Communication</small></div><button class="secondary-btn" onclick="openCourse('feedback')">View</button></div>
+        <div class="course-row"><div class="course-art art-gold">◇</div><div><strong>Time Management Essentials</strong><small>15 min · Productivity</small></div><button class="secondary-btn" onclick="openCourse('time')">View</button></div>
+       </div>
+       <div class="dash-card recommendation">
+        <h3>A learning suggestion</h3>
+        <p>You've been exploring communication topics. You may find the feedback course useful as a next step.</p>
+        <button class="secondary-btn" onclick="goTo('discover')">Explore courses</button>
+       </div>
+      </div>
+     </div>
+
+     <div class="page-view" id="my-learning">
+      <h2 class="view-title">My learning</h2><p class="view-subtitle">Keep track of your current and completed courses.</p>
+      <div class="dash-card">
+       <h3>In progress</h3>
+       <div class="course-row"><div class="course-art art-blue">▣</div><div style="flex:1"><strong>Communicating with Confidence</strong><small>60% complete · 25 min</small><div class="progress-track" style="margin-top:8px"><div class="progress-fill" style="width:60%"></div></div></div><button class="secondary-btn" onclick="openCourse('communication')">Open</button></div>
+       <div class="course-row"><div class="course-art art-green">✦</div><div style="flex:1"><strong>Workplace Cybersecurity</strong><small>30% complete · 20 min</small><div class="progress-track" style="margin-top:8px"><div class="progress-fill" style="width:30%"></div></div></div><button class="secondary-btn" onclick="openCourse('cyber')">Open</button></div>
+       <div class="course-row"><div class="course-art art-gold">◇</div><div style="flex:1"><strong>Introduction to Project Planning</strong><small>10% complete · 35 min</small><div class="progress-track" style="margin-top:8px"><div class="progress-fill" style="width:10%"></div></div></div><button class="secondary-btn" onclick="openCourse('project')">Open</button></div>
+      </div>
+      <div class="dash-card" style="margin-top:15px"><h3>Completed</h3><div class="course-row"><div class="course-art art-green">✓</div><div><strong>Inclusive Workplace Essentials</strong><small>Completed · September 2026</small></div><span class="pill">Complete</span></div></div>
+     </div>
+
+     <div class="page-view" id="discover">
+      <h2 class="view-title">Discover courses</h2><p class="view-subtitle">Explore learning opportunities that support your development.</p>
+      <div class="filter-row">
+       <button class="filter active" onclick="filterCourses('all',this)">All courses</button>
+       <button class="filter" onclick="filterCourses('communication',this)">Communication</button>
+       <button class="filter" onclick="filterCourses('technology',this)">Technology</button>
+       <button class="filter" onclick="filterCourses('productivity',this)">Productivity</button>
+      </div>
+      <div class="catalog-grid" id="catalog">
+       <div class="catalog-card" data-category="communication"><div class="course-art art-green">✦</div><h3>Giving and Receiving Feedback</h3><p>Practice constructive feedback and active listening. · 20 min</p><button class="secondary-btn" onclick="openCourse('feedback')">View course</button></div>
+       <div class="catalog-card" data-category="productivity"><div class="course-art art-gold">◇</div><h3>Time Management Essentials</h3><p>Explore practical ways to prioritize tasks. · 15 min</p><button class="secondary-btn" onclick="openCourse('time')">View course</button></div>
+       <div class="catalog-card" data-category="technology"><div class="course-art art-blue">▣</div><h3>Workplace Cybersecurity</h3><p>Learn how to recognize and respond to common risks. · 20 min</p><button class="secondary-btn" onclick="openCourse('cyber')">View course</button></div>
+       <div class="catalog-card" data-category="communication"><div class="course-art art-green">◎</div><h3>Communicating with Confidence</h3><p>Build confidence in everyday workplace conversations. · 25 min</p><button class="secondary-btn" onclick="openCourse('communication')">View course</button></div>
+      </div>
+     </div>
+
+     <div class="page-view" id="resources">
+      <h2 class="view-title">Learning resources</h2><p class="view-subtitle">Quick access to useful materials and reference guides.</p>
+      <div class="resource-row"><div><strong>Communication conversation guide</strong><br><span>PDF · Reference guide</span></div><span>↗</span></div>
+      <div class="resource-row"><div><strong>Cybersecurity quick reference</strong><br><span>Checklist · Job aid</span></div><span>↗</span></div>
+      <div class="resource-row"><div><strong>Project planning template</strong><br><span>Template · Downloadable resource</span></div><span>↗</span></div>
+      <div class="notice">In a production LMS, these resources would link to accessible documents, videos, job aids, and other approved learning materials.</div>
+     </div>
+
+     <div class="page-view" id="goals">
+      <h2 class="view-title">My learning goals</h2><p class="view-subtitle">Use your goals to guide your learning choices.</p>
+      <div class="dash-card">
+       <h3>Development interests</h3>
+       <label class="check-row"><input type="checkbox" checked> Communication and collaboration</label>
+       <label class="check-row"><input type="checkbox" checked> Digital tools and technology</label>
+       <label class="check-row"><input type="checkbox"> Leadership and people development</label>
+       <label class="check-row"><input type="checkbox"> Project and time management</label>
+       <button class="primary-btn" onclick="saveGoals()">Save interests</button>
+       <p id="goal-feedback" style="font-size:11px;color:var(--teal);margin-top:10px"></p>
+      </div>
+      <div class="callout"><strong>Your learning, your direction</strong><p>Recommendations should support your goals, not limit your choices. You can explore any available course at any time.</p></div>
+     </div>
+
+     <div class="page-view" id="course-detail">
+      <h2 class="view-title" id="detail-title">Course details</h2><p class="view-subtitle" id="detail-description"></p>
+      <div class="dash-card">
+       <div class="course-detail"><div><span class="course-tag" id="detail-category">COURSE</span><h3 id="detail-name"></h3><p id="detail-duration"></p></div><div class="course-art art-blue" style="width:55px;height:55px">▣</div></div>
+       <div class="callout"><strong>What you'll explore</strong><p id="detail-summary"></p></div>
+       <button class="primary-btn" style="margin-top:17px" onclick="startCourse()">Start learning →</button>
+       <button class="secondary-btn" style="margin:17px 0 0 8px" onclick="goTo('discover')">Back to courses</button>
+       <p id="start-feedback" style="font-size:11px;color:var(--teal);margin-top:12px"></p>
+      </div>
+     </div>
+
+    </main>
+   </div>
+  </div>
+  <p class="notice">Prototype note: This is a front-end concept using sample learner data and predefined course recommendations. It does not connect to a live LMS, store user accounts, or use a live AI model.</p>
+ </div>
 </section>
 
-<section>
-  <div class="section-label">04 / How the AI feature could work</div>
-  <h2>From learner information to relevant recommendations</h2>
-  <p>
-    In a developed LMS, AI-assisted recommendations could be supported
-    by a combination of learner preferences, course information, and
-    learning activity. The following outlines a possible approach.
-  </p>
-
-  <div class="ai-steps">
-    <div class="ai-step">
-      <div class="number">STEP 01</div>
-      <h4>Understand learner goals</h4>
-      <p>
-        Learners identify skills they want to develop, such as
-        communication, leadership, or technical knowledge. They can
-        update these goals whenever their priorities change.
-      </p>
-    </div>
-    <div class="ai-step">
-      <div class="number">STEP 02</div>
-      <h4>Identify interests</h4>
-      <p>
-        Learners select subjects and topics they want to explore.
-        This gives the platform additional context beyond assigned
-        workplace training.
-      </p>
-    </div>
-    <div class="ai-step">
-      <div class="number">STEP 03</div>
-      <h4>Consider learning activity</h4>
-      <p>
-        With appropriate permission, the system can consider completed
-        courses, topics explored, progress, and quiz results to help
-        identify useful next steps.
-      </p>
-    </div>
-    <div class="ai-step">
-      <div class="number">STEP 04</div>
-      <h4>Suggest relevant resources</h4>
-      <p>
-        An AI-assisted recommendation service could match learner
-        information with course descriptions, skills, and learning
-        objectives to suggest relevant resources.
-      </p>
-    </div>
+<section class="section">
+ <div class="container">
+  <div class="eyebrow">05 · Recommendation concept</div>
+  <h2 class="section-heading">Making learning recommendations more relevant</h2>
+  <p class="lead">A future enhancement could use a recommendation system to help learners discover resources connected to their development goals and previous learning activity.</p>
+  <div class="grid-2">
+   <div class="panel">
+    <h3>Information the system could use</h3>
+    <p>Self-selected interests, learning goals, completed courses, topics explored, and optional learner feedback. These signals could help identify relevant next steps.</p>
+   </div>
+   <div class="panel">
+    <h3>How recommendations could work</h3>
+    <p>A recommendation engine could compare learner-selected interests with course topics and metadata, then rank relevant resources. More advanced AI could support natural-language discovery and personalized suggestions.</p>
+   </div>
   </div>
-
-  <div class="future-note">
-    <h3>How could the recommendations adapt over time?</h3>
-    <p>
-      Imagine a learner who wants to improve communication and completes
-      a course on effective teamwork. The platform could then suggest
-      a lesson on active listening, a practice activity on giving
-      constructive feedback, or a course on managing difficult
-      conversations. If the learner changes their goal to leadership,
-      the recommendations could shift toward coaching, delegation,
-      and team development.
-      <br><br>
-      The goal is not to assign learners a fixed learning style or
-      decide what they must study. It is to make useful resources
-      easier to discover while keeping the learner in control.
-    </p>
+  <div class="callout">
+   <strong>Important design consideration</strong>
+   <p>Recommendations should be explainable, optional, and easy to adjust. The concept does not assume that people have fixed learning styles. Learners should remain in control of what they choose to explore.</p>
   </div>
+ </div>
 </section>
 
-<section>
-  <div class="section-label">05 / Design and evaluation</div>
-  <h2>Designing an experience that supports independent learning</h2>
-
-  <div class="case-grid">
-    <div class="case-card">
-      <h3>UX design decisions</h3>
-      <p>
-        A centralized dashboard, consistent navigation, visible progress
-        indicators, and organized course cards help learners understand
-        where they are and what they can do next.
-      </p>
-    </div>
-    <div class="case-card">
-      <h3>Learning experience design</h3>
-      <p>
-        Course recommendations and progress cues support self-directed
-        learning. Content can be organized into manageable lessons,
-        with clear objectives and feedback that help learners understand
-        their progress.
-      </p>
-    </div>
-    <div class="case-card">
-      <h3>Assessment and evaluation</h3>
-      <p>
-        Usability testing could ask representative learners to find a
-        course, locate a resource, and identify their next step.
-        Measures could include task completion, errors, time on task,
-        and learner feedback.
-      </p>
-    </div>
-    <div class="case-card">
-      <h3>Privacy and responsible AI</h3>
-      <p>
-        A future recommendation system should use relevant learner
-        information transparently, provide appropriate privacy controls,
-        and allow learners to adjust their preferences or dismiss
-        recommendations. AI suggestions should support, not replace,
-        learner choice.
-      </p>
-    </div>
+<section class="section white">
+ <div class="container">
+  <div class="eyebrow">06 · Evaluation</div>
+  <h2 class="section-heading">How could the experience be evaluated?</h2>
+  <p class="lead">The concept would need usability testing and learner feedback before being considered for implementation.</p>
+  <div class="evaluation">
+   <div class="eval-card"><strong>Task completion</strong><p>Can learners locate an assigned course, find a resource, and identify their next learning activity?</p></div>
+   <div class="eval-card"><strong>Usability and clarity</strong><p>Can learners understand navigation labels, progress indicators, course descriptions, and recommendations?</p></div>
+   <div class="eval-card"><strong>Learner feedback</strong><p>Do employees find the platform easier to navigate and the recommended resources relevant to their goals?</p></div>
   </div>
+ </div>
 </section>
 
-<div class="portfolio-note">
-  <strong>Project status:</strong> This project presents a UX and learning
-  experience design concept for a more supportive LMS. The interface
-  demonstrates proposed dashboard features, course navigation, progress
-  tracking, and a simulated personalized recommendation experience.
-  The recommendation demo uses predefined rules rather than a live AI
-  integration. Future development could connect an approved AI service
-  to learner goals, interests, and learning activity to generate more
-  tailored suggestions.
-</div>
+<section class="section">
+ <div class="container">
+  <div class="eyebrow">07 · Reflection</div>
+  <div class="reflection">
+   <h3>Good learning experiences need more than good content.</h3>
+   <p>This project explores how user-centred design can support workplace learning beyond the course itself. By making learning easier to find, understand, and manage, an LMS can reduce navigation friction and help employees take a more active role in their development. The interface supports the learning experience; it does not replace thoughtful instructional design.</p>
+  </div>
+ </div>
+</section>
 
-</main>
-
-<footer>
-  © 2026 Rathesa Kodeeswaran · UX & Learning Experience Design Portfolio
-  <br><br>
-  <a href="index.html">← Back to all projects</a>
+<footer class="footer">
+ <div class="container">Rathesa Kodeeswaran · Learning Experience Design Portfolio · 2026</div>
 </footer>
 
 <script>
-function showView(viewId, button) {
-  document.querySelectorAll(".dashboard-view").forEach(view => {
-    view.classList.remove("active");
-  });
+const courseData = {
+ communication: {
+  name:"Communicating with Confidence",
+  category:"Communication",
+  duration:"25 minutes · Intermediate",
+  description:"Build practical communication skills for everyday workplace conversations.",
+  summary:"Explore active listening, clear communication, and practical approaches to common workplace conversations."
+ },
+ feedback: {
+  name:"Giving and Receiving Feedback",
+  category:"Communication",
+  duration:"20 minutes · Beginner",
+  description:"Practice constructive feedback and active listening.",
+  summary:"Learn how to prepare for feedback conversations, communicate observations clearly, and respond constructively."
+ },
+ time: {
+  name:"Time Management Essentials",
+  category:"Productivity",
+  duration:"15 minutes · Beginner",
+  description:"Explore practical ways to prioritize tasks and manage competing demands.",
+  summary:"Explore prioritization, realistic planning, and strategies for managing everyday workload."
+ },
+ cyber: {
+  name:"Workplace Cybersecurity",
+  category:"Technology",
+  duration:"20 minutes · Beginner",
+  description:"Learn how to recognize and respond to common cybersecurity risks.",
+  summary:"Identify suspicious messages, protect sensitive information, and make safer decisions when working remotely."
+ },
+ project: {
+  name:"Introduction to Project Planning",
+  category:"Productivity",
+  duration:"35 minutes · Beginner",
+  description:"Build a foundation in organizing and planning project work.",
+  summary:"Explore project objectives, timelines, responsibilities, and ways to keep work organized."
+ }
+};
+let selectedCourse = "communication";
 
-  document.querySelectorAll(".side-link").forEach(link => {
-    link.classList.remove("active");
-  });
-
-  document.getElementById(viewId).classList.add("active");
-  if (button) button.classList.add("active");
+function goTo(view) {
+ document.querySelectorAll(".page-view").forEach(el=>el.classList.remove("active"));
+ document.querySelectorAll(".nav-item").forEach(el=>el.classList.remove("active"));
+ const target=document.getElementById(view);
+ if(target) target.classList.add("active");
+ const nav=document.querySelector('.nav-item[data-view="'+view+'"]');
+ if(nav) nav.classList.add("active");
+ document.querySelector(".app-main").scrollIntoView({behavior:"smooth",block:"nearest"});
 }
 
-const courseLibrary = [
-  {
-    title: "Effective Communication",
-    category: ["communication", "career"],
-    interests: ["presentations", "collaboration"],
-    activity: ["new", "exploring"],
-    description: "Build confidence in sharing ideas and communicating clearly.",
-    icon: "💬"
-  },
-  {
-    title: "Managing Difficult Conversations",
-    category: ["communication", "teamwork"],
-    interests: ["conflict", "collaboration"],
-    activity: ["active", "exploring"],
-    description: "Practise listening, responding, and navigating workplace disagreements.",
-    icon: "🤝"
-  },
-  {
-    title: "Leadership Foundations",
-    category: ["leadership", "career"],
-    interests: ["management", "collaboration"],
-    activity: ["active", "new"],
-    description: "Explore coaching, delegation, and supporting team development.",
-    icon: "🧭"
-  },
-  {
-    title: "Digital Tools for the Workplace",
-    category: ["technical", "productivity"],
-    interests: ["digital", "problem-solving"],
-    activity: ["new", "exploring"],
-    description: "Build confidence using digital tools and workplace systems.",
-    icon: "💻"
-  },
-  {
-    title: "Time and Task Management",
-    category: ["productivity", "career"],
-    interests: ["time", "problem-solving"],
-    activity: ["incomplete", "active"],
-    description: "Explore practical approaches to organizing tasks and priorities.",
-    icon: "📅"
-  },
-  {
-    title: "Collaborating Across Teams",
-    category: ["teamwork", "leadership"],
-    interests: ["collaboration", "conflict"],
-    activity: ["active", "exploring"],
-    description: "Strengthen teamwork through shared goals and communication.",
-    icon: "👥"
-  },
-  {
-    title: "Presenting with Confidence",
-    category: ["communication", "career"],
-    interests: ["presentations"],
-    activity: ["new", "exploring"],
-    description: "Structure presentations and communicate ideas to an audience.",
-    icon: "🎤"
-  },
-  {
-    title: "Problem-Solving at Work",
-    category: ["technical", "productivity"],
-    interests: ["problem-solving", "digital"],
-    activity: ["incomplete", "active"],
-    description: "Use structured approaches to understand and solve workplace challenges.",
-    icon: "🧩"
-  }
-];
+document.querySelectorAll(".nav-item").forEach(item=>{
+ item.addEventListener("click",()=>goTo(item.dataset.view));
+});
 
-function generateRecommendations() {
-  const selectedGoal = document.querySelector('input[name="goal"]:checked');
-  const goal = selectedGoal ? selectedGoal.value : "communication";
-
-  const interests = Array.from(
-    document.querySelectorAll('.interest-option input:checked')
-  ).map(input => input.value);
-
-  const activity = document.getElementById("activity").value;
-
-  const ranked = courseLibrary.map(course => {
-    let score = 0;
-    if (course.category.includes(goal)) score += 4;
-
-    interests.forEach(interest => {
-      if (course.interests.includes(interest)) score += 2;
-    });
-
-    if (course.activity.includes(activity)) score += 1;
-
-    return { ...course, score };
-  });
-
-  ranked.sort((a,b) => b.score - a.score);
-
-  const recommendations = ranked.slice(0,3);
-
-  const goalNames = {
-    communication: "communication",
-    leadership: "leadership",
-    technical: "technical skills",
-    productivity: "productivity",
-    teamwork: "teamwork",
-    career: "career growth"
-  };
-
-  document.getElementById("resultHeading").textContent =
-    "Your suggested learning pathway";
-
-  document.getElementById("resultIntro").textContent =
-    "Based on your interest in " + goalNames[goal] +
-    " and the preferences you selected, here are three resources to explore.";
-
-  document.getElementById("resultCards").innerHTML =
-    recommendations.map(course => `
-      <div class="result-card">
-        <div class="result-icon">${course.icon}</div>
-        <div>
-          <h4>${escapeHTML(course.title)}</h4>
-          <p>${escapeHTML(course.description)}</p>
-        </div>
-      </div>
-    `).join("");
-
-  let reason =
-    "Your selected goal was " + goalNames[goal] + ".";
-
-  if (interests.length) {
-    reason += " Your interests in " +
-      interests.map(formatInterest).join(", ") +
-      " helped prioritize related resources.";
-  }
-
-  const activityReasons = {
-    new: " Since you're getting started, the suggestions include accessible learning opportunities.",
-    active: " Your recent learning activity can help surface related opportunities for continued development.",
-    incomplete: " The system could also consider unfinished learning and suggest a manageable next step.",
-    exploring: " Your interest in exploring different topics can help surface a mix of relevant resources."
-  };
-
-  reason += activityReasons[activity];
-
-  document.getElementById("resultReason").textContent = reason;
-  document.getElementById("recommendResults").classList.add("visible");
-
-  document.getElementById("recommendResults").scrollIntoView({
-    behavior: "smooth",
-    block: "nearest"
-  });
+function openCourse(id) {
+ const course=courseData[id];
+ if(!course) return;
+ selectedCourse=id;
+ document.querySelectorAll(".page-view").forEach(el=>el.classList.remove("active"));
+ document.getElementById("course-detail").classList.add("active");
+ document.querySelectorAll(".nav-item").forEach(el=>el.classList.remove("active"));
+ document.getElementById("detail-title").textContent=course.name;
+ document.getElementById("detail-name").textContent=course.name;
+ document.getElementById("detail-category").textContent=course.category;
+ document.getElementById("detail-duration").textContent=course.duration;
+ document.getElementById("detail-description").textContent=course.description;
+ document.getElementById("detail-summary").textContent=course.summary;
+ document.getElementById("start-feedback").textContent="";
 }
 
-function formatInterest(value) {
-  const names = {
-    presentations: "presentations",
-    conflict: "conflict management",
-    collaboration: "collaboration",
-    management: "people management",
-    digital: "digital tools",
-    "problem-solving": "problem-solving",
-    time: "time management"
-  };
-  return names[value] || value;
+function startCourse() {
+ document.getElementById("start-feedback").textContent =
+ "Sample interaction: " + courseData[selectedCourse].name + " is ready to begin. A live LMS would open the course content here.";
 }
 
-function escapeHTML(value) {
-  return value.replace(/[&<>"']/g, char => ({
-    "&": "&amp;",
-    "<": "&lt;",
-    ">": "&gt;",
-    '"': "&quot;",
-    "'": "&#039;"
-  })[char]);
+function filterCourses(category,button) {
+ document.querySelectorAll(".filter").forEach(el=>el.classList.remove("active"));
+ button.classList.add("active");
+ document.querySelectorAll(".catalog-card").forEach(card=>{
+  card.style.display=(category==="all"||card.dataset.category===category)?"block":"none";
+ });
+}
+
+function saveGoals() {
+ document.getElementById("goal-feedback").textContent="Your sample interests have been selected. In a live platform, these could inform your course recommendations.";
 }
 </script>
-
 </body>
 </html>
