@@ -1,21 +1,1548 @@
+
 <!DOCTYPE html>
-<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Cybersecurity Basics for Remote Workers | Rathesa Kodeeswaran</title>
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cybersecurity Essentials | Rathesa Kodeeswaran</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
 <style>
-:root{--bg:#f7f7f2;--paper:#fff;--ink:#202923;--muted:#59645d;--green:#285d49;--green2:#dcebe1;--pink:#f3dce5;--line:#dce2dc}
-*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.7 "DM Sans",sans-serif}.wrap{width:min(850px,calc(100% - 36px));margin:auto}nav{padding:25px 0;display:flex;justify-content:space-between;gap:20px}nav a{color:var(--green);font-weight:700;text-decoration:none}.hero{padding:65px 0 45px}.eyebrow{color:var(--green);font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase}h1,h2{font-family:Manrope,sans-serif;line-height:1.15;letter-spacing:-.04em}h1{font-size:clamp(38px,7vw,58px);margin:15px 0}.summary{font-size:19px;color:var(--muted);max-width:720px}.banner{background:#f3dce5;border-radius:16px;padding:28px;margin:25px 0 40px}.banner strong{font:700 14px Manrope}.banner p{margin:5px 0 0;color:#48554b}section{padding:28px 0;border-top:1px solid var(--line)}h2{font-size:25px;margin:0 0 12px}p,li{color:var(--muted)}ul{padding-left:22px}li{padding:4px 0}.back{display:inline-block;margin:20px 0 60px;padding:11px 16px;border:1px solid var(--green);border-radius:7px;color:var(--green);font-weight:700;text-decoration:none}.disclaimer{font-size:13px;background:#fff;border-left:4px solid var(--green);padding:14px 18px;margin-top:25px}@media(max-width:560px){nav{flex-direction:column}}
-</style></head><body><div class="wrap">
-<nav><a href="index.html">← Rathesa Kodeeswaran</a><a href="index.html#work">All projects</a></nav>
-<header class="hero"><div class="eyebrow">Project 01 · Scenario-based learning</div><h1>Cybersecurity Basics for Remote Workers</h1><p class="summary">A short digital learning concept that helps employees recognize suspicious messages and practise safer responses in realistic workplace situations.</p>
-<div class="banner"><strong>At a glance</strong><p>Articulate Rise / H5P concept · Scenario writing · Feedback design</p></div></header>
-<section><h2>The learning problem</h2><p>Employees may recognize the word phishing but still feel unsure when deciding what to do with an unexpected or suspicious message.</p></section>
-<section><h2>Target audience</h2><p>Employees who work remotely or use email and shared digital documents as part of their daily work. The concept assumes a general workplace audience; it can be adapted after a learner analysis.</p></section>
-<section><h2>Learning objectives</h2><p>By the end of this learning experience, learners should be able to:</p><ul><li>Identify common warning signs in suspicious messages.</li><li>Choose an appropriate action when an email or shared document seems unusual.</li><li>Describe what to do after interacting with a suspicious link.</li></ul></section>
-<section><h2>Why this learning method?</h2><p>Scenario-based learning gives learners a chance to apply information in context. Retrieval practice and immediate feedback help them check their understanding and learn from each decision.</p></section>
-<section><h2>Design and development</h2><p>The proposed module uses short workplace scenarios, multiple-choice decisions, feedback after each response, and a completion screen. The scenarios cover an urgent payroll request, an unexpected shared document, and responding after entering a password on a suspicious page.</p></section>
-<section><h2>Assessment and evaluation</h2><p>Learners choose a response for each scenario. Feedback explains why the selected action is or is not appropriate. A fuller version could include a short pre-check and a follow-up knowledge check after a delay.</p></section>
-<section><h2>Design reflection</h2><p>The key design decision is to focus on action rather than asking learners to memorize a list of phishing definitions. In a real deployment, the scenarios and recommended reporting steps would need review by the organization’s IT/security team.</p></section>
-<div class="disclaimer"><strong>Portfolio note:</strong> This page describes a learning-design concept and proposed approach. Add your actual screenshots, prototype, learner feedback, and measured results as you develop the project. Do not present proposed outcomes as completed results.</div>
-<a class="back" href="index.html#work">← Back to all projects</a>
-</div></body></html>
+:root {
+  --navy: #172c36;
+  --green: #285d49;
+  --green-light: #eaf2ed;
+  --cream: #f8f8f4;
+  --white: #ffffff;
+  --text: #34434a;
+  --muted: #68777c;
+  --border: #e1e7e3;
+  --pink: #f5e8e6;
+  --yellow: #f7f0d9;
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  background: var(--cream);
+  color: var(--text);
+  font-family: 'DM Sans', sans-serif;
+  line-height: 1.7;
+}
+
+h1, h2, h3, h4 {
+  font-family: 'Manrope', sans-serif;
+  color: var(--navy);
+  line-height: 1.25;
+}
+
+h1 { font-size: clamp(2.5rem, 6vw, 4.4rem); }
+h2 { font-size: 2rem; margin-bottom: 18px; }
+h3 { font-size: 1.2rem; }
+
+a { color: var(--green); }
+
+button {
+  font: inherit;
+  cursor: pointer;
+}
+
+.top-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 22px 7%;
+  background: white;
+  border-bottom: 1px solid var(--border);
+}
+
+.brand {
+  font-family: 'Manrope', sans-serif;
+  font-weight: 800;
+  color: var(--navy);
+  letter-spacing: 1px;
+}
+
+.top-nav a {
+  text-decoration: none;
+  font-weight: 600;
+  font-size: .9rem;
+}
+
+.container {
+  max-width: 1050px;
+  margin: auto;
+  padding: 0 28px;
+}
+
+.hero {
+  padding: 85px 0 65px;
+}
+
+.eyebrow {
+  color: var(--green);
+  text-transform: uppercase;
+  font-size: .76rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
+.hero h1 {
+  max-width: 850px;
+  margin: 18px 0;
+}
+
+.hero p {
+  max-width: 700px;
+  color: var(--muted);
+  font-size: 1.12rem;
+}
+
+.hero-tag {
+  display: inline-block;
+  background: var(--green-light);
+  color: var(--green);
+  border-radius: 30px;
+  padding: 8px 16px;
+  font-size: .82rem;
+  font-weight: 700;
+  margin-top: 18px;
+}
+
+.section {
+  padding: 65px 0;
+  border-top: 1px solid var(--border);
+}
+
+.section-intro {
+  max-width: 720px;
+  color: var(--muted);
+}
+
+.banner {
+  background: var(--pink);
+  border-radius: 12px;
+  padding: 25px 30px;
+  margin: 30px 0;
+}
+
+.banner strong { color: var(--navy); }
+
+.banner p { margin-bottom: 0; }
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 18px;
+  margin-top: 28px;
+}
+
+.info-card {
+  background: white;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 25px;
+}
+
+.info-card h3 { margin-top: 0; }
+
+.info-card p {
+  color: var(--muted);
+  margin-bottom: 0;
+}
+
+.tag-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 9px;
+  margin-top: 20px;
+}
+
+.tag {
+  background: var(--green-light);
+  color: var(--green);
+  border-radius: 5px;
+  padding: 7px 12px;
+  font-size: .82rem;
+  font-weight: 600;
+}
+
+ul.clean {
+  padding-left: 20px;
+}
+
+ul.clean li { margin: 9px 0; }
+
+.strategy-list {
+  display: grid;
+  gap: 15px;
+  margin-top: 28px;
+}
+
+.strategy-item {
+  display: grid;
+  grid-template-columns: 45px 1fr;
+  gap: 18px;
+  background: white;
+  padding: 22px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+}
+
+.strategy-number {
+  width: 38px;
+  height: 38px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: var(--green-light);
+  color: var(--green);
+  font-weight: 800;
+}
+
+.strategy-item h3 { margin: 0 0 6px; }
+.strategy-item p { margin: 0; color: var(--muted); }
+
+/* Interactive course */
+
+.course-shell {
+  background: white;
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  overflow: hidden;
+  margin-top: 35px;
+  box-shadow: 0 12px 35px rgba(23,44,54,.06);
+}
+
+.course-header {
+  background: var(--navy);
+  color: white;
+  padding: 30px;
+}
+
+.course-header h2 {
+  color: white;
+  margin: 8px 0;
+}
+
+.course-header p {
+  color: #d4e0df;
+  margin: 0;
+}
+
+.course-label {
+  color: #b8d6c5;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: .72rem;
+  font-weight: 700;
+}
+
+.course-progress {
+  background: #40545c;
+  height: 7px;
+  border-radius: 20px;
+  margin-top: 25px;
+  overflow: hidden;
+}
+
+.course-progress-fill {
+  height: 100%;
+  width: 0;
+  background: #a9d4b7;
+  transition: width .3s;
+}
+
+.progress-label {
+  font-size: .78rem;
+  color: #d4e0df;
+  margin-top: 8px;
+}
+
+.course-body {
+  display: grid;
+  grid-template-columns: 220px 1fr;
+  min-height: 600px;
+}
+
+.course-sidebar {
+  background: #f4f7f4;
+  padding: 25px 15px;
+  border-right: 1px solid var(--border);
+}
+
+.course-sidebar h4 {
+  font-size: .75rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--muted);
+  padding-left: 12px;
+}
+
+.course-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.course-nav button {
+  border: 0;
+  background: transparent;
+  text-align: left;
+  padding: 11px 12px;
+  border-radius: 7px;
+  color: var(--text);
+  font-size: .84rem;
+}
+
+.course-nav button.active {
+  background: var(--green-light);
+  color: var(--green);
+  font-weight: 700;
+}
+
+.course-nav button:hover { background: #e8eee9; }
+
+.course-content {
+  padding: 35px;
+  min-width: 0;
+}
+
+.course-section { display: none; }
+.course-section.active { display: block; }
+
+.course-content h2 {
+  font-size: 1.8rem;
+}
+
+.course-content h3 { margin-top: 28px; }
+
+.course-content p { color: var(--text); }
+
+.course-content .muted { color: var(--muted); }
+
+.course-callout {
+  background: var(--green-light);
+  border-left: 4px solid var(--green);
+  border-radius: 6px;
+  padding: 18px 20px;
+  margin: 24px 0;
+}
+
+.course-callout.warning {
+  background: var(--yellow);
+  border-left-color: #b38a2f;
+}
+
+.course-callout p { margin: 5px 0 0; }
+
+.email-card {
+  border: 1px solid #d9dfdf;
+  border-radius: 10px;
+  overflow: hidden;
+  margin: 25px 0;
+}
+
+.email-top {
+  background: #f1f4f4;
+  padding: 14px 18px;
+  font-size: .82rem;
+  color: var(--muted);
+}
+
+.email-body { padding: 22px; }
+
+.email-body p { margin: 8px 0; }
+
+.email-link {
+  color: #b33c3c;
+  text-decoration: underline;
+  font-weight: 700;
+  overflow-wrap: anywhere;
+}
+
+.warning-list {
+  padding-left: 20px;
+}
+
+.warning-list li { margin: 8px 0; }
+
+.choice-list {
+  display: grid;
+  gap: 12px;
+  margin: 22px 0;
+}
+
+.choice {
+  border: 1px solid var(--border);
+  background: white;
+  padding: 17px;
+  text-align: left;
+  border-radius: 9px;
+  width: 100%;
+  transition: .2s;
+}
+
+.choice:hover {
+  border-color: var(--green);
+  background: #f8fbf8;
+}
+
+.choice.selected {
+  border: 2px solid var(--green);
+  background: var(--green-light);
+}
+
+.feedback {
+  display: none;
+  border-radius: 9px;
+  padding: 17px 20px;
+  margin: 18px 0;
+}
+
+.feedback.show { display: block; }
+
+.feedback.correct {
+  background: #e8f4eb;
+  color: #235b38;
+}
+
+.feedback.incorrect {
+  background: #f9ece9;
+  color: #8b3930;
+}
+
+.question-card {
+  background: #f8faf8;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 22px;
+  margin: 20px 0;
+}
+
+.question-card h3 { margin-top: 0; }
+
+.quiz-option {
+  display: block;
+  width: 100%;
+  text-align: left;
+  border: 1px solid var(--border);
+  background: white;
+  border-radius: 7px;
+  padding: 12px 15px;
+  margin: 9px 0;
+}
+
+.quiz-option:hover { border-color: var(--green); }
+
+.quiz-option:disabled { cursor: default; opacity: .8; }
+
+.quiz-option.correct-answer {
+  border-color: #43865b;
+  background: #eaf4ec;
+}
+
+.quiz-option.wrong-answer {
+  border-color: #bd6256;
+  background: #f9ece9;
+}
+
+.primary-btn, .secondary-btn {
+  border: 0;
+  border-radius: 7px;
+  padding: 12px 20px;
+  font-weight: 700;
+  font-size: .9rem;
+}
+
+.primary-btn {
+  background: var(--green);
+  color: white;
+}
+
+.primary-btn:hover { background: #1e4938; }
+
+.secondary-btn {
+  background: #edf1ee;
+  color: var(--navy);
+}
+
+.course-controls {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  margin-top: 35px;
+  padding-top: 20px;
+  border-top: 1px solid var(--border);
+}
+
+.checklist label {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 13px 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.checklist input {
+  width: 18px;
+  height: 18px;
+  margin-top: 5px;
+  accent-color: var(--green);
+}
+
+.completion {
+  text-align: center;
+  padding: 35px 10px;
+}
+
+.completion-icon {
+  font-size: 3.5rem;
+  margin-bottom: 15px;
+}
+
+.score-display {
+  font-family: 'Manrope', sans-serif;
+  font-size: 3rem;
+  font-weight: 800;
+  color: var(--green);
+}
+
+.commitment-input {
+  display: block;
+  width: 100%;
+  min-height: 100px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 13px;
+  font: inherit;
+  margin: 15px 0;
+}
+
+.reflection-box {
+  background: var(--green-light);
+  border-radius: 10px;
+  padding: 20px;
+  margin-top: 25px;
+}
+
+.footer {
+  text-align: center;
+  padding: 35px 20px;
+  color: var(--muted);
+  font-size: .85rem;
+  border-top: 1px solid var(--border);
+}
+
+@media(max-width: 750px) {
+  .grid { grid-template-columns: 1fr; }
+  .course-body { grid-template-columns: 1fr; }
+  .course-sidebar {
+    border-right: 0;
+    border-bottom: 1px solid var(--border);
+  }
+  .course-nav {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .course-content { padding: 23px; }
+  .hero { padding: 55px 0 45px; }
+  .top-nav { padding: 18px 5%; }
+  .strategy-item { grid-template-columns: 35px 1fr; }
+}
+
+@media print {
+  .top-nav, .course-sidebar, .course-controls,
+  .primary-btn, .secondary-btn { display: none !important; }
+  body { background: white; }
+}
+</style>
+</head>
+
+<body>
+
+<nav class="top-nav">
+  <div class="brand">RATHESA KODEESWARAN</div>
+  <a href="index.html">← Back to Portfolio</a>
+</nav>
+
+<main>
+
+<!-- PROJECT INTRODUCTION -->
+
+<header class="container hero">
+  <div class="eyebrow">Learning Experience Design · Case Study</div>
+  <h1>Cybersecurity Essentials: Working Securely from Anywhere</h1>
+  <p>
+    An interactive workplace learning concept designed to help employees
+    recognize common cybersecurity threats, make safer decisions, and
+    apply practical security habits in everyday work situations.
+  </p>
+  <span class="hero-tag">Instructional Design · Scenario-Based Learning · eLearning</span>
+</header>
+
+<!-- PROJECT OVERVIEW -->
+
+<section class="section">
+<div class="container">
+  <div class="eyebrow">01 / Project Overview</div>
+  <h2>Making cybersecurity easier to understand and apply</h2>
+  <p class="section-intro">
+    Employees regularly handle sensitive information across different
+    environments, including offices, homes, and public spaces. Understanding
+    cybersecurity policies is important, but employees also need to recognize
+    risks and know how to respond when situations arise.
+  </p>
+
+  <div class="banner">
+    <strong>The learning challenge</strong>
+    <p>
+      How can employees practise recognizing cybersecurity risks and
+      responding confidently to suspicious situations without relying
+      solely on lengthy policy documents?
+    </p>
+  </div>
+
+  <div class="grid">
+    <div class="info-card">
+      <h3>Target Audience</h3>
+      <p>
+        Employees who use digital tools, communicate online, and access
+        organizational information in office, remote, or hybrid work settings.
+      </p>
+    </div>
+    <div class="info-card">
+      <h3>Learning Format</h3>
+      <p>
+        A short, self-paced digital learning experience designed to take
+        approximately 15–20 minutes.
+      </p>
+    </div>
+    <div class="info-card">
+      <h3>Learning Objectives</h3>
+      <p>By the end of the experience, learners should be able to:</p>
+      <ul class="clean">
+        <li>Recognize common phishing and social engineering indicators.</li>
+        <li>Choose safer responses to realistic workplace situations.</li>
+        <li>Apply practical habits to protect company information.</li>
+      </ul>
+    </div>
+    <div class="info-card">
+      <h3>Tools & Methods</h3>
+      <p>
+        Scenario writing, interactive knowledge checks, instructional
+        feedback, and a responsive browser-based learning prototype.
+      </p>
+      <div class="tag-list">
+        <span class="tag">eLearning</span>
+        <span class="tag">HTML / CSS / JavaScript</span>
+        <span class="tag">UX Design</span>
+        <span class="tag">Assessment Design</span>
+      </div>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- DESIGN STRATEGY -->
+
+<section class="section">
+<div class="container">
+  <div class="eyebrow">02 / Instructional Design Strategy</div>
+  <h2>Designing for practical application</h2>
+  <p class="section-intro">
+    Rather than presenting cybersecurity information as a list of rules,
+    the learning experience uses familiar workplace situations to help
+    learners recognize risks, consider their options, and practise making
+    informed decisions.
+  </p>
+
+  <div class="strategy-list">
+    <div class="strategy-item">
+      <div class="strategy-number">01</div>
+      <div>
+        <h3>Authentic workplace scenarios</h3>
+        <p>
+          Situations involving suspicious emails and shared workspaces
+          connect cybersecurity concepts to decisions employees may
+          encounter in their daily work.
+        </p>
+      </div>
+    </div>
+
+    <div class="strategy-item">
+      <div class="strategy-number">02</div>
+      <div>
+        <h3>Decision-based activities</h3>
+        <p>
+          Learners select how they would respond to realistic situations.
+          This encourages active participation and application rather
+          than passive reading.
+        </p>
+      </div>
+    </div>
+
+    <div class="strategy-item">
+      <div class="strategy-number">03</div>
+      <div>
+        <h3>Immediate instructional feedback</h3>
+        <p>
+          Feedback explains why an answer is appropriate or risky,
+          reinforcing correct decisions and helping address misconceptions.
+        </p>
+      </div>
+    </div>
+
+    <div class="strategy-item">
+      <div class="strategy-number">04</div>
+      <div>
+        <h3>Knowledge checks and retrieval practice</h3>
+        <p>
+          Short questions give learners opportunities to recall and apply
+          key concepts throughout the experience.
+        </p>
+      </div>
+    </div>
+
+    <div class="strategy-item">
+      <div class="strategy-number">05</div>
+      <div>
+        <h3>Practical transfer to the workplace</h3>
+        <p>
+          A final checklist and personal commitment prompt encourage
+          learners to identify habits they can apply beyond the course.
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- INTERACTIVE COURSE -->
+
+<section class="section" id="interactive-learning">
+<div class="container">
+  <div class="eyebrow">03 / Interactive Learning Experience</div>
+  <h2>Explore the course</h2>
+  <p class="section-intro">
+    Experience the learning module as an employee would. Work through
+    the scenarios, make decisions, complete the knowledge check, and
+    review the practical takeaways.
+  </p>
+
+  <div class="course-shell">
+
+    <div class="course-header">
+      <div class="course-label">Northstar Learning · Enterprise Security Academy</div>
+      <h2>Cybersecurity Essentials</h2>
+      <p>Working Securely from Anywhere · 15–20 minutes</p>
+      <div class="course-progress">
+        <div class="course-progress-fill" id="progressFill"></div>
+      </div>
+      <div class="progress-label" id="progressLabel">Section 1 of 8</div>
+    </div>
+
+    <div class="course-body">
+
+      <aside class="course-sidebar">
+        <h4>Course contents</h4>
+        <div class="course-nav">
+          <button class="active" data-section="0">01 · Introduction</button>
+          <button data-section="1">02 · Common Risks</button>
+          <button data-section="2">03 · Sarah's Inbox</button>
+          <button data-section="3">04 · Make a Decision</button>
+          <button data-section="4">05 · Shared Workspace</button>
+          <button data-section="5">06 · Knowledge Check</button>
+          <button data-section="6">07 · Security Checklist</button>
+          <button data-section="7">08 · Completion</button>
+        </div>
+      </aside>
+
+      <div class="course-content">
+
+        <!-- SECTION 1 -->
+
+        <div class="course-section active" data-page="0">
+          <div class="course-label">WELCOME</div>
+          <h2>Working securely starts with you</h2>
+          <p>
+            Cybersecurity is not just the responsibility of IT teams.
+            Every employee plays a role in protecting company information,
+            accounts, and digital systems.
+          </p>
+          <p>
+            Whether you are working at the office, from home, or in a
+            public space, everyday decisions can affect the security
+            of the information you handle.
+          </p>
+
+          <div class="course-callout">
+            <strong>Your approach: Pause. Verify. Protect.</strong>
+            <p>
+              Take a moment before acting. Verify unexpected requests.
+              Protect information by following approved security practices.
+            </p>
+          </div>
+
+          <h3>What you will learn</h3>
+          <ul class="clean">
+            <li>Identify warning signs in suspicious messages.</li>
+            <li>Recognize common cybersecurity risks.</li>
+            <li>Choose safer responses to workplace situations.</li>
+            <li>Build everyday habits that protect information.</li>
+          </ul>
+
+          <p class="muted">
+            Take your time. You will receive feedback as you work through
+            the activities.
+          </p>
+        </div>
+
+        <!-- SECTION 2 -->
+
+        <div class="course-section" data-page="1">
+          <div class="course-label">UNDERSTANDING THE RISKS</div>
+          <h2>Where can security risks happen?</h2>
+          <p>
+            Cybersecurity threats can appear in everyday activities.
+            Understanding common risks is the first step toward
+            preventing them.
+          </p>
+
+          <div class="grid">
+            <div class="info-card">
+              <h3>Phishing & Social Engineering</h3>
+              <p>
+                Messages designed to trick people into sharing sensitive
+                information or taking unsafe actions.
+              </p>
+            </div>
+            <div class="info-card">
+              <h3>Suspicious Links & Attachments</h3>
+              <p>
+                Unexpected links or files can lead to fraudulent websites
+                or malicious downloads.
+              </p>
+            </div>
+            <div class="info-card">
+              <h3>Weak Account Security</h3>
+              <p>
+                Reused or easy-to-guess passwords can make accounts
+                vulnerable to unauthorized access.
+              </p>
+            </div>
+            <div class="info-card">
+              <h3>Unsecured Networks</h3>
+              <p>
+                Public or untrusted networks may expose sensitive
+                information if approved security measures are not used.
+              </p>
+            </div>
+            <div class="info-card">
+              <h3>Information Exposure</h3>
+              <p>
+                Documents, screens, and conversations can unintentionally
+                expose confidential information.
+              </p>
+            </div>
+            <div class="info-card">
+              <h3>Unexpected Requests</h3>
+              <p>
+                Someone may impersonate a colleague, manager, or
+                service provider to create urgency and bypass normal checks.
+              </p>
+            </div>
+          </div>
+
+          <div class="course-callout warning">
+            <strong>Remember</strong>
+            <p>
+              A message that looks familiar is not necessarily legitimate.
+              Always verify unexpected requests before taking action.
+            </p>
+          </div>
+        </div>
+
+        <!-- SECTION 3 -->
+
+        <div class="course-section" data-page="2">
+          <div class="course-label">SCENARIO 01 · PHISHING</div>
+          <h2>A message that needs your attention</h2>
+          <p>
+            Sarah is working remotely when she receives an email claiming
+            that her company account will be suspended unless she verifies
+            her information within 30 minutes.
+          </p>
+
+          <div class="email-card">
+            <div class="email-top">
+              <strong>From:</strong> support@northstarr-secure.com<br>
+              <strong>Subject:</strong> URGENT: Your account will be suspended
+            </div>
+            <div class="email-body">
+              <p>Hello Sarah,</p>
+              <p>
+                We detected an issue with your account. Your access will
+                be suspended in 30 minutes unless you verify your
+                credentials immediately.
+              </p>
+              <p>
+                Please use the link below to confirm your account:
+              </p>
+              <p class="email-link">northstar-account.help/login</p>
+              <p>Thank you,<br>Northstar IT Support</p>
+            </div>
+          </div>
+
+          <h3>Can you spot the warning signs?</h3>
+          <p>Look carefully at the message. Consider these indicators:</p>
+
+          <ul class="warning-list">
+            <li><strong>Look-alike sender:</strong> The email domain is slightly different from the expected company domain.</li>
+            <li><strong>Manufactured urgency:</strong> The 30-minute deadline pressures Sarah to act quickly.</li>
+            <li><strong>Credential request:</strong> The message asks Sarah to provide her login information.</li>
+            <li><strong>Suspicious destination:</strong> The link does not match an expected company website.</li>
+          </ul>
+
+          <div class="course-callout">
+            <strong>Think before you click.</strong>
+            <p>
+              Urgent language, unexpected requests for credentials, and
+              unfamiliar links are reasons to stop and verify.
+            </p>
+          </div>
+        </div>
+
+        <!-- SECTION 4 -->
+
+        <div class="course-section" data-page="3">
+          <div class="course-label">SCENARIO 01 · YOUR DECISION</div>
+          <h2>What should Sarah do?</h2>
+          <p>
+            Sarah needs to decide how to respond to the suspicious email.
+            What is the safest course of action?
+          </p>
+
+          <div class="choice-list" id="scenarioChoices">
+            <button class="choice" data-correct="false">
+              <strong>Option A</strong><br>
+              Click the link and sign in before the deadline.
+            </button>
+            <button class="choice" data-correct="false">
+              <strong>Option B</strong><br>
+              Reply to the email and ask whether the request is legitimate.
+            </button>
+            <button class="choice" data-correct="true">
+              <strong>Option C</strong><br>
+              Avoid clicking the link and report the suspicious email
+              using the organization's approved process.
+            </button>
+          </div>
+
+          <div class="feedback" id="scenarioFeedback" role="status" aria-live="polite"></div>
+
+          <div class="course-callout">
+            <strong>Key takeaway</strong>
+            <p>
+              Never use contact details or links from a suspicious message
+              to verify that same message. Use a known, trusted channel.
+            </p>
+          </div>
+        </div>
+
+        <!-- SECTION 5 -->
+
+        <div class="course-section" data-page="4">
+          <div class="course-label">SCENARIO 02 · REMOTE WORK</div>
+          <h2>Protecting information in a shared space</h2>
+          <p>
+            Jordan is working from a coffee shop while waiting for a
+            meeting to begin. He joins a video call to discuss a
+            confidential project document.
+          </p>
+
+          <div class="info-card">
+            <h3>The situation</h3>
+            <p>
+              People are sitting nearby, the Wi-Fi network is public,
+              and Jordan has opened a document containing sensitive
+              business information.
+            </p>
+          </div>
+
+          <h3>What should Jordan do?</h3>
+
+          <div class="choice-list" id="workspaceChoices">
+            <button class="choice" data-correct="false">
+              <strong>Option A</strong><br>
+              Continue the call because the document is only being
+              discussed, not shared.
+            </button>
+            <button class="choice" data-correct="true">
+              <strong>Option B</strong><br>
+              Move to a private location and use the organization's
+              approved secure connection before continuing.
+            </button>
+            <button class="choice" data-correct="false">
+              <strong>Option C</strong><br>
+              Turn up the screen brightness so he can read the
+              document more easily.
+            </button>
+          </div>
+
+          <div class="feedback" id="workspaceFeedback" role="status" aria-live="polite"></div>
+
+          <div class="course-callout">
+            <strong>Key takeaway</strong>
+            <p>
+              Consider your surroundings before accessing or discussing
+              confidential information. Protect screens, conversations,
+              and network connections.
+            </p>
+          </div>
+        </div>
+
+        <!-- SECTION 6 -->
+
+        <div class="course-section" data-page="5">
+          <div class="course-label">KNOWLEDGE CHECK</div>
+          <h2>Test your understanding</h2>
+          <p>
+            Apply what you have learned. Select the best response
+            for each situation. You will receive feedback after
+            answering each question.
+          </p>
+
+          <div id="quizContainer"></div>
+
+          <div class="feedback" id="quizFeedback" role="status" aria-live="polite"></div>
+
+          <div style="margin-top:20px;">
+            <strong id="quizCounter">Question 1 of 5</strong>
+          </div>
+
+          <div id="quizResult" style="display:none;" class="reflection-box">
+            <h3>Knowledge check complete</h3>
+            <div class="score-display" id="quizScore">0/5</div>
+            <p id="quizMessage"></p>
+            <button class="secondary-btn" id="retryQuiz">Try again</button>
+          </div>
+        </div>
+
+        <!-- SECTION 7 -->
+
+        <div class="course-section" data-page="6">
+          <div class="course-label">PUT IT INTO PRACTICE</div>
+          <h2>Your everyday security checklist</h2>
+          <p>
+            Use this checklist as a reminder of the habits that help
+            protect your organization and the information you handle.
+          </p>
+
+          <div class="checklist" id="securityChecklist">
+            <label>
+              <input type="checkbox">
+              <span>Verify unexpected requests through a known, trusted contact method.</span>
+            </label>
+            <label>
+              <input type="checkbox">
+              <span>Avoid clicking unfamiliar links or opening unexpected attachments.</span>
+            </label>
+            <label>
+              <input type="checkbox">
+              <span>Use approved password practices and multi-factor authentication.</span>
+            </label>
+            <label>
+              <input type="checkbox">
+              <span>Use approved secure connections and protect your devices.</span>
+            </label>
+            <label>
+              <input type="checkbox">
+              <span>Keep confidential information away from unauthorized viewers.</span>
+            </label>
+            <label>
+              <input type="checkbox">
+              <span>Report suspicious activity using your organization's approved process.</span>
+            </label>
+          </div>
+
+          <div class="course-callout">
+            <strong>Make it a habit</strong>
+            <p>
+              Cybersecurity is built through consistent everyday actions,
+              not just one-time training.
+            </p>
+          </div>
+
+          <h3>Your personal commitment</h3>
+          <p>
+            What is one security habit you will make a priority this week?
+          </p>
+          <textarea class="commitment-input" id="commitment"
+            placeholder="This week, I will..."></textarea>
+        </div>
+
+        <!-- SECTION 8 -->
+
+        <div class="course-section" data-page="7">
+          <div class="completion">
+            <div class="completion-icon">✓</div>
+            <div class="course-label">COURSE COMPLETE</div>
+            <h2>Small pauses can prevent large incidents.</h2>
+            <p>
+              You have reached the end of Cybersecurity Essentials:
+              Working Securely from Anywhere.
+            </p>
+
+            <div class="reflection-box">
+              <h3>Your knowledge check result</h3>
+              <div class="score-display" id="finalScore">0/5</div>
+              <p id="finalScoreMessage">
+                Review your knowledge check results and key takeaways.
+              </p>
+            </div>
+
+            <div class="reflection-box" style="text-align:left;">
+              <h3>Remember these three steps</h3>
+              <p><strong>Pause:</strong> Stop before responding to unexpected requests.</p>
+              <p><strong>Verify:</strong> Confirm requests through trusted channels.</p>
+              <p><strong>Protect:</strong> Follow approved practices and report concerns.</p>
+            </div>
+
+            <div class="reflection-box" style="text-align:left;">
+              <h3>Your commitment</h3>
+              <p id="finalCommitment">Your personal commitment will appear here.</p>
+            </div>
+
+            <p style="margin-top:25px;">
+              Thank you for taking the time to build safer working habits.
+            </p>
+
+            <button class="primary-btn" onclick="window.print()">
+              Print course summary
+            </button>
+          </div>
+        </div>
+
+        <!-- NAVIGATION -->
+
+        <div class="course-controls">
+          <button class="secondary-btn" id="previousBtn" disabled>← Previous</button>
+          <button class="primary-btn" id="nextBtn">Next section →</button>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- ASSESSMENT AND EVALUATION -->
+
+<section class="section">
+<div class="container">
+  <div class="eyebrow">04 / Assessment & Evaluation</div>
+  <h2>How learning could be evaluated</h2>
+  <p class="section-intro">
+    The prototype includes formative knowledge checks and scenario-based
+    decision-making activities. In a workplace implementation, additional
+    evaluation could help determine whether the learning translates into
+    safer everyday behaviours.
+  </p>
+
+  <div class="grid">
+    <div class="info-card">
+      <h3>Knowledge Assessment</h3>
+      <p>
+        Review quiz scores and scenario responses to identify whether
+        learners can recognize common security risks and select
+        appropriate actions.
+      </p>
+    </div>
+    <div class="info-card">
+      <h3>Learner Feedback</h3>
+      <p>
+        Collect learner feedback about the clarity, relevance, accessibility,
+        and usefulness of the learning experience.
+      </p>
+    </div>
+    <div class="info-card">
+      <h3>Confidence & Application</h3>
+      <p>
+        Use short pre- and post-learning confidence questions to explore
+        whether learners feel more prepared to respond to suspicious
+        workplace situations.
+      </p>
+    </div>
+    <div class="info-card">
+      <h3>Workplace Indicators</h3>
+      <p>
+        Where appropriate, review longer-term indicators such as reporting
+        behaviour, phishing simulation results, and recurring security
+        awareness gaps.
+      </p>
+    </div>
+  </div>
+
+  <div class="banner">
+    <strong>Evaluation note</strong>
+    <p>
+      These are proposed evaluation methods for the concept. No
+      organizational pilot, learner study, or measured performance
+      improvement is being claimed.
+    </p>
+  </div>
+</div>
+</section>
+
+<!-- REFLECTION -->
+
+<section class="section">
+<div class="container">
+  <div class="eyebrow">05 / Design Reflection</div>
+  <h2>Bringing UX and learning design together</h2>
+  <p class="section-intro">
+    This project explores how user experience principles can support
+    effective digital learning. Clear navigation, consistent layouts,
+    accessible interactions, and meaningful feedback help learners
+    focus on the content and understand what to do next.
+  </p>
+  <p>
+    The design process involved breaking down cybersecurity concepts
+    into manageable topics, writing realistic scenarios, and creating
+    opportunities for learners to practise decision-making.
+  </p>
+  <p>
+    It also reinforced the importance of connecting learning objectives,
+    instructional activities, and assessment. A successful learning
+    experience should do more than present information; it should help
+    people apply what they have learned in practical situations.
+  </p>
+
+  <div class="tag-list">
+    <span class="tag">Adult Learning</span>
+    <span class="tag">Scenario-Based Learning</span>
+    <span class="tag">UX / UI Design</span>
+    <span class="tag">Accessibility</span>
+    <span class="tag">Interactive eLearning</span>
+    <span class="tag">Feedback Design</span>
+  </div>
+</div>
+</section>
+
+</main>
+
+<footer class="footer">
+  <p>© 2026 Rathesa Kodeeswaran · Learning Experience Design Portfolio</p>
+  <a href="index.html">Return to all projects</a>
+</footer>
+
+<script>
+/* COURSE NAVIGATION */
+
+const sections = Array.from(document.querySelectorAll('.course-section'));
+const navButtons = Array.from(document.querySelectorAll('.course-nav button'));
+const progressFill = document.getElementById('progressFill');
+const progressLabel = document.getElementById('progressLabel');
+const previousBtn = document.getElementById('previousBtn');
+const nextBtn = document.getElementById('nextBtn');
+
+let currentSection = 0;
+
+function showSection(index) {
+  currentSection = Math.max(0, Math.min(index, sections.length - 1));
+
+  sections.forEach((section, i) => {
+    section.classList.toggle('active', i === currentSection);
+  });
+
+  navButtons.forEach((button, i) => {
+    button.classList.toggle('active', i === currentSection);
+  });
+
+  progressFill.style.width =
+    ((currentSection + 1) / sections.length * 100) + '%';
+
+  progressLabel.textContent =
+    `Section ${currentSection + 1} of ${sections.length}`;
+
+  previousBtn.disabled = currentSection === 0;
+
+  nextBtn.style.display =
+    currentSection === sections.length - 1 ? 'none' : 'inline-block';
+
+  if (currentSection === 7) {
+    document.getElementById('finalScore').textContent =
+      `${quizScore}/${quizQuestions.length}`;
+
+    document.getElementById('finalScoreMessage').textContent =
+      quizCompleted
+        ? `You answered ${quizScore} out of ${quizQuestions.length} questions correctly.`
+        : 'Explore the course knowledge check to review your understanding.';
+
+    const commitment = document.getElementById('commitment').value.trim();
+
+    document.getElementById('finalCommitment').textContent =
+      commitment || 'Choose one security habit to put into practice this week.';
+  }
+}
+
+navButtons.forEach(button => {
+  button.addEventListener('click', () => {
+    showSection(Number(button.dataset.section));
+  });
+});
+
+previousBtn.addEventListener('click', () => {
+  showSection(currentSection - 1);
+});
+
+nextBtn.addEventListener('click', () => {
+  showSection(currentSection + 1);
+});
+
+/* SCENARIO FEEDBACK */
+
+function setupScenario(containerId, feedbackId, correctMessage, incorrectMessage) {
+  const container = document.getElementById(containerId);
+  const feedback = document.getElementById(feedbackId);
+
+  container.querySelectorAll('.choice').forEach(button => {
+    button.addEventListener('click', () => {
+      container.querySelectorAll('.choice').forEach(choice => {
+        choice.classList.remove('selected');
+      });
+
+      button.classList.add('selected');
+
+      const correct = button.dataset.correct === 'true';
+
+      feedback.className = 'feedback show ' +
+        (correct ? 'correct' : 'incorrect');
+
+      feedback.innerHTML = correct
+        ? '<strong>Correct!</strong><br>' + correctMessage
+        : '<strong>Not quite.</strong><br>' + incorrectMessage;
+    });
+  });
+}
+
+setupScenario(
+  'scenarioChoices',
+  'scenarioFeedback',
+  'Sarah should avoid the link and report the suspicious email through the approved process. This prevents her from exposing her credentials and alerts the appropriate team.',
+  'Clicking the link or replying to the suspicious message could expose Sarah to further risk. The safest response is to avoid interacting with it and report it through the approved process.'
+);
+
+setupScenario(
+  'workspaceChoices',
+  'workspaceFeedback',
+  'Jordan should move to a private location and use an approved secure connection. This helps protect confidential information from nearby viewers and potential network risks.',
+  'Continuing a confidential conversation in a public space can expose sensitive information. Jordan should move somewhere private and follow approved network security practices.'
+);
+
+/* KNOWLEDGE CHECK */
+
+const quizQuestions = [
+  {
+    question: 'You receive an urgent payment request from a senior leader using an unfamiliar email address. What should you do?',
+    options: [
+      'Process the payment immediately because the request is urgent.',
+      'Reply to the email asking for confirmation.',
+      'Verify the request through a known contact method and report it if suspicious.'
+    ],
+    answer: 2,
+    explanation: 'Always verify unexpected financial requests through an independently known contact method. Urgency and unfamiliar sender details are common social engineering warning signs.'
+  },
+  {
+    question: 'You create an account for a new approved workplace service. Which password practice is safest?',
+    options: [
+      'Reuse your existing work password.',
+      'Create a unique password using an approved password manager.',
+      'Use a simple password that is easy to remember.'
+    ],
+    answer: 1,
+    explanation: 'Unique passwords reduce the risk of one compromised account exposing other accounts. Use your organization-approved password manager and authentication practices.'
+  },
+  {
+    question: 'You need to access a confidential file while at an airport. What should you consider?',
+    options: [
+      'Use any available public Wi-Fi connection.',
+      'Use approved secure access and protect your screen from nearby viewers.',
+      'Ask someone nearby to watch your belongings while you work.'
+    ],
+    answer: 1,
+    explanation: 'Use approved secure access methods and consider visual privacy. Avoid exposing sensitive information to people nearby.'
+  },
+  {
+    question: 'A housemate enters the room while you are discussing confidential information on a video call. What is the best response?',
+    options: [
+      'Continue speaking because the call is online.',
+      'Mute yourself and move to a private location before continuing.',
+      'Turn up your speaker volume.'
+    ],
+    answer: 1,
+    explanation: 'Confidential conversations should not be overheard by unauthorized people. Mute your microphone and move to a private location.'
+  },
+  {
+    question: 'You clicked a suspicious link but did not enter any information. What should you do?',
+    options: [
+      'Ignore it because you did not enter a password.',
+      'Delete the email and do nothing else.',
+      'Report the incident immediately and follow the security team’s instructions.'
+    ],
+    answer: 2,
+    explanation: 'Report suspicious activity promptly, even if you did not enter information. Follow your organization’s incident-response instructions.'
+  }
+];
+
+let quizIndex = 0;
+let quizScore = 0;
+let quizCompleted = false;
+let quizAnswers = [];
+
+const quizContainer = document.getElementById('quizContainer');
+const quizFeedback = document.getElementById('quizFeedback');
+const quizCounter = document.getElementById('quizCounter');
+const quizResult = document.getElementById('quizResult');
+
+function renderQuestion() {
+  const question = quizQuestions[quizIndex];
+
+  quizCounter.textContent =
+    `Question ${quizIndex + 1} of ${quizQuestions.length}`;
+
+  quizFeedback.className = 'feedback';
+  quizFeedback.textContent = '';
+
+  quizContainer.innerHTML = `
+    <div class="question-card">
+      <h3>${quizIndex + 1}. ${question.question}</h3>
+      <div id="quizOptions"></div>
+      <button class="primary-btn" id="submitAnswer" disabled>
+        Submit answer
+      </button>
+      <button class="secondary-btn" id="nextQuestion" style="display:none;margin-left:8px;">
+        ${quizIndex === quizQuestions.length - 1 ? 'See results' : 'Next question →'}
+      </button>
+    </div>
+  `;
+
+  const optionsContainer = document.getElementById('quizOptions');
+  let selectedAnswer = null;
+
+  question.options.forEach((option, index) => {
+    const button = document.createElement('button');
+    button.className = 'quiz-option';
+    button.textContent = option;
+
+    button.addEventListener('click', () => {
+      selectedAnswer = index;
+
+      optionsContainer.querySelectorAll('button').forEach(btn => {
+        btn.classList.remove('selected');
+        btn.style.borderColor = '';
+        btn.style.background = '';
+      });
+
+      button.classList.add('selected');
+      button.style.borderColor = '#285d49';
+      button.style.background = '#eaf2ed';
+
+      document.getElementById('submitAnswer').disabled = false;
+    });
+
+    optionsContainer.appendChild(button);
+  });
+
+  document.getElementById('submitAnswer').addEventListener('click', () => {
+    if (selectedAnswer === null) return;
+
+    const correct = selectedAnswer === question.answer;
+
+    if (correct) quizScore++;
+
+    quizAnswers.push({
+      selected: selectedAnswer,
+      correct: correct
+    });
+
+    optionsContainer.querySelectorAll('button').forEach((btn, index) => {
+      btn.disabled = true;
+
+      if (index === question.answer) {
+        btn.classList.add('correct-answer');
+      } else if (index === selectedAnswer && !correct) {
+        btn.classList.add('wrong-answer');
+      }
+    });
+
+    quizFeedback.className =
+      'feedback show ' + (correct ? 'correct' : 'incorrect');
+
+    quizFeedback.innerHTML =
+      `<strong>${correct ? 'Correct!' : 'Not quite.'}</strong><br>${question.explanation}`;
+
+    document.getElementById('submitAnswer').style.display = 'none';
+    document.getElementById('nextQuestion').style.display = 'inline-block';
+  });
+
+  document.getElementById('nextQuestion').addEventListener('click', () => {
+    if (quizIndex < quizQuestions.length - 1) {
+      quizIndex++;
+      renderQuestion();
+    } else {
+      finishQuiz();
+    }
+  });
+}
+
+function finishQuiz() {
+  quizCompleted = true;
+  quizContainer.style.display = 'none';
+  quizCounter.style.display = 'none';
+  quizFeedback.className = 'feedback';
+
+  quizResult.style.display = 'block';
+
+  document.getElementById('quizScore').textContent =
+    `${quizScore}/${quizQuestions.length}`;
+
+  document.getElementById('quizMessage').textContent =
+    quizScore === 5
+      ? 'Excellent work! You answered every question correctly.'
+      : quizScore >= 3
+        ? 'Good effort! Review the feedback and key concepts to strengthen your understanding.'
+        : 'Keep practising. Review the scenarios and try the knowledge check again.';
+
+  document.getElementById('finalScore').textContent =
+    `${quizScore}/${quizQuestions.length}`;
+}
+
+function resetQuiz() {
+  quizIndex = 0;
+  quizScore = 0;
+  quizCompleted = false;
+  quizAnswers = [];
+
+  quizContainer.style.display = 'block';
+  quizCounter.style.display = 'block';
+  quizResult.style.display = 'none';
+
+  renderQuestion();
+}
+
+document.getElementById('retryQuiz').addEventListener('click', resetQuiz);
+
+renderQuestion();
+showSection(0);
+
+</script>
+</body>
+</html>
