@@ -4,151 +4,184 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>LearnFlow | Learning Experience Design Portfolio</title>
+<meta name="theme-color" content="#f5f7fa">
+<title>LearnFlow | Adaptive Learning Experience</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
 <style>
-:root {
-  --ink:#202b39;
-  --muted:#687687;
-  --navy:#172d49;
-  --blue:#426cba;
-  --blue-light:#edf3fc;
-  --teal:#398d83;
-  --teal-light:#eaf5f2;
-  --gold:#d5a44b;
-  --line:#e6eaf0;
-  --surface:#ffffff;
-  --canvas:#f5f7fa;
-  --radius:18px;
+:root{
+ --ink:#202b39;
+ --muted:#687687;
+ --navy:#172d49;
+ --blue:#426cba;
+ --blue-light:#edf3fc;
+ --teal:#398d83;
+ --teal-light:#eaf5f2;
+ --gold:#d5a44b;
+ --line:#e6eaf0;
+ --canvas:#f5f7fa;
+ --white:#fff;
+ --radius:16px;
 }
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
 body{margin:0;background:var(--canvas);color:var(--ink);font-family:"DM Sans",sans-serif;line-height:1.6}
-h1,h2,h3,h4{font-family:"Manrope",sans-serif;line-height:1.2}
-a{color:inherit}
+h1,h2,h3,h4{font-family:"Manrope",sans-serif;line-height:1.25}
+button,input{font:inherit}
+button{cursor:pointer}
 .topbar{background:#fff;border-bottom:1px solid var(--line);padding:18px 6%;display:flex;justify-content:space-between;align-items:center}
 .brand{font-family:Manrope;font-weight:800;letter-spacing:-.5px;color:var(--navy);text-decoration:none}
 .topbar nav{display:flex;gap:26px;font-size:13px;color:var(--muted)}
-.topbar nav a{text-decoration:none}
-.topbar nav a:hover{color:var(--blue)}
-.back{font-size:13px;color:var(--muted);text-decoration:none}
+.topbar nav a,.back{text-decoration:none}
+.back{font-size:13px;color:var(--muted)}
 .container{max-width:1160px;margin:auto;padding:0 28px}
 .hero{padding:74px 0 58px;background:#fff}
 .eyebrow{font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--blue)}
-.hero h1{font-size:clamp(38px,5vw,62px);letter-spacing:-2.5px;color:var(--navy);max-width:800px;margin:16px 0}
-.hero p{max-width:690px;color:var(--muted);font-size:17px}
+.hero h1{font-size:clamp(38px,5vw,62px);letter-spacing:-2.5px;color:var(--navy);max-width:850px;margin:16px 0}
+.hero p{max-width:740px;color:var(--muted);font-size:17px}
 .pills{display:flex;gap:9px;flex-wrap:wrap;margin-top:25px}
-.pill{font-size:12px;background:var(--blue-light);color:#355a99;padding:7px 12px;border-radius:30px;font-weight:600}
+.pill{font-size:11px;background:var(--blue-light);color:#355a99;padding:7px 12px;border-radius:30px;font-weight:700}
 .project-meta{display:grid;grid-template-columns:repeat(4,1fr);gap:15px;margin-top:40px;padding-top:25px;border-top:1px solid var(--line)}
 .meta-label{font-size:10px;text-transform:uppercase;letter-spacing:1.3px;color:#8994a2;font-weight:700}
 .meta-value{font-size:13px;margin-top:5px;font-weight:600}
 .section{padding:68px 0}
 .section.white{background:#fff}
 .section-heading{font-size:30px;letter-spacing:-1px;color:var(--navy);margin:8px 0 14px}
-.lead{font-size:16px;color:var(--muted);max-width:760px}
-.grid-2{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:30px}
-.panel{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:26px}
-.panel h3{font-size:17px;margin:0 0 12px;color:var(--navy)}
-.panel p{font-size:14px;color:var(--muted);margin:0}
-.problem{background:#f0f4fa;border-left:4px solid var(--blue);padding:24px 28px;border-radius:0 14px 14px 0;margin-top:28px}
+.lead{font-size:15px;color:var(--muted);max-width:780px}
+.grid-2{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-top:28px}
+.panel{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:24px}
+.panel h3{font-size:16px;margin:0 0 10px;color:var(--navy)}
+.panel p{font-size:13px;color:var(--muted);margin:0}
+.problem{background:#f0f4fa;border-left:4px solid var(--blue);padding:23px 26px;border-radius:0 13px 13px 0;margin-top:26px}
 .problem strong{display:block;color:var(--navy);margin-bottom:6px}
-.problem p{margin:0;color:#58687c;font-size:14px}
-.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:17px;margin-top:28px}
-.info-card{background:#fff;border:1px solid var(--line);border-radius:16px;padding:23px}
-.number{width:34px;height:34px;border-radius:10px;background:var(--blue-light);color:var(--blue);display:grid;place-items:center;font-weight:800;margin-bottom:16px}
+.problem p{margin:0;color:#58687c;font-size:13px}
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:26px}
+.info-card{background:#fff;border:1px solid var(--line);border-radius:15px;padding:22px}
+.number{width:33px;height:33px;border-radius:10px;background:var(--blue-light);color:var(--blue);display:grid;place-items:center;font-weight:800;margin-bottom:14px}
 .info-card h3{font-size:15px;margin:0 0 8px}
-.info-card p{font-size:13px;color:var(--muted);margin:0}
-.objectives{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:25px}
-.objective{display:flex;gap:13px;background:#fff;border:1px solid var(--line);border-radius:13px;padding:17px;font-size:13px}
+.info-card p{font-size:12px;color:var(--muted);margin:0}
+.objectives{display:grid;grid-template-columns:1fr 1fr;gap:11px;margin-top:23px}
+.objective{display:flex;gap:12px;background:#fff;border:1px solid var(--line);border-radius:12px;padding:15px;font-size:12px}
 .check{color:var(--teal);font-weight:800}
-.strategy-list{display:grid;gap:13px;margin-top:25px}
-.strategy{display:flex;gap:17px;padding:18px 20px;border:1px solid var(--line);border-radius:14px;background:#fff}
-.strategy-icon{width:40px;height:40px;flex-shrink:0;border-radius:12px;background:var(--teal-light);display:grid;place-items:center;color:var(--teal);font-size:18px}
-.strategy h3{font-size:15px;margin:0 0 5px}
-.strategy p{font-size:13px;color:var(--muted);margin:0}
-.prototype-intro{display:flex;justify-content:space-between;gap:20px;align-items:end;margin-bottom:25px}
-.prototype-intro p{max-width:650px;color:var(--muted);font-size:14px}
-.demo-shell{background:#eaf0f7;border-radius:22px;padding:22px;box-shadow:0 18px 50px rgba(25,45,75,.08)}
-.app{background:#fff;border:1px solid #e3e8ef;border-radius:15px;overflow:hidden;min-height:650px;display:grid;grid-template-columns:205px 1fr}
-.sidebar{background:#172d49;color:#fff;padding:25px 16px}
-.app-logo{font-family:Manrope;font-size:19px;font-weight:800;padding:0 10px 25px}
+.strategy-list{display:grid;gap:12px;margin-top:24px}
+.strategy{display:flex;gap:16px;padding:18px;border:1px solid var(--line);border-radius:13px;background:#fff}
+.strategy-icon{width:39px;height:39px;flex-shrink:0;border-radius:11px;background:var(--teal-light);display:grid;place-items:center;color:var(--teal);font-size:18px}
+.strategy h3{font-size:14px;margin:0 0 5px}
+.strategy p{font-size:12px;color:var(--muted);margin:0}
+.prototype-intro{display:flex;justify-content:space-between;gap:20px;align-items:end;margin-bottom:23px}
+.prototype-intro p{max-width:690px;color:var(--muted);font-size:13px}
+.demo-shell{background:#eaf0f7;border-radius:20px;padding:20px;box-shadow:0 18px 50px rgba(25,45,75,.07)}
+.app{background:#fff;border:1px solid #e3e8ef;border-radius:14px;overflow:hidden;min-height:680px;display:grid;grid-template-columns:205px 1fr}
+.sidebar{background:#172d49;color:#fff;padding:23px 15px}
+.app-logo{font-family:Manrope;font-size:19px;font-weight:800;padding:0 10px 22px}
 .app-logo span{color:#83c5bb}
-.profile{display:flex;gap:10px;align-items:center;padding:14px 9px;border-top:1px solid #38506c;border-bottom:1px solid #38506c;margin-bottom:20px}
-.avatar{width:34px;height:34px;background:#dce8f5;color:#24466e;border-radius:50%;display:grid;place-items:center;font-weight:800;font-size:12px}
+.profile{display:flex;gap:10px;align-items:center;padding:13px 8px;border-top:1px solid #38506c;border-bottom:1px solid #38506c;margin-bottom:17px}
+.avatar{width:34px;height:34px;background:#dce8f5;color:#24466e;border-radius:50%;display:grid;place-items:center;font-weight:800;font-size:12px;flex-shrink:0}
 .profile small{display:block;color:#aebdd0;font-size:10px}
-.profile strong{font-size:12px}
+.profile strong{font-size:11px}
 .nav-label{font-size:9px;text-transform:uppercase;letter-spacing:1.4px;color:#9aacc2;padding:12px 10px 7px}
-.nav-item{padding:10px;border-radius:8px;color:#d3deeb;font-size:12px;margin:3px 0;cursor:pointer;display:flex;gap:10px;align-items:center}
+.nav-item{padding:10px;border-radius:8px;color:#d3deeb;font-size:11px;margin:3px 0;cursor:pointer;display:flex;gap:9px;align-items:center}
 .nav-item.active,.nav-item:hover{background:#2a4565;color:#fff}
-.app-main{padding:27px;background:#f8fafc;min-width:0}
-.app-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:24px}
-.app-top small{color:#8491a1;font-size:11px}
-.app-top strong{font-size:12px}
-.welcome h2{font-size:23px;color:var(--navy);margin:0 0 5px}
-.welcome p{font-size:12px;color:var(--muted);margin:0}
-.dashboard-grid{display:grid;grid-template-columns:1.55fr 1fr;gap:15px;margin-top:22px}
-.dash-card{background:#fff;border:1px solid var(--line);border-radius:13px;padding:18px;min-width:0}
-.dash-card h3{font-size:13px;color:var(--navy);margin:0 0 13px}
+.app-main{padding:25px;background:#f8fafc;min-width:0}
+.app-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:22px;gap:12px}
+.app-top small{color:#8491a1;font-size:10px}
+.app-top strong{font-size:11px}
+.welcome h2{font-size:22px;color:var(--navy);margin:0 0 5px}
+.welcome p{font-size:11px;color:var(--muted);margin:0}
+.dashboard-grid{display:grid;grid-template-columns:1.5fr 1fr;gap:13px;margin-top:20px}
+.dash-card{background:#fff;border:1px solid var(--line);border-radius:12px;padding:17px;min-width:0}
+.dash-card h3{font-size:12px;color:var(--navy);margin:0 0 12px}
 .continue-card{background:#edf3fc;border:1px solid #dce7f7}
 .course-tag{font-size:9px;color:#426cba;font-weight:800;text-transform:uppercase;letter-spacing:1px}
-.continue-card h3{font-size:17px;margin:8px 0 5px}
-.continue-card p{font-size:11px;color:#64758a;margin:0 0 14px}
+.continue-card h3{font-size:16px;margin:8px 0 5px}
+.continue-card p{font-size:10px;color:#64758a;margin:0 0 13px}
 .progress-track{height:7px;background:#dbe3ee;border-radius:10px;overflow:hidden}
 .progress-fill{height:100%;background:var(--blue);border-radius:10px;transition:width .3s}
-.progress-label{display:flex;justify-content:space-between;font-size:10px;color:#68788c;margin:7px 0 14px}
-.primary-btn,.secondary-btn{border:0;border-radius:8px;padding:10px 15px;font-family:inherit;font-weight:700;font-size:11px;cursor:pointer}
+.progress-label{display:flex;justify-content:space-between;font-size:10px;color:#68788c;margin:7px 0 13px}
+.primary-btn,.secondary-btn{border:0;border-radius:8px;padding:9px 13px;font-weight:700;font-size:10px}
 .primary-btn{background:var(--blue);color:#fff}
 .primary-btn:hover{background:#315899}
 .secondary-btn{background:#edf1f6;color:#42556d}
-.stat-grid{display:grid;grid-template-columns:1fr 1fr;gap:9px}
-.stat{background:#f7f9fc;border-radius:10px;padding:13px}
-.stat strong{font-family:Manrope;font-size:22px;color:var(--navy);display:block}
-.stat span{font-size:10px;color:var(--muted)}
-.course-row{display:flex;gap:12px;align-items:center;padding:12px 0;border-bottom:1px solid #edf0f4}
+.stat-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.stat{background:#f7f9fc;border-radius:9px;padding:11px}
+.stat strong{font-family:Manrope;font-size:20px;color:var(--navy);display:block}
+.stat span{font-size:9px;color:var(--muted)}
+.course-row{display:flex;gap:10px;align-items:center;padding:11px 0;border-bottom:1px solid #edf0f4}
 .course-row:last-child{border:0}
-.course-art{width:43px;height:43px;border-radius:10px;display:grid;place-items:center;font-size:18px;flex-shrink:0}
+.course-art{width:40px;height:40px;border-radius:10px;display:grid;place-items:center;font-size:17px;flex-shrink:0}
 .art-blue{background:#e8effb}.art-green{background:#e8f4ee}.art-gold{background:#fbf1df}
-.course-row strong{font-size:11px;display:block}
-.course-row small{font-size:10px;color:var(--muted)}
+.course-row strong{font-size:10px;display:block}
+.course-row small{font-size:9px;color:var(--muted)}
 .course-row button{margin-left:auto;white-space:nowrap}
 .recommendation{background:#f0f7f5;border:1px solid #dcece7}
-.recommendation p{font-size:11px;color:#5e746e;margin:0 0 12px}
+.recommendation p{font-size:10px;color:#5e746e;margin:0 0 11px}
 .page-view{display:none}
 .page-view.active{display:block}
-.view-title{font-size:22px;color:var(--navy);margin:0 0 6px}
-.view-subtitle{font-size:12px;color:var(--muted);margin:0 0 22px}
-.course-detail{display:grid;grid-template-columns:1fr auto;gap:15px;align-items:center}
-.course-detail h3{margin:5px 0;font-size:16px}
-.course-detail p{font-size:11px;color:var(--muted);margin:0}
-.filter-row{display:flex;gap:8px;flex-wrap:wrap;margin:15px 0}
-.filter{border:1px solid var(--line);background:#fff;padding:7px 12px;border-radius:20px;font-size:10px;cursor:pointer;color:var(--muted)}
+.view-title{font-size:21px;color:var(--navy);margin:0 0 5px}
+.view-subtitle{font-size:11px;color:var(--muted);margin:0 0 20px}
+.course-detail{display:grid;grid-template-columns:1fr auto;gap:14px;align-items:center}
+.course-detail h3{margin:5px 0;font-size:15px}
+.course-detail p{font-size:10px;color:var(--muted);margin:0}
+.filter-row{display:flex;gap:7px;flex-wrap:wrap;margin:14px 0}
+.filter{border:1px solid var(--line);background:#fff;padding:7px 11px;border-radius:20px;font-size:9px;color:var(--muted)}
 .filter.active{background:var(--blue-light);color:var(--blue);border-color:#cddcf1}
-.catalog-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
-.catalog-card{background:#fff;border:1px solid var(--line);border-radius:12px;padding:16px}
-.catalog-card .course-art{margin-bottom:12px}
-.catalog-card h3{font-size:13px;margin:0 0 5px}
-.catalog-card p{font-size:10px;color:var(--muted);margin:0 0 12px}
-.resource-row{background:#fff;border:1px solid var(--line);border-radius:10px;padding:14px;margin:9px 0;display:flex;justify-content:space-between;gap:12px;font-size:11px}
+.catalog-grid{display:grid;grid-template-columns:1fr 1fr;gap:11px}
+.catalog-card{background:#fff;border:1px solid var(--line);border-radius:11px;padding:14px}
+.catalog-card .course-art{margin-bottom:10px}
+.catalog-card h3{font-size:12px;margin:0 0 5px}
+.catalog-card p{font-size:9px;color:var(--muted);margin:0 0 10px}
+.resource-row{background:#fff;border:1px solid var(--line);border-radius:9px;padding:13px;margin:8px 0;display:flex;justify-content:space-between;gap:12px;font-size:10px}
 .resource-row span{color:var(--muted)}
-.check-row{display:flex;gap:12px;align-items:center;background:#fff;border:1px solid var(--line);border-radius:10px;padding:14px;margin:9px 0;font-size:12px}
-.check-row input{accent-color:var(--teal);width:16px;height:16px}
-.notice{font-size:10px;color:var(--muted);margin-top:18px;padding:13px;background:#f0f3f7;border-radius:9px}
-.callout{padding:20px;background:#edf3fc;border-radius:13px;margin-top:20px}
-.callout strong{color:var(--navy);font-size:13px}
-.callout p{font-size:12px;color:var(--muted);margin:5px 0 0}
-.evaluation{display:grid;grid-template-columns:repeat(3,1fr);gap:15px;margin-top:25px}
-.eval-card{border-top:3px solid var(--teal);background:#fff;padding:18px;border-radius:0 0 12px 12px}
-.eval-card strong{font-size:13px}
-.eval-card p{font-size:12px;color:var(--muted);margin:7px 0 0}
-.reflection{background:var(--navy);color:#fff;padding:35px;border-radius:18px;margin-top:28px}
-.reflection h3{font-size:20px;margin:0 0 10px}
-.reflection p{font-size:14px;color:#d1dce9;max-width:780px;margin:0}
-.footer{padding:35px 0;text-align:center;color:#8792a1;font-size:11px}
-@media(max-width:800px){
+.check-row{display:flex;gap:11px;align-items:center;background:#fff;border:1px solid var(--line);border-radius:9px;padding:12px;margin:8px 0;font-size:11px}
+.check-row input{accent-color:var(--teal);width:15px;height:15px}
+.notice{font-size:10px;color:var(--muted);margin-top:15px;padding:12px;background:#f0f3f7;border-radius:9px}
+.callout{padding:17px;background:#edf3fc;border-radius:12px;margin-top:16px}
+.callout strong{color:var(--navy);font-size:12px}
+.callout p{font-size:11px;color:var(--muted);margin:5px 0 0}
+.field-group{margin:18px 0}
+.field-group>label{font-size:12px;font-weight:700;color:var(--navy);display:block;margin-bottom:9px}
+.choice-grid{display:grid;grid-template-columns:1fr 1fr;gap:9px}
+.choice{display:flex;gap:9px;align-items:flex-start;border:1px solid var(--line);border-radius:10px;padding:11px;background:#fff;cursor:pointer;font-size:10px;color:var(--ink)}
+.choice:has(input:checked){border-color:var(--blue);background:#f1f5fc}
+.choice input{accent-color:var(--blue);margin-top:2px}
+.choice small{display:block;color:var(--muted);font-size:9px;margin-top:3px}
+.profile-summary{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:15px}
+.profile-stat{padding:13px;background:#f5f8fc;border-radius:10px}
+.profile-stat span{display:block;font-size:9px;color:var(--muted);text-transform:uppercase;letter-spacing:.7px}
+.profile-stat strong{font-size:12px;color:var(--navy)}
+.lesson-methods{display:flex;gap:7px;flex-wrap:wrap;margin:14px 0}
+.method-btn{background:#fff;border:1px solid var(--line);border-radius:8px;padding:8px 11px;font-size:10px;color:var(--muted)}
+.method-btn.active{background:var(--blue-light);border-color:#cbdaf1;color:var(--blue);font-weight:700}
+.lesson-content{background:#fff;border:1px solid var(--line);border-radius:12px;padding:18px;margin-top:12px}
+.lesson-content h3{font-size:14px;color:var(--navy);margin:0 0 8px}
+.lesson-content p{font-size:11px;color:var(--muted)}
+.lesson-visual{background:#edf3fc;padding:17px;border-radius:10px;margin:12px 0;text-align:center;color:var(--navy)}
+.lesson-visual strong{font-size:12px;display:block}
+.lesson-visual span{font-size:10px;color:var(--muted)}
+.lesson-steps{display:grid;gap:8px;margin-top:12px}
+.lesson-step{background:#f5f7fa;padding:11px;border-radius:8px;font-size:10px}
+.quiz-option{display:block;border:1px solid var(--line);border-radius:9px;padding:11px;margin:8px 0;background:#fff;font-size:10px;cursor:pointer}
+.quiz-option:has(input:checked){border-color:var(--blue);background:#f1f5fc}
+.quiz-option input{accent-color:var(--blue);margin-right:8px}
+.feedback{padding:12px;border-radius:9px;margin-top:12px;font-size:10px;display:none}
+.feedback.show{display:block}
+.feedback.good{background:#eaf5f2;color:#286e63}
+.feedback.try{background:#fff5e5;color:#8a641f}
+.recommendation-result{border:1px solid #d6e8e2;background:#f0f7f5;padding:15px;border-radius:11px;margin-top:14px}
+.recommendation-result strong{font-size:12px;color:#286e63}
+.recommendation-result p{font-size:10px;color:#526e67;margin:5px 0 0}
+.evaluation{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:23px}
+.eval-card{border-top:3px solid var(--teal);background:#fff;padding:17px;border-radius:0 0 11px 11px}
+.eval-card strong{font-size:12px}
+.eval-card p{font-size:11px;color:var(--muted);margin:7px 0 0}
+.reflection{background:var(--navy);color:#fff;padding:33px;border-radius:17px;margin-top:26px}
+.reflection h3{font-size:19px;margin:0 0 10px}
+.reflection p{font-size:13px;color:#d1dce9;max-width:790px;margin:0}
+.footer{padding:35px 0;text-align:center;color:#8792a1;font-size:10px}
+@media(max-width:850px){
  .topbar nav{display:none}
- .project-meta{grid-template-columns:1fr 1fr}
  .cards,.evaluation{grid-template-columns:1fr}
  .grid-2,.objectives{grid-template-columns:1fr}
  .app{grid-template-columns:1fr}
@@ -156,42 +189,46 @@ a{color:inherit}
  .dashboard-grid{grid-template-columns:1fr}
  .prototype-intro{display:block}
 }
-@media(max-width:520px){
- .container{padding:0 18px}
- .hero{padding:50px 0 40px}
- .app-main{padding:15px}
- .demo-shell{padding:8px}
- .catalog-grid{grid-template-columns:1fr}
+@media(max-width:560px){
+ .container{padding:0 17px}
+ .hero{padding:48px 0 38px}
+ .project-meta{grid-template-columns:1fr 1fr}
+ .app-main{padding:13px}
+ .demo-shell{padding:7px}
+ .catalog-grid,.choice-grid,.profile-summary{grid-template-columns:1fr}
+ .app-top{align-items:flex-start;flex-direction:column}
 }
 </style>
 </head>
+
 <body>
 <header class="topbar">
-  <a class="brand" href="index.html">RATHESA KODEESWARAN</a>
-  <nav>
-    <a href="index.html#work">Projects</a>
-    <a href="index.html#about">About</a>
-    <a href="index.html#contact">Contact</a>
-  </nav>
-  <a class="back" href="index.html#work">← All projects</a>
+ <a class="brand" href="index.html">RATHESA KODEESWARAN</a>
+ <nav>
+  <a href="index.html#work">Projects</a>
+  <a href="index.html#about">About</a>
+  <a href="index.html#contact">Contact</a>
+ </nav>
+ <a class="back" href="index.html#work">← All projects</a>
 </header>
 
 <section class="hero">
  <div class="container">
-  <div class="eyebrow">Project 03 · UX + Self-Directed Learning</div>
-  <h1>LearnFlow: A More Supportive LMS Experience</h1>
-  <p>A learning management system concept designed to make workplace learning easier to navigate. LearnFlow brings course discovery, learning resources, and progress tracking into one organized experience.</p>
+  <div class="eyebrow">Project 03 · UX + Adaptive Learning</div>
+  <h1>LearnFlow: A More Personalized Learning Experience</h1>
+  <p>An adaptive learning management system concept that explores how learner preferences, activity, and knowledge-check performance can help create more relevant and supportive workplace learning experiences.</p>
   <div class="pills">
    <span class="pill">UX/UI Design</span>
    <span class="pill">Adult Learning</span>
+   <span class="pill">Adaptive Learning</span>
+   <span class="pill">AI Learning Concept</span>
    <span class="pill">Information Architecture</span>
-   <span class="pill">Learning Experience Design</span>
   </div>
   <div class="project-meta">
    <div><div class="meta-label">Project type</div><div class="meta-value">Independent concept</div></div>
    <div><div class="meta-label">Audience</div><div class="meta-value">Workplace learners</div></div>
-   <div><div class="meta-label">Focus</div><div class="meta-value">Learning platform UX</div></div>
-   <div><div class="meta-label">Tools</div><div class="meta-value">Figma · HTML · CSS · JavaScript</div></div>
+   <div><div class="meta-label">Focus</div><div class="meta-value">Adaptive learning UX</div></div>
+   <div><div class="meta-label">Tools</div><div class="meta-value">HTML · CSS · JavaScript · Figma</div></div>
   </div>
  </div>
 </section>
@@ -199,20 +236,20 @@ a{color:inherit}
 <section class="section">
  <div class="container">
   <div class="eyebrow">01 · The challenge</div>
-  <h2 class="section-heading">Making workplace learning easier to navigate</h2>
-  <p class="lead">Learning platforms can contain valuable training and development resources, but learners may struggle to find relevant courses, locate materials, or understand what they should do next.</p>
+  <h2 class="section-heading">One learning experience does not work equally well for everyone</h2>
+  <p class="lead">Traditional learning platforms often present the same content in the same format to every learner. However, employees may have different preferences, levels of prior knowledge, schedules, and support needs.</p>
   <div class="problem">
    <strong>The design problem</strong>
-   <p>How might we create a more organized and supportive learning experience that helps employees find relevant learning, manage their progress, and take ownership of their development?</p>
+   <p>How might we create a learning platform that responds to individual preferences and learning progress, helping employees engage with content in ways that support their development?</p>
   </div>
   <div class="grid-2">
    <div class="panel">
     <h3>Learner needs</h3>
-    <p>Employees need a clear view of assigned learning, accessible course materials, visible progress, and recommendations that connect to their interests and development goals.</p>
+    <p>Employees need flexibility in how they access information, clear learning goals, relevant practice, useful feedback, and visibility into their progress.</p>
    </div>
    <div class="panel">
     <h3>Design opportunity</h3>
-    <p>Bring key learning activities into one place and reduce the effort required to move between course discovery, learning content, and progress information.</p>
+    <p>Use learner-selected preferences and demonstrated learning needs to suggest appropriate content formats, activities, and additional support.</p>
    </div>
   </div>
  </div>
@@ -221,19 +258,19 @@ a{color:inherit}
 <section class="section white">
  <div class="container">
   <div class="eyebrow">02 · Audience & objectives</div>
-  <h2 class="section-heading">Designing around the learner</h2>
-  <p class="lead">The concept is intended for employees balancing required workplace training with optional professional development.</p>
+  <h2 class="section-heading">Designing around individual learners</h2>
+  <p class="lead">LearnFlow is intended for employees balancing required workplace training with optional professional development.</p>
   <div class="cards">
-   <div class="info-card"><div class="number">01</div><h3>Assigned learners</h3><p>Employees who need to complete mandatory courses and understand deadlines and outstanding requirements.</p></div>
-   <div class="info-card"><div class="number">02</div><h3>Self-directed learners</h3><p>Employees exploring optional courses and resources to build skills or support career development.</p></div>
-   <div class="info-card"><div class="number">03</div><h3>Busy professionals</h3><p>Employees who need to quickly locate relevant information and return to learning without unnecessary navigation.</p></div>
+   <div class="info-card"><div class="number">01</div><h3>Assigned learners</h3><p>Employees completing required training who need a clear view of deadlines, progress, and outstanding activities.</p></div>
+   <div class="info-card"><div class="number">02</div><h3>Self-directed learners</h3><p>Employees exploring optional learning opportunities to build skills and support career development.</p></div>
+   <div class="info-card"><div class="number">03</div><h3>Different learning needs</h3><p>Employees who benefit from different explanations, examples, practice activities, and levels of guidance.</p></div>
   </div>
-  <h3 style="margin:35px 0 0;color:var(--navy);font-size:17px">Learning experience objectives</h3>
+  <h3 style="margin:34px 0 0;color:var(--navy);font-size:16px">Experience objectives</h3>
   <div class="objectives">
-   <div class="objective"><span class="check">✓</span><span>Help learners locate assigned and recommended learning opportunities.</span></div>
-   <div class="objective"><span class="check">✓</span><span>Make course progress and outstanding learning requirements easy to understand.</span></div>
-   <div class="objective"><span class="check">✓</span><span>Connect learners with resources that support their interests and development goals.</span></div>
-   <div class="objective"><span class="check">✓</span><span>Provide a consistent place to access courses, materials, and learning activities.</span></div>
+   <div class="objective"><span class="check">✓</span><span>Allow learners to communicate their preferred ways of engaging with content.</span></div>
+   <div class="objective"><span class="check">✓</span><span>Present learning through a choice of instructional methods.</span></div>
+   <div class="objective"><span class="check">✓</span><span>Use knowledge checks to identify topics that may need reinforcement.</span></div>
+   <div class="objective"><span class="check">✓</span><span>Adjust learning suggestions based on preferences and demonstrated progress.</span></div>
   </div>
  </div>
 </section>
@@ -241,13 +278,17 @@ a{color:inherit}
 <section class="section">
  <div class="container">
   <div class="eyebrow">03 · Experience strategy</div>
-  <h2 class="section-heading">From course access to learner support</h2>
-  <p class="lead">The interface is designed to support self-directed learning by helping employees understand their options, make informed choices, and monitor their progress.</p>
+  <h2 class="section-heading">From a standard LMS to an adaptive experience</h2>
+  <p class="lead">The platform combines learner choice with ongoing feedback. Instead of assigning people a fixed learning-style label, it gives them control over content formats and responds to their activity.</p>
   <div class="strategy-list">
-   <div class="strategy"><div class="strategy-icon">⌂</div><div><h3>Centralized dashboard</h3><p>Bring assigned courses, learning activity, and recommended resources together so learners can see what matters at a glance.</p></div></div>
-   <div class="strategy"><div class="strategy-icon">◎</div><div><h3>Clear course discovery</h3><p>Organize learning opportunities by topic and provide concise descriptions, estimated time, and course details before learners begin.</p></div></div>
-   <div class="strategy"><div class="strategy-icon">↗</div><div><h3>Visible progress</h3><p>Use progress indicators and completion information to help learners understand where they are and what remains.</p></div></div>
-   <div class="strategy"><div class="strategy-icon">✧</div><div><h3>Relevant recommendations</h3><p>Suggest learning based on a learner's stated goals, interests, and previous activity, while keeping recommendations transparent and optional.</p></div></div>
+   <div class="strategy"><div class="strategy-icon">◎</div><div><h3>Understand learner preferences</h3><p>Ask learners how they prefer to explore information, the length of sessions they prefer, and the types of support they find useful.</p></div></div>
+   <div class="strategy"><div class="strategy-icon">▧</div><div><h3>Offer multiple instructional methods</h3><p>Provide written explanations, visual examples, demonstrations, scenarios, and hands-on practice where appropriate.</p></div></div>
+   <div class="strategy"><div class="strategy-icon">↗</div><div><h3>Respond to learning progress</h3><p>Use knowledge-check performance and learner feedback to suggest review, additional examples, or more challenging activities.</p></div></div>
+   <div class="strategy"><div class="strategy-icon">✧</div><div><h3>Keep the learner in control</h3><p>Make recommendations optional, explain why they appear, and allow learners to change preferences whenever they want.</p></div></div>
+  </div>
+  <div class="callout">
+   <strong>A note on learning styles</strong>
+   <p>LearnFlow does not classify people into fixed visual, auditory, or kinaesthetic learning types. It explores self-reported preferences and observed learning needs. Different instructional methods can support different objectives, and learners should be free to use more than one method.</p>
   </div>
  </div>
 </section>
@@ -257,8 +298,8 @@ a{color:inherit}
   <div class="eyebrow">04 · Interactive prototype</div>
   <div class="prototype-intro">
    <div>
-    <h2 class="section-heading">Explore the LearnFlow experience</h2>
-    <p>Try the sample dashboard. Navigate between learning areas, explore course recommendations, and update the sample checklist. This prototype uses fictional course content and sample learner information.</p>
+    <h2 class="section-heading">Explore your LearnFlow experience</h2>
+    <p>Try the sample learner profile, explore course options, and complete an adaptive lesson. Your choices change the sample learning recommendations during this session.</p>
    </div>
    <span class="pill">Interactive concept</span>
   </div>
@@ -267,21 +308,32 @@ a{color:inherit}
    <div class="app">
     <aside class="sidebar">
      <div class="app-logo">learn<span>flow</span></div>
-     <div class="profile"><div class="avatar">JD</div><div><strong>Jordan Davis</strong><small>Learning account</small></div></div>
+     <div class="profile">
+      <div class="avatar">JD</div>
+      <div><strong>Jordan Davis</strong><small>Learning account</small></div>
+     </div>
      <div class="nav-label">Workspace</div>
      <div class="nav-item active" data-view="overview">⌂ &nbsp; Overview</div>
      <div class="nav-item" data-view="my-learning">▤ &nbsp; My learning</div>
      <div class="nav-item" data-view="discover">⌕ &nbsp; Discover courses</div>
      <div class="nav-item" data-view="resources">▧ &nbsp; Resources</div>
-     <div class="nav-label">Account</div>
-     <div class="nav-item" data-view="goals">◎ &nbsp; My goals</div>
+     <div class="nav-label">Personalization</div>
+     <div class="nav-item" data-view="profile-view">◎ &nbsp; My learning profile</div>
+     <div class="nav-item" data-view="adaptive">✧ &nbsp; Adaptive lesson</div>
     </aside>
 
     <main class="app-main">
-     <div class="app-top"><strong>LEARNING WORKSPACE</strong><small>Sample learner account · Jordan Davis</small></div>
+     <div class="app-top">
+      <strong>LEARNING WORKSPACE</strong>
+      <small>Sample learner account · Jordan Davis</small>
+     </div>
 
+     <!-- DASHBOARD -->
      <div class="page-view active" id="overview">
-      <div class="welcome"><h2>Good morning, Jordan 👋</h2><p>Here's an overview of your learning activity.</p></div>
+      <div class="welcome">
+       <h2>Good morning, Jordan 👋</h2>
+       <p>Your learning journey, organized around your goals and progress.</p>
+      </div>
       <div class="dashboard-grid">
        <div class="dash-card continue-card">
         <span class="course-tag">Continue learning</span>
@@ -297,107 +349,249 @@ a{color:inherit}
          <div class="stat"><strong>3</strong><span>Active courses</span></div>
          <div class="stat"><strong>2</strong><span>Completed</span></div>
          <div class="stat"><strong>4.5h</strong><span>Learning time</span></div>
-         <div class="stat"><strong>1</strong><span>Due this week</span></div>
+         <div class="stat"><strong id="dashboard-score">—</strong><span>Latest quiz result</span></div>
         </div>
        </div>
        <div class="dash-card">
-        <h3>Recommended for you</h3>
-        <div class="course-row"><div class="course-art art-green">✦</div><div><strong>Giving and Receiving Feedback</strong><small>20 min · Communication</small></div><button class="secondary-btn" onclick="openCourse('feedback')">View</button></div>
-        <div class="course-row"><div class="course-art art-gold">◇</div><div><strong>Time Management Essentials</strong><small>15 min · Productivity</small></div><button class="secondary-btn" onclick="openCourse('time')">View</button></div>
+        <h3>Suggested next steps</h3>
+        <div class="course-row">
+         <div class="course-art art-green">✦</div>
+         <div><strong>Giving and Receiving Feedback</strong><small>20 min · Communication</small></div>
+         <button class="secondary-btn" onclick="openCourse('feedback')">View</button>
+        </div>
+        <div class="course-row">
+         <div class="course-art art-gold">◇</div>
+         <div><strong>Time Management Essentials</strong><small>15 min · Productivity</small></div>
+         <button class="secondary-btn" onclick="openCourse('time')">View</button>
+        </div>
        </div>
        <div class="dash-card recommendation">
-        <h3>A learning suggestion</h3>
-        <p>You've been exploring communication topics. You may find the feedback course useful as a next step.</p>
-        <button class="secondary-btn" onclick="goTo('discover')">Explore courses</button>
+        <h3>Your learning profile</h3>
+        <p id="dashboard-profile-summary">Tell LearnFlow how you prefer to engage with learning content to explore personalized suggestions.</p>
+        <button class="secondary-btn" onclick="goTo('profile-view')">Set preferences</button>
        </div>
       </div>
      </div>
 
+     <!-- MY LEARNING -->
      <div class="page-view" id="my-learning">
-      <h2 class="view-title">My learning</h2><p class="view-subtitle">Keep track of your current and completed courses.</p>
+      <h2 class="view-title">My learning</h2>
+      <p class="view-subtitle">Keep track of your current and completed courses.</p>
       <div class="dash-card">
        <h3>In progress</h3>
-       <div class="course-row"><div class="course-art art-blue">▣</div><div style="flex:1"><strong>Communicating with Confidence</strong><small>60% complete · 25 min</small><div class="progress-track" style="margin-top:8px"><div class="progress-fill" style="width:60%"></div></div></div><button class="secondary-btn" onclick="openCourse('communication')">Open</button></div>
-       <div class="course-row"><div class="course-art art-green">✦</div><div style="flex:1"><strong>Workplace Cybersecurity</strong><small>30% complete · 20 min</small><div class="progress-track" style="margin-top:8px"><div class="progress-fill" style="width:30%"></div></div></div><button class="secondary-btn" onclick="openCourse('cyber')">Open</button></div>
-       <div class="course-row"><div class="course-art art-gold">◇</div><div style="flex:1"><strong>Introduction to Project Planning</strong><small>10% complete · 35 min</small><div class="progress-track" style="margin-top:8px"><div class="progress-fill" style="width:10%"></div></div></div><button class="secondary-btn" onclick="openCourse('project')">Open</button></div>
+       <div class="course-row">
+        <div class="course-art art-blue">▣</div>
+        <div style="flex:1"><strong>Communicating with Confidence</strong><small>60% complete · 25 min</small><div class="progress-track" style="margin-top:8px"><div class="progress-fill" style="width:60%"></div></div></div>
+        <button class="secondary-btn" onclick="openCourse('communication')">Open</button>
+       </div>
+       <div class="course-row">
+        <div class="course-art art-green">✦</div>
+        <div style="flex:1"><strong>Workplace Cybersecurity</strong><small>30% complete · 20 min</small><div class="progress-track" style="margin-top:8px"><div class="progress-fill" style="width:30%"></div></div></div>
+        <button class="secondary-btn" onclick="openCourse('cyber')">Open</button>
+       </div>
+       <div class="course-row">
+        <div class="course-art art-gold">◇</div>
+        <div style="flex:1"><strong>Introduction to Project Planning</strong><small>10% complete · 35 min</small><div class="progress-track" style="margin-top:8px"><div class="progress-fill" style="width:10%"></div></div></div>
+        <button class="secondary-btn" onclick="openCourse('project')">Open</button>
+       </div>
       </div>
-      <div class="dash-card" style="margin-top:15px"><h3>Completed</h3><div class="course-row"><div class="course-art art-green">✓</div><div><strong>Inclusive Workplace Essentials</strong><small>Completed · September 2026</small></div><span class="pill">Complete</span></div></div>
+      <div class="dash-card" style="margin-top:14px">
+       <h3>Completed</h3>
+       <div class="course-row"><div class="course-art art-green">✓</div><div><strong>Inclusive Workplace Essentials</strong><small>Completed · September 2026</small></div><span class="pill">Complete</span></div>
+      </div>
      </div>
 
+     <!-- COURSE DISCOVERY -->
      <div class="page-view" id="discover">
-      <h2 class="view-title">Discover courses</h2><p class="view-subtitle">Explore learning opportunities that support your development.</p>
+      <h2 class="view-title">Discover courses</h2>
+      <p class="view-subtitle">Explore learning opportunities that support your development.</p>
       <div class="filter-row">
        <button class="filter active" onclick="filterCourses('all',this)">All courses</button>
        <button class="filter" onclick="filterCourses('communication',this)">Communication</button>
        <button class="filter" onclick="filterCourses('technology',this)">Technology</button>
        <button class="filter" onclick="filterCourses('productivity',this)">Productivity</button>
       </div>
-      <div class="catalog-grid" id="catalog">
+      <div class="catalog-grid">
        <div class="catalog-card" data-category="communication"><div class="course-art art-green">✦</div><h3>Giving and Receiving Feedback</h3><p>Practice constructive feedback and active listening. · 20 min</p><button class="secondary-btn" onclick="openCourse('feedback')">View course</button></div>
        <div class="catalog-card" data-category="productivity"><div class="course-art art-gold">◇</div><h3>Time Management Essentials</h3><p>Explore practical ways to prioritize tasks. · 15 min</p><button class="secondary-btn" onclick="openCourse('time')">View course</button></div>
-       <div class="catalog-card" data-category="technology"><div class="course-art art-blue">▣</div><h3>Workplace Cybersecurity</h3><p>Learn how to recognize and respond to common risks. · 20 min</p><button class="secondary-btn" onclick="openCourse('cyber')">View course</button></div>
-       <div class="catalog-card" data-category="communication"><div class="course-art art-green">◎</div><h3>Communicating with Confidence</h3><p>Build confidence in everyday workplace conversations. · 25 min</p><button class="secondary-btn" onclick="openCourse('communication')">View course</button></div>
+       <div class="catalog-card" data-category="technology"><div class="course-art art-blue">▣</div><h3>Workplace Cybersecurity</h3><p>Recognize and respond to common risks. · 20 min</p><button class="secondary-btn" onclick="openCourse('cyber')">View course</button></div>
+       <div class="catalog-card" data-category="communication"><div class="course-art art-green">◎</div><h3>Communicating with Confidence</h3><p>Build confidence in everyday conversations. · 25 min</p><button class="secondary-btn" onclick="openCourse('communication')">View course</button></div>
       </div>
      </div>
 
+     <!-- RESOURCES -->
      <div class="page-view" id="resources">
-      <h2 class="view-title">Learning resources</h2><p class="view-subtitle">Quick access to useful materials and reference guides.</p>
-      <div class="resource-row"><div><strong>Communication conversation guide</strong><br><span>PDF · Reference guide</span></div><span>↗</span></div>
+      <h2 class="view-title">Learning resources</h2>
+      <p class="view-subtitle">Quick access to useful materials and reference guides.</p>
+      <div class="resource-row"><div><strong>Communication conversation guide</strong><br><span>Reference guide · Reading</span></div><span>↗</span></div>
       <div class="resource-row"><div><strong>Cybersecurity quick reference</strong><br><span>Checklist · Job aid</span></div><span>↗</span></div>
-      <div class="resource-row"><div><strong>Project planning template</strong><br><span>Template · Downloadable resource</span></div><span>↗</span></div>
-      <div class="notice">In a production LMS, these resources would link to accessible documents, videos, job aids, and other approved learning materials.</div>
+      <div class="resource-row"><div><strong>Project planning template</strong><br><span>Template · Practice resource</span></div><span>↗</span></div>
+      <div class="notice">In a production LMS, these resources would link to accessible documents, videos, job aids, and approved learning materials.</div>
      </div>
 
-     <div class="page-view" id="goals">
-      <h2 class="view-title">My learning goals</h2><p class="view-subtitle">Use your goals to guide your learning choices.</p>
+     <!-- LEARNER PROFILE -->
+     <div class="page-view" id="profile-view">
+      <h2 class="view-title">My learning profile</h2>
+      <p class="view-subtitle">Tell LearnFlow what helps you engage with learning. You can change these preferences at any time.</p>
+
       <div class="dash-card">
-       <h3>Development interests</h3>
-       <label class="check-row"><input type="checkbox" checked> Communication and collaboration</label>
-       <label class="check-row"><input type="checkbox" checked> Digital tools and technology</label>
-       <label class="check-row"><input type="checkbox"> Leadership and people development</label>
-       <label class="check-row"><input type="checkbox"> Project and time management</label>
-       <button class="primary-btn" onclick="saveGoals()">Save interests</button>
-       <p id="goal-feedback" style="font-size:11px;color:var(--teal);margin-top:10px"></p>
+       <span class="course-tag">Your preferences</span>
+       <h3 style="margin-top:8px">How do you prefer to explore new information?</h3>
+       <p style="font-size:10px;color:var(--muted)">Choose the content formats you would like to have available. You can select more than one.</p>
+
+       <div class="field-group">
+        <label>Preferred content formats</label>
+        <div class="choice-grid">
+         <label class="choice"><input type="checkbox" name="format" value="visual" checked><span><strong>Visual explanations</strong><small>Diagrams, charts, infographics and screenshots.</small></span></label>
+         <label class="choice"><input type="checkbox" name="format" value="reading"><span><strong>Reading and reference</strong><small>Written explanations, guides and summaries.</small></span></label>
+         <label class="choice"><input type="checkbox" name="format" value="demonstration"><span><strong>Demonstrations</strong><small>Videos, narrated walkthroughs and examples.</small></span></label>
+         <label class="choice"><input type="checkbox" name="format" value="practice" checked><span><strong>Hands-on practice</strong><small>Scenarios, simulations and interactive activities.</small></span></label>
+        </div>
+       </div>
+
+       <div class="field-group">
+        <label for="session-length">What learning session length works best for you?</label>
+        <select id="session-length" style="width:100%;padding:11px;border:1px solid var(--line);border-radius:9px;background:#fff;font-size:11px">
+         <option value="short">Short sessions (5–10 minutes)</option>
+         <option value="medium" selected>Medium sessions (10–20 minutes)</option>
+         <option value="long">Longer sessions (20–30 minutes)</option>
+         <option value="flexible">A mix, depending on the topic</option>
+        </select>
+       </div>
+
+       <div class="field-group">
+        <label for="support-level">What kind of support would you find most useful?</label>
+        <select id="support-level" style="width:100%;padding:11px;border:1px solid var(--line);border-radius:9px;background:#fff;font-size:11px">
+         <option value="guided">Step-by-step guidance and examples</option>
+         <option value="balanced" selected>A balance of guidance and independent practice</option>
+         <option value="independent">Independent exploration and challenges</option>
+        </select>
+       </div>
+
+       <button class="primary-btn" onclick="saveProfile()">Save my preferences →</button>
+       <p id="profile-feedback" style="font-size:10px;color:var(--teal);margin:10px 0 0"></p>
       </div>
-      <div class="callout"><strong>Your learning, your direction</strong><p>Recommendations should support your goals, not limit your choices. You can explore any available course at any time.</p></div>
+
+      <div class="dash-card" style="margin-top:14px">
+       <h3>Your current learning profile</h3>
+       <p style="font-size:10px;color:var(--muted)">A summary of the preferences you selected. These are flexible choices, not fixed learning-style categories.</p>
+       <div class="profile-summary">
+        <div class="profile-stat"><span>Preferred formats</span><strong id="summary-formats">Visual · Practice</strong></div>
+        <div class="profile-stat"><span>Session length</span><strong id="summary-session">10–20 minutes</strong></div>
+        <div class="profile-stat"><span>Support preference</span><strong id="summary-support">Balanced guidance</strong></div>
+        <div class="profile-stat"><span>Profile status</span><strong id="summary-status">Sample profile</strong></div>
+       </div>
+      </div>
+      <div class="callout">
+       <strong>Your choices can change</strong>
+       <p>People may prefer different formats for different subjects. LearnFlow should allow learners to switch methods whenever they need to.</p>
+      </div>
      </div>
 
-     <div class="page-view" id="course-detail">
-      <h2 class="view-title" id="detail-title">Course details</h2><p class="view-subtitle" id="detail-description"></p>
+     <!-- ADAPTIVE LESSON -->
+     <div class="page-view" id="adaptive">
+      <h2 class="view-title">Your adaptive lesson</h2>
+      <p class="view-subtitle">Explore how the platform could adjust an explanation and recommend additional practice.</p>
+
       <div class="dash-card">
-       <div class="course-detail"><div><span class="course-tag" id="detail-category">COURSE</span><h3 id="detail-name"></h3><p id="detail-duration"></p></div><div class="course-art art-blue" style="width:55px;height:55px">▣</div></div>
+       <span class="course-tag">Sample lesson · Workplace communication</span>
+       <h3 style="margin-top:7px">Giving constructive feedback</h3>
+       <p style="font-size:10px;color:var(--muted)">The same learning objective can be explored through different instructional methods. Select a method below to experience the alternatives.</p>
+
+       <div class="lesson-methods">
+        <button class="method-btn active" data-method="visual" onclick="changeMethod('visual',this)">Visual guide</button>
+        <button class="method-btn" data-method="reading" onclick="changeMethod('reading',this)">Read</button>
+        <button class="method-btn" data-method="demonstration" onclick="changeMethod('demonstration',this)">Example</button>
+        <button class="method-btn" data-method="practice" onclick="changeMethod('practice',this)">Practice</button>
+       </div>
+
+       <div class="lesson-content" id="lesson-content">
+        <h3>Three parts of constructive feedback</h3>
+        <p>Constructive feedback focuses on a specific situation, explains the observed behaviour, and describes its impact.</p>
+        <div class="lesson-visual">
+         <strong>Situation → Behaviour → Impact</strong>
+         <span>A simple structure for a clear feedback conversation.</span>
+        </div>
+        <div class="lesson-steps">
+         <div class="lesson-step"><strong>1. Situation</strong><br>Describe when or where something happened.</div>
+         <div class="lesson-step"><strong>2. Behaviour</strong><br>Identify the specific action you observed.</div>
+         <div class="lesson-step"><strong>3. Impact</strong><br>Explain the effect of that action.</div>
+        </div>
+       </div>
+       <p id="method-note" style="font-size:10px;color:var(--muted);margin:12px 0 0">Visual guide selected. You can switch formats whenever you want.</p>
+      </div>
+
+      <div class="dash-card" style="margin-top:14px">
+       <h3>Knowledge check</h3>
+       <p style="font-size:11px;color:var(--muted)">A colleague submits a report after the deadline, delaying the team's next step. Which response is the clearest example of constructive feedback?</p>
+       <label class="quiz-option"><input type="radio" name="quiz" value="a"> "You are always late with your work."</label>
+       <label class="quiz-option"><input type="radio" name="quiz" value="b"> "The report arrived after the deadline, which delayed the team's review. Can we discuss how to avoid this next time?"</label>
+       <label class="quiz-option"><input type="radio" name="quiz" value="c"> "Don't worry about the deadline. It doesn't matter."</label>
+       <button class="primary-btn" onclick="checkAnswer()">Submit answer</button>
+       <div id="quiz-feedback" class="feedback"></div>
+       <div id="adaptive-recommendation" class="recommendation-result" style="display:none">
+        <strong id="adaptive-title">Your next learning suggestion</strong>
+        <p id="adaptive-copy"></p>
+       </div>
+      </div>
+     </div>
+
+     <!-- COURSE DETAILS -->
+     <div class="page-view" id="course-detail">
+      <h2 class="view-title" id="detail-title">Course details</h2>
+      <p class="view-subtitle" id="detail-description"></p>
+      <div class="dash-card">
+       <div class="course-detail">
+        <div><span class="course-tag" id="detail-category">COURSE</span><h3 id="detail-name"></h3><p id="detail-duration"></p></div>
+        <div class="course-art art-blue" style="width:55px;height:55px">▣</div>
+       </div>
        <div class="callout"><strong>What you'll explore</strong><p id="detail-summary"></p></div>
-       <button class="primary-btn" style="margin-top:17px" onclick="startCourse()">Start learning →</button>
-       <button class="secondary-btn" style="margin:17px 0 0 8px" onclick="goTo('discover')">Back to courses</button>
-       <p id="start-feedback" style="font-size:11px;color:var(--teal);margin-top:12px"></p>
+       <div class="callout" style="background:#f0f7f5">
+        <strong>Personalized learning suggestion</strong>
+        <p id="course-suggestion">Set your preferences to explore a suggested learning format.</p>
+       </div>
+       <button class="primary-btn" style="margin-top:16px" onclick="startCourse()">Start learning →</button>
+       <button class="secondary-btn" style="margin:16px 0 0 7px" onclick="goTo('discover')">Back to courses</button>
+       <p id="start-feedback" style="font-size:10px;color:var(--teal);margin-top:11px"></p>
       </div>
      </div>
 
     </main>
    </div>
   </div>
-  <p class="notice">Prototype note: This is a front-end concept using sample learner data and predefined course recommendations. It does not connect to a live LMS, store user accounts, or use a live AI model.</p>
+
+  <p class="notice">Prototype note: This is a front-end concept with sample learner information, predefined course content, and rule-based adaptive responses. It does not connect to a live LMS, store accounts, or use a live AI model.</p>
  </div>
 </section>
 
 <section class="section">
  <div class="container">
-  <div class="eyebrow">05 · Recommendation concept</div>
-  <h2 class="section-heading">Making learning recommendations more relevant</h2>
-  <p class="lead">A future enhancement could use a recommendation system to help learners discover resources connected to their development goals and previous learning activity.</p>
+  <div class="eyebrow">05 · How adaptive learning could work</div>
+  <h2 class="section-heading">A learning experience that responds over time</h2>
+  <p class="lead">In a future implementation, an adaptive recommendation engine could combine learner-selected preferences with performance and engagement data to suggest relevant learning activities.</p>
+
   <div class="grid-2">
    <div class="panel">
-    <h3>Information the system could use</h3>
-    <p>Self-selected interests, learning goals, completed courses, topics explored, and optional learner feedback. These signals could help identify relevant next steps.</p>
+    <h3>1. Understand the learner</h3>
+    <p>Collect optional preferences, learning goals, selected content formats, and preferred session length.</p>
    </div>
    <div class="panel">
-    <h3>How recommendations could work</h3>
-    <p>A recommendation engine could compare learner-selected interests with course topics and metadata, then rank relevant resources. More advanced AI could support natural-language discovery and personalized suggestions.</p>
+    <h3>2. Observe learning activity</h3>
+    <p>Review knowledge-check results, course progress, attempts, learner feedback, and topics that may need additional support.</p>
+   </div>
+   <div class="panel">
+    <h3>3. Recommend a learning method</h3>
+    <p>Suggest a relevant combination of explanations, examples, demonstrations, practice, and review activities.</p>
+   </div>
+   <div class="panel">
+    <h3>4. Refine recommendations</h3>
+    <p>Use new activity and learner feedback to improve suggestions while allowing learners to change or ignore them.</p>
    </div>
   </div>
-  <div class="callout">
-   <strong>Important design consideration</strong>
-   <p>Recommendations should be explainable, optional, and easy to adjust. The concept does not assume that people have fixed learning styles. Learners should remain in control of what they choose to explore.</p>
+
+  <div class="problem" style="margin-top:25px">
+   <strong>Example adaptive response</strong>
+   <p>If a learner struggles with a knowledge check, the system could offer a simpler explanation, a worked example, or another practice activity. It should not assume that one incorrect answer means the learner has a particular learning style or ability.</p>
   </div>
  </div>
 </section>
@@ -408,9 +602,9 @@ a{color:inherit}
   <h2 class="section-heading">How could the experience be evaluated?</h2>
   <p class="lead">The concept would need usability testing and learner feedback before being considered for implementation.</p>
   <div class="evaluation">
-   <div class="eval-card"><strong>Task completion</strong><p>Can learners locate an assigned course, find a resource, and identify their next learning activity?</p></div>
-   <div class="eval-card"><strong>Usability and clarity</strong><p>Can learners understand navigation labels, progress indicators, course descriptions, and recommendations?</p></div>
-   <div class="eval-card"><strong>Learner feedback</strong><p>Do employees find the platform easier to navigate and the recommended resources relevant to their goals?</p></div>
+   <div class="eval-card"><strong>Task completion</strong><p>Can learners set preferences, locate courses, switch content formats, and identify their next learning activity?</p></div>
+   <div class="eval-card"><strong>Learning progress</strong><p>Do knowledge checks show improvement over time? Are learners able to apply what they have practised?</p></div>
+   <div class="eval-card"><strong>Learner experience</strong><p>Do employees find recommendations relevant, understandable, and easy to control?</p></div>
   </div>
  </div>
 </section>
@@ -419,8 +613,8 @@ a{color:inherit}
  <div class="container">
   <div class="eyebrow">07 · Reflection</div>
   <div class="reflection">
-   <h3>Good learning experiences need more than good content.</h3>
-   <p>This project explores how user-centred design can support workplace learning beyond the course itself. By making learning easier to find, understand, and manage, an LMS can reduce navigation friction and help employees take a more active role in their development. The interface supports the learning experience; it does not replace thoughtful instructional design.</p>
+   <h3>Personalized learning should respond to people, not put them into boxes.</h3>
+   <p>LearnFlow explores how user-centred design and adaptive learning principles can support more flexible workplace learning. By combining learner preferences with progress and knowledge-check feedback, the platform could help employees access relevant explanations and practice. The goal is not to assign a permanent learning style, but to give learners more choice and provide useful support as their needs change.</p>
   </div>
  </div>
 </section>
@@ -430,36 +624,36 @@ a{color:inherit}
 </footer>
 
 <script>
-const courseData = {
- communication: {
+const courseData={
+ communication:{
   name:"Communicating with Confidence",
   category:"Communication",
   duration:"25 minutes · Intermediate",
   description:"Build practical communication skills for everyday workplace conversations.",
   summary:"Explore active listening, clear communication, and practical approaches to common workplace conversations."
  },
- feedback: {
+ feedback:{
   name:"Giving and Receiving Feedback",
   category:"Communication",
   duration:"20 minutes · Beginner",
   description:"Practice constructive feedback and active listening.",
   summary:"Learn how to prepare for feedback conversations, communicate observations clearly, and respond constructively."
  },
- time: {
+ time:{
   name:"Time Management Essentials",
   category:"Productivity",
   duration:"15 minutes · Beginner",
   description:"Explore practical ways to prioritize tasks and manage competing demands.",
   summary:"Explore prioritization, realistic planning, and strategies for managing everyday workload."
  },
- cyber: {
+ cyber:{
   name:"Workplace Cybersecurity",
   category:"Technology",
   duration:"20 minutes · Beginner",
   description:"Learn how to recognize and respond to common cybersecurity risks.",
   summary:"Identify suspicious messages, protect sensitive information, and make safer decisions when working remotely."
  },
- project: {
+ project:{
   name:"Introduction to Project Planning",
   category:"Productivity",
   duration:"35 minutes · Beginner",
@@ -467,25 +661,93 @@ const courseData = {
   summary:"Explore project objectives, timelines, responsibilities, and ways to keep work organized."
  }
 };
-let selectedCourse = "communication";
 
-function goTo(view) {
+let selectedCourse="communication";
+let learnerProfile={
+ formats:["visual","practice"],
+ session:"medium",
+ support:"balanced",
+ saved:false
+};
+let latestScore=null;
+
+function goTo(view){
  document.querySelectorAll(".page-view").forEach(el=>el.classList.remove("active"));
  document.querySelectorAll(".nav-item").forEach(el=>el.classList.remove("active"));
  const target=document.getElementById(view);
  if(target) target.classList.add("active");
  const nav=document.querySelector('.nav-item[data-view="'+view+'"]');
  if(nav) nav.classList.add("active");
- document.querySelector(".app-main").scrollIntoView({behavior:"smooth",block:"nearest"});
 }
 
 document.querySelectorAll(".nav-item").forEach(item=>{
  item.addEventListener("click",()=>goTo(item.dataset.view));
 });
 
-function openCourse(id) {
+function saveProfile(){
+ const formats=[...document.querySelectorAll('input[name="format"]:checked')].map(input=>input.value);
+ if(formats.length===0){
+  document.getElementById("profile-feedback").textContent="Please select at least one content format.";
+  return;
+ }
+
+ learnerProfile.formats=formats;
+ learnerProfile.session=document.getElementById("session-length").value;
+ learnerProfile.support=document.getElementById("support-level").value;
+ learnerProfile.saved=true;
+
+ updateProfileSummary();
+
+ document.getElementById("profile-feedback").textContent="Your preferences have been updated for this prototype session.";
+ document.getElementById("dashboard-profile-summary").textContent=
+  "Your preferred formats are "+formatNames(formats)+". Your suggestions can now reflect these choices.";
+
+ document.getElementById("summary-status").textContent="Preferences saved";
+ updateCourseSuggestion();
+}
+
+function formatNames(formats){
+ const names={
+  visual:"Visual",
+  reading:"Reading",
+  demonstration:"Demonstrations",
+  practice:"Hands-on practice"
+ };
+ return formats.map(f=>names[f]).join(" · ");
+}
+
+function updateProfileSummary(){
+ document.getElementById("summary-formats").textContent=formatNames(learnerProfile.formats);
+ const sessionNames={
+  short:"5–10 minutes",
+  medium:"10–20 minutes",
+  long:"20–30 minutes",
+  flexible:"Flexible"
+ };
+ const supportNames={
+  guided:"Step-by-step guidance",
+  balanced:"Balanced guidance",
+  independent:"Independent practice"
+ };
+ document.getElementById("summary-session").textContent=sessionNames[learnerProfile.session];
+ document.getElementById("summary-support").textContent=supportNames[learnerProfile.support];
+ document.getElementById("summary-status").textContent="Preferences saved";
+}
+
+function updateCourseSuggestion(){
+ const suggestions={
+  visual:"A visual guide with diagrams and key ideas could be a useful starting point.",
+  reading:"A written explanation and reference summary could be a useful starting point.",
+  demonstration:"A short demonstration with a worked example could be a useful starting point.",
+  practice:"An interactive activity with guided feedback could be a useful starting point."
+ };
+ const first=learnerProfile.formats[0]||"visual";
+ document.getElementById("course-suggestion").textContent=suggestions[first];
+}
+
+function openCourse(id){
  const course=courseData[id];
- if(!course) return;
+ if(!course)return;
  selectedCourse=id;
  document.querySelectorAll(".page-view").forEach(el=>el.classList.remove("active"));
  document.getElementById("course-detail").classList.add("active");
@@ -497,14 +759,16 @@ function openCourse(id) {
  document.getElementById("detail-description").textContent=course.description;
  document.getElementById("detail-summary").textContent=course.summary;
  document.getElementById("start-feedback").textContent="";
+ updateCourseSuggestion();
 }
 
-function startCourse() {
- document.getElementById("start-feedback").textContent =
- "Sample interaction: " + courseData[selectedCourse].name + " is ready to begin. A live LMS would open the course content here.";
+function startCourse(){
+ document.getElementById("start-feedback").textContent=
+  "Sample interaction: "+courseData[selectedCourse].name+
+  " is ready to begin. A live LMS would open the course content here.";
 }
 
-function filterCourses(category,button) {
+function filterCourses(category,button){
  document.querySelectorAll(".filter").forEach(el=>el.classList.remove("active"));
  button.classList.add("active");
  document.querySelectorAll(".catalog-card").forEach(card=>{
@@ -512,9 +776,82 @@ function filterCourses(category,button) {
  });
 }
 
-function saveGoals() {
- document.getElementById("goal-feedback").textContent="Your sample interests have been selected. In a live platform, these could inform your course recommendations.";
+function saveGoals(){
+ document.getElementById("goal-feedback").textContent=
+  "Your sample interests have been selected. In a live platform, these could inform course recommendations.";
 }
+
+/* ADAPTIVE LESSON METHODS */
+const lessonMethods={
+ visual:{
+  title:"Three parts of constructive feedback",
+  body:"Constructive feedback focuses on a specific situation, explains the observed behaviour, and describes its impact.",
+  content:'<div class="lesson-visual"><strong>Situation → Behaviour → Impact</strong><span>A simple structure for a clear feedback conversation.</span></div><div class="lesson-steps"><div class="lesson-step"><strong>1. Situation</strong><br>Describe when or where something happened.</div><div class="lesson-step"><strong>2. Behaviour</strong><br>Identify the specific action you observed.</div><div class="lesson-step"><strong>3. Impact</strong><br>Explain the effect of that action.</div></div>',
+  note:"Visual guide selected. The key ideas are organized into a simple visual structure."
+ },
+ reading:{
+  title:"Understanding constructive feedback",
+  body:"Constructive feedback is specific, respectful, and focused on an observable action rather than a person's character.",
+  content:'<p><strong>Situation:</strong> Begin by describing the context. For example, identify the meeting, deadline, or task.</p><p><strong>Behaviour:</strong> Explain the action you observed. Avoid general statements or assumptions about someone's intentions.</p><p><strong>Impact:</strong> Describe how the action affected the work, team, or outcome. Invite a discussion about next steps.</p>',
+  note:"Written explanation selected. You can review the details at your own pace."
+ },
+ demonstration:{
+  title:"See an example",
+  body:"Consider how a manager might communicate a concern about a missed deadline.",
+  content:'<div class="lesson-visual" style="text-align:left"><strong>Example conversation</strong><p style="margin:8px 0;color:#53647a">“The report arrived after our agreed deadline. This delayed the team's review. Could we discuss what would help us meet the next deadline?”</p></div><p><strong>Why this works:</strong> The message identifies a specific event, explains the impact, and invites a constructive next step.</p>',
+  note:"Worked example selected. The lesson shows how the communication structure can be applied."
+ },
+ practice:{
+  title:"Apply the concept",
+  body:"Think about a colleague who regularly misses a handover deadline. Which opening statement would help start a constructive conversation?",
+  content:'<div class="lesson-steps"><div class="lesson-step"><strong>Option A</strong><br>“You never get your work done on time.”</div><div class="lesson-step"><strong>Option B</strong><br>“The last two handovers arrived after the agreed time. Can we talk about what is getting in the way?”</div><div class="lesson-step"><strong>Option C</strong><br>“I will just finish the handover myself next time.”</div></div><p>Compare the options. Consider which statement focuses on observable behaviour and opens a conversation.</p>',
+  note:"Practice activity selected. You can apply the idea to a realistic workplace example."
+ }
+};
+
+function changeMethod(method,button){
+ const content=lessonMethods[method];
+ if(!content)return;
+ document.querySelectorAll(".method-btn").forEach(el=>el.classList.remove("active"));
+ button.classList.add("active");
+
+ document.getElementById("lesson-content").innerHTML=
+  "<h3>"+content.title+"</h3><p>"+content.body+"</p>"+content.content;
+ document.getElementById("method-note").textContent=content.note;
+}
+
+/* KNOWLEDGE CHECK AND ADAPTIVE RESPONSE */
+function checkAnswer(){
+ const selected=document.querySelector('input[name="quiz"]:checked');
+ const feedback=document.getElementById("quiz-feedback");
+ const recommendation=document.getElementById("adaptive-recommendation");
+
+ if(!selected){
+  feedback.className="feedback show try";
+  feedback.textContent="Select an answer before submitting.";
+  recommendation.style.display="none";
+  return;
+ }
+
+ const isCorrect=selected.value==="b";
+ latestScore=isCorrect?100:0;
+ document.getElementById("dashboard-score").textContent=isCorrect?"100%":"Review";
+ feedback.className="feedback show "+(isCorrect?"good":"try");
+
+ if(isCorrect){
+  feedback.textContent="Good choice. This response describes an observable event, explains its impact, and invites a constructive conversation.";
+  document.getElementById("adaptive-title").textContent="Ready for a new challenge?";
+  document.getElementById("adaptive-copy").textContent=
+   "You demonstrated understanding of the feedback structure. You could now try a more challenging scenario or explore another communication topic.";
+ }else{
+  feedback.textContent="This response is too general or dismissive. Constructive feedback is more useful when it identifies a specific situation, explains the behaviour or impact, and opens a discussion.";
+  document.getElementById("adaptive-title").textContent="Let's reinforce this concept";
+  document.getElementById("adaptive-copy").textContent=
+   "You may benefit from reviewing the worked example and trying another practice activity. Switch to the Demonstration or Practice method above, then try the question again.";
+ }
+ recommendation.style.display="block";
+}
+
 </script>
 </body>
 </html>
