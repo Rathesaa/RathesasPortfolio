@@ -4,1464 +4,624 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#f7f7f2">
+<meta name="theme-color" content="#f7f7f4">
 <title>FirstSteps | Employee Onboarding Experience</title>
-<meta name="description" content="FirstSteps is an employee onboarding and learning journey concept by Rathesa Kodeeswaran.">
-
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
 <style>
-:root {
-  --bg: #f7f7f2;
-  --paper: #ffffff;
-  --ink: #202923;
-  --muted: #647067;
-  --green: #285d49;
-  --green-light: #e3eee6;
-  --green-pale: #f0f6f1;
-  --yellow: #f3e9c9;
-  --pink: #f3dce5;
-  --lavender: #e9e5f2;
-  --line: #dce2dc;
-  --shadow: 0 12px 35px rgba(31,49,38,.07);
-}
-
-* { box-sizing: border-box; }
-
-html {
-  scroll-behavior: smooth;
-  scroll-padding-top: 90px;
-}
-
-body {
-  margin: 0;
-  background: var(--bg);
-  color: var(--ink);
-  font-family: "DM Sans", sans-serif;
-  line-height: 1.7;
-}
-
-a { color: inherit; }
-
-button { font: inherit; }
-
-.wrap {
-  width: min(1120px, calc(100% - 40px));
-  margin: auto;
-}
-
-nav {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 23px 0;
-  gap: 20px;
-}
-
-.brand {
-  text-decoration: none;
-  font: 800 15px Manrope, sans-serif;
-  letter-spacing: .02em;
-}
-
-.nav-links {
-  display: flex;
-  gap: 22px;
-  flex-wrap: wrap;
-}
-
-.nav-links a {
-  text-decoration: none;
-  color: var(--muted);
-  font-size: 13px;
-  font-weight: 600;
-}
-
-.nav-links a:hover { color: var(--green); }
-
-.back-link {
-  display: inline-block;
-  margin: 22px 0 35px;
-  text-decoration: none;
-  font-size: 13px;
-  color: var(--green);
-  font-weight: 700;
-}
-
-.hero {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 55px;
-  align-items: center;
-  padding: 35px 0 85px;
-}
-
-.eyebrow {
-  color: var(--green);
-  font-size: 11px;
-  font-weight: 700;
-  letter-spacing: .14em;
-  text-transform: uppercase;
-}
-
-.hero h1 {
-  font: 800 clamp(42px, 6vw, 68px)/1.06 Manrope, sans-serif;
-  letter-spacing: -.055em;
-  margin: 17px 0;
-}
-
-.hero h1 span { color: var(--green); }
-
-.hero-copy {
-  color: var(--muted);
-  font-size: 17px;
-  max-width: 570px;
-}
-
-.hero-tags {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-  margin: 24px 0;
-}
-
-.hero-tags span,
-.tag {
-  background: var(--green-light);
-  color: var(--green);
-  border-radius: 30px;
-  padding: 7px 12px;
-  font-size: 11px;
-  font-weight: 700;
-}
-
-.hero-visual {
-  background: var(--lavender);
-  border-radius: 20px;
-  padding: 25px;
-  min-height: 400px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.mock-window {
-  width: 100%;
-  max-width: 440px;
-  background: white;
-  border-radius: 13px;
-  box-shadow: var(--shadow);
-  overflow: hidden;
-}
-
-.mock-top {
-  border-bottom: 1px solid var(--line);
-  padding: 14px 17px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.mock-logo {
-  font: 800 15px Manrope;
-  color: var(--green);
-}
-
-.mock-user {
-  background: var(--yellow);
-  border-radius: 50%;
-  width: 30px;
-  height: 30px;
-  display: grid;
-  place-items: center;
-  font-size: 11px;
-  font-weight: 700;
-}
-
-.mock-content { padding: 22px; }
-
-.welcome-label {
-  font-size: 10px;
-  text-transform: uppercase;
-  color: var(--green);
-  font-weight: 700;
-  letter-spacing: .1em;
-}
-
-.mock-content h3 {
-  font: 700 23px Manrope;
-  margin: 5px 0;
-}
-
-.mock-content p {
-  color: var(--muted);
-  font-size: 12px;
-  margin: 0;
-}
-
-.mock-progress-label {
-  display: flex;
-  justify-content: space-between;
-  font-size: 11px;
-  font-weight: 700;
-  margin-top: 23px;
-}
-
-.progress-track {
-  height: 8px;
-  border-radius: 20px;
-  background: #edf0ed;
-  overflow: hidden;
-  margin-top: 7px;
-}
-
-.progress-fill {
-  width: 45%;
-  height: 100%;
-  background: var(--green);
-  border-radius: 20px;
-}
-
-.mock-task {
-  border: 1px solid var(--line);
-  border-radius: 8px;
-  padding: 10px 12px;
-  margin-top: 11px;
-  font-size: 11px;
-  display: flex;
-  justify-content: space-between;
-  gap: 10px;
-}
-
-.mock-task span:last-child {
-  color: var(--green);
-  font-weight: 700;
-}
-
-.project-meta {
-  display: grid;
-  grid-template-columns: repeat(4,1fr);
-  gap: 12px;
-  padding: 24px 0 35px;
-  border-top: 1px solid var(--line);
-  border-bottom: 1px solid var(--line);
-}
-
-.meta-item strong {
-  display: block;
-  font: 700 14px Manrope;
-}
-
-.meta-item span {
-  font-size: 11px;
-  color: var(--muted);
-}
-
-section { padding: 82px 0; }
-
-.section-head {
-  max-width: 700px;
-  margin-bottom: 35px;
-}
-
-.section-head h2 {
-  font: 800 clamp(29px,4vw,43px)/1.15 Manrope;
-  letter-spacing: -.04em;
-  margin: 10px 0;
-}
-
-.section-head p {
-  color: var(--muted);
-  margin: 0;
-}
-
-.two-col {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 45px;
-  align-items: start;
-}
-
-.copy p {
-  color: var(--muted);
-  margin-top: 0;
-}
-
-.highlight {
-  background: var(--yellow);
-  border-radius: 13px;
-  padding: 25px;
-}
-
-.highlight strong {
-  font: 700 17px Manrope;
-}
-
-.highlight p {
-  font-size: 14px;
-  color: #55564c;
-  margin-bottom: 0;
-}
-
-.audience-card {
-  background: white;
-  border: 1px solid var(--line);
-  border-radius: 13px;
-  padding: 25px;
-  box-shadow: var(--shadow);
-}
-
-.audience-card h3 {
-  font: 700 19px Manrope;
-  margin: 0 0 13px;
-}
-
-.audience-card ul {
-  padding-left: 20px;
-  color: var(--muted);
-  font-size: 14px;
-}
-
-.audience-card li { margin-bottom: 8px; }
-
-.challenge-grid {
-  display: grid;
-  grid-template-columns: repeat(3,1fr);
-  gap: 16px;
-}
-
-.challenge {
-  background: white;
-  border: 1px solid var(--line);
-  border-radius: 12px;
-  padding: 22px;
-}
-
-.challenge .number {
-  font: 800 30px Manrope;
-  color: #9bb7a4;
-}
-
-.challenge h3 {
-  font: 700 17px Manrope;
-  margin: 7px 0;
-}
-
-.challenge p {
-  color: var(--muted);
-  font-size: 13px;
-  margin: 0;
-}
-
-.journey {
-  background: #edf2eb;
-}
-
-.journey-grid {
-  display: grid;
-  grid-template-columns: repeat(3,1fr);
-  gap: 15px;
-}
-
-.phase {
-  background: white;
-  border-radius: 13px;
-  padding: 23px;
-  border-top: 4px solid var(--green);
-}
-
-.phase:nth-child(2) { border-top-color: #c99b55; }
-.phase:nth-child(3) { border-top-color: #b57b97; }
-
-.phase-label {
-  font-size: 10px;
-  color: var(--green);
-  text-transform: uppercase;
-  letter-spacing: .1em;
-  font-weight: 700;
-}
-
-.phase h3 {
-  font: 700 21px Manrope;
-  margin: 8px 0;
-}
-
-.phase p {
-  color: var(--muted);
-  font-size: 13px;
-}
-
-.phase ul {
-  padding-left: 18px;
-  color: var(--muted);
-  font-size: 13px;
-}
-
-.phase li { margin-bottom: 7px; }
-
-.demo-section {
-  background: var(--paper);
-}
-
-.demo-shell {
-  display: grid;
-  grid-template-columns: 230px 1fr;
-  border: 1px solid var(--line);
-  border-radius: 16px;
-  overflow: hidden;
-  box-shadow: var(--shadow);
-  min-height: 490px;
-}
-
-.sidebar {
-  background: #f0f4f0;
-  padding: 24px 16px;
-}
-
-.sidebar-brand {
-  font: 800 20px Manrope;
-  color: var(--green);
-  padding: 0 10px 25px;
-}
-
-.sidebar-label {
-  color: #87948a;
-  font-size: 10px;
-  text-transform: uppercase;
-  letter-spacing: .12em;
-  font-weight: 700;
-  padding: 0 10px;
-  margin-bottom: 8px;
-}
-
-.side-tab {
-  display: block;
-  width: 100%;
-  border: 0;
-  background: transparent;
-  padding: 11px 10px;
-  text-align: left;
-  border-radius: 7px;
-  color: #536159;
-  cursor: pointer;
-  font-size: 12px;
-  font-weight: 600;
-  margin-bottom: 4px;
-}
-
-.side-tab.active {
-  background: var(--green);
-  color: white;
-}
-
-.demo-main {
-  padding: 30px;
-  min-width: 0;
-}
-
-.demo-top {
-  display: flex;
-  justify-content: space-between;
-  gap: 15px;
-  align-items: center;
-  margin-bottom: 25px;
-}
-
-.demo-top small {
-  color: var(--muted);
-  font-size: 11px;
-}
-
-.demo-top h3 {
-  font: 700 22px Manrope;
-  margin: 0;
-}
-
-.avatar {
-  background: var(--pink);
-  width: 38px;
-  height: 38px;
-  border-radius: 50%;
-  display: grid;
-  place-items: center;
-  font-size: 12px;
-  font-weight: 700;
-}
-
-.demo-welcome {
-  background: var(--green-light);
-  border-radius: 11px;
-  padding: 20px;
-  margin-bottom: 20px;
-}
-
-.demo-welcome h4 {
-  font: 700 19px Manrope;
-  margin: 0 0 5px;
-}
-
-.demo-welcome p {
-  font-size: 12px;
-  color: var(--muted);
-  margin: 0;
-}
-
-.demo-progress {
-  display: flex;
-  justify-content: space-between;
-  font-size: 11px;
-  font-weight: 700;
-  margin-bottom: 6px;
-}
-
-.task-list {
-  display: grid;
-  gap: 9px;
-}
-
-.task-row {
-  border: 1px solid var(--line);
-  border-radius: 9px;
-  padding: 12px;
-  display: flex;
-  align-items: center;
-  gap: 12px;
-}
-
-.task-row input {
-  width: 17px;
-  height: 17px;
-  accent-color: var(--green);
-  cursor: pointer;
-  flex-shrink: 0;
-}
-
-.task-info { flex: 1; }
-
-.task-info strong {
-  display: block;
-  font-size: 12px;
-}
-
-.task-info span {
-  display: block;
-  color: var(--muted);
-  font-size: 10px;
-}
-
-.task-status {
-  color: var(--green);
-  font-size: 10px;
-  font-weight: 700;
-}
-
-.demo-panel { display: none; }
-.demo-panel.active { display: block; }
-
-.info-grid {
-  display: grid;
-  grid-template-columns: repeat(2,1fr);
-  gap: 12px;
-}
-
-.info-card {
-  background: #f5f7f4;
-  border: 1px solid var(--line);
-  border-radius: 9px;
-  padding: 15px;
-}
-
-.info-card strong {
-  font: 700 14px Manrope;
-  display: block;
-}
-
-.info-card span {
-  font-size: 11px;
-  color: var(--muted);
-}
-
-.demo-note {
-  margin-top: 16px;
-  background: var(--yellow);
-  padding: 13px;
-  border-radius: 8px;
-  font-size: 11px;
-  color: #595648;
-}
-
-.design-grid {
-  display: grid;
-  grid-template-columns: repeat(2,1fr);
-  gap: 16px;
-}
-
-.design-card {
-  padding: 23px;
-  border: 1px solid var(--line);
-  border-radius: 12px;
-  background: white;
-}
-
-.design-card h3 {
-  font: 700 17px Manrope;
-  margin: 0 0 8px;
-}
-
-.design-card p {
-  font-size: 13px;
-  color: var(--muted);
-  margin: 0;
-}
-
-.design-card .design-number {
-  color: var(--green);
-  font-weight: 800;
-  font-size: 12px;
-  margin-bottom: 8px;
-}
-
-.evaluation {
-  background: var(--lavender);
-}
-
-.evaluation-list {
-  display: grid;
-  grid-template-columns: repeat(2,1fr);
-  gap: 15px;
-}
-
-.eval-item {
-  background: white;
-  padding: 20px;
-  border-radius: 11px;
-}
-
-.eval-item strong {
-  font: 700 15px Manrope;
-}
-
-.eval-item p {
-  font-size: 13px;
-  color: var(--muted);
-  margin: 5px 0 0;
-}
-
-.reflection {
-  background: var(--green);
-  color: white;
-  border-radius: 16px;
-  padding: 40px;
-}
-
-.reflection .eyebrow { color: #c7dfce; }
-
-.reflection h2 {
-  font: 800 clamp(28px,4vw,40px)/1.2 Manrope;
-  max-width: 720px;
-  margin: 10px 0;
-}
-
-.reflection p {
-  color: #e1eee5;
-  max-width: 750px;
-}
-
-.tools {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 9px;
-  margin-top: 20px;
-}
-
-.tools span {
-  border: 1px solid #ffffff60;
-  color: white;
-  border-radius: 30px;
-  padding: 7px 12px;
-  font-size: 11px;
-}
-
-footer {
-  padding: 35px 0;
-  display: flex;
-  justify-content: space-between;
-  gap: 20px;
-  color: var(--muted);
-  font-size: 12px;
-}
-
-@media(max-width:800px) {
-  .hero, .two-col { grid-template-columns: 1fr; }
-  .hero { gap: 25px; }
-  .project-meta { grid-template-columns: repeat(2,1fr); }
-  .challenge-grid, .journey-grid { grid-template-columns: 1fr; }
-}
-
-@media(max-width:620px) {
-  .wrap { width: calc(100% - 28px); }
-  nav { align-items: flex-start; flex-direction: column; }
-  .nav-links { gap: 12px; }
-  .hero { padding: 25px 0 55px; }
-  .hero h1 { font-size: 43px; }
-  .hero-visual { min-height: 320px; padding: 15px; }
-  .project-meta { grid-template-columns: repeat(2,1fr); }
-  .demo-shell { grid-template-columns: 1fr; }
-  .sidebar { display: flex; flex-wrap: wrap; gap: 5px; }
-  .sidebar-brand { width: 100%; padding-bottom: 10px; }
-  .sidebar-label { display: none; }
-  .side-tab { width: auto; }
-  .demo-main { padding: 18px; }
-  .design-grid, .evaluation-list, .info-grid { grid-template-columns: 1fr; }
-  .reflection { padding: 25px; }
-  footer { flex-direction: column; }
-}
-
-@media(prefers-reduced-motion:reduce) {
-  html { scroll-behavior: auto; }
+:root{
+ --ink:#26352f;
+ --muted:#718078;
+ --forest:#244b3d;
+ --green:#4e8b70;
+ --mint:#eaf3ed;
+ --sage:#dce9df;
+ --cream:#f7f7f4;
+ --gold:#d8ae67;
+ --gold-light:#faf2e3;
+ --line:#e5eae5;
+ --white:#fff;
+ --radius:16px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--cream);color:var(--ink);font-family:"DM Sans",sans-serif;line-height:1.6}
+h1,h2,h3,h4{font-family:"Manrope",sans-serif;line-height:1.25}
+button{font:inherit;cursor:pointer}
+a{text-decoration:none;color:inherit}
+.topbar{background:#fff;border-bottom:1px solid var(--line);padding:18px 6%;display:flex;justify-content:space-between;align-items:center}
+.brand{font-family:Manrope;font-weight:800;letter-spacing:-.5px;color:var(--forest)}
+.topbar nav{display:flex;gap:26px;font-size:13px;color:var(--muted)}
+.back{font-size:13px;color:var(--muted)}
+.container{max-width:1160px;margin:auto;padding:0 28px}
+.hero{background:#fff;padding:76px 0 55px}
+.eyebrow{font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--green)}
+.hero h1{font-size:clamp(38px,5vw,62px);letter-spacing:-2.5px;color:var(--forest);max-width:850px;margin:16px 0}
+.hero p{font-size:17px;color:var(--muted);max-width:740px}
+.pills{display:flex;gap:9px;flex-wrap:wrap;margin-top:24px}
+.pill{font-size:11px;background:var(--mint);color:var(--forest);padding:7px 12px;border-radius:30px;font-weight:700}
+.project-meta{display:grid;grid-template-columns:repeat(4,1fr);gap:15px;margin-top:38px;padding-top:24px;border-top:1px solid var(--line)}
+.meta-label{font-size:10px;text-transform:uppercase;letter-spacing:1.3px;color:#89958e;font-weight:700}
+.meta-value{font-size:13px;margin-top:5px;font-weight:600}
+.section{padding:68px 0}
+.section.white{background:#fff}
+.section-heading{font-size:30px;letter-spacing:-1px;color:var(--forest);margin:8px 0 14px}
+.lead{font-size:15px;color:var(--muted);max-width:780px}
+.problem{background:#edf3ee;border-left:4px solid var(--green);padding:23px 26px;border-radius:0 13px 13px 0;margin-top:26px}
+.problem strong{display:block;color:var(--forest);margin-bottom:6px}
+.problem p{margin:0;color:#617369;font-size:13px}
+.grid-2{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-top:27px}
+.panel{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:24px}
+.panel h3{font-size:16px;margin:0 0 10px;color:var(--forest)}
+.panel p{font-size:13px;color:var(--muted);margin:0}
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:26px}
+.info-card{background:#fff;border:1px solid var(--line);border-radius:15px;padding:22px}
+.number{width:34px;height:34px;border-radius:10px;background:var(--mint);color:var(--forest);display:grid;place-items:center;font-weight:800;margin-bottom:14px}
+.info-card h3{font-size:15px;margin:0 0 8px}
+.info-card p{font-size:12px;color:var(--muted);margin:0}
+.objectives{display:grid;grid-template-columns:1fr 1fr;gap:11px;margin-top:22px}
+.objective{display:flex;gap:12px;background:#fff;border:1px solid var(--line);border-radius:12px;padding:15px;font-size:12px}
+.check{color:var(--green);font-weight:800}
+.strategy-list{display:grid;gap:12px;margin-top:24px}
+.strategy{display:flex;gap:16px;padding:18px;border:1px solid var(--line);border-radius:13px;background:#fff}
+.strategy-icon{width:40px;height:40px;flex-shrink:0;border-radius:11px;background:var(--mint);display:grid;place-items:center;color:var(--forest);font-size:18px}
+.strategy h3{font-size:14px;margin:0 0 5px}
+.strategy p{font-size:12px;color:var(--muted);margin:0}
+.prototype-intro{display:flex;justify-content:space-between;gap:20px;align-items:end;margin-bottom:24px}
+.prototype-intro p{max-width:690px;color:var(--muted);font-size:13px}
+.demo-shell{background:#e9eee9;border-radius:20px;padding:20px;box-shadow:0 18px 50px rgba(30,65,45,.07)}
+.app{background:#fff;border:1px solid #e1e8e1;border-radius:14px;overflow:hidden;min-height:690px;display:grid;grid-template-columns:205px 1fr}
+.sidebar{background:#244b3d;color:#fff;padding:23px 15px}
+.app-logo{font-family:Manrope;font-size:19px;font-weight:800;padding:0 10px 22px}
+.app-logo span{color:#b5d6be}
+.profile{display:flex;gap:10px;align-items:center;padding:13px 8px;border-top:1px solid #45685b;border-bottom:1px solid #45685b;margin-bottom:17px}
+.avatar{width:35px;height:35px;background:#dce9df;color:#244b3d;border-radius:50%;display:grid;place-items:center;font-weight:800;font-size:12px;flex-shrink:0}
+.profile small{display:block;color:#bfd0c4;font-size:10px}
+.profile strong{font-size:11px}
+.nav-label{font-size:9px;text-transform:uppercase;letter-spacing:1.4px;color:#b5c8bc;padding:12px 10px 7px}
+.nav-item{padding:10px;border-radius:8px;color:#e1eae3;font-size:11px;margin:3px 0;cursor:pointer;display:flex;gap:9px;align-items:center}
+.nav-item.active,.nav-item:hover{background:#3b6653;color:#fff}
+.app-main{padding:25px;background:#f8faf8;min-width:0}
+.app-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:22px;gap:12px}
+.app-top strong{font-size:11px;color:var(--forest)}
+.app-top small{color:#87948b;font-size:10px}
+.page-view{display:none}
+.page-view.active{display:block}
+.welcome h2{font-size:22px;color:var(--forest);margin:0 0 5px}
+.welcome p{font-size:11px;color:var(--muted);margin:0}
+.welcome-banner{background:#eaf3ed;border:1px solid #dce9df;border-radius:13px;padding:20px;margin-top:18px;display:flex;justify-content:space-between;gap:15px;align-items:center}
+.welcome-banner h3{font-size:16px;color:var(--forest);margin:0 0 5px}
+.welcome-banner p{font-size:10px;color:#63786b;margin:0}
+.welcome-art{width:66px;height:66px;flex-shrink:0;border-radius:50%;background:#d4e5d8;display:grid;place-items:center;font-size:29px;color:var(--forest)}
+.progress-card{background:#fff;border:1px solid var(--line);border-radius:12px;padding:17px;margin-top:14px}
+.progress-head{display:flex;justify-content:space-between;align-items:center;gap:10px}
+.progress-head h3{font-size:12px;margin:0;color:var(--forest)}
+.progress-number{font-family:Manrope;font-size:21px;font-weight:800;color:var(--forest)}
+.progress-track{height:8px;background:#e8eee9;border-radius:10px;overflow:hidden;margin-top:12px}
+.progress-fill{height:100%;background:var(--green);border-radius:10px;transition:width .3s}
+.progress-label{display:flex;justify-content:space-between;font-size:9px;color:var(--muted);margin-top:7px}
+.dashboard-grid{display:grid;grid-template-columns:1.25fr 1fr;gap:13px;margin-top:14px}
+.dash-card{background:#fff;border:1px solid var(--line);border-radius:12px;padding:17px;min-width:0}
+.dash-card h3{font-size:12px;color:var(--forest);margin:0 0 12px}
+.task-row{display:flex;gap:10px;align-items:flex-start;padding:10px 0;border-bottom:1px solid #edf0ed}
+.task-row:last-child{border:0}
+.task-icon{width:31px;height:31px;background:var(--mint);border-radius:9px;display:grid;place-items:center;flex-shrink:0;font-size:13px}
+.task-row strong{display:block;font-size:10px}
+.task-row small{display:block;color:var(--muted);font-size:9px}
+.task-row button{margin-left:auto;white-space:nowrap}
+.primary-btn,.secondary-btn{border:0;border-radius:8px;padding:9px 13px;font-weight:700;font-size:10px}
+.primary-btn{background:var(--forest);color:#fff}
+.primary-btn:hover{background:#376b55}
+.secondary-btn{background:#edf2ed;color:var(--forest)}
+.stage-list{display:grid;gap:10px}
+.stage{border:1px solid var(--line);background:#fff;border-radius:11px;padding:13px;display:flex;gap:11px;align-items:center}
+.stage-icon{width:34px;height:34px;background:var(--mint);border-radius:10px;display:grid;place-items:center;color:var(--forest);flex-shrink:0}
+.stage strong{font-size:10px;display:block}
+.stage small{font-size:9px;color:var(--muted)}
+.stage-status{margin-left:auto;font-size:9px;color:var(--green);font-weight:700;white-space:nowrap}
+.view-title{font-size:21px;color:var(--forest);margin:0 0 5px}
+.view-subtitle{font-size:11px;color:var(--muted);margin:0 0 20px}
+.tab-row{display:flex;gap:7px;flex-wrap:wrap;margin:16px 0}
+.filter{border:1px solid var(--line);background:#fff;padding:7px 11px;border-radius:20px;font-size:9px;color:var(--muted)}
+.filter.active{background:var(--mint);color:var(--forest);border-color:#cbded0}
+.checklist-group{margin:17px 0}
+.checklist-group h3{font-size:12px;color:var(--forest);margin:0 0 8px}
+.check-row{display:flex;gap:11px;align-items:flex-start;background:#fff;border:1px solid var(--line);border-radius:9px;padding:12px;margin:8px 0;font-size:10px}
+.check-row input{accent-color:var(--green);width:15px;height:15px;margin-top:2px;flex-shrink:0}
+.check-row strong{display:block;font-size:10px}
+.check-row small{display:block;font-size:9px;color:var(--muted);margin-top:2px}
+.check-row:has(input:checked){background:#f1f7f2}
+.check-row:has(input:checked) strong{text-decoration:line-through;color:#87958b}
+.stage-card{background:#fff;border:1px solid var(--line);border-radius:12px;padding:17px;margin:12px 0}
+.stage-card-head{display:flex;justify-content:space-between;align-items:center;gap:10px}
+.stage-card h3{font-size:13px;margin:5px 0;color:var(--forest)}
+.stage-card p{font-size:10px;color:var(--muted);margin:0}
+.stage-badge{font-size:9px;background:var(--mint);color:var(--forest);padding:5px 9px;border-radius:20px;font-weight:700}
+.pathway-task{display:flex;align-items:center;gap:10px;padding:11px 0;border-bottom:1px solid #edf0ed;font-size:10px}
+.pathway-task:last-child{border:0}
+.pathway-task span{color:var(--green);font-weight:800}
+.resource-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.resource-card{background:#fff;border:1px solid var(--line);border-radius:11px;padding:14px}
+.resource-card .task-icon{margin-bottom:10px}
+.resource-card strong{font-size:11px;display:block}
+.resource-card p{font-size:9px;color:var(--muted);margin:5px 0 11px}
+.resource-card button{font-size:9px}
+.resource-detail{display:none;background:#f1f6f1;border:1px solid #dce9df;border-radius:10px;padding:13px;margin-top:12px}
+.resource-detail.show{display:block}
+.resource-detail strong{font-size:11px;color:var(--forest)}
+.resource-detail p{font-size:10px;color:var(--muted);margin:5px 0 0}
+.faq-item{background:#fff;border:1px solid var(--line);border-radius:10px;margin:9px 0;overflow:hidden}
+.faq-question{width:100%;text-align:left;border:0;background:#fff;padding:14px;font-size:10px;font-weight:700;color:var(--forest);display:flex;justify-content:space-between;gap:10px}
+.faq-answer{display:none;padding:0 14px 14px;font-size:10px;color:var(--muted)}
+.faq-item.open .faq-answer{display:block}
+.notice{font-size:10px;color:var(--muted);margin-top:15px;padding:12px;background:#f0f3f0;border-radius:9px}
+.callout{padding:17px;background:var(--mint);border-radius:12px;margin-top:16px}
+.callout strong{color:var(--forest);font-size:12px}
+.callout p{font-size:11px;color:var(--muted);margin:5px 0 0}
+.evaluation{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:23px}
+.eval-card{border-top:3px solid var(--green);background:#fff;padding:17px;border-radius:0 0 11px 11px}
+.eval-card strong{font-size:12px}
+.eval-card p{font-size:11px;color:var(--muted);margin:7px 0 0}
+.reflection{background:var(--forest);color:#fff;padding:33px;border-radius:17px;margin-top:26px}
+.reflection h3{font-size:19px;margin:0 0 10px}
+.reflection p{font-size:13px;color:#d8e6dc;max-width:790px;margin:0}
+.footer{padding:35px 0;text-align:center;color:#87928a;font-size:10px}
+@media(max-width:850px){
+ .topbar nav{display:none}
+ .cards,.evaluation{grid-template-columns:1fr}
+ .grid-2,.objectives{grid-template-columns:1fr}
+ .app{grid-template-columns:1fr}
+ .sidebar{display:none}
+ .dashboard-grid{grid-template-columns:1fr}
+ .prototype-intro{display:block}
+}
+@media(max-width:560px){
+ .container{padding:0 17px}
+ .hero{padding:48px 0 38px}
+ .project-meta{grid-template-columns:1fr 1fr}
+ .app-main{padding:13px}
+ .demo-shell{padding:7px}
+ .resource-grid{grid-template-columns:1fr}
+ .welcome-banner{align-items:flex-start}
+ .welcome-art{width:45px;height:45px;font-size:21px}
 }
 </style>
 </head>
 
 <body>
-
-<div class="wrap">
-
-<nav>
-  <a class="brand" href="index.html">RATHESA KODEESWARAN</a>
-  <div class="nav-links">
-    <a href="index.html#about">About</a>
-    <a href="index.html#work">Projects</a>
-    <a href="#overview">Overview</a>
-    <a href="#experience">Experience</a>
-  </div>
-</nav>
-
-<a class="back-link" href="index.html#work">← Back to all projects</a>
-
-<header class="hero">
-  <div>
-    <div class="eyebrow">Project 04 · Employee onboarding · UX + learning design</div>
-
-    <h1>FirstSteps: A More <span>Supportive</span> Onboarding Experience</h1>
-
-    <p class="hero-copy">
-      A digital onboarding concept designed to help new employees feel
-      prepared, understand their priorities, and navigate their first
-      30 days with greater clarity and confidence.
-    </p>
-
-    <div class="hero-tags">
-      <span>Employee onboarding</span>
-      <span>Learning pathways</span>
-      <span>Performance support</span>
-      <span>UX/UI design</span>
-    </div>
-  </div>
-
-  <div class="hero-visual">
-    <div class="mock-window">
-      <div class="mock-top">
-        <div class="mock-logo">FirstSteps</div>
-        <div class="mock-user">JD</div>
-      </div>
-
-      <div class="mock-content">
-        <div class="welcome-label">Your onboarding journey</div>
-        <h3>Welcome aboard, Jordan!</h3>
-        <p>Here is a look at your first steps with the team.</p>
-
-        <div class="mock-progress-label">
-          <span>Your onboarding progress</span>
-          <span>45%</span>
-        </div>
-        <div class="progress-track">
-          <div class="progress-fill"></div>
-        </div>
-
-        <div class="mock-task">
-          <span>Complete your welcome orientation</span>
-          <span>Done</span>
-        </div>
-        <div class="mock-task">
-          <span>Meet your team</span>
-          <span>Next</span>
-        </div>
-        <div class="mock-task">
-          <span>Explore essential resources</span>
-          <span>To do</span>
-        </div>
-      </div>
-    </div>
-  </div>
+<header class="topbar">
+ <a class="brand" href="index.html">RATHESA KODEESWARAN</a>
+ <nav>
+  <a href="index.html#work">Projects</a>
+  <a href="index.html#about">About</a>
+  <a href="index.html#contact">Contact</a>
+ </nav>
+ <a class="back" href="index.html#work">← All projects</a>
 </header>
 
-<div class="project-meta">
-  <div class="meta-item">
-    <strong>Project type</strong>
-    <span>Conceptual UX + learning design</span>
+<section class="hero">
+ <div class="container">
+  <div class="eyebrow">Project 04 · UX + Employee Learning</div>
+  <h1>FirstSteps: A More Structured Employee Onboarding Experience</h1>
+  <p>A digital onboarding concept designed to help new employees navigate their first 30 days, access essential resources, understand learning priorities, and feel more confident starting a new role.</p>
+  <div class="pills">
+   <span class="pill">UX/UI Design</span>
+   <span class="pill">Employee Onboarding</span>
+   <span class="pill">Learning Pathways</span>
+   <span class="pill">Performance Support</span>
+   <span class="pill">Information Architecture</span>
   </div>
-  <div class="meta-item">
-    <strong>Audience</strong>
-    <span>New employees</span>
+  <div class="project-meta">
+   <div><div class="meta-label">Project type</div><div class="meta-value">Independent concept</div></div>
+   <div><div class="meta-label">Audience</div><div class="meta-value">New employees</div></div>
+   <div><div class="meta-label">Focus</div><div class="meta-value">First 30 days</div></div>
+   <div><div class="meta-label">Tools</div><div class="meta-value">HTML · CSS · JavaScript · Figma</div></div>
   </div>
-  <div class="meta-item">
-    <strong>Focus</strong>
-    <span>First 30 days</span>
-  </div>
-  <div class="meta-item">
-    <strong>Tools</strong>
-    <span>Figma · HTML · CSS · JavaScript</span>
-  </div>
-</div>
-
-</div>
-
-<section id="overview">
-<div class="wrap">
-  <div class="section-head">
-    <div class="eyebrow">01 · The opportunity</div>
-    <h2>Starting a new job shouldn't feel like finding your way through a maze.</h2>
-    <p>
-      A new employee often has to absorb a lot of information in a short
-      period of time. FirstSteps explores how onboarding can feel more
-      organized, approachable, and easier to navigate.
-    </p>
-  </div>
-
-  <div class="two-col">
-    <div class="copy">
-      <p>
-        Starting a new role involves more than learning job responsibilities.
-        Employees may need to understand company policies, meet colleagues,
-        complete required training, learn unfamiliar systems, and figure out
-        where to find help.
-      </p>
-
-      <p>
-        When information is spread across emails, documents, meetings, and
-        different platforms, it can be difficult to know what matters most
-        or what to do next.
-      </p>
-
-      <p>
-        FirstSteps is a proposed onboarding experience that brings key
-        activities and resources into one place. It gives new employees a
-        clearer path while allowing them to revisit information when needed.
-      </p>
-    </div>
-
-    <div class="highlight">
-      <strong>The design opportunity</strong>
-      <p>
-        Create a guided onboarding experience that balances structured
-        learning with flexibility, helping employees understand their
-        priorities without overwhelming them with information.
-      </p>
-    </div>
-  </div>
-</div>
+ </div>
 </section>
 
-<section>
-<div class="wrap">
-  <div class="section-head">
-    <div class="eyebrow">02 · Learner needs</div>
-    <h2>What does a new employee need during onboarding?</h2>
-    <p>
-      The experience is designed around common onboarding needs that
-      organizations can validate with new employees and managers.
-    </p>
+<section class="section">
+ <div class="container">
+  <div class="eyebrow">01 · The challenge</div>
+  <h2 class="section-heading">Starting a new role can feel overwhelming</h2>
+  <p class="lead">New employees are often introduced to a large amount of information in a short period of time. They may need to learn company policies, meet colleagues, understand internal systems, complete mandatory training, and begin their role-specific responsibilities.</p>
+  <div class="problem">
+   <strong>The design problem</strong>
+   <p>How might we create a more organized onboarding experience that helps new employees understand what to do, where to find information, and how to progress through their first month?</p>
   </div>
-
-  <div class="two-col">
-    <div class="audience-card">
-      <h3>Primary audience</h3>
-      <p style="color:var(--muted);font-size:13px;">
-        Employees who are new to an organization and need support
-        understanding their role, workplace expectations, and essential
-        processes.
-      </p>
-      <ul>
-        <li>New hires joining an unfamiliar team</li>
-        <li>Employees learning new systems and processes</li>
-        <li>People completing required introductory training</li>
-        <li>Employees who need to revisit information independently</li>
-      </ul>
-    </div>
-
-    <div class="audience-card">
-      <h3>Key learner needs</h3>
-      <ul>
-        <li>Understand what to complete and when</li>
-        <li>Know where to find policies and essential resources</li>
-        <li>Understand who to contact for support</li>
-        <li>Track onboarding activities and progress</li>
-        <li>Connect learning activities to actual job responsibilities</li>
-      </ul>
-    </div>
+  <div class="grid-2">
+   <div class="panel">
+    <h3>Learner challenges</h3>
+    <p>Unclear priorities, information spread across multiple platforms, uncertainty about required training, and difficulty knowing who to contact for help.</p>
+   </div>
+   <div class="panel">
+    <h3>Design opportunity</h3>
+    <p>Bring onboarding tasks, learning activities, essential resources, and progress tracking into one accessible employee workspace.</p>
+   </div>
   </div>
-</div>
+ </div>
 </section>
 
-<section>
-<div class="wrap">
-  <div class="section-head">
-    <div class="eyebrow">03 · The challenge</div>
-    <h2>Three onboarding challenges to address.</h2>
+<section class="section white">
+ <div class="container">
+  <div class="eyebrow">02 · Audience & objectives</div>
+  <h2 class="section-heading">Supporting employees as they settle into a new role</h2>
+  <p class="lead">The concept is designed for employees joining an organization who need a clear introduction to workplace expectations, systems, people, and learning requirements.</p>
+  <div class="cards">
+   <div class="info-card"><div class="number">01</div><h3>New employees</h3><p>People joining an organization who need to understand their responsibilities, workplace culture, and first steps.</p></div>
+   <div class="info-card"><div class="number">02</div><h3>Managers</h3><p>Managers who need a shared view of onboarding priorities, progress, and upcoming conversations.</p></div>
+   <div class="info-card"><div class="number">03</div><h3>HR and L&D teams</h3><p>Teams coordinating orientation, required learning, employee resources, and onboarding communications.</p></div>
   </div>
-
-  <div class="challenge-grid">
-    <article class="challenge">
-      <div class="number">01</div>
-      <h3>Information overload</h3>
-      <p>
-        New employees receive a large amount of information before they
-        have enough context to understand or remember it.
-      </p>
-    </article>
-
-    <article class="challenge">
-      <div class="number">02</div>
-      <h3>Unclear next steps</h3>
-      <p>
-        Employees may not know which activities are essential, what
-        deadlines matter, or what to prioritize first.
-      </p>
-    </article>
-
-    <article class="challenge">
-      <div class="number">03</div>
-      <h3>Scattered resources</h3>
-      <p>
-        Important documents, training materials, and contacts can be
-        difficult to locate when they are spread across platforms.
-      </p>
-    </article>
+  <h3 style="margin:34px 0 0;color:var(--forest);font-size:16px">Experience objectives</h3>
+  <div class="objectives">
+   <div class="objective"><span class="check">✓</span><span>Help employees understand their onboarding priorities and next steps.</span></div>
+   <div class="objective"><span class="check">✓</span><span>Provide a structured first-30-days learning pathway.</span></div>
+   <div class="objective"><span class="check">✓</span><span>Make essential policies, tools, and reference materials easier to find.</span></div>
+   <div class="objective"><span class="check">✓</span><span>Make onboarding progress visible to support accountability and confidence.</span></div>
   </div>
-</div>
+ </div>
 </section>
 
-<section class="journey">
-<div class="wrap">
-  <div class="section-head">
-    <div class="eyebrow">04 · Proposed learning journey</div>
-    <h2>A guided first 30 days.</h2>
-    <p>
-      Rather than presenting everything at once, FirstSteps organizes
-      onboarding into manageable stages. The timing and activities would
-      be adapted to the role and organization.
-    </p>
+<section class="section">
+ <div class="container">
+  <div class="eyebrow">03 · Instructional strategy</div>
+  <h2 class="section-heading">A guided path from orientation to application</h2>
+  <p class="lead">Rather than presenting every resource at once, FirstSteps organizes onboarding into manageable stages. Each stage combines information, learning, practical activities, and opportunities to ask questions.</p>
+  <div class="cards">
+   <div class="info-card"><div class="number">01</div><h3>Days 1–5 · Get oriented</h3><p>Understand the organization, meet key contacts, access systems, and complete essential orientation activities.</p></div>
+   <div class="info-card"><div class="number">02</div><h3>Days 6–15 · Build understanding</h3><p>Explore role-specific processes, complete required learning, and become familiar with workplace tools and procedures.</p></div>
+   <div class="info-card"><div class="number">03</div><h3>Days 16–30 · Put learning into practice</h3><p>Apply new knowledge, practise everyday responsibilities, ask questions, and discuss progress with a manager.</p></div>
   </div>
-
-  <div class="journey-grid">
-    <article class="phase">
-      <div class="phase-label">Days 1–5</div>
-      <h3>Get oriented</h3>
-      <p>Help employees understand the organization and get comfortable.</p>
-      <ul>
-        <li>Welcome and orientation</li>
-        <li>Meet the team and manager</li>
-        <li>Set up essential accounts</li>
-        <li>Review workplace policies</li>
-        <li>Explore key resources</li>
-      </ul>
-    </article>
-
-    <article class="phase">
-      <div class="phase-label">Days 6–15</div>
-      <h3>Build understanding</h3>
-      <p>Introduce important responsibilities, tools, and processes.</p>
-      <ul>
-        <li>Complete role-specific learning</li>
-        <li>Explore systems and tools</li>
-        <li>Review process documentation</li>
-        <li>Observe team workflows</li>
-        <li>Ask questions and get feedback</li>
-      </ul>
-    </article>
-
-    <article class="phase">
-      <div class="phase-label">Days 16–30</div>
-      <h3>Put learning into practice</h3>
-      <p>Support employees as they begin applying what they have learned.</p>
-      <ul>
-        <li>Practise common job tasks</li>
-        <li>Complete guided activities</li>
-        <li>Revisit reference materials</li>
-        <li>Meet with a manager or mentor</li>
-        <li>Reflect on progress and next steps</li>
-      </ul>
-    </article>
+  <div class="strategy-list">
+   <div class="strategy"><div class="strategy-icon">▤</div><div><h3>Chunk information into manageable steps</h3><p>Break onboarding into smaller activities instead of overwhelming employees with a large collection of documents.</p></div></div>
+   <div class="strategy"><div class="strategy-icon">◎</div><div><h3>Connect learning to real work</h3><p>Combine formal training with practical tasks, guided exploration, and opportunities to apply new knowledge.</p></div></div>
+   <div class="strategy"><div class="strategy-icon">⌕</div><div><h3>Provide support at the point of need</h3><p>Make policies, process guides, FAQs, and contact information easy to locate when employees need them.</p></div></div>
+   <div class="strategy"><div class="strategy-icon">↗</div><div><h3>Make progress visible</h3><p>Use a checklist and learning pathway to clarify completed activities and upcoming priorities.</p></div></div>
   </div>
-</div>
+ </div>
 </section>
 
-<section class="demo-section" id="experience">
-<div class="wrap">
-  <div class="section-head">
-    <div class="eyebrow">05 · Interactive prototype</div>
-    <h2>A home base for the onboarding journey.</h2>
-    <p>
-      The dashboard brings together onboarding tasks, learning resources,
-      and progress so employees can focus on what comes next.
-    </p>
+<section class="section white" id="prototype">
+ <div class="container">
+  <div class="eyebrow">04 · Interactive prototype</div>
+  <div class="prototype-intro">
+   <div>
+    <h2 class="section-heading">Explore the FirstSteps dashboard</h2>
+    <p>Try the sample employee experience. Complete onboarding tasks, explore the 30-day pathway, and open reference resources. The progress indicator updates as you complete checklist items.</p>
+   </div>
+   <span class="pill">Interactive concept</span>
   </div>
 
   <div class="demo-shell">
-
+   <div class="app">
     <aside class="sidebar">
-      <div class="sidebar-brand">FirstSteps.</div>
-      <div class="sidebar-label">Your workspace</div>
-
-      <button class="side-tab active" data-tab="dashboard">Overview</button>
-      <button class="side-tab" data-tab="checklist">My checklist</button>
-      <button class="side-tab" data-tab="learning">Learning path</button>
-      <button class="side-tab" data-tab="resources">Resources</button>
+     <div class="app-logo">first<span>steps</span></div>
+     <div class="profile">
+      <div class="avatar">JD</div>
+      <div><strong>Jordan Davis</strong><small>New employee · Sample account</small></div>
+     </div>
+     <div class="nav-label">My onboarding</div>
+     <div class="nav-item active" data-view="overview">⌂ &nbsp; Overview</div>
+     <div class="nav-item" data-view="checklist">☑ &nbsp; My checklist</div>
+     <div class="nav-item" data-view="pathway">▤ &nbsp; Learning pathway</div>
+     <div class="nav-item" data-view="resources">▧ &nbsp; Resources</div>
+     <div class="nav-label">Support</div>
+     <div class="nav-item" data-view="faq">? &nbsp; Help & FAQs</div>
     </aside>
 
-    <div class="demo-main">
+    <main class="app-main">
+     <div class="app-top">
+      <strong>EMPLOYEE ONBOARDING</strong>
+      <small>Sample account · First 30 days</small>
+     </div>
 
-      <!-- DASHBOARD -->
-      <div class="demo-panel active" id="dashboard">
-        <div class="demo-top">
-          <div>
-            <small>MONDAY · YOUR ONBOARDING JOURNEY</small>
-            <h3>Welcome, Jordan!</h3>
-          </div>
-          <div class="avatar">JD</div>
-        </div>
-
-        <div class="demo-welcome">
-          <h4>You're making progress.</h4>
-          <p>
-            Your first few steps are underway. Keep going at a manageable pace.
-          </p>
-        </div>
-
-        <div class="demo-progress">
-          <span>Overall onboarding progress</span>
-          <span id="dashboardPercent">0%</span>
-        </div>
-        <div class="progress-track">
-          <div class="progress-fill" id="dashboardBar" style="width:0%"></div>
-        </div>
-
-        <h4 style="font:700 15px Manrope;margin:23px 0 10px;">
-          Your next steps
-        </h4>
-
-        <div class="task-list">
-          <div class="task-row">
-            <div class="task-info">
-              <strong>Complete your welcome orientation</strong>
-              <span>Introduction · 15 minutes</span>
-            </div>
-            <span class="task-status">Required</span>
-          </div>
-
-          <div class="task-row">
-            <div class="task-info">
-              <strong>Meet your team</strong>
-              <span>Getting started · Team activity</span>
-            </div>
-            <span class="task-status">Next</span>
-          </div>
-
-          <div class="task-row">
-            <div class="task-info">
-              <strong>Explore essential resources</strong>
-              <span>Reference materials · 10 minutes</span>
-            </div>
-            <span class="task-status">Upcoming</span>
-          </div>
-        </div>
-
-        <div class="demo-note">
-          Tip: You can return to your checklist at any time to review
-          completed and outstanding activities.
-        </div>
+     <!-- OVERVIEW -->
+     <div class="page-view active" id="overview">
+      <div class="welcome">
+       <h2>Welcome to the team, Jordan! 👋</h2>
+       <p>Your first few weeks are about getting comfortable, building connections, and learning how things work.</p>
       </div>
 
-      <!-- CHECKLIST -->
-      <div class="demo-panel" id="checklist">
-        <div class="demo-top">
-          <div>
-            <small>YOUR TASKS</small>
-            <h3>My onboarding checklist</h3>
-          </div>
-          <div class="avatar">JD</div>
-        </div>
-
-        <p style="font-size:12px;color:var(--muted);">
-          Check off activities as you complete them. Your progress updates
-          automatically.
-        </p>
-
-        <div class="demo-progress">
-          <span>Activities completed</span>
-          <span id="checklistCount">0 of 6</span>
-        </div>
-
-        <div class="progress-track">
-          <div class="progress-fill" id="checklistBar" style="width:0%"></div>
-        </div>
-
-        <div class="task-list" id="interactiveTasks">
-          <label class="task-row">
-            <input type="checkbox" class="task-check">
-            <span class="task-info">
-              <strong>Complete welcome orientation</strong>
-              <span>Introduction to the organization</span>
-            </span>
-            <span class="task-status">Required</span>
-          </label>
-
-          <label class="task-row">
-            <input type="checkbox" class="task-check">
-            <span class="task-info">
-              <strong>Review workplace policies</strong>
-              <span>Policies and expectations</span>
-            </span>
-            <span class="task-status">Required</span>
-          </label>
-
-          <label class="task-row">
-            <input type="checkbox" class="task-check">
-            <span class="task-info">
-              <strong>Meet your manager and team</strong>
-              <span>People and connections</span>
-            </span>
-            <span class="task-status">Activity</span>
-          </label>
-
-          <label class="task-row">
-            <input type="checkbox" class="task-check">
-            <span class="task-info">
-              <strong>Set up essential tools</strong>
-              <span>Systems and access</span>
-            </span>
-            <span class="task-status">Required</span>
-          </label>
-
-          <label class="task-row">
-            <input type="checkbox" class="task-check">
-            <span class="task-info">
-              <strong>Complete role-specific training</strong>
-              <span>Learning pathway</span>
-            </span>
-            <span class="task-status">Learning</span>
-          </label>
-
-          <label class="task-row">
-            <input type="checkbox" class="task-check">
-            <span class="task-info">
-              <strong>Schedule a progress check-in</strong>
-              <span>Manager conversation</span>
-            </span>
-            <span class="task-status">Meeting</span>
-          </label>
-        </div>
-
-        <div class="demo-note">
-          This checklist is interactive. Select the boxes to see your
-          onboarding progress change.
-        </div>
+      <div class="welcome-banner">
+       <div>
+        <span class="eyebrow" style="font-size:9px">YOUR ONBOARDING JOURNEY</span>
+        <h3>Let's make your first 30 days count.</h3>
+        <p>Start with your priority tasks and work through your learning pathway at a manageable pace.</p>
+       </div>
+       <div class="welcome-art">✦</div>
       </div>
 
-      <!-- LEARNING -->
-      <div class="demo-panel" id="learning">
-        <div class="demo-top">
-          <div>
-            <small>YOUR DEVELOPMENT</small>
-            <h3>Learning pathway</h3>
-          </div>
-          <div class="avatar">JD</div>
-        </div>
-
-        <p style="font-size:12px;color:var(--muted);">
-          A suggested sequence of introductory learning activities.
-        </p>
-
-        <div class="info-grid">
-          <div class="info-card">
-            <strong>01 · Organization overview</strong>
-            <span>Understand the organization and its purpose.</span>
-          </div>
-          <div class="info-card">
-            <strong>02 · Workplace essentials</strong>
-            <span>Review policies, expectations, and key procedures.</span>
-          </div>
-          <div class="info-card">
-            <strong>03 · Tools and systems</strong>
-            <span>Become familiar with the tools used in your role.</span>
-          </div>
-          <div class="info-card">
-            <strong>04 · Role-specific training</strong>
-            <span>Build knowledge for your day-to-day responsibilities.</span>
-          </div>
-        </div>
-
-        <div class="demo-note">
-          Learning activities can be tailored to each role, with links to
-          relevant courses, practice activities, and reference materials.
-        </div>
+      <div class="progress-card">
+       <div class="progress-head">
+        <h3>Your onboarding progress</h3>
+        <span class="progress-number" id="progress-percent">0%</span>
+       </div>
+       <div class="progress-track"><div class="progress-fill" id="progress-bar" style="width:0%"></div></div>
+       <div class="progress-label"><span id="progress-count">0 of 12 tasks completed</span><span>First 30 days</span></div>
       </div>
 
-      <!-- RESOURCES -->
-      <div class="demo-panel" id="resources">
-        <div class="demo-top">
-          <div>
-            <small>QUICK ACCESS</small>
-            <h3>Helpful resources</h3>
-          </div>
-          <div class="avatar">JD</div>
+      <div class="dashboard-grid">
+       <div class="dash-card">
+        <h3>Priority tasks</h3>
+        <div class="task-row">
+         <div class="task-icon">◈</div>
+         <div><strong>Review your welcome information</strong><small>Start here · 10 minutes</small></div>
+         <button class="secondary-btn" onclick="goTo('checklist')">View</button>
         </div>
-
-        <div class="info-grid">
-          <div class="info-card">
-            <strong>Employee handbook</strong>
-            <span>Workplace information and expectations.</span>
-          </div>
-          <div class="info-card">
-            <strong>Policies and procedures</strong>
-            <span>Important guidelines and reference documents.</span>
-          </div>
-          <div class="info-card">
-            <strong>People and contacts</strong>
-            <span>Find your manager, team, and support contacts.</span>
-          </div>
-          <div class="info-card">
-            <strong>Frequently asked questions</strong>
-            <span>Answers to common new employee questions.</span>
-          </div>
+        <div class="task-row">
+         <div class="task-icon">▣</div>
+         <div><strong>Complete workplace orientation</strong><small>Required learning · 30 minutes</small></div>
+         <button class="secondary-btn" onclick="goTo('pathway')">View</button>
         </div>
-
-        <div class="demo-note">
-          A centralized resource area helps employees find information
-          when they need it, rather than relying on memory.
+        <div class="task-row">
+         <div class="task-icon">◎</div>
+         <div><strong>Schedule a manager check-in</strong><small>First week · 15 minutes</small></div>
+         <button class="secondary-btn" onclick="goTo('checklist')">View</button>
         </div>
+       </div>
+       <div class="dash-card">
+        <h3>Your first 30 days</h3>
+        <div class="stage-list">
+         <div class="stage"><div class="stage-icon">01</div><div><strong>Get oriented</strong><small>Days 1–5</small></div><span class="stage-status">Start here</span></div>
+         <div class="stage"><div class="stage-icon">02</div><div><strong>Build understanding</strong><small>Days 6–15</small></div><span class="stage-status">Next</span></div>
+         <div class="stage"><div class="stage-icon">03</div><div><strong>Put learning into practice</strong><small>Days 16–30</small></div><span class="stage-status">Upcoming</span></div>
+        </div>
+        <button class="secondary-btn" style="margin-top:12px" onclick="goTo('pathway')">Explore pathway →</button>
+       </div>
       </div>
 
-    </div>
+      <div class="callout">
+       <strong>Need a hand?</strong>
+       <p>Not sure where to start? Visit Help & FAQs for answers to common onboarding questions and guidance on who to contact.</p>
+      </div>
+     </div>
+
+     <!-- CHECKLIST -->
+     <div class="page-view" id="checklist">
+      <h2 class="view-title">My onboarding checklist</h2>
+      <p class="view-subtitle">Work through your onboarding tasks at a manageable pace. Check off each activity as you complete it.</p>
+
+      <div class="progress-card" style="margin-top:0">
+       <div class="progress-head"><h3>Overall checklist progress</h3><span class="progress-number" id="checklist-percent">0%</span></div>
+       <div class="progress-track"><div class="progress-fill" id="checklist-bar" style="width:0%"></div></div>
+       <div class="progress-label"><span id="checklist-count">0 of 12 tasks completed</span><span>All stages</span></div>
+      </div>
+
+      <div class="checklist-group">
+       <h3>Days 1–5 · Get oriented</h3>
+       <label class="check-row"><input type="checkbox" class="task-check" data-stage="1"><span><strong>Review welcome information</strong><small>Learn about the organization and your first steps.</small></span></label>
+       <label class="check-row"><input type="checkbox" class="task-check" data-stage="1"><span><strong>Meet your manager and team</strong><small>Understand team responsibilities and key contacts.</small></span></label>
+       <label class="check-row"><input type="checkbox" class="task-check" data-stage="1"><span><strong>Set up your workplace accounts</strong><small>Access email, internal systems, and communication tools.</small></span></label>
+       <label class="check-row"><input type="checkbox" class="task-check" data-stage="1"><span><strong>Review workplace policies</strong><small>Locate key policies and employee guidelines.</small></span></label>
+      </div>
+
+      <div class="checklist-group">
+       <h3>Days 6–15 · Build understanding</h3>
+       <label class="check-row"><input type="checkbox" class="task-check" data-stage="2"><span><strong>Complete required workplace training</strong><small>Review assigned learning and complete knowledge checks.</small></span></label>
+       <label class="check-row"><input type="checkbox" class="task-check" data-stage="2"><span><strong>Explore role-specific resources</strong><small>Find guides, procedures, and reference materials.</small></span></label>
+       <label class="check-row"><input type="checkbox" class="task-check" data-stage="2"><span><strong>Review key team processes</strong><small>Understand common workflows and responsibilities.</small></span></label>
+       <label class="check-row"><input type="checkbox" class="task-check" data-stage="2"><span><strong>Ask questions and clarify expectations</strong><small>Discuss priorities and responsibilities with your manager.</small></span></label>
+      </div>
+
+      <div class="checklist-group">
+       <h3>Days 16–30 · Put learning into practice</h3>
+       <label class="check-row"><input type="checkbox" class="task-check" data-stage="3"><span><strong>Complete a supervised work activity</strong><small>Apply a process or skill with appropriate support.</small></span></label>
+       <label class="check-row"><input type="checkbox" class="task-check" data-stage="3"><span><strong>Review progress with your manager</strong><small>Discuss achievements, questions, and next steps.</small></span></label>
+       <label class="check-row"><input type="checkbox" class="task-check" data-stage="3"><span><strong>Identify further learning needs</strong><small>Consider skills and knowledge to develop next.</small></span></label>
+       <label class="check-row"><input type="checkbox" class="task-check" data-stage="3"><span><strong>Complete your first-month reflection</strong><small>Reflect on your onboarding experience and goals.</small></span></label>
+      </div>
+      <p id="completion-message" class="notice">Your progress updates as you complete tasks. This sample checklist can be reset by refreshing the page.</p>
+     </div>
+
+     <!-- PATHWAY -->
+     <div class="page-view" id="pathway">
+      <h2 class="view-title">Your learning pathway</h2>
+      <p class="view-subtitle">A suggested sequence of activities to help you build knowledge and confidence throughout your first month.</p>
+
+      <div class="stage-card">
+       <div class="stage-card-head"><span class="stage-badge">STAGE 01 · DAYS 1–5</span><span style="font-size:10px;color:var(--green)">Get oriented</span></div>
+       <h3>Understand your new environment</h3>
+       <p>Focus on the organization, people, tools, and information you need to get started.</p>
+       <div class="pathway-task"><span>✓</span> Welcome and organization overview</div>
+       <div class="pathway-task"><span>✓</span> Team introductions and key contacts</div>
+       <div class="pathway-task"><span>✓</span> Workplace systems and account setup</div>
+       <div class="pathway-task"><span>✓</span> Essential policies and procedures</div>
+      </div>
+
+      <div class="stage-card">
+       <div class="stage-card-head"><span class="stage-badge">STAGE 02 · DAYS 6–15</span><span style="font-size:10px;color:var(--green)">Build understanding</span></div>
+       <h3>Develop role-related knowledge</h3>
+       <p>Learn how everyday work gets done and become familiar with important processes.</p>
+       <div class="pathway-task"><span>✓</span> Mandatory training and learning modules</div>
+       <div class="pathway-task"><span>✓</span> Role-specific guides and reference materials</div>
+       <div class="pathway-task"><span>✓</span> Team workflows and responsibilities</div>
+       <div class="pathway-task"><span>✓</span> Manager discussion and questions</div>
+      </div>
+
+      <div class="stage-card">
+       <div class="stage-card-head"><span class="stage-badge">STAGE 03 · DAYS 16–30</span><span style="font-size:10px;color:var(--green)">Put learning into practice</span></div>
+       <h3>Apply what you have learned</h3>
+       <p>Begin using your knowledge in everyday work, with guidance and opportunities for feedback.</p>
+       <div class="pathway-task"><span>✓</span> Supervised practical activity</div>
+       <div class="pathway-task"><span>✓</span> Progress and feedback conversation</div>
+       <div class="pathway-task"><span>✓</span> Identify additional development needs</div>
+       <div class="pathway-task"><span>✓</span> First-month reflection</div>
+      </div>
+
+      <div class="callout">
+       <strong>Learning is not one-size-fits-all</strong>
+       <p>The pathway provides structure, but activities and timelines would need to be adapted to the employee's role, experience, team, and organizational requirements.</p>
+      </div>
+     </div>
+
+     <!-- RESOURCES -->
+     <div class="page-view" id="resources">
+      <h2 class="view-title">Employee resources</h2>
+      <p class="view-subtitle">Find helpful information and reference materials in one place.</p>
+      <div class="resource-grid">
+       <div class="resource-card"><div class="task-icon">◈</div><strong>Employee handbook</strong><p>Workplace expectations, policies, and employee information.</p><button class="secondary-btn" onclick="showResource('handbook')">View details</button></div>
+       <div class="resource-card"><div class="task-icon">▣</div><strong>Systems and technology</strong><p>Guidance for accessing workplace tools and accounts.</p><button class="secondary-btn" onclick="showResource('systems')">View details</button></div>
+       <div class="resource-card"><div class="task-icon">◎</div><strong>People and contacts</strong><p>Find out who to contact for different types of support.</p><button class="secondary-btn" onclick="showResource('contacts')">View details</button></div>
+       <div class="resource-card"><div class="task-icon">▤</div><strong>Learning and development</strong><p>Training requirements and professional development resources.</p><button class="secondary-btn" onclick="showResource('learning')">View details</button></div>
+       <div class="resource-card"><div class="task-icon">◇</div><strong>Workplace procedures</strong><p>Reference information for common workplace processes.</p><button class="secondary-btn" onclick="showResource('procedures')">View details</button></div>
+       <div class="resource-card"><div class="task-icon">✦</div><strong>First-month guide</strong><p>Questions to consider and topics to discuss with your manager.</p><button class="secondary-btn" onclick="showResource('guide')">View details</button></div>
+      </div>
+      <div class="resource-detail" id="resource-detail">
+       <strong id="resource-title"></strong>
+       <p id="resource-copy"></p>
+      </div>
+      <p class="notice">These are sample resource categories. In a production onboarding platform, each item would link to approved internal documents, systems, and contacts.</p>
+     </div>
+
+     <!-- FAQ -->
+     <div class="page-view" id="faq">
+      <h2 class="view-title">Help & frequently asked questions</h2>
+      <p class="view-subtitle">Quick answers to common questions during your first few weeks.</p>
+      <div class="faq-item">
+       <button class="faq-question" onclick="toggleFaq(this)">Where should I start? <span>＋</span></button>
+       <div class="faq-answer">Begin with your welcome information and the first-stage checklist. Your manager or onboarding contact can help clarify which activities are most important for your role.</div>
+      </div>
+      <div class="faq-item">
+       <button class="faq-question" onclick="toggleFaq(this)">What if I cannot access a workplace system? <span>＋</span></button>
+       <div class="faq-answer">Contact your designated IT support team or onboarding contact. Do not share passwords or sensitive account information when requesting help.</div>
+      </div>
+      <div class="faq-item">
+       <button class="faq-question" onclick="toggleFaq(this)">Do I need to complete every activity in the same order? <span>＋</span></button>
+       <div class="faq-answer">The pathway provides a suggested sequence. Your manager or onboarding coordinator can confirm which activities are mandatory and whether the order needs to change for your role.</div>
+      </div>
+      <div class="faq-item">
+       <button class="faq-question" onclick="toggleFaq(this)">Who should I contact if I have questions about my role? <span>＋</span></button>
+       <div class="faq-answer">Your manager is a good starting point for role expectations, team priorities, and work-related questions. Your onboarding contact can help direct you to other resources.</div>
+      </div>
+      <div class="faq-item">
+       <button class="faq-question" onclick="toggleFaq(this)">What happens after my first 30 days? <span>＋</span></button>
+       <div class="faq-answer">Onboarding continues beyond the first month. You and your manager can identify further learning needs, set development goals, and plan additional support.</div>
+      </div>
+      <div class="callout">
+       <strong>Still need help?</strong>
+       <p>Contact your manager or designated onboarding coordinator for guidance specific to your role and organization.</p>
+      </div>
+     </div>
+
+    </main>
+   </div>
   </div>
-
-  <p style="font-size:11px;color:var(--muted);margin-top:12px;">
-    Prototype demonstration · Sample employee profile and onboarding content.
-  </p>
-</div>
+  <p class="notice">Prototype note: This is an independent design concept with sample employee information and placeholder resources. It is not connected to a real HR system, employee account, or organizational LMS.</p>
+ </div>
 </section>
 
-<section>
-<div class="wrap">
-  <div class="section-head">
-    <div class="eyebrow">06 · Design decisions</div>
-    <h2>Designing for clarity, confidence, and independence.</h2>
-    <p>
-      The interface is intended to support employees without making the
-      onboarding process feel like another overwhelming task.
-    </p>
+<section class="section">
+ <div class="container">
+  <div class="eyebrow">05 · Evaluation</div>
+  <h2 class="section-heading">How could the onboarding experience be evaluated?</h2>
+  <p class="lead">The concept would need to be tested with new employees, managers, and onboarding coordinators to understand whether it makes the experience easier to navigate.</p>
+  <div class="evaluation">
+   <div class="eval-card"><strong>Task completion</strong><p>Can new employees locate key resources, understand their priorities, and complete onboarding activities?</p></div>
+   <div class="eval-card"><strong>Confidence and clarity</strong><p>Do employees understand what is expected of them and where to get help when they need it?</p></div>
+   <div class="eval-card"><strong>Onboarding coordination</strong><p>Can managers and HR/L&D teams use the structure to communicate expectations and identify outstanding activities?</p></div>
   </div>
-
-  <div class="design-grid">
-    <article class="design-card">
-      <div class="design-number">01 · INFORMATION ARCHITECTURE</div>
-      <h3>One organized starting point</h3>
-      <p>
-        Bring essential tasks, learning activities, and reference materials
-        together so employees have a clear place to begin.
-      </p>
-    </article>
-
-    <article class="design-card">
-      <div class="design-number">02 · COGNITIVE LOAD</div>
-      <h3>Break information into stages</h3>
-      <p>
-        Organize activities into smaller steps and time-based stages to make
-        onboarding easier to approach and understand.
-      </p>
-    </article>
-
-    <article class="design-card">
-      <div class="design-number">03 · PROGRESS AND FEEDBACK</div>
-      <h3>Make progress visible</h3>
-      <p>
-        Use checklists and progress indicators to help employees recognize
-        what they have completed and what remains.
-      </p>
-    </article>
-
-    <article class="design-card">
-      <div class="design-number">04 · PERFORMANCE SUPPORT</div>
-      <h3>Make information available when needed</h3>
-      <p>
-        Provide quick access to policies, procedures, contacts, and other
-        reference materials that employees may need to revisit.
-      </p>
-    </article>
-  </div>
-</div>
+ </div>
 </section>
 
-<section class="evaluation">
-<div class="wrap">
-  <div class="section-head">
-    <div class="eyebrow">07 · Evaluation approach</div>
-    <h2>How could the experience be evaluated?</h2>
-    <p>
-      The concept would need to be tested with new employees, managers,
-      and onboarding stakeholders before implementation.
-    </p>
-  </div>
-
-  <div class="evaluation-list">
-    <article class="eval-item">
-      <strong>Usability testing</strong>
-      <p>
-        Ask new employees to locate a policy, identify their next task,
-        and find a learning resource. Observe where they hesitate or
-        encounter difficulty.
-      </p>
-    </article>
-
-    <article class="eval-item">
-      <strong>Task completion</strong>
-      <p>
-        Review whether employees can complete onboarding activities
-        and understand what is expected of them.
-      </p>
-    </article>
-
-    <article class="eval-item">
-      <strong>Learner feedback</strong>
-      <p>
-        Gather feedback about clarity, confidence, information access,
-        and the overall onboarding experience.
-      </p>
-    </article>
-
-    <article class="eval-item">
-      <strong>Manager feedback</strong>
-      <p>
-        Explore whether managers find it easier to communicate
-        onboarding expectations and identify areas where employees
-        need additional support.
-      </p>
-    </article>
-  </div>
-</div>
-</section>
-
-<section>
-<div class="wrap">
+<section class="section white">
+ <div class="container">
+  <div class="eyebrow">06 · Reflection</div>
   <div class="reflection">
-    <div class="eyebrow">08 · Reflection</div>
-    <h2>Onboarding is not just about delivering information. It's about helping people use it.</h2>
-    <p>
-      This concept helped me explore how UX principles and adult learning
-      considerations can work together to create a more supportive
-      employee experience. Clear navigation, manageable learning stages,
-      visible progress, and accessible reference materials can help new
-      employees feel more prepared as they transition into their roles.
-    </p>
-    <p>
-      An effective onboarding experience also needs human connection.
-      A digital platform can organize information and guide activities,
-      but it should complement conversations with managers, colleagues,
-      and mentors—not replace them.
-    </p>
-
-    <div class="tools">
-      <span>UX/UI design</span>
-      <span>Adult learning</span>
-      <span>Learning pathways</span>
-      <span>Information architecture</span>
-      <span>Performance support</span>
-      <span>Usability evaluation</span>
-    </div>
+   <h3>Good onboarding is more than a list of tasks.</h3>
+   <p>FirstSteps explores how user-centred design and adult learning principles can help make the transition into a new role more manageable. By organizing information into stages, connecting learning to practical activities, and making resources easier to access, the experience aims to give employees a clearer sense of direction. The platform supports onboarding, but it does not replace the relationships, conversations, and guidance that help new employees feel part of a team.</p>
   </div>
-</div>
+ </div>
 </section>
 
-<div class="wrap">
-  <div style="padding:45px 0;text-align:center;">
-    <div class="eyebrow">Thanks for exploring</div>
-    <h2 style="font:800 30px Manrope;margin:10px 0;">
-      Explore more of my work.
-    </h2>
-    <p style="color:var(--muted);font-size:14px;">
-      Discover more projects combining UX, instructional design, and digital learning.
-    </p>
-    <a href="index.html#work" style="color:var(--green);font-weight:700;font-size:14px;">
-      ← Return to portfolio
-    </a>
-  </div>
-
-  <footer>
-    <span>© 2026 Rathesa Kodeeswaran</span>
-    <span>Learning Experience Design · UX · Digital Learning</span>
-  </footer>
-</div>
+<footer class="footer">
+ <div class="container">Rathesa Kodeeswaran · Learning Experience Design Portfolio · 2026</div>
+</footer>
 
 <script>
-const tabs = document.querySelectorAll(".side-tab");
-const panels = document.querySelectorAll(".demo-panel");
-
-tabs.forEach(tab => {
-  tab.addEventListener("click", () => {
-    tabs.forEach(item => item.classList.remove("active"));
-    panels.forEach(panel => panel.classList.remove("active"));
-
-    tab.classList.add("active");
-
-    const selectedPanel = document.getElementById(tab.dataset.tab);
-    if (selectedPanel) {
-      selectedPanel.classList.add("active");
-    }
-  });
+/* NAVIGATION */
+function goTo(view){
+ document.querySelectorAll(".page-view").forEach(el=>el.classList.remove("active"));
+ document.querySelectorAll(".nav-item").forEach(el=>el.classList.remove("active"));
+ const target=document.getElementById(view);
+ if(target)target.classList.add("active");
+ const nav=document.querySelector('.nav-item[data-view="'+view+'"]');
+ if(nav)nav.classList.add("active");
+}
+document.querySelectorAll(".nav-item").forEach(item=>{
+ item.addEventListener("click",()=>goTo(item.dataset.view));
 });
 
-const taskCheckboxes = document.querySelectorAll(".task-check");
+/* CHECKLIST AND PROGRESS */
+const taskChecks=[...document.querySelectorAll(".task-check")];
 
-function updateProgress() {
-  const total = taskCheckboxes.length;
-  const completed = [...taskCheckboxes].filter(box => box.checked).length;
-  const percentage = Math.round((completed / total) * 100);
+function updateProgress(){
+ const completed=taskChecks.filter(item=>item.checked).length;
+ const total=taskChecks.length;
+ const percent=Math.round((completed/total)*100);
 
-  document.getElementById("checklistCount").textContent =
-    completed + " of " + total;
+ document.getElementById("progress-percent").textContent=percent+"%";
+ document.getElementById("progress-bar").style.width=percent+"%";
+ document.getElementById("progress-count").textContent=completed+" of "+total+" tasks completed";
 
-  document.getElementById("checklistBar").style.width =
-    percentage + "%";
+ document.getElementById("checklist-percent").textContent=percent+"%";
+ document.getElementById("checklist-bar").style.width=percent+"%";
+ document.getElementById("checklist-count").textContent=completed+" of "+total+" tasks completed";
 
-  document.getElementById("dashboardPercent").textContent =
-    percentage + "%";
+ const message=document.getElementById("completion-message");
+ if(completed===total){
+  message.textContent="Congratulations! You have completed all 12 sample onboarding tasks. Consider reviewing your first-month progress with your manager.";
+ }else if(completed===0){
+  message.textContent="Your progress updates as you complete tasks. Start with the activities in the first stage.";
+ }else{
+  message.textContent="You have completed "+completed+" of "+total+" activities. Keep going at a manageable pace.";
+ }
+}
+taskChecks.forEach(item=>item.addEventListener("change",updateProgress));
 
-  document.getElementById("dashboardBar").style.width =
-    percentage + "%";
+/* RESOURCE DETAILS */
+const resources={
+ handbook:{
+  title:"Employee handbook",
+  copy:"A central reference for workplace policies, employee expectations, organizational values, benefits information, and important procedures."
+ },
+ systems:{
+  title:"Systems and technology",
+  copy:"A practical guide to account access, workplace applications, communication tools, system support, and safe technology practices."
+ },
+ contacts:{
+  title:"People and contacts",
+  copy:"A directory of key contacts, including your manager, HR support, IT help desk, onboarding coordinator, and relevant team members."
+ },
+ learning:{
+  title:"Learning and development",
+  copy:"Information about mandatory training, available courses, learning pathways, professional development, and how to access the organization's LMS."
+ },
+ procedures:{
+  title:"Workplace procedures",
+  copy:"Reference guides for common role-related processes, responsibilities, approval steps, and everyday tasks."
+ },
+ guide:{
+  title:"First-month guide",
+  copy:"Suggested questions and reflection prompts for conversations with your manager, including priorities, feedback, challenges, and future learning goals."
+ }
+};
 
-  taskCheckboxes.forEach(box => {
-    const row = box.closest(".task-row");
-    const title = row.querySelector(".task-info strong");
-
-    if (box.checked) {
-      title.style.textDecoration = "line-through";
-      title.style.opacity = ".55";
-    } else {
-      title.style.textDecoration = "none";
-      title.style.opacity = "1";
-    }
-  });
+function showResource(id){
+ const item=resources[id];
+ if(!item)return;
+ document.getElementById("resource-title").textContent=item.title;
+ document.getElementById("resource-copy").textContent=item.copy;
+ document.getElementById("resource-detail").classList.add("show");
 }
 
-taskCheckboxes.forEach(box => {
-  box.addEventListener("change", updateProgress);
-});
-
-updateProgress();
+/* FAQ */
+function toggleFaq(button){
+ const item=button.parentElement;
+ const isOpen=item.classList.toggle("open");
+ button.querySelector("span").textContent=isOpen?"−":"＋";
+}
 </script>
-
 </body>
 </html>
